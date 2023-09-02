@@ -1,0 +1,15 @@
+ATENÇÃO
+
+Saudações LateXianas!!!
+
+COMPILAR O ARQUIVO
+
+"template-abnt-ufop-escola-de-minas.tex"
+
+utilizando o compulador XeLaTeX, para o texto e Biber para as referências bibliograficas.
+
+Boa pesquisa, Paz e luz!
+
+Prof. Danny A. V. Tonidandel
+
+

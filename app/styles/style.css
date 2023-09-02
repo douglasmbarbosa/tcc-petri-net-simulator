@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.lugar {
+    width: 30px; /* Largura igual à altura para criar um círculo perfeito */
+    height: 30px;
+    background-color: rgb(255, 255, 255); /* Cor de preenchimento do círculo */
+    border-radius: 50%; /* Isso faz com que a div seja exibida como um círculo */
+    border: 2px solid black;
+    position: absolute;
+    cursor: pointer;
+}

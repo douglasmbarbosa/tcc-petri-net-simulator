@@ -1,0 +1,272 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{boyle1772}{mvbook}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a1a82803a4ca9424b6c10482d6c199d5}{%
+           family={Boyle},
+           familyi={B\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=cc43c2e6a2fce79a1da25262af5f973f}{%
+           family={Birch},
+           familyi={B\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {London}%
+      }
+      \list{publisher}{2}{%
+        {J.}%
+        {F. Rivington}%
+      }
+      \strng{namehash}{a1a82803a4ca9424b6c10482d6c199d5}
+      \strng{fullhash}{a1a82803a4ca9424b6c10482d6c199d5}
+      \strng{bibnamehash}{a1a82803a4ca9424b6c10482d6c199d5}
+      \strng{authorbibnamehash}{a1a82803a4ca9424b6c10482d6c199d5}
+      \strng{authornamehash}{a1a82803a4ca9424b6c10482d6c199d5}
+      \strng{authorfullhash}{a1a82803a4ca9424b6c10482d6c199d5}
+      \strng{editorbibnamehash}{cc43c2e6a2fce79a1da25262af5f973f}
+      \strng{editornamehash}{cc43c2e6a2fce79a1da25262af5f973f}
+      \strng{editorfullhash}{cc43c2e6a2fce79a1da25262af5f973f}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{pagetotal}{1062}
+      \field{title}{The works of the Honourable Robert Boyle}
+      \field{volumes}{6}
+      \field{year}{1772}
+      \verb{urlraw}
+      \verb http://bit.ly/boyle-works
+      \endverb
+      \verb{url}
+      \verb http://bit.ly/boyle-works
+      \endverb
+    \endentry
+    \entry{CassandrasLafortune08}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7dd349abebd258362b8f14a38e12272c}{%
+           family={Cassandras},
+           familyi={C\bibinitperiod},
+           given={Christos\bibnamedelima G.},
+           giveni={C\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d254ddd569262e8cffbb335d51b9ec59}{%
+           family={Lafortune},
+           familyi={L\bibinitperiod},
+           given={Stéphane},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{13bce8d1629e7df04f8f2574a43742da}
+      \strng{fullhash}{13bce8d1629e7df04f8f2574a43742da}
+      \strng{bibnamehash}{13bce8d1629e7df04f8f2574a43742da}
+      \strng{authorbibnamehash}{13bce8d1629e7df04f8f2574a43742da}
+      \strng{authornamehash}{13bce8d1629e7df04f8f2574a43742da}
+      \strng{authorfullhash}{13bce8d1629e7df04f8f2574a43742da}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The book provides a comprehensive introduction to the field of discrete event systems, offering a breadth of coverage that makes the material accessible to readers of varied backgrounds. The book emphasizes a unified modeling framework that transcends specific application areas, linking the following topics in a coherent manner: language and automata theory, supervisory control, Petri net theory, Markov chains and queueing theory, discrete-event simulation, and concurrent estimation techniques.}
+      \field{edition}{2}
+      \field{isbn}{978-0-387-33332-8}
+      \field{title}{Introduction to Discrete Event Systems}
+      \field{year}{2008}
+      \verb{doi}
+      \verb 10.1007/978-0-387-68612-7
+      \endverb
+      \verb{file}
+      \verb SpringerLink:2008/CassandrasLafortune08.pdf:PDF;Springer Product page:http\://www.springer.com/978-0-387-33332-8:URL;Amazon Search inside:http\://www.amazon.de/gp/reader/0387333320/:URL
+      \endverb
+      \keyw{01624 103 springer book computer science system engineering theory format concurrent design simulation zzz.cps}
+    \endentry
+    \entry{coutinho1992terceira}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0a5fa117a3ba6280be74ed3c6190fd8a}{%
+           family={Coutinho},
+           familyi={C\bibinitperiod},
+           given={Luciano},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Universidade Estadual de Campinas (UNICAMP), Instituto de Economia}%
+      }
+      \strng{namehash}{0a5fa117a3ba6280be74ed3c6190fd8a}
+      \strng{fullhash}{0a5fa117a3ba6280be74ed3c6190fd8a}
+      \strng{bibnamehash}{0a5fa117a3ba6280be74ed3c6190fd8a}
+      \strng{authorbibnamehash}{0a5fa117a3ba6280be74ed3c6190fd8a}
+      \strng{authornamehash}{0a5fa117a3ba6280be74ed3c6190fd8a}
+      \strng{authorfullhash}{0a5fa117a3ba6280be74ed3c6190fd8a}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Economia e sociedade}
+      \field{number}{1}
+      \field{title}{A terceira revolução industrial e tecnológica. As grandes tendências das mudanças}
+      \field{volume}{1}
+      \field{year}{1992}
+      \field{pages}{69}
+      \range{pages}{1}
+    \endentry
+    \entry{Einstein1920}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3ebf53e52a3ce84f0ffb8553200a6a63}{%
+           family={Einstein},
+           familyi={E\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Jerusalém}%
+      }
+      \list{publisher}{1}{%
+        {The Albert Einstein Archives}%
+      }
+      \strng{namehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{fullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{bibnamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{authorbibnamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{authornamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{authorfullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Transcrição de uma palestra proferida na Universidade Leyden, Holanda.}
+      \field{title}{Aether und Relativitaetstheorie}
+      \field{year}{1920}
+      \verb{urlraw}
+      \verb http://alberteinstein.info/vufind1/Record/EAR000045690
+      \endverb
+      \verb{url}
+      \verb http://alberteinstein.info/vufind1/Record/EAR000045690
+      \endverb
+    \endentry
+    \entry{frances2003introduccao}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=22d856fcdc41b56f5711ac3c5d84fd0d}{%
+           family={Francês},
+           familyi={F\bibinitperiod},
+           given={Carlos\bibnamedelimb Renato\bibnamedelima Lisboa},
+           giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{22d856fcdc41b56f5711ac3c5d84fd0d}
+      \strng{fullhash}{22d856fcdc41b56f5711ac3c5d84fd0d}
+      \strng{bibnamehash}{22d856fcdc41b56f5711ac3c5d84fd0d}
+      \strng{authorbibnamehash}{22d856fcdc41b56f5711ac3c5d84fd0d}
+      \strng{authornamehash}{22d856fcdc41b56f5711ac3c5d84fd0d}
+      \strng{authorfullhash}{22d856fcdc41b56f5711ac3c5d84fd0d}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Laboratório de Computação Aplicada, Universidade Federal do Pará}
+      \field{title}{Introdução às redes de petri}
+      \field{year}{2003}
+    \endentry
+    \entry{lins2013evoluccao}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8200eacb241b72c62e5606006ee1329f}{%
+           family={Lins},
+           familyi={L\bibinitperiod},
+           given={Bernardo\bibnamedelimb Felipe\bibnamedelima Estellita},
+           giveni={B\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8200eacb241b72c62e5606006ee1329f}
+      \strng{fullhash}{8200eacb241b72c62e5606006ee1329f}
+      \strng{bibnamehash}{8200eacb241b72c62e5606006ee1329f}
+      \strng{authorbibnamehash}{8200eacb241b72c62e5606006ee1329f}
+      \strng{authornamehash}{8200eacb241b72c62e5606006ee1329f}
+      \strng{authorfullhash}{8200eacb241b72c62e5606006ee1329f}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cadernos Aslegis}
+      \field{title}{A evolução da Internet: uma perspectiva histórica}
+      \field{volume}{48}
+      \field{year}{2013}
+      \field{pages}{11\bibrangedash 45}
+      \range{pages}{35}
+    \endentry
+    \entry{petri1962kommunikation}{thesis}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ad3d952bb11bfac7d97d4c6454d948b2}{%
+           family={Petri},
+           familyi={P\bibinitperiod},
+           given={Carl},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {TU Darmstadt}%
+      }
+      \strng{namehash}{ad3d952bb11bfac7d97d4c6454d948b2}
+      \strng{fullhash}{ad3d952bb11bfac7d97d4c6454d948b2}
+      \strng{bibnamehash}{ad3d952bb11bfac7d97d4c6454d948b2}
+      \strng{authorbibnamehash}{ad3d952bb11bfac7d97d4c6454d948b2}
+      \strng{authornamehash}{ad3d952bb11bfac7d97d4c6454d948b2}
+      \strng{authorfullhash}{ad3d952bb11bfac7d97d4c6454d948b2}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{bookpagination}{sheet}
+      \field{title}{Kommunikation mit Automaten}
+      \field{type}{phdthesis}
+      \field{year}{1962}
+      \keyw{dnb}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
