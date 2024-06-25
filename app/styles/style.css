@@ -1,15 +1,20 @@
-body {
-    margin: 0;
-    overflow: hidden;
-    cursor: pointer;
+h1 {
+    text-align: center;
+    font-size: 20px;
 }
 
-.lugar {
-    width: 30px; /* Largura igual à altura para criar um círculo perfeito */
-    height: 30px;
-    background-color: rgb(255, 255, 255); /* Cor de preenchimento do círculo */
-    border-radius: 50%; /* Isso faz com que a div seja exibida como um círculo */
-    border: 2px solid black;
-    position: absolute;
-    cursor: pointer;
+#canvas-container {
+    border: 1px solid #000;
+    display: inline-block;
+    margin: 20px 0;
+  }
+
+#petri-net-canvas {
+    width: 600px;
+    height: 250px;
+    background-color: #f0f0f0;
+}
+
+#buttons-container{
+    text-align: center;
 }

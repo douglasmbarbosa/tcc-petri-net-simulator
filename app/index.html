@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt/br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
     <title>Simulador Online de Redes de Petri</title>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <header>
-        <h1>Simulador de Redes de Petri</h1>
-    </header>
-    <div class="botoes">
-        <button id="botao_adicionar_lugar" onclick="adicionar_lugar()">Adicionar Lugar</button>
-        <button id="botao_adicionar_transicao" onclick="adicionar_transicao()">Adicionar Transição</button>
-        <button id="botao_adicionar_arco" onclick="adicionar_arco()">Adicionar Arco</button>
-        <button id="botao_adicionar_marcacao" onclick="adicionar_marcacao()">Adicionar Marcação</button>
-        <button id="botao_simular" onclick="simular_rede()">Simular Rede</button>
-        <button id="botao_simular" onclick="criar_nova_rede()">Criar Nova Rede</button>
+    <div id="app">
+        <h1>Simulador Online de Redes de Petri</h1>
+        <div id="canvas-container">
+            <canvas id="petri-net-canvas"></canvas>
+        </div>
+        <div id="buttons-container">
+            <button>Adicionar Lugar</button>
+            <button>Adicionar Transição</button>
+            <button>Simular Rede</button>
+        </div>
+      
     </div>
     
-    <!-- <div id="circle2" class="lugar"></div> -->
-    
-    <div id="lugares">.</div>
-    
-    <script src="scripts/script.js">
-    </script>
+
+    <div></div>
+
 </body>
 </html>
