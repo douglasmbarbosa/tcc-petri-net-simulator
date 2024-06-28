@@ -10,17 +10,18 @@
     <div id="app">
         <h1>Simulador Online de Redes de Petri</h1>
         <div id="canvas-container">
-            <canvas id="petri-net-canvas"  width="1200" height="600x"></canvas>
+            <canvas id="petri-net-canvas"  width="1600" height="700"></canvas>
         </div>
         <div class="buttons-container">
-            <button onclick="adicionarLugar()">Adicionar Lugar</button>
-            <button onclick="adicionarTransicao()">Adicionar Transição</button>
-            <button onclick="adicionarArco">Adicionar Arco</button>
+            <button onclick="addPlace()">Adicionar Lugar</button>
+            <button onclick="addTransition()">Adicionar Transição</button>
+            <button onclick="addToken()">Adicionar Arco</button>
             <button>Excluir Elemento</button>
             <button>Excluir Rede</button>
             <button onclick="simularRede()">Simular Rede</button>
         </div>  
     </div>
-    <script src="scripts/addElementos.js"> </script>
+    <script src="scripts/addElements.js"> </script>
+    <script src="scripts/moveElements.js"></script>
 </body>
 </html>
