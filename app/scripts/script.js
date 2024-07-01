@@ -29,8 +29,14 @@ arrayLugares.push(objLugar)
 
 arrayLugares.push(objLugar2)
 
-//onsole.log(arrayLugares)
+for (var i of arrayLugares) {
+    console.log(i.posX)
+    //ctx.arc(arrayPlaces[i].posX,arrayPlaces[i].posY,25,0,2*Math.PI) // Argumentos (x,y,raio,angulo inicial,angulo final)
+    //ctx.fillText(arrayPlaces[nPlaces].Name, mouseX, mouseY - 35);
+}
+
+//console.log(arrayLugares[0].posX)
 
 nLugares = 2
 
-console.log()
+//console.log()
