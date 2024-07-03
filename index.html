@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador Online de Redes de Petri</title>
     <link rel="stylesheet" href="app/styles/style.css">
 </head>
+
 <body>
     <div id="app">
         <h1>Simulador Online de Redes de Petri</h1>
         <div id="canvas-container">
-            <canvas id="petri-net-canvas"  width="1600" height="700"></canvas>
+            <canvas id="petri-net-canvas" width="1600" height="700"></canvas>
         </div>
         <div class="buttons-container">
             <button onclick="addPlace()">Adicionar Lugar</button>
@@ -19,13 +21,15 @@
             <button>Excluir Elemento</button>
             <button>Excluir Rede</button>
             <button onclick="simularRede()">Simular Rede</button>
-        </div>  
+        </div>
     </div>
     <script src="app/scripts/moveElements.js"></script>
     <script src="app/scripts/buttons.js"></script>
     <script src="app/scripts/insideElement.js"></script>
     <script src="app/scripts/addElements.js"></script>
     <script src="app/scripts/render.js"></script>
+    <script src="app/scripts/variables.js"></script>
     <script src="app/scripts/script.js"></script>
 </body>
+
 </html>
