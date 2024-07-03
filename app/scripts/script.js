@@ -26,42 +26,7 @@ const transitionWidth = 20
 
 function loop(){
     window.requestAnimationFrame(loop,canvas);
-    update();
     render();
-}
-
-function update(){
-
-}
-
-function adjustedPositionArc(arc, mouseX, mouseY) {
-
-    
-
-    var point = arc.substring(0, arc.indexOf(' '))
-    var arcName = `${arc.substring(arc.indexOf(' ') + 1)}`
-    var idArc = arcName.substring(arcName.indexOf(' ') + 1) - 1
-
-    if (point == "Start") {
-
-        arcPosX = arrayArcs[idArc].startingPositionArc[0][0]
-        arcPosY = arrayArcs[idArc].startingPositionArc[0][1]
-        console.log(arcPosX, arcPosY)
-
-        arrayArcs[idArc].startingPositionArc[0][0] = mouseX  //- (mouseX - arrayArcs[idArc].startingPositionArc[0][0])
-        arrayArcs[idArc].startingPositionArc[0][1] = mouseY  //(mouseY - arrayArcs[idArc].startingPositionArc[0][1])
-
-    }
-
-    else if (point == "Finish") {
-
-        console.log(arrayArcs[idArc].endPositionArc)
-        arrayArcs[idArc].endPositionArc[0][0] = mouseX
-        arrayArcs[idArc].endPositionArc[0][1] = mouseY
-
-
-    }
-
 }
 
 canvas.addEventListener('mousedown', (event) => {
@@ -79,7 +44,6 @@ canvas.addEventListener('mousedown', (event) => {
             nTokens: nTokens
         }
         arrayPlaces.push(objPlace);
-        //console.log(arrayPlaces)
         nPlaces += 1;
     }
 
@@ -155,14 +119,8 @@ canvas.addEventListener('mousedown', (event) => {
             nArcs += 1; 
             startingPositionArc = [];
             endPositionArc = [];
-            // console.log(arrayArcs)
-            // console.log(arrayPlaces)
-            // console.log(arrayTransitions)
-        }
-        
-        
-        
-        
+            
+        }        
     }
     
     if (drawArc == false){
@@ -189,7 +147,7 @@ canvas.addEventListener('mousemove', (event) => {
             place.posY = mouseY;
 
             for (var arc of place.connections){
-                adjustedPositionArc(arc, mouseX, mouseY)
+                adjustedPositionArc(arc, mouseX, mouseY,place.posX,place.posY)
             }
 
             
@@ -207,7 +165,7 @@ canvas.addEventListener('mousemove', (event) => {
             transition.posY = mouseY - transitionHeigth/2;
 
             for (var arc of transition.connections){
-                adjustedPositionArc(arc, mouseX, mouseY)
+                adjustedPositionArc(arc, mouseX, mouseY,transition.posX,transition.posY)
             }
 
             //console.log(transition.Name)
