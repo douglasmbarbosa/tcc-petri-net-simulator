@@ -1,13 +1,13 @@
 function render(){
     ctx.clearRect(0,0,canvas.width, canvas.height); // Comando para limpar a área do canvas
-    ctx.font = '16px Arial';
+    ctx.font = `${sizeFontName}px Arial`;
     ctx.fillStyle = 'black';
-    ctx.textAlign = 'center';
+    //ctx.textAlign = 'center';
     ctx.linewidth = 4;
     for (var place of arrayPlaces) {  
         ctx.beginPath();
         ctx.arc(place.posX,place.posY,radius,0,2*Math.PI) // Argumentos (x,y,raio,angulo inicial,angulo final)
-        ctx.fillText(place.Name, place.posX, place.posY - 35);
+        ctx.fillText(place.Name, place.namePositionX, place.namePositionY);
         ctx.closePath();
         ctx.stroke();
     }
@@ -15,7 +15,7 @@ function render(){
         ctx.beginPath();
         ctx.rect(transition.posX,transition.posY,transitionWidth,transitionHeigth) // Argumentos (x,y,largura,altura)
         ctx.fill();
-        ctx.fillText(transition.Name, transition.posX, transition.posY - 20);
+        ctx.fillText(transition.name, transition.namePositionX, transition.namePositionY);
         ctx.closePath();
     }  
 
@@ -60,7 +60,6 @@ function renderArcAux(beginPos, endPos) {
     ctx.lineTo(endPos[0], endPos[1])
     ctx.closePath();
     ctx.stroke();
-
     console.log(beginPos[0])
     console.log(endPos)
 }

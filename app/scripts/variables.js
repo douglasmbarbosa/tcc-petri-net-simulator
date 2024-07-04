@@ -25,3 +25,4 @@ const radius = 25;
 const transitionHeigth = 50
 const transitionWidth = 25
 const triangleSize = 10
+const sizeFontName = 16

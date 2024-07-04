@@ -12,6 +12,8 @@ canvas.addEventListener('mousedown', (event) => {
         objPlace = {
             id: nPlaces,
             Name: `place ${nPlaces + 1}`,
+            namePositionX: mouseX - 20,
+            namePositionY: mouseY - 35,
             posX: mouseX,
             posY: mouseY,
             connections: [],
@@ -24,7 +26,9 @@ canvas.addEventListener('mousedown', (event) => {
     if (buttonPress == 2) {
         objTransition = {
             id: nTransitions,
-            Name: `transition ${nTransitions + 1}`,
+            name: `transition ${nTransitions + 1}`,
+            namePositionX: mouseX - 20,
+            namePositionY: mouseY - 35,
             posX: mouseX - transitionWidth / 2,
             posY: mouseY - transitionHeigth / 2,
             connections: [],
@@ -40,11 +44,8 @@ canvas.addEventListener('mousedown', (event) => {
 
         for (var place of arrayPlaces) {
             isInsidePlace = insidePlace(mouseX, mouseY, place.posX, place.posY)
-
             posEdge = adjustedPositionArcPlace(mouseX, mouseY, place.posX, place.posY)
-
             posEdge.push(place.Name)
-
             if (isInsidePlace && startingPositionArc.length == 0) {
 
                 startingPositionArc.push(posEdge)
@@ -57,16 +58,11 @@ canvas.addEventListener('mousedown', (event) => {
                 drawArc = false
                 typeElement = null
             }
-
-            
-
         }
 
         for (var transition of arrayTransitions) {
             isInsideTransition = insideTransition(mouseX, mouseY, transition.posX, transition.posY)
-
             mouseXY = [mouseX, mouseY, transition.Name]
-
             if (isInsideTransition && startingPositionArc.length == 0) {
                 startingPositionArc.push(mouseXY)
                 transition.connections.push(`Start Arc ${nArcs + 1}`)
@@ -95,47 +91,56 @@ canvas.addEventListener('mousedown', (event) => {
             endPositionArc = [];
         }
     }
-
     if (drawArc == false) {
         buttonPress = 0
     }
-
     //Verifica se o botão pressionado foi o esquerdo  
     if (event.button == 0) {
         isPress = true
     }
 })
-
 canvas.addEventListener('mousemove', (event) => {
     const rect = canvas.getBoundingClientRect();
     const mouseX = event.clientX - rect.left;
     const mouseY = event.clientY - rect.top;
     for (var place of arrayPlaces) {
         isInsidePlace = insidePlace(mouseX, mouseY, place.posX, place.posY)
+        insideNameElementAux = insideNameElement(place.name,place.namePositionX,place.namePositionY, mouseX, mouseY)      
+        isInsideNameElement = insideNameElementAux[0]
+        sizeFontWidth = insideNameElementAux[1]
 
         canvas.style.cursor = isPress ? 'grabbing' : 'default'
 
         if (isInsidePlace && isPress) {
             place.posX = mouseX;
             place.posY = mouseY;
-
-            for (var arc of place.connections) {
-                adjustedPositionArc(arc, mouseX, mouseY, place.posX, place.posY, "place")
-            }
+        }
+        else if (isInsideNameElement && isPress) {
+                place.namePositionX = mouseX - sizeFontWidth/2
+                place.namePositionY = mouseY + sizeFontName/2
+        }
+        for (var arc of place.connections) {
+            adjustedPositionArc(arc, mouseX, mouseY, place.posX, place.posY, "place")
         }
     }
     for (var transition of arrayTransitions) {
-        isInsideTransition = insideTransition(mouseX, mouseY, transition.posX, transition.posY)
+        isInsideTransition = insideTransition(mouseX, mouseY, transition.posX, transition.posY)    
+        insideNameElementAux = insideNameElement(transition.name,transition.namePositionX,transition.namePositionY, mouseX, mouseY)   
+        isInsideNameElement = insideNameElementAux[0]
+        sizeFontWidth = insideNameElementAux[1]   
         canvas.style.cursor = isPress ? 'grabbing' : 'default'
         if (isInsideTransition && isPress) {
             transition.posX = mouseX - transitionWidth / 2;
             transition.posY = mouseY - transitionHeigth / 2;
-
-            for (var arc of transition.connections) {
-                adjustedPositionArc(arc, mouseX, mouseY, transition.posX, transition.posY, "transition")
-            }         
-    }
-    }
+        }
+        else if (isInsideNameElement && isPress) {
+            transition.namePositionX = mouseX - sizeFontWidth/2
+            transition.namePositionY = mouseY + sizeFontName/2
+        }
+        for (var arc of transition.connections) {
+            adjustedPositionArc(arc, mouseX, mouseY, transition.posX, transition.posY, "transition")
+        }         
+    } 
 })
 
 canvas.addEventListener('mouseup', (event) => {

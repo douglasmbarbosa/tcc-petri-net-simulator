@@ -9,9 +9,7 @@
 <body>
     <div id="app">
         <h1>Online Petri Net Simulator</h1>
-        <div id="canvas-container">
-            <canvas id="petri-net-canvas" width="1600" height="700"></canvas>
-        </div>
+
         <div class="buttons-container">
             <button onclick="addPlace()">Add Place</button>
             <button onclick="addTransition()">Add Transition</button>
@@ -20,6 +18,10 @@
             <button>Delete Net</button>
             <button onclick="netSimulation()">Simulation</button>
         </div>
+        <div id="canvas-container">
+            <canvas id="petri-net-canvas" width="1600" height="650"></canvas>
+        </div>
+        
     </div>
     <script src="app/scripts/moveElements.js"></script>
     <script src="app/scripts/buttons.js"></script>
@@ -28,5 +30,12 @@
     <script src="app/scripts/render.js"></script>
     <script src="app/scripts/variables.js"></script>
     <script src="app/scripts/script.js"></script>
+
+
+    <div id = "devInformation">
+        <a href="https://github.com/douglasmbarbosa/tcc-petri-net-simulator" >link to github project</a>
+        <p>developed by Douglas Barbosa</p>       
+    </div>
+
 </body>
 </html>
