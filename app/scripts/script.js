@@ -41,13 +41,9 @@ canvas.addEventListener('mousedown', (event) => {
         for (var place of arrayPlaces) {
             isInsidePlace = insidePlace(mouseX, mouseY, place.posX, place.posY)
 
-            const dx = mouseX - place.posX;
-            const dy = mouseY - place.posY;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            const adjustedX = place.posX + (dx / distance) * radius;
-            const adjustedY = place.posY + (dy / distance) * radius;
+            posEdge = adjustedPositionArcPlace(mouseX, mouseY, place.posX, place.posY)
 
-            posEdge = [adjustedX, adjustedY, place.Name]
+            posEdge.push(place.Name)
 
             if (isInsidePlace && startingPositionArc.length == 0) {
 
@@ -61,6 +57,8 @@ canvas.addEventListener('mousedown', (event) => {
                 drawArc = false
                 typeElement = null
             }
+
+            
 
         }
 
@@ -88,13 +86,13 @@ canvas.addEventListener('mousedown', (event) => {
                 startingPositionArc: startingPositionArc,
                 endPositionArc: endPositionArc,
                 intermediatePoints: intermediatePoints,
+                trianglePoints: [],
                 weight: 1
             }
             arrayArcs.push(objArc);
             nArcs += 1;
             startingPositionArc = [];
             endPositionArc = [];
-
         }
     }
 
@@ -135,12 +133,9 @@ canvas.addEventListener('mousemove', (event) => {
 
             for (var arc of transition.connections) {
                 adjustedPositionArc(arc, mouseX, mouseY, transition.posX, transition.posY, "transition")
-            }
-
-            //console.log(transition.Name)
-        }
+            }         
     }
-
+    }
 })
 
 canvas.addEventListener('mouseup', (event) => {

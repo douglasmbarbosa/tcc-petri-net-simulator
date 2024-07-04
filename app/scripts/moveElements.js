@@ -8,6 +8,8 @@ function adjustedPositionArc(arc, mouseX, mouseY, posCenterX, posCenterY, type) 
 
     if (point == "Start") {
 
+        //console.log(endPositionArc)
+
         var arcPosFinalX = arrayArcs[idArc].endPositionArc[0][0]
         var arcPosFinalY = arrayArcs[idArc].endPositionArc[0][1]
 
@@ -49,6 +51,35 @@ function adjustedPositionArc(arc, mouseX, mouseY, posCenterX, posCenterY, type) 
         arrayArcs[idArc].endPositionArc[0][0] = shortestDistanceX
         arrayArcs[idArc].endPositionArc[0][1] = shortestDistanceY
 
+        
+        
+        
     }
+
+}
+
+function adjustedPositionArcPlace (mouseX, mouseY, posX, posY) {
+
+    const dx = mouseX - posX;
+    const dy = mouseY - posY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    const adjustedX = posX + (dx / distance) * radius;
+    const adjustedY = posY + (dy / distance) * radius;
+
+    return [adjustedX, adjustedY]
+
+}
+
+
+function trianglePointsCalculation (startX, startY, endX, endY) {
+
+        var angle = Math.atan2(endY - startY, endX - startX);
+
+        var pointX1 = endX - triangleSize * Math.cos(angle - Math.PI / 6);
+        var pointY1 = endY - triangleSize * Math.sin(angle - Math.PI / 6);
+        var pointX2 = endX - triangleSize * Math.cos(angle + Math.PI / 6);
+        var pointY2 = endY - triangleSize * Math.sin(angle + Math.PI / 6);
+
+        return [pointX1, pointY1, pointX2, pointY2]
 
 }
