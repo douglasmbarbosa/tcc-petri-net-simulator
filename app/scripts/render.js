@@ -17,12 +17,50 @@ function render(){
         ctx.fill();
         ctx.fillText(transition.Name, transition.posX, transition.posY - 20);
         ctx.closePath();
-    }     
+    }  
+
     for (var arc of arrayArcs) {
         ctx.beginPath();
+
         ctx.moveTo(arc.startingPositionArc[0][0], arc.startingPositionArc[0][1]);
-        ctx.lineTo(arc.endPositionArc[0][0], arc.endPositionArc[0][1]);
+
+
+        ctx.lineTo(arc.endPositionArc[0][0], arc.endPositionArc[0][1])
+        
+
+        //console.log (startingPositionArc.length, endPositionArc.length)
+        
         ctx.closePath();
         ctx.stroke();
+
+        // Desenhar o triângulo
+
+        trianglePoints = trianglePointsCalculation (arc.startingPositionArc[0][0], arc.startingPositionArc[0][1], arc.endPositionArc[0][0], arc.endPositionArc[0][1])
+
+        ctx.beginPath();
+        ctx.moveTo(arc.endPositionArc[0][0], arc.endPositionArc[0][1]);
+        ctx.lineTo(trianglePoints[0], trianglePoints[1]);
+        ctx.lineTo(trianglePoints[2], trianglePoints[3]);
+        ctx.closePath();
+        ctx.fill()
     }
+
+
+
+
+
+
+    // console.log (startingPositionArc.length, endPositionArc.length)
+}
+
+function renderArcAux(beginPos, endPos) {
+
+    ctx.beginPath();
+    ctx.moveTo(beginPos[0][0], beginPos[0][1]);
+    ctx.lineTo(endPos[0], endPos[1])
+    ctx.closePath();
+    ctx.stroke();
+
+    console.log(beginPos[0])
+    console.log(endPos)
 }
