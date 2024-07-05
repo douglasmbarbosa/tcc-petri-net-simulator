@@ -21,22 +21,34 @@ function render(){
 
     for (var arc of arrayArcs) {
         ctx.beginPath();
-
+    
         ctx.moveTo(arc.startingPositionArc[0][0], arc.startingPositionArc[0][1]);
-
-
+        var n = 0
+        for (var points of arc.intermediatePoints) {
+            ctx.lineTo(points[0], points[1])  
+        }
         ctx.lineTo(arc.endPositionArc[0][0], arc.endPositionArc[0][1])
-        
-
-        //console.log (startingPositionArc.length, endPositionArc.length)
-        
-        ctx.closePath();
         ctx.stroke();
+        ctx.closePath();      
+        for (var points of arc.intermediatePoints) {
+            ctx.beginPath()
+            ctx.arc(points[0],points[1],radiusPointArc,0,2*Math.PI)
+            ctx.closePath()
+            ctx.fill()  
+        }
 
         // Desenhar o triângulo
 
-        trianglePoints = trianglePointsCalculation (arc.startingPositionArc[0][0], arc.startingPositionArc[0][1], arc.endPositionArc[0][0], arc.endPositionArc[0][1])
+        nPointsIntermediate = arc.intermediatePoints.length
 
+        if (nPointsIntermediate == 0) {
+            trianglePoints = trianglePointsCalculation (arc.startingPositionArc[0][0], arc.startingPositionArc[0][1], arc.endPositionArc[0][0], arc.endPositionArc[0][1])
+        }
+
+        else if (nPointsIntermediate > 0) {
+            trianglePoints = trianglePointsCalculation (arc.intermediatePoints[nPointsIntermediate - 1 ][0], arc.intermediatePoints[nPointsIntermediate - 1 ][1], arc.endPositionArc[0][0], arc.endPositionArc[0][1])
+        }
+         
         ctx.beginPath();
         ctx.moveTo(arc.endPositionArc[0][0], arc.endPositionArc[0][1]);
         ctx.lineTo(trianglePoints[0], trianglePoints[1]);
@@ -44,17 +56,9 @@ function render(){
         ctx.closePath();
         ctx.fill()
     }
-
-
-
-
-
-
-    // console.log (startingPositionArc.length, endPositionArc.length)
 }
 
 function renderArcAux(beginPos, endPos) {
-
     ctx.beginPath();
     ctx.moveTo(beginPos[0][0], beginPos[0][1]);
     ctx.lineTo(endPos[0], endPos[1])

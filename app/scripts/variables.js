@@ -22,6 +22,7 @@ var isInsideTransition = false
 var typeElement = null
 var endPositionArcAux = null
 const radius = 25;
+const radiusPointArc = 3
 const transitionHeigth = 50
 const transitionWidth = 25
 const triangleSize = 10

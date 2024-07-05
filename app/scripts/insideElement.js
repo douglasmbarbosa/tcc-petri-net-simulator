@@ -5,6 +5,13 @@ function insidePlace(mouseX,mouseY,placeX,placeY) {
     return c; 
 }
 
+function insideArc(mouseX,mouseY,placeX,placeY) {
+    var a = mouseX - placeX;
+    var b = mouseY - placeY;
+    var c = (Math.pow(a,2) + Math.pow(b,2) <= Math.pow(radiusPointArc,2))
+    return c; 
+}
+
 function insideTransition(mouseX, mouseY, transitionX, transitionY) {
     var a = (mouseX >= transitionX) && (mouseX <= transitionX + transitionWidth) && (mouseY >= transitionY) && (mouseY <= transitionY + transitionHeigth)
     return a;

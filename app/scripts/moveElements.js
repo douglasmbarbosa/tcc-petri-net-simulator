@@ -6,12 +6,18 @@ function adjustedPositionArc(arc, mouseX, mouseY, posCenterX, posCenterY, type) 
     var arcName = `${arc.substring(arc.indexOf(' ') + 1)}`
     var idArc = arcName.substring(arcName.indexOf(' ') + 1) - 1
 
+    nPointsIntermediate = arrayArcs[idArc].intermediatePoints.length
+
     if (point == "Start") {
 
-        //console.log(endPositionArc)
-
-        var arcPosFinalX = arrayArcs[idArc].endPositionArc[0][0]
-        var arcPosFinalY = arrayArcs[idArc].endPositionArc[0][1]
+        if (nPointsIntermediate == 0) {
+            var arcPosFinalX = arrayArcs[idArc].endPositionArc[0][0]
+            var arcPosFinalY = arrayArcs[idArc].endPositionArc[0][1]
+        }
+        else if (nPointsIntermediate > 0) {
+            var arcPosFinalX = arrayArcs[idArc].intermediatePoints[0][0]
+            var arcPosFinalY = arrayArcs[idArc].intermediatePoints[0][1]
+        }
 
         if (type == "place") {
             var distance = Math.sqrt(Math.pow(arcPosFinalX - posCenterX,2) + Math.pow(arcPosFinalY - posCenterY,2)) 
@@ -25,17 +31,22 @@ function adjustedPositionArc(arc, mouseX, mouseY, posCenterX, posCenterY, type) 
         }
 
         arrayArcs[idArc].startingPositionArc[0][0] = shortestDistanceX  
-        arrayArcs[idArc].startingPositionArc[0][1] = shortestDistanceY 
-
-        
+        arrayArcs[idArc].startingPositionArc[0][1] = shortestDistanceY    
 
     }
 
     else if (point == "Finish") {
 
-        var arcPosFinalX = arrayArcs[idArc].startingPositionArc[0][0]
-        var arcPosFinalY = arrayArcs[idArc].startingPositionArc[0][1]
+        if (nPointsIntermediate == 0) {
+            var arcPosFinalX = arrayArcs[idArc].startingPositionArc[0][0]
+            var arcPosFinalY = arrayArcs[idArc].startingPositionArc[0][1]
+        }
 
+        else if (nPointsIntermediate > 0) {
+            var arcPosFinalX = arrayArcs[idArc].intermediatePoints[nPointsIntermediate - 1][0]
+            var arcPosFinalY = arrayArcs[idArc].intermediatePoints[nPointsIntermediate - 1][1]
+        }
+          
         if (type == "place") {
             var distance = Math.sqrt(Math.pow(arcPosFinalX - posCenterX,2) + Math.pow(arcPosFinalY - posCenterY,2)) 
 
@@ -50,10 +61,7 @@ function adjustedPositionArc(arc, mouseX, mouseY, posCenterX, posCenterY, type) 
 
         arrayArcs[idArc].endPositionArc[0][0] = shortestDistanceX
         arrayArcs[idArc].endPositionArc[0][1] = shortestDistanceY
-
-        
-        
-        
+   
     }
 
 }
@@ -69,7 +77,6 @@ function adjustedPositionArcPlace (mouseX, mouseY, posX, posY) {
     return [adjustedX, adjustedY]
 
 }
-
 
 function trianglePointsCalculation (startX, startY, endX, endY) {
 

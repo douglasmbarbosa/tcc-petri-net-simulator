@@ -39,15 +39,15 @@ canvas.addEventListener('mousedown', (event) => {
     }
 
     if (buttonPress == 3) {
-
         drawArc = true
-
+        if (startingPositionArc.length > 0 && endPositionArc.length == 0) {
+            intermediatePoints.push([mouseX, mouseY])
+        }
         for (var place of arrayPlaces) {
             isInsidePlace = insidePlace(mouseX, mouseY, place.posX, place.posY)
             posEdge = adjustedPositionArcPlace(mouseX, mouseY, place.posX, place.posY)
             posEdge.push(place.Name)
             if (isInsidePlace && startingPositionArc.length == 0) {
-
                 startingPositionArc.push(posEdge)
                 place.connections.push(`Start Arc ${nArcs + 1}`)
                 typeElement = "place"
@@ -59,7 +59,6 @@ canvas.addEventListener('mousedown', (event) => {
                 typeElement = null
             }
         }
-
         for (var transition of arrayTransitions) {
             isInsideTransition = insideTransition(mouseX, mouseY, transition.posX, transition.posY)
             mouseXY = [mouseX, mouseY, transition.Name]
@@ -76,8 +75,9 @@ canvas.addEventListener('mousedown', (event) => {
             }
         }
         if (startingPositionArc.length > 0 && endPositionArc.length > 0) {
+            intermediatePoints.pop() 
             objArc = {
-                id: nTransitions,
+                id: nArcs,
                 Name: `Arc ${nArcs + 1}`,
                 startingPositionArc: startingPositionArc,
                 endPositionArc: endPositionArc,
@@ -89,7 +89,10 @@ canvas.addEventListener('mousedown', (event) => {
             nArcs += 1;
             startingPositionArc = [];
             endPositionArc = [];
+            intermediatePoints = []
         }
+
+        //console.log(arrayArcs)
     }
     if (drawArc == false) {
         buttonPress = 0
@@ -99,6 +102,7 @@ canvas.addEventListener('mousedown', (event) => {
         isPress = true
     }
 })
+
 canvas.addEventListener('mousemove', (event) => {
     const rect = canvas.getBoundingClientRect();
     const mouseX = event.clientX - rect.left;
@@ -108,9 +112,7 @@ canvas.addEventListener('mousemove', (event) => {
         insideNameElementAux = insideNameElement(place.name,place.namePositionX,place.namePositionY, mouseX, mouseY)      
         isInsideNameElement = insideNameElementAux[0]
         sizeFontWidth = insideNameElementAux[1]
-
         canvas.style.cursor = isPress ? 'grabbing' : 'default'
-
         if (isInsidePlace && isPress) {
             place.posX = mouseX;
             place.posY = mouseY;
@@ -123,6 +125,7 @@ canvas.addEventListener('mousemove', (event) => {
             adjustedPositionArc(arc, mouseX, mouseY, place.posX, place.posY, "place")
         }
     }
+
     for (var transition of arrayTransitions) {
         isInsideTransition = insideTransition(mouseX, mouseY, transition.posX, transition.posY)    
         insideNameElementAux = insideNameElement(transition.name,transition.namePositionX,transition.namePositionY, mouseX, mouseY)   
@@ -139,8 +142,21 @@ canvas.addEventListener('mousemove', (event) => {
         }
         for (var arc of transition.connections) {
             adjustedPositionArc(arc, mouseX, mouseY, transition.posX, transition.posY, "transition")
-        }         
-    } 
+        }
+    }
+        
+    for (var arc of arrayArcs) {
+        idArc = arc.id
+        nIntermediatePoints = arc.intermediatePoints.length
+        for (var i = 0; i < nIntermediatePoints; i++) {
+            isInsidePointArc = insideArc(mouseX, mouseY, arc.intermediatePoints[i][0], arc.intermediatePoints[i][1])
+            if (isInsidePointArc && isPress) {
+                arc.intermediatePoints[i][0] = mouseX
+                arc.intermediatePoints[i][1] = mouseY      
+            }
+        }
+    }
+     
 })
 
 canvas.addEventListener('mouseup', (event) => {
