@@ -8,6 +8,7 @@ var arcs = [];
 var startingPositionArc = []
 var endPositionArc = []
 var intermediatePoints = []
+var arrayTemporaryArc = []
 var nPlaces = 0;
 var nTransitions = 0;
 var nArcs = 0;
@@ -27,3 +28,8 @@ const transitionHeigth = 50
 const transitionWidth = 25
 const triangleSize = 10
 const sizeFontName = 16
+
+var startX = null
+var startY = null
+var finalX = null
+var finalY = null

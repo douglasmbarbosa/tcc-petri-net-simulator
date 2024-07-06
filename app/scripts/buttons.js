@@ -8,5 +8,6 @@ function addTransition() {
 
 function addArc() {
     buttonPress = 3
+    drawArc = true
 }
 

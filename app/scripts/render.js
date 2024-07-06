@@ -56,14 +56,42 @@ function render(){
         ctx.closePath();
         ctx.fill()
     }
+
+    // mostra o arco enquanto ele é feito
+
+    if (drawArc == true && startingPositionArc.length > 0 && endPositionArc.length == 0) {
+        ctx.beginPath();
+        ctx.moveTo(startX, startY)
+        for (var points of intermediatePoints) {
+            ctx.lineTo(points[0], points[1])  
+        }
+        ctx.lineTo(finalX, finalY) 
+        ctx.stroke()
+        ctx.closePath()
+        for (var points of intermediatePoints) {
+            ctx.beginPath()
+            ctx.arc(points[0],points[1],radiusPointArc,0,2*Math.PI)
+            ctx.closePath()
+            ctx.fill()  
+        }
+
+        nPointsIntermediate = intermediatePoints.length
+
+        if (nPointsIntermediate == 0) {
+            trianglePoints = trianglePointsCalculation (startX, startY, finalX, finalY)
+        }
+
+        else if (nPointsIntermediate > 0) {
+             trianglePoints = trianglePointsCalculation (intermediatePoints[nPointsIntermediate - 1 ][0], intermediatePoints[nPointsIntermediate - 1 ][1], finalX, finalY)
+        }      
+        ctx.beginPath();
+        ctx.moveTo(finalX, finalY);
+        ctx.lineTo(trianglePoints[0], trianglePoints[1]);
+        ctx.lineTo(trianglePoints[2], trianglePoints[3]);
+        ctx.closePath();
+        ctx.fill()
+    }
 }
 
-function renderArcAux(beginPos, endPos) {
-    ctx.beginPath();
-    ctx.moveTo(beginPos[0][0], beginPos[0][1]);
-    ctx.lineTo(endPos[0], endPos[1])
-    ctx.closePath();
-    ctx.stroke();
-    console.log(beginPos[0])
-    console.log(endPos)
-}
+
+    

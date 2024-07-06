@@ -39,7 +39,6 @@ canvas.addEventListener('mousedown', (event) => {
     }
 
     if (buttonPress == 3) {
-        drawArc = true
         if (startingPositionArc.length > 0 && endPositionArc.length == 0) {
             intermediatePoints.push([mouseX, mouseY])
         }
@@ -107,6 +106,20 @@ canvas.addEventListener('mousemove', (event) => {
     const rect = canvas.getBoundingClientRect();
     const mouseX = event.clientX - rect.left;
     const mouseY = event.clientY - rect.top;
+
+    if (drawArc == true && startingPositionArc.length > 0 && endPositionArc.length == 0) {
+        startX = startingPositionArc[0][0]
+        startY = startingPositionArc[0][1]
+        finalX = mouseX
+        finalY = mouseY
+    }
+    else {
+        startX = null
+        startY = null
+        finalX = null
+        finalY = null
+    }
+
     for (var place of arrayPlaces) {
         isInsidePlace = insidePlace(mouseX, mouseY, place.posX, place.posY)
         insideNameElementAux = insideNameElement(place.name,place.namePositionX,place.namePositionY, mouseX, mouseY)      
@@ -156,7 +169,7 @@ canvas.addEventListener('mousemove', (event) => {
             }
         }
     }
-     
+    
 })
 
 canvas.addEventListener('mouseup', (event) => {
