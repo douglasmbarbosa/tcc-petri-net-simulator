@@ -11,3 +11,18 @@ function addArc() {
     drawArc = true
 }
 
+function excludeElement() {
+    buttonPress = 4
+}
+
+function excludeNet() {
+    buttonPress = 5
+    console.log(arrayTransitions)
+}
+
+function netSimulation() {
+    buttonPress = 6
+    console.log(arrayPlaces)
+}
+
+

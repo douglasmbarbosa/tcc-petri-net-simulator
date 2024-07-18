@@ -4,7 +4,17 @@ function adjustedPositionArc(arc, mouseX, mouseY, posCenterX, posCenterY, type) 
 
     var point = arc.substring(0, arc.indexOf(' '))
     var arcName = `${arc.substring(arc.indexOf(' ') + 1)}`
-    var idArc = arcName.substring(arcName.indexOf(' ') + 1) - 1
+    //var idArc = arcName.substring(arcName.indexOf(' ') + 1) - 1
+    var idArc = null
+
+    for (var element of arrayArcs) {
+
+        if (arcName == element.name) {
+
+            idArc = arrayArcs.indexOf(element)
+        }
+
+    }
 
     nPointsIntermediate = arrayArcs[idArc].intermediatePoints.length
 

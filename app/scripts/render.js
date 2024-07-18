@@ -7,7 +7,7 @@ function render(){
     for (var place of arrayPlaces) {  
         ctx.beginPath();
         ctx.arc(place.posX,place.posY,radius,0,2*Math.PI) // Argumentos (x,y,raio,angulo inicial,angulo final)
-        ctx.fillText(place.Name, place.namePositionX, place.namePositionY);
+        ctx.fillText(place.name, place.namePositionX, place.namePositionY);
         ctx.closePath();
         ctx.stroke();
     }
