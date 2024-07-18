@@ -1,6 +1,7 @@
 function loop() {
     window.requestAnimationFrame(loop, canvas);
     render();
+    buttonsColors()
 }
 
 canvas.addEventListener('mousedown', (event) => {

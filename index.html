@@ -11,17 +11,16 @@
         <h1>Online Petri Net Simulator</h1>
 
         <div class="buttons-container">
-            <button onclick="addPlace()">Add Place</button>
-            <button onclick="addTransition()">Add Transition</button>
-            <button onclick="addArc()">Add Arc</button>
-            <button onclick="excludeElement()">Delete Element</button>
-            <button onclick="excludeNet()">Delete Net</button>
-            <button onclick="netSimulation()">Simulation</button>
+            <button id="buttonAddPlace" onclick="addPlace()">Add Place</button>
+            <button id="buttonAddTransition" onclick="addTransition()">Add Transition</button>
+            <button id="buttonAddArc" onclick="addArc()">Add Arc</button>
+            <button id="buttonDeleteElement" onclick="excludeElement()">Delete Element</button>
+            <button id="buttonDeleteNet" onclick="excludeNet()">Delete Net</button>
+            <button id="buttonNetSimulation" onclick="netSimulation()">Simulation</button>
         </div>
         <div id="canvas-container">
             <canvas id="petri-net-canvas" width="1600" height="650"></canvas>
         </div>
-        
     </div>
     <script src="app/scripts/moveElements.js"></script>
     <script src="app/scripts/buttons.js"></script>
@@ -29,7 +28,12 @@
     <script src="app/scripts/addElements.js"></script>
     <script src="app/scripts/render.js"></script>
     <script src="app/scripts/variables.js"></script>
+    <script src="app/scripts/styleButtons.js"></script>
     <script src="app/scripts/script.js"></script>
+    
+
+
+    <div id="messageToUser"></div>
 
 
     <div id = "devInformation">
