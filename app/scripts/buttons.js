@@ -1,33 +1,37 @@
-function addPlace() {
+function buttonAddPlace() {
     buttonPress = 1
 }
 
-function addTransition() {
+function buttonAddTransition() {
     buttonPress = 2
 }
 
-function addArc() {
+function buttonAddArc() {
     buttonPress = 3
     drawArc = true
 }
 
-function deleteElement() {
+function buttonDeleteElement() {
     buttonPress = 4
 }
 
-function deleteNet() {
+function buttonDeleteNet() {
     buttonPress = 5
     console.log(arrayTransitions)
 }
 
-function netSimulation() {
+function buttonNetSimulation() {
     buttonPress = 6
     console.log(arrayPlaces)
 }
 
-function saveNet() {
+function buttonSaveNet() {
     buttonPress = 7
     console.log(arrayArcs)
+}
+
+function buttonLoadNet() {
+    buttonPress = 8
 }
 
 

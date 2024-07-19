@@ -1,6 +1,7 @@
 var colorOn = "red"
 var colorOff = "lightblue"
-var buttons = ["buttonAddPlace", "buttonAddTransition", "buttonAddArc", "buttonDeleteElement", "buttonDeleteNet", "buttonNetSimulation", "buttonSaveNet"]
+var buttons = ["buttonAddPlace", "buttonAddTransition", "buttonAddArc", "buttonDeleteElement", 
+    "buttonDeleteNet", "buttonNetSimulation", "buttonSaveNet", "buttonLoadNet"]
 
 function buttonColors(){
   

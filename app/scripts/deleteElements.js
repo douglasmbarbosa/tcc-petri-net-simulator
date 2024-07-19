@@ -109,7 +109,6 @@ function deleteArc(arc, index) {
     buttonPress = 0
 }
 
-
     // 1. Verifico se está encima do elemento lugar 
     // 2. Verifico se existe algum arco associado a esse lugar
     // 3. Verifico, caso exista um arco associado, a qual transição está associada também

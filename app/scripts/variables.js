@@ -13,7 +13,8 @@ var nPlaces = 0;
 var nTransitions = 0;
 var nArcs = 0;
 var nTokens = 0;
-var isMoving = false;
+var isMovingPlace = false;
+var isMovingTransition = false;
 var isEnabled = false;
 var isPress = false
 var drawArc = false
@@ -34,3 +35,6 @@ var finalX = null
 var finalY = null
 var start = null
 var end = null 
+
+var mouseMoveX = null
+var mouseMoveY = null

@@ -6,126 +6,36 @@ function loop() {
 
 canvas.addEventListener('mousedown', (event) => {
     //Obtendo posição do ponteiro do mouse
+
     const rect = canvas.getBoundingClientRect();
     const mouseX = event.clientX - rect.left;
     const mouseY = event.clientY - rect.top;
 
     if (buttonPress == 1) {
-        objPlace = {
-            id: nPlaces,
-            name: `place ${nPlaces + 1}`,
-            namePositionX: mouseX - 20,
-            namePositionY: mouseY - 35,
-            posX: mouseX,
-            posY: mouseY,
-            connections: [],
-            nTokens: nTokens
-        }
-        arrayPlaces.push(objPlace);
-        nPlaces += 1;
-        buttonPress = 0
-
-        
+        addPlace(mouseX, mouseY);
+        buttonPress = 0;     
     }
 
     if (buttonPress == 2) {
-        objTransition = {
-            id: nTransitions,
-            name: `transition ${nTransitions + 1}`,
-            namePositionX: mouseX - 20,
-            namePositionY: mouseY - 35,
-            posX: mouseX - transitionWidth / 2,
-            posY: mouseY - transitionHeigth / 2,
-            connections: [],
-            isEnabled: isEnabled
-        }
-        arrayTransitions.push(objTransition);
-        nTransitions += 1;
-        buttonPress = 0
+        addTransition(mouseX, mouseY);
+        buttonPress = 0;
     }
 
     if (buttonPress == 3) {
-        if (startingPositionArc.length > 0 && endPositionArc.length == 0) {
-            intermediatePoints.push([mouseX, mouseY])
+        addArc(mouseX, mouseY)
+        if (drawArc == false) {
+            buttonPress = 0
         }
-        for (var place of arrayPlaces) {
-            isInsidePlace = insidePlace(mouseX, mouseY, place.posX, place.posY)
-            //console.log(isInsidePlace)
-            posEdge = adjustedPositionArcPlace(mouseX, mouseY, place.posX, place.posY)
-            posEdge.push(place.name)
-            if (isInsidePlace && startingPositionArc.length == 0) {
-                startingPositionArc.push(posEdge)
-                place.connections.push(`Start Arc ${nArcs + 1}`)
-                start = place.name
-                typeElement = "place"
-            }
-            else if (isInsidePlace && typeElement == "transition") {
-                endPositionArc.push(posEdge)
-                place.connections.push(`Finish Arc ${nArcs + 1}`)
-                end = place.name
-                drawArc = false
-                typeElement = null
-            }
-        }
-        for (var transition of arrayTransitions) {
-            isInsideTransition = insideTransition(mouseX, mouseY, transition.posX, transition.posY)
-            mouseXY = [mouseX, mouseY, transition.name]
-            if (isInsideTransition && startingPositionArc.length == 0) {
-                startingPositionArc.push(mouseXY)
-                transition.connections.push(`Start Arc ${nArcs + 1}`)
-                start = transition.name
-                typeElement = "transition"
-            }
-            else if (isInsideTransition && typeElement == "place") {
-                endPositionArc.push(mouseXY)
-                transition.connections.push(`Finish Arc ${nArcs + 1}`)
-                end = transition.name
-                drawArc = false
-                typeElement = null
-            }
-        }
-        if (startingPositionArc.length > 0 && endPositionArc.length > 0) {
-            intermediatePoints.pop() 
-            objArc = {
-                id: nArcs,
-                name: `Arc ${nArcs + 1}`,
-                startingPositionArc: startingPositionArc,
-                endPositionArc: endPositionArc,
-                start: start,
-                end: end,
-                intermediatePoints: intermediatePoints,
-
-                trianglePoints: [],
-                weight: 1
-            }
-            arrayArcs.push(objArc);
-            nArcs += 1;
-            startingPositionArc = [];
-            endPositionArc = [];
-            intermediatePoints = [];
-            start = null;
-            end = null;
-            if (drawArc == false) {
-                buttonPress = 0
-            }
-        }   
-    }
-
-   
-
+    }   
+    
     if (buttonPress == 4) {
         deleteElements(mouseX, mouseY)
     }
 
-    
-
     if (buttonPress == 5) {
-
-        
-
+        deleteNet();
+        buttonPress = 0;
     }
-
-    
 
     //Verifica se o botão pressionado foi o esquerdo  
     if (event.button == 0) {
@@ -137,6 +47,9 @@ canvas.addEventListener('mousemove', (event) => {
     const rect = canvas.getBoundingClientRect();
     const mouseX = event.clientX - rect.left;
     const mouseY = event.clientY - rect.top;
+
+    mouseMoveX = mouseX;
+    mouseMoveY = mouseY;
 
     if (drawArc == true && startingPositionArc.length > 0 && endPositionArc.length == 0) {
         startX = startingPositionArc[0][0]
@@ -199,6 +112,9 @@ canvas.addEventListener('mousemove', (event) => {
             }
         }
     }
+    
+    buttonPress == 1 ? isMovingPlace = true : isMovingPlace = false
+    buttonPress == 2 ? isMovingTransition = true : isMovingTransition = false
     
 })
 

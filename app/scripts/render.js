@@ -91,7 +91,27 @@ function render(){
         ctx.closePath();
         ctx.fill()
     }
+
+    if (isMovingPlace) {
+        ctx.beginPath();
+        ctx.fillStyle = 'rgba(0,0,0,0.2)'
+        ctx.arc(mouseMoveX,mouseMoveY,radius,0,2*Math.PI) // Argumentos (x,y,raio,angulo inicial,angulo final)
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+    }
+
+    if (isMovingTransition) {
+        ctx.beginPath();
+        ctx.fillStyle = 'rgba(0,0,0,0.8)'
+        ctx.rect(mouseMoveX - transitionWidth / 2,mouseMoveY - transitionHeigth / 2,transitionWidth,transitionHeigth) // Argumentos (x,y,largura,altura)
+        ctx.fill();
+        ctx.closePath();
+    }
 }
+
+
+
 
 
     
