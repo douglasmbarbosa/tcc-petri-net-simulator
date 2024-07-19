@@ -14,9 +14,10 @@
             <button id="buttonAddPlace" onclick="addPlace()">Add Place</button>
             <button id="buttonAddTransition" onclick="addTransition()">Add Transition</button>
             <button id="buttonAddArc" onclick="addArc()">Add Arc</button>
-            <button id="buttonDeleteElement" onclick="excludeElement()">Delete Element</button>
-            <button id="buttonDeleteNet" onclick="excludeNet()">Delete Net</button>
+            <button id="buttonDeleteElement" onclick="deleteElement()">Delete Element</button>
+            <button id="buttonDeleteNet" onclick="deleteNet()">Delete Net</button>
             <button id="buttonNetSimulation" onclick="netSimulation()">Simulation</button>
+            <button id="buttonSaveNet" onclick="saveNet()">Save Net</button>
         </div>
         <div id="canvas-container">
             <canvas id="petri-net-canvas" width="1600" height="650"></canvas>
@@ -28,7 +29,8 @@
     <script src="app/scripts/addElements.js"></script>
     <script src="app/scripts/render.js"></script>
     <script src="app/scripts/variables.js"></script>
-    <script src="app/scripts/styleButtons.js"></script>
+    <script src="app/scripts/styles.js"></script>
+    <script src="app/scripts/deleteElements.js"></script>
     <script src="app/scripts/script.js"></script>
     
 

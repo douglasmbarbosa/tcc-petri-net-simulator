@@ -11,11 +11,11 @@ function addArc() {
     drawArc = true
 }
 
-function excludeElement() {
+function deleteElement() {
     buttonPress = 4
 }
 
-function excludeNet() {
+function deleteNet() {
     buttonPress = 5
     console.log(arrayTransitions)
 }
@@ -23,6 +23,11 @@ function excludeNet() {
 function netSimulation() {
     buttonPress = 6
     console.log(arrayPlaces)
+}
+
+function saveNet() {
+    buttonPress = 7
+    console.log(arrayArcs)
 }
 
 

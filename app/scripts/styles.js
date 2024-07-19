@@ -1,8 +1,8 @@
 var colorOn = "red"
 var colorOff = "lightblue"
-var buttons = ["buttonAddPlace", "buttonAddTransition", "buttonAddArc", "buttonDeleteElement", "buttonDeleteNet", "buttonNetSimulation"]
+var buttons = ["buttonAddPlace", "buttonAddTransition", "buttonAddArc", "buttonDeleteElement", "buttonDeleteNet", "buttonNetSimulation", "buttonSaveNet"]
 
-function buttonsColors(){
+function buttonColors(){
   
     for (var button of buttons) {
         index = buttons.indexOf(button)
