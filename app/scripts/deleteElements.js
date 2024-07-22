@@ -125,7 +125,6 @@ function deleteNet() {
     nTransitions = 0;
     nArcs = 0;
     drawArc = false;
-    buttonPress = 0;
 }
 
 document.getElementById('buttonDeleteNet').addEventListener('click', function() {

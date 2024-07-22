@@ -52,7 +52,7 @@ canvas.addEventListener('mousemove', (event) => {
 
     mouseMoveX = mouseX;
     mouseMoveY = mouseY;
-    console.log(isInsidePlace, isInsideTransition, insideNameElementAux[0])
+    
     if (drawArc == true && startingPositionArc.length > 0 && endPositionArc.length == 0) {
         startX = startingPositionArc[0][0]
         startY = startingPositionArc[0][1]
@@ -71,7 +71,7 @@ canvas.addEventListener('mousemove', (event) => {
         insideNameElementAux = insideNameElement(place.name,place.namePositionX,place.namePositionY, mouseX, mouseY)      
         isInsideNameElement = insideNameElementAux[0]
         sizeFontWidth = insideNameElementAux[1]
-        console.log(isInsidePlace)
+        
         if (isInsidePlace && isPress) {
             
             place.posX = mouseX;
