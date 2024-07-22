@@ -116,7 +116,7 @@ function deleteArc(arc, index) {
     // 5. Caso 2 se confirme, excluo o arco
     // 6. Caso 1 se confirme, excluo o lugar
 
-function deleteNet() {
+function deleteNet() {  
     arrayPlaces = [];
     arrayTransitions = [];
     arrayArcs = [];
@@ -124,5 +124,15 @@ function deleteNet() {
     nPlaces = 0;
     nTransitions = 0;
     nArcs = 0;
-    drawArc = false
+    drawArc = false;
+    buttonPress = 0;
 }
+
+document.getElementById('buttonDeleteNet').addEventListener('click', function() {
+    var confirmation = confirm("Do you really want to delete the petri net?");
+    if (confirmation) {
+        deleteNet();
+    } else {
+        buttonPress = 0;      
+    }
+});

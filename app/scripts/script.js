@@ -1,7 +1,8 @@
 function loop() {
     window.requestAnimationFrame(loop, canvas);
     render();
-    buttonColors()
+    buttonColors();
+    
 }
 
 canvas.addEventListener('mousedown', (event) => {
@@ -33,14 +34,15 @@ canvas.addEventListener('mousedown', (event) => {
     }
 
     if (buttonPress == 5) {
-        deleteNet();
-        buttonPress = 0;
+        
+       
     }
 
     //Verifica se o botão pressionado foi o esquerdo  
     if (event.button == 0) {
         isPress = true
     }
+    
 })
 
 canvas.addEventListener('mousemove', (event) => {
@@ -50,7 +52,7 @@ canvas.addEventListener('mousemove', (event) => {
 
     mouseMoveX = mouseX;
     mouseMoveY = mouseY;
-
+    console.log(isInsidePlace, isInsideTransition, insideNameElementAux[0])
     if (drawArc == true && startingPositionArc.length > 0 && endPositionArc.length == 0) {
         startX = startingPositionArc[0][0]
         startY = startingPositionArc[0][1]
@@ -69,8 +71,9 @@ canvas.addEventListener('mousemove', (event) => {
         insideNameElementAux = insideNameElement(place.name,place.namePositionX,place.namePositionY, mouseX, mouseY)      
         isInsideNameElement = insideNameElementAux[0]
         sizeFontWidth = insideNameElementAux[1]
-        canvas.style.cursor = isPress ? 'grabbing' : 'default'
+        console.log(isInsidePlace)
         if (isInsidePlace && isPress) {
+            
             place.posX = mouseX;
             place.posY = mouseY;
         }
@@ -88,7 +91,6 @@ canvas.addEventListener('mousemove', (event) => {
         insideNameElementAux = insideNameElement(transition.name,transition.namePositionX,transition.namePositionY, mouseX, mouseY)   
         isInsideNameElement = insideNameElementAux[0]
         sizeFontWidth = insideNameElementAux[1]   
-        canvas.style.cursor = isPress ? 'grabbing' : 'default'
         if (isInsideTransition && isPress) {
             transition.posX = mouseX - transitionWidth / 2;
             transition.posY = mouseY - transitionHeigth / 2;
@@ -115,7 +117,9 @@ canvas.addEventListener('mousemove', (event) => {
     
     buttonPress == 1 ? isMovingPlace = true : isMovingPlace = false
     buttonPress == 2 ? isMovingTransition = true : isMovingTransition = false
+
     
+    cursorStyle(mouseMoveX, mouseMoveY);
 })
 
 canvas.addEventListener('mouseup', (event) => {

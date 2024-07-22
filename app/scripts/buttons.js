@@ -16,8 +16,10 @@ function buttonDeleteElement() {
 }
 
 function buttonDeleteNet() {
-    buttonPress = 5
+    
     console.log(arrayTransitions)
+    buttonPress = 5;
+   
 }
 
 function buttonNetSimulation() {
@@ -32,6 +34,7 @@ function buttonSaveNet() {
 
 function buttonLoadNet() {
     buttonPress = 8
+    
 }
 
 
