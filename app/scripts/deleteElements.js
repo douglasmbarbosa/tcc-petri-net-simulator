@@ -58,7 +58,6 @@ function deleteElements(mouseX, mouseY) {
         }
     }
 
-
     for (var arc of arrayArcs) {
         index = arrayArcs.indexOf(arc)
         nIntermediatePoints = arc.intermediatePoints.length
@@ -116,7 +115,8 @@ function deleteArc(arc, index) {
     // 5. Caso 2 se confirme, excluo o arco
     // 6. Caso 1 se confirme, excluo o lugar
 
-function deleteNet() {  
+function deleteNet() { 
+    localStorage.clear();
     arrayPlaces = [];
     arrayTransitions = [];
     arrayArcs = [];
