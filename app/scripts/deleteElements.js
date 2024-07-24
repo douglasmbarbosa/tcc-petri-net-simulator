@@ -72,6 +72,7 @@ function deleteElements(mouseX, mouseY) {
         }
         if (isInsideTriangleArc) {
             deleteArc(arc, index)
+            
         }
               
     }

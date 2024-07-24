@@ -8,6 +8,7 @@ function render(){
         ctx.beginPath();
         ctx.arc(place.posX,place.posY,radius,0,2*Math.PI) // Argumentos (x,y,raio,angulo inicial,angulo final)
         ctx.fillText(place.name, place.namePositionX, place.namePositionY);
+        ctx.fillText(place.nTokens, place.posX, place.posY)
         ctx.closePath();
         ctx.stroke();
     }
@@ -23,6 +24,7 @@ function render(){
         ctx.beginPath();
     
         ctx.moveTo(arc.startingPositionArc[0][0], arc.startingPositionArc[0][1]);
+        
         var n = 0
         for (var points of arc.intermediatePoints) {
             ctx.lineTo(points[0], points[1])  
@@ -48,11 +50,18 @@ function render(){
         else if (nPointsIntermediate > 0) {
             trianglePoints = trianglePointsCalculation (arc.intermediatePoints[nPointsIntermediate - 1 ][0], arc.intermediatePoints[nPointsIntermediate - 1 ][1], arc.endPositionArc[0][0], arc.endPositionArc[0][1])
         }
+        
+        A = {x: arc.endPositionArc[0][0], y: arc.endPositionArc[0][1]}
+        B = {x: trianglePoints[0], y: trianglePoints[1]}
+        C = {x: trianglePoints[2], y: trianglePoints[3]}
+        
+        pointsWeigth = pointsWeigthCalculation(A, B)
          
         ctx.beginPath();
-        ctx.moveTo(arc.endPositionArc[0][0], arc.endPositionArc[0][1]);
-        ctx.lineTo(trianglePoints[0], trianglePoints[1]);
-        ctx.lineTo(trianglePoints[2], trianglePoints[3]);
+        ctx.fillText(arc.weight, pointsWeigth.x, pointsWeigth.y)
+        ctx.moveTo(A.x, A.y);
+        ctx.lineTo(B.x, B.y);
+        ctx.lineTo(C.x, C.y);
         ctx.closePath();
         ctx.fill()
     }

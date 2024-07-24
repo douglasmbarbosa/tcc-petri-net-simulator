@@ -66,3 +66,22 @@ function areaTriangle(x1, y1, x2, y2, x3, y3) {
     return area;
 
 }
+
+function pointsWeigthCalculation(A, B) {
+    // Calcular o vetor AB
+    var AB = {x: B.x - A.x, y: B.y - A.y};
+
+    // Calcular a magnitude de AB
+    var magnitudeAB = Math.sqrt(AB.x * AB.x + AB.y * AB.y);
+
+    // Normalizar o vetor AB
+    var unitAB = {x: AB.x / magnitudeAB, y: AB.y / magnitudeAB};
+
+    // Calcular o ponto desejado
+    var point = {
+        x: A.x + unitAB.x * distanceWeigthPoint,
+        y: A.y + unitAB.y * distanceWeigthPoint
+    };
+
+    return point;
+}

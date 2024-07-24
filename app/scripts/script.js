@@ -112,13 +112,12 @@ canvas.addEventListener('mousemove', (event) => {
                 arc.intermediatePoints[i][0] = mouseX
                 arc.intermediatePoints[i][1] = mouseY      
             }
-        }
+        }  
     }
     
     buttonPress == 1 ? isMovingPlace = true : isMovingPlace = false
     buttonPress == 2 ? isMovingTransition = true : isMovingTransition = false
 
-    
     cursorStyle(mouseMoveX, mouseMoveY);
 })
 

@@ -21,8 +21,7 @@ function loadVariables(data) {
     nArcs = data.nArcs;
 }
 
-function saveJSON() {
-    
+function saveJSON() {   
     variables = saveVariables();
     const dataStr = JSON.stringify(variables);
     const blob = new Blob([dataStr], { type: "application/json" });
@@ -48,6 +47,8 @@ function loadJSON(event) {
 document.getElementById("buttonSaveNet").addEventListener("click", saveJSON);
 document.getElementById("buttonLoadNet").addEventListener("click", () => {document.getElementById("fileInput").click();});
 document.getElementById("fileInput").addEventListener("change", loadJSON);
+
+//Salvar e carregar no localStorage f5 da página
 
 window.addEventListener('beforeunload', () => {
     variables = JSON.stringify(saveVariables());

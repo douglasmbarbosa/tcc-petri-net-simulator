@@ -32,6 +32,7 @@ const transitionHeigth = 50
 const transitionWidth = 25
 const triangleSize = 10
 const sizeFontName = 16
+const distanceWeigthPoint = 40
 var startX = null
 var startY = null
 var finalX = null

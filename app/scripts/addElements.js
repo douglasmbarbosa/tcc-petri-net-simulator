@@ -7,7 +7,7 @@ function addPlace(mouseX, mouseY) {
         posX: mouseX,
         posY: mouseY,
         connections: [],
-        nTokens: nTokens
+        nTokens: 0
     }
     arrayPlaces.push(objPlace);
     nPlaces += 1;
@@ -22,7 +22,7 @@ function addTransition(mouseX, mouseY) {
         posX: mouseX - transitionWidth / 2,
         posY: mouseY - transitionHeigth / 2,
         connections: [],
-        isEnabled: isEnabled
+        isEnabled: false
     }
     arrayTransitions.push(objTransition);
     nTransitions += 1;
