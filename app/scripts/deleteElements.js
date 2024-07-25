@@ -5,11 +5,11 @@ function deleteElements(mouseX, mouseY) {
         if (isInsidePlace) {
             if (place.connections.length > 0) {
                 for (var connectionPlace of place.connections) {                       
-                    arcNamePlace = `${connectionPlace.substring(connectionPlace.indexOf(' ') + 1)}`                                              
+                    arcIdPlace = `${connectionPlace.substring(connectionPlace.indexOf(' ') + 1)}`                                              
                     for (var transition of arrayTransitions) {
                         for (var connectionTransition of transition.connections) {
-                            arcNameTransition = `${connectionTransition.substring(connectionTransition.indexOf(' ') + 1)}`   
-                            if (arcNameTransition == arcNamePlace) {
+                            arcIdTransition = `${connectionTransition.substring(connectionTransition.indexOf(' ') + 1)}`   
+                            if (arcIdTransition == arcIdPlace) {
                                 indexConection = transition.connections.indexOf(connectionTransition)
                                 transition.connections.splice(indexConection, 1)
                             }
@@ -17,7 +17,7 @@ function deleteElements(mouseX, mouseY) {
                     }
                     for (var arc of arrayArcs) {
                         index = arrayArcs.indexOf(arc)
-                        if (arcNamePlace == arc.name) {
+                        if (arcIdPlace == arc.id) {
                             arrayArcs.splice(index, 1)
                         }
                     }
@@ -34,11 +34,11 @@ function deleteElements(mouseX, mouseY) {
         if (isInsideTransition) {
             if (transition.connections.length > 0) {
                 for (var connectionTransition of transition.connections) {                       
-                    arcNameTransition = `${connectionTransition.substring(connectionTransition.indexOf(' ') + 1)}`                                              
+                    arcIdTransition = `${connectionTransition.substring(connectionTransition.indexOf(' ') + 1)}`                                              
                     for (var place of arrayPlaces) {
                         for (var connectionPlace of place.connections) {
-                            arcNamePlace = `${connectionPlace.substring(connectionPlace.indexOf(' ') + 1)}`   
-                            if (arcNamePlace == arcNameTransition) {
+                            arcIdPlace = `${connectionPlace.substring(connectionPlace.indexOf(' ') + 1)}`   
+                            if (arcIdPlace == arcIdTransition) {
                                 indexConection = place.connections.indexOf(connectionPlace)
                                 place.connections.splice(indexConection, 1)
                             }
@@ -46,7 +46,7 @@ function deleteElements(mouseX, mouseY) {
                     }
                     for (var arc of arrayArcs) {
                         index = arrayArcs.indexOf(arc)
-                        if (arcNameTransition == arc.name) {
+                        if (arcIdTransition == arc.id) {
                             arrayArcs.splice(index, 1)
                         }
                     }
@@ -83,10 +83,10 @@ function deleteElements(mouseX, mouseY) {
 function deleteArc(arc, index) {
 
     for (var place of arrayPlaces) {
-        if (place.name == arc.start || place.name == arc.end) {
+        if (place.id == arc.start || place.id == arc.end) {
             for (var connectionPlace of place.connections) {
-                arcNamePlace = `${connectionPlace.substring(connectionPlace.indexOf(' ') + 1)}`   
-                if (arcNamePlace == arc.name) {
+                arcIdPlace = `${connectionPlace.substring(connectionPlace.indexOf(' ') + 1)}`   
+                if (arcIdPlace == arc.id) {
                     indexConection = place.connections.indexOf(connectionPlace)
                     place.connections.splice(indexConection, 1)
                 }
@@ -95,10 +95,10 @@ function deleteArc(arc, index) {
     }
 
     for (var transition of arrayTransitions) {
-        if (transition.name == arc.start || transition.name == arc.end) {
+        if (transition.id == arc.start || transition.id == arc.end) {
             for (var connectionTransition of transition.connections) {
-                arcNameTransition = `${connectionTransition.substring(connectionTransition.indexOf(' ') + 1)}`   
-                if (arcNameTransition == arc.name) {
+                arcIdTransition = `${connectionTransition.substring(connectionTransition.indexOf(' ') + 1)}`   
+                if (arcIdTransition == arc.id) {
                     indexConection = transition.connections.indexOf(connectionTransition)
                     transition.connections.splice(indexConection, 1)
                 }

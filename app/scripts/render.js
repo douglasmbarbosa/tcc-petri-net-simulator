@@ -8,7 +8,9 @@ function render(){
         ctx.beginPath();
         ctx.arc(place.posX,place.posY,radius,0,2*Math.PI) // Argumentos (x,y,raio,angulo inicial,angulo final)
         ctx.fillText(place.name, place.namePositionX, place.namePositionY);
-        ctx.fillText(place.nTokens, place.posX, place.posY)
+        textWidth = ctx.measureText(place.nTokens).width;
+        textHeight = sizeFontName - 5;
+        ctx.fillText(place.nTokens, place.posX - textWidth / 2, place.posY + textHeight / 2)
         ctx.closePath();
         ctx.stroke();
     }
@@ -56,6 +58,8 @@ function render(){
         C = {x: trianglePoints[2], y: trianglePoints[3]}
         
         pointsWeigth = pointsWeigthCalculation(A, B)
+        
+        
         
         arc.weightPos.x = pointsWeigth.x
         arc.weightPos.y = pointsWeigth.y

@@ -3,12 +3,12 @@
 function adjustedPositionArc(arc, mouseX, mouseY, posCenterX, posCenterY, type) {
 
     var point = arc.substring(0, arc.indexOf(' '))
-    var arcName = `${arc.substring(arc.indexOf(' ') + 1)}`
+    var arcId = `${arc.substring(arc.indexOf(' ') + 1)}`
     var idArc = null
 
-    for (var element of arrayArcs) {
-        if (arcName == element.name) {
-            idArc = arrayArcs.indexOf(element)
+    for (var arc of arrayArcs) {
+        if (arcId == arc.id) {
+            idArc = arrayArcs.indexOf(arc)
         }
     }
 

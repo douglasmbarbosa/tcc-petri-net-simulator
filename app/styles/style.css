@@ -30,3 +30,9 @@ button {
     text-align: right;
     font-size: 15px;
 }
+
+#editBox {
+    display: none;
+    position: absolute;
+    border: 1px solid black;
+}

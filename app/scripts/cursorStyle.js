@@ -18,9 +18,9 @@ function cursorStyle(mouseMoveX, mouseMoveY) {
     });
     arrayArcs.forEach(arc => {
         isInsideTriangleArc = insideTriangle(arc, mouseMoveX, mouseMoveY)
-        insideNameElementAux = insideNameElement(arc.weight,arc.weightPos.x,arc.weightPos.y, mouseMoveX, mouseMoveY)   
-        isInsideNameElement = insideNameElementAux[0]
-        if (isInsideTriangleArc || isInsideNameElement) {
+        insideWeightElementAux = insideNameElement(arc.weight,arc.weightPos.x,arc.weightPos.y, mouseMoveX, mouseMoveY)   
+        isInsideWeightElement = insideWeightElementAux[0]
+        if (isInsideTriangleArc || isInsideWeightElement) {
             inside = true
         }
         else {
