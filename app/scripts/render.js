@@ -56,9 +56,12 @@ function render(){
         C = {x: trianglePoints[2], y: trianglePoints[3]}
         
         pointsWeigth = pointsWeigthCalculation(A, B)
-         
+        
+        arc.weightPos.x = pointsWeigth.x
+        arc.weightPos.y = pointsWeigth.y
+          
         ctx.beginPath();
-        ctx.fillText(arc.weight, pointsWeigth.x, pointsWeigth.y)
+        ctx.fillText(arc.weight, arc.weightPos.x, arc.weightPos.y)
         ctx.moveTo(A.x, A.y);
         ctx.lineTo(B.x, B.y);
         ctx.lineTo(C.x, C.y);

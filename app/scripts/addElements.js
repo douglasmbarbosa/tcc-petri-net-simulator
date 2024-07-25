@@ -77,7 +77,8 @@ function addArc(mouseX, mouseY) {
             start: start,
             end: end,
             intermediatePoints: intermediatePoints,
-            weight: 1
+            weight: 1,
+            weightPos: {x: null, y: null}
         }
         arrayArcs.push(objArc);
         nArcs += 1;

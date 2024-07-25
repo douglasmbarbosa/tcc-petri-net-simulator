@@ -6,8 +6,7 @@ function cursorStyle(mouseMoveX, mouseMoveY) {
         isInsideNameElement = insideNameElementAux[0]
         if (isInsidePlace || isInsideNameElement) {
             inside = true
-        }
-          
+        }     
     });        
     arrayTransitions.forEach(transition => {
         isInsideTransition = insideTransition(mouseMoveX,mouseMoveY,transition.posX,transition.posY)
@@ -19,17 +18,21 @@ function cursorStyle(mouseMoveX, mouseMoveY) {
     });
     arrayArcs.forEach(arc => {
         isInsideTriangleArc = insideTriangle(arc, mouseMoveX, mouseMoveY)
-        if (isInsideTriangleArc) {
+        insideNameElementAux = insideNameElement(arc.weight,arc.weightPos.x,arc.weightPos.y, mouseMoveX, mouseMoveY)   
+        isInsideNameElement = insideNameElementAux[0]
+        if (isInsideTriangleArc || isInsideNameElement) {
             inside = true
         }
-        nIntermediatePoints = arc.intermediatePoints.length
-        for (var i = 0; i < nIntermediatePoints; i++) {           
-            isInsidePointArc = insideArc(mouseMoveX, mouseMoveY, arc.intermediatePoints[i][0], arc.intermediatePoints[i][1])
-            if (isInsidePointArc) {
-                inside = true
+        else {
+            nIntermediatePoints = arc.intermediatePoints.length
+            for (var i = 0; i < nIntermediatePoints; i++) {           
+                isInsidePointArc = insideArc(mouseMoveX, mouseMoveY, arc.intermediatePoints[i][0], arc.intermediatePoints[i][1])
+                if (isInsidePointArc) {
+                    inside = true
+                }
             }
-        }  
-    });
+        }     
+    });  
     if (inside) {
         if (isPress) {
             canvas.style.cursor = "grabbing"
