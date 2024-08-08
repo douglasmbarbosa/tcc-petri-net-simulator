@@ -17,9 +17,19 @@ function render(){
     for (var transition of arrayTransitions) {  
         ctx.beginPath();
         ctx.rect(transition.posX,transition.posY,transitionWidth,transitionHeigth) // Argumentos (x,y,largura,altura)
+
+        if (transition.isEnable && simulation) {
+            ctx.fillStyle = 'red'
+        }
+        else {
+            ctx.fillStyle = 'black'   
+        }
+
         ctx.fill();
-        ctx.fillText(transition.name, transition.namePositionX, transition.namePositionY);
         ctx.closePath();
+        ctx.fillStyle = 'black' 
+        ctx.fillText(transition.name, transition.namePositionX, transition.namePositionY);
+        
     }  
 
     for (var arc of arrayArcs) {
@@ -33,13 +43,17 @@ function render(){
         }
         ctx.lineTo(arc.endPositionArc[0][0], arc.endPositionArc[0][1])
         ctx.stroke();
-        ctx.closePath();      
+        ctx.closePath();
+              
         for (var points of arc.intermediatePoints) {
             ctx.beginPath()
             ctx.arc(points[0],points[1],radiusPointArc,0,2*Math.PI)
-            ctx.closePath()
-            ctx.fill()  
+            
+            ctx.fill() 
+            ctx.closePath() 
         }
+
+        
 
         // Desenhar o triângulo
 
@@ -69,8 +83,9 @@ function render(){
         ctx.moveTo(A.x, A.y);
         ctx.lineTo(B.x, B.y);
         ctx.lineTo(C.x, C.y);
-        ctx.closePath();
+        
         ctx.fill()
+        ctx.closePath();
     }
 
     // mostra o arco enquanto ele é feito
@@ -87,8 +102,8 @@ function render(){
         for (var points of intermediatePoints) {
             ctx.beginPath()
             ctx.arc(points[0],points[1],radiusPointArc,0,2*Math.PI)
-            ctx.closePath()
             ctx.fill()  
+            ctx.closePath()
         }
 
         nPointsIntermediate = intermediatePoints.length
@@ -112,9 +127,10 @@ function render(){
         ctx.beginPath();
         ctx.fillStyle = 'rgba(0,0,0,0.2)'
         ctx.arc(mouseMoveX,mouseMoveY,radius,0,2*Math.PI) // Argumentos (x,y,raio,angulo inicial,angulo final)
-        ctx.closePath();
+        
         ctx.stroke();
         ctx.fill();
+        ctx.closePath();
     }
 
     if (isMovingTransition) {

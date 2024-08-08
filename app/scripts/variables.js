@@ -18,6 +18,7 @@ var isMovingTransition = false;
 var isEnabled = false;
 var isPress = false
 var drawArc = false
+var simulation = false
 var selectFirtsPoint = false
 var isInsidePlace = false
 var isInsideTransition = false
@@ -39,6 +40,5 @@ var finalX = null
 var finalY = null
 var start = null
 var end = null 
-
 var mouseMoveX = null
 var mouseMoveY = null

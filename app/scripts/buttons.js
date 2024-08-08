@@ -24,7 +24,15 @@ function buttonDeleteNet() {
 
 function buttonNetSimulation() {
     buttonPress = 6
-    console.log(arrayPlaces)
+
+    if (!simulation) {
+        simulation = true
+    }
+
+    else if (simulation) {
+        simulation = false
+    }
+   
 }
 
 function buttonSaveNet() {

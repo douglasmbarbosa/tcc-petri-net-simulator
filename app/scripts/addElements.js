@@ -1,7 +1,7 @@
 function addPlace(mouseX, mouseY) {
     objPlace = {
         id: `place ${nPlaces + 1}`,
-        name: `place ${nPlaces + 1}`,
+        name: `P${nPlaces + 1}`,
         namePositionX: mouseX - 20,
         namePositionY: mouseY - 35,
         posX: mouseX,
@@ -16,7 +16,7 @@ function addPlace(mouseX, mouseY) {
 function addTransition(mouseX, mouseY) {
     objTransition = {
         id: `transition ${nTransitions + 1}`,
-        name: `transition ${nTransitions + 1}`,
+        name: `T${nTransitions + 1}`,
         namePositionX: mouseX - 20,
         namePositionY: mouseY - 35,
         posX: mouseX - transitionWidth / 2,
@@ -71,12 +71,13 @@ function addArc(mouseX, mouseY) {
         intermediatePoints.pop();
         objArc = {
             id: `Arc ${nArcs + 1}`,
-            name: `Arc ${nArcs + 1}`,
+            name: `A${nArcs + 1}`,
             startingPositionArc: startingPositionArc,
             endPositionArc: endPositionArc,
             start: start,
             end: end,
             intermediatePoints: intermediatePoints,
+            isEnable: false,
             weight: 1,
             weightPos: {x: null, y: null}
         }

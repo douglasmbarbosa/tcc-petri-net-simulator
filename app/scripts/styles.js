@@ -1,4 +1,4 @@
-var colorOn = "red"
+var colorOn = "yellow"
 var colorOff = "lightblue"
 var buttons = ["buttonAddPlace", "buttonAddTransition", "buttonAddArc", "buttonDeleteElement", 
     "buttonDeleteNet", "buttonNetSimulation", "buttonSaveNet", "buttonLoadNet"]
