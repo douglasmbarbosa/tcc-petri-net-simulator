@@ -1,48 +1,48 @@
 function buttonAddPlace() {
-    buttonPress = 1
+    if (buttonPress != 1) {
+        buttonPress = 1   
+    }
+    else {
+        buttonPress = 0    
+    }    
 }
 
 function buttonAddTransition() {
-    buttonPress = 2
+    if (buttonPress != 2) {
+        buttonPress = 2   
+    }
+    else {
+        buttonPress = 0   
+    }  
 }
 
 function buttonAddArc() {
-    buttonPress = 3
-    drawArc = true
+    if (buttonPress != 3) {
+        buttonPress = 3
+        drawArc = true
+    }   
 }
 
 function buttonDeleteElement() {
-    buttonPress = 4
-}
-
-function buttonDeleteNet() {
-    
-    console.log(arrayTransitions)
-    buttonPress = 5;
-   
+    if (buttonPress != 4) {
+        buttonPress = 4      
+    }
+    else {
+        buttonPress = 0   
+    }
 }
 
 function buttonNetSimulation() {
-    buttonPress = 6
-
     if (!simulation) {
+        buttonPress = 5
         simulation = true
     }
 
     else if (simulation) {
+        buttonPress = 0
         simulation = false
     }
-   
 }
 
-function buttonSaveNet() {
-    buttonPress = 7
-    console.log(arrayArcs)
-}
-
-function buttonLoadNet() {
-    buttonPress = 8
-    
-}
 
 

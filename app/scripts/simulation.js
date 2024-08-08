@@ -42,8 +42,7 @@ function netSimulationEnables() {
                         for (var place of arrayPlaces) {
                             if (place.id == placeStart) {
                                if (place.nTokens >= arc.weight) {
-                                    arc.isEnable = true
-                                            
+                                    arc.isEnable = true        
                                }
                                else {
                                     arc.isEnable = false

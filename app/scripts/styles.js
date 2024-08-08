@@ -1,7 +1,7 @@
 var colorOn = "yellow"
 var colorOff = "lightblue"
-var buttons = ["buttonAddPlace", "buttonAddTransition", "buttonAddArc", "buttonDeleteElement", 
-    "buttonDeleteNet", "buttonNetSimulation", "buttonSaveNet", "buttonLoadNet"]
+var buttons = ["buttonAddPlace", "buttonAddTransition", "buttonAddArc", 
+    "buttonDeleteElement", "buttonNetSimulation"]
 
 function buttonColors(){
   
@@ -10,4 +10,8 @@ function buttonColors(){
         buttonPress == (index + 1) ? document.getElementById(button).style.backgroundColor = colorOn : document.getElementById(button).style.backgroundColor = colorOff
     }
 
+    document.getElementById('buttonSaveNet').style.backgroundColor = 'grey'
+    document.getElementById('buttonLoadNet').style.backgroundColor = 'grey'
+    document.getElementById('buttonDeleteNet').style.backgroundColor = 'grey'
+   
 }

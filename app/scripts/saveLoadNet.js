@@ -3,7 +3,6 @@ function saveVariables() {
         places: arrayPlaces,
         transitions: arrayTransitions,
         arcs: arrayArcs,
-        buttonPress: buttonPress,
         nPlaces: nPlaces,
         nTransitions: nTransitions,
         nArcs: nArcs,   
@@ -15,7 +14,6 @@ function loadVariables(data) {
     arrayPlaces = data.places;
     arrayTransitions = data.transitions;
     arrayArcs = data.arcs;
-    buttonPress = data.buttonPress
     nPlaces = data.nPlaces;
     nTransitions = data.nTransitions;
     nArcs = data.nArcs;
