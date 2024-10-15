@@ -4,6 +4,9 @@ function render(){
     ctx.fillStyle = 'black';
     //ctx.textAlign = 'center';
     ctx.linewidth = 4;
+
+    //desenhando o lugar
+
     for (var place of arrayPlaces) {  
         ctx.beginPath();
         ctx.arc(place.posX,place.posY,radius,0,2*Math.PI) // Argumentos (x,y,raio,angulo inicial,angulo final)
@@ -14,6 +17,9 @@ function render(){
         ctx.closePath();
         ctx.stroke();
     }
+
+    // desenhando a transição
+
     for (var transition of arrayTransitions) {  
         ctx.beginPath();
         ctx.rect(transition.posX,transition.posY,transitionWidth,transitionHeigth) // Argumentos (x,y,largura,altura)
@@ -31,6 +37,8 @@ function render(){
         ctx.fillText(transition.name, transition.namePositionX, transition.namePositionY);
         
     }  
+
+    //desenhando o arco
 
     for (var arc of arrayArcs) {
         ctx.beginPath();
@@ -53,7 +61,6 @@ function render(){
             ctx.closePath() 
         }
 
-        
 
         // Desenhar o triângulo
 
@@ -71,21 +78,30 @@ function render(){
         B = {x: trianglePoints[0], y: trianglePoints[1]}
         C = {x: trianglePoints[2], y: trianglePoints[3]}
         
-        pointsWeigth = pointsWeigthCalculation(A, B)
-        
-        
-        
+        pointsWeigth = pointsWeigthCalculation(A, B)        
         arc.weightPos.x = pointsWeigth.x
         arc.weightPos.y = pointsWeigth.y
-          
+
         ctx.beginPath();
         ctx.fillText(arc.weight, arc.weightPos.x, arc.weightPos.y)
-        ctx.moveTo(A.x, A.y);
-        ctx.lineTo(B.x, B.y);
-        ctx.lineTo(C.x, C.y);
-        
-        ctx.fill()
-        ctx.closePath();
+        //console.log(arc.arcType)
+        if (arc.type == "normal") {
+            
+            ctx.moveTo(A.x, A.y);
+            ctx.lineTo(B.x, B.y);
+            ctx.lineTo(C.x, C.y);   
+            ctx.fill()
+            ctx.closePath();
+        }
+
+        else if (arc.type == "inhibitor") {
+            ctx.beginPath();
+            ctx.fillText(arc.weight, arc.weightPos.x, arc.weightPos.y)
+            ctx.arc(arc.endPositionArc[0][0], arc.endPositionArc[0][1],radiusPointInhArc,0,2*Math.PI)
+            ctx.fill()
+            ctx.closePath();
+        }
+
     }
 
     // mostra o arco enquanto ele é feito

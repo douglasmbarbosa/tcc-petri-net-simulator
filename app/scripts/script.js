@@ -52,6 +52,8 @@ canvas.addEventListener('mousedown', (event) => {
     else if (simulation) {
         netSimulationMove(mouseX, mouseY)
     }
+
+    console.log(arrayArcs)
     
 })
 
@@ -85,7 +87,6 @@ canvas.addEventListener('mousemove', (event) => {
             sizeFontWidth = insideNameElementAux[1]
             
             if (isInsidePlace && isPress) {
-                
                 place.posX = mouseX;
                 place.posY = mouseY;
             }

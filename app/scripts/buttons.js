@@ -20,7 +20,16 @@ function buttonAddArc() {
     if (buttonPress != 3) {
         buttonPress = 3
         drawArc = true
-    }   
+    } 
+    arcType = "normal"  
+}
+
+function buttonAddInhArc() {
+    if (buttonPress != 3) {
+        buttonPress = 3
+        drawArc = true
+    }
+    arcType = "inhibitor"   
 }
 
 function buttonDeleteElement() {

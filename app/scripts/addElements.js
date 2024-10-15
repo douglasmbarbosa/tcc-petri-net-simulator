@@ -53,7 +53,7 @@ function addArc(mouseX, mouseY) {
     for (var transition of arrayTransitions) {
         isInsideTransition = insideTransition(mouseX, mouseY, transition.posX, transition.posY);
         mouseXY = [mouseX, mouseY, transition.id];
-        if (isInsideTransition && startingPositionArc.length == 0) {
+        if (isInsideTransition && startingPositionArc.length == 0 && arcType == "normal") {
             startingPositionArc.push(mouseXY);
             transition.connections.push(`Start Arc ${nArcs + 1}`);
             start = transition.id;
@@ -72,6 +72,7 @@ function addArc(mouseX, mouseY) {
         objArc = {
             id: `Arc ${nArcs + 1}`,
             name: `A${nArcs + 1}`,
+            type: arcType,
             startingPositionArc: startingPositionArc,
             endPositionArc: endPositionArc,
             start: start,
