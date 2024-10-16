@@ -25,16 +25,16 @@ function buttonAddArc() {
 }
 
 function buttonAddInhArc() {
-    if (buttonPress != 3) {
-        buttonPress = 3
+    if (buttonPress != 4) {
+        buttonPress = 4
         drawArc = true
     }
     arcType = "inhibitor"   
 }
 
 function buttonDeleteElement() {
-    if (buttonPress != 4) {
-        buttonPress = 4      
+    if (buttonPress != 5) {
+        buttonPress = 5      
     }
     else {
         buttonPress = 0   
@@ -43,7 +43,7 @@ function buttonDeleteElement() {
 
 function buttonNetSimulation() {
     if (!simulation) {
-        buttonPress = 5
+        buttonPress = 6
         simulation = true
     }
 

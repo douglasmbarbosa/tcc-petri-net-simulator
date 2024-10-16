@@ -61,7 +61,6 @@ function render(){
             ctx.closePath() 
         }
 
-
         // Desenhar o triângulo
 
         nPointsIntermediate = arc.intermediatePoints.length
@@ -81,27 +80,28 @@ function render(){
         pointsWeigth = pointsWeigthCalculation(A, B)        
         arc.weightPos.x = pointsWeigth.x
         arc.weightPos.y = pointsWeigth.y
-
         ctx.beginPath();
         ctx.fillText(arc.weight, arc.weightPos.x, arc.weightPos.y)
-        //console.log(arc.arcType)
-        if (arc.type == "normal") {
-            
+        if (arc.type == "normal") {   
             ctx.moveTo(A.x, A.y);
             ctx.lineTo(B.x, B.y);
             ctx.lineTo(C.x, C.y);   
             ctx.fill()
             ctx.closePath();
         }
-
         else if (arc.type == "inhibitor") {
             ctx.beginPath();
             ctx.fillText(arc.weight, arc.weightPos.x, arc.weightPos.y)
-            ctx.arc(arc.endPositionArc[0][0], arc.endPositionArc[0][1],radiusPointInhArc,0,2*Math.PI)
+            if (nPointsIntermediate == 0) {
+                circleXY = centerCircle(arc.startingPositionArc[0][0], arc.startingPositionArc[0][1], arc.endPositionArc[0][0], arc.endPositionArc[0][1])
+            }
+            else if (nPointsIntermediate > 0) {
+                circleXY = centerCircle(arc.intermediatePoints[nPointsIntermediate - 1 ][0], arc.intermediatePoints[nPointsIntermediate - 1 ][1], arc.endPositionArc[0][0], arc.endPositionArc[0][1])
+            }
+            ctx.arc(circleXY[0],circleXY[1],radiusPointInhArc,0,2*Math.PI)
             ctx.fill()
             ctx.closePath();
         }
-
     }
 
     // mostra o arco enquanto ele é feito
@@ -121,20 +121,31 @@ function render(){
             ctx.fill()  
             ctx.closePath()
         }
-
         nPointsIntermediate = intermediatePoints.length
+        if (arcType == "normal") {
+            if (nPointsIntermediate == 0) {
+                trianglePoints = trianglePointsCalculation (startX, startY, finalX, finalY)
+            }
 
-        if (nPointsIntermediate == 0) {
-            trianglePoints = trianglePointsCalculation (startX, startY, finalX, finalY)
+            else if (nPointsIntermediate > 0) {
+                trianglePoints = trianglePointsCalculation (intermediatePoints[nPointsIntermediate - 1 ][0], intermediatePoints[nPointsIntermediate - 1 ][1], finalX, finalY)
+            }      
+            ctx.beginPath();
+            ctx.moveTo(finalX, finalY);
+            ctx.lineTo(trianglePoints[0], trianglePoints[1]);
+            ctx.lineTo(trianglePoints[2], trianglePoints[3]);
         }
-
-        else if (nPointsIntermediate > 0) {
-             trianglePoints = trianglePointsCalculation (intermediatePoints[nPointsIntermediate - 1 ][0], intermediatePoints[nPointsIntermediate - 1 ][1], finalX, finalY)
-        }      
-        ctx.beginPath();
-        ctx.moveTo(finalX, finalY);
-        ctx.lineTo(trianglePoints[0], trianglePoints[1]);
-        ctx.lineTo(trianglePoints[2], trianglePoints[3]);
+        else if (arcType == "inhibitor") {
+            if (nPointsIntermediate == 0) {
+                circleXY = centerCircle(startX, startY, finalX, finalY)
+            }
+            else if (nPointsIntermediate > 0) {
+                circleXY = centerCircle(intermediatePoints[nPointsIntermediate - 1 ][0], intermediatePoints[nPointsIntermediate - 1 ][1], finalX, finalY)
+            }
+            ctx.beginPath();
+            console.log(circleXY)
+            ctx.arc(circleXY[0],circleXY[1],radiusPointInhArc,0,2*Math.PI)
+        }
         ctx.closePath();
         ctx.fill()
     }
@@ -143,12 +154,10 @@ function render(){
         ctx.beginPath();
         ctx.fillStyle = 'rgba(0,0,0,0.2)'
         ctx.arc(mouseMoveX,mouseMoveY,radius,0,2*Math.PI) // Argumentos (x,y,raio,angulo inicial,angulo final)
-        
         ctx.stroke();
         ctx.fill();
         ctx.closePath();
     }
-
     if (isMovingTransition) {
         ctx.beginPath();
         ctx.fillStyle = 'rgba(0,0,0,0.8)'

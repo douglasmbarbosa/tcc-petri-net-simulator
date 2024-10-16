@@ -92,3 +92,11 @@ function trianglePointsCalculation (startX, startY, endX, endY) {
         return [pointX1, pointY1, pointX2, pointY2]
 
 }
+
+function centerCircle (initialX, initialY, finalX, finalY) {
+
+    x = finalX - radiusPointInhArc * (finalX - initialX) / ((Math.sqrt(Math.pow(finalX - initialX,2) + Math.pow(finalY - initialY,2))))
+    y = finalY - radiusPointInhArc * (finalY - initialY) / ((Math.sqrt(Math.pow(finalX - initialX,2) + Math.pow(finalY - initialY,2))))
+
+    return [x, y]
+}

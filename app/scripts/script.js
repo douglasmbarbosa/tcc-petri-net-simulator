@@ -26,18 +26,18 @@ canvas.addEventListener('mousedown', (event) => {
             buttonPress = 0;
         }
 
-        if (buttonPress == 3) {
+        if (buttonPress == 3 || buttonPress == 4) {
             addArc(mouseX, mouseY)
             if (drawArc == false) {
                 buttonPress = 0
             }
         }   
         
-        if (buttonPress == 4) {
+        if (buttonPress == 5) {
             deleteElements(mouseX, mouseY)
         }
 
-        if (buttonPress == 5) {
+        if (buttonPress == 6) {
             
         
         }

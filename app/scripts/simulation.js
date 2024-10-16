@@ -41,12 +41,22 @@ function netSimulationEnables() {
                         
                         for (var place of arrayPlaces) {
                             if (place.id == placeStart) {
-                               if (place.nTokens >= arc.weight) {
-                                    arc.isEnable = true        
-                               }
-                               else {
-                                    arc.isEnable = false
-                               }
+                               if (arc.type == "normal") { 
+                                    if (place.nTokens >= arc.weight) {
+                                            arc.isEnable = true        
+                                    }
+                                    else {
+                                            arc.isEnable = false
+                                    }
+                                }
+                                else if (arc.type == "inhibitor") {
+                                    if (place.nTokens <= arc.weight) {
+                                        arc.isEnable = true        
+                                    }
+                                    else {
+                                        arc.isEnable = false
+                                    }
+                                }
                                arrayIsEnable.push(arc.isEnable)
                             }
                         }
@@ -90,7 +100,7 @@ function netSimulationMove(mouseX, mouseY) {
                             
                             placeEnd = arc.endPositionArc[0][2]
                             for (var place of arrayPlaces) {
-                                if (place.id == placeEnd) {
+                                if (place.id == placeEnd && arc.type == "normal") {
                                     place.nTokens = place.nTokens + arc.weight
                                 }
                             }
@@ -122,7 +132,7 @@ function netSimulationMove(mouseX, mouseY) {
                             placeStart = arc.startingPositionArc[0][2]
                             
                             for (var place of arrayPlaces) {
-                                if (place.id == placeStart) {
+                                if (place.id == placeStart && arc.type == "normal") {
                                     place.nTokens = place.nTokens - arc.weight
                                 }
                             }
