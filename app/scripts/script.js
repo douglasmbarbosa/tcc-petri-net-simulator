@@ -14,6 +14,11 @@ canvas.addEventListener('mousedown', (event) => {
     const mouseX = event.clientX - rect.left;
     const mouseY = event.clientY - rect.top;
 
+    //Verifica se o botão pressionado foi o esquerdo  
+    if (event.button == 0) {
+        isPress = true
+    }
+
     if (!simulation) {
 
         if (buttonPress == 1) {
@@ -42,10 +47,19 @@ canvas.addEventListener('mousedown', (event) => {
         
         }
 
-        //Verifica se o botão pressionado foi o esquerdo  
-        if (event.button == 0) {
-            isPress = true
+        for (var place of arrayPlaces) {
+            isInsidePlace = insidePlace(mouseX, mouseY, place.posX, place.posY)
+            insideNameElementAux = insideNameElement(place.name,place.namePositionX,place.namePositionY, mouseX, mouseY)      
+            isInsideNameElement = insideNameElementAux[0]
+            sizeFontWidth = insideNameElementAux[1]
+            if (isInsidePlace){
+                idPlace = place.id
+            }
+            else if (isInsideNameElement) {
+                nameElement = place.name
+            }
         }
+ 
 
     }
 
@@ -53,7 +67,7 @@ canvas.addEventListener('mousedown', (event) => {
         netSimulationMove(mouseX, mouseY)
     }
 
-    console.log(arrayArcs)
+    //console.log(arrayArcs)
     
 })
 
@@ -81,16 +95,17 @@ canvas.addEventListener('mousemove', (event) => {
         }
 
         for (var place of arrayPlaces) {
-            isInsidePlace = insidePlace(mouseX, mouseY, place.posX, place.posY)
-            insideNameElementAux = insideNameElement(place.name,place.namePositionX,place.namePositionY, mouseX, mouseY)      
-            isInsideNameElement = insideNameElementAux[0]
-            sizeFontWidth = insideNameElementAux[1]
+            // isInsidePlace = insidePlace(mouseX, mouseY, place.posX, place.posY)
+            // insideNameElementAux = insideNameElement(place.name,place.namePositionX,place.namePositionY, mouseX, mouseY)      
+            // isInsideNameElement = insideNameElementAux[0]
+            // sizeFontWidth = insideNameElementAux[1]
             
-            if (isInsidePlace && isPress) {
+            if (isPress && idPlace == place.id) {
                 place.posX = mouseX;
                 place.posY = mouseY;
             }
-            else if (isInsideNameElement && isPress) {
+
+            else if (isPress && nameElement == place.name) {
                     place.namePositionX = mouseX - sizeFontWidth/2
                     place.namePositionY = mouseY + sizeFontName/2
             }
@@ -139,6 +154,8 @@ canvas.addEventListener('mousemove', (event) => {
 canvas.addEventListener('mouseup', (event) => {
     if (event.button == 0) {
         isPress = false
+        idPlace = null
+        nameElement = null
     }
 })
 

@@ -44,3 +44,5 @@ var end = null
 var mouseMoveX = null
 var mouseMoveY = null
 var arcType = null
+var idPlace = null
+var nameElement = null
