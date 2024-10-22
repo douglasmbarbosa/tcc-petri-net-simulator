@@ -18,7 +18,9 @@ canvas.addEventListener('mousedown', (event) => {
     if (event.button == 0) {
         isPress = true
     }
-
+    
+    console.log(arrayArcs)
+    
     if (!simulation) {
 
         if (buttonPress == 1) {
@@ -56,10 +58,33 @@ canvas.addEventListener('mousedown', (event) => {
                 idPlace = place.id
             }
             else if (isInsideNameElement) {
-                nameElement = place.name
+                namePlace = place.name
             }
         }
- 
+        
+        for (var transition of arrayTransitions) {
+            isInsideTransition = insideTransition(mouseX, mouseY, transition.posX, transition.posY)    
+            insideNameElementAux = insideNameElement(transition.name,transition.namePositionX,transition.namePositionY, mouseX, mouseY)   
+            isInsideNameElement = insideNameElementAux[0]
+            sizeFontWidth = insideNameElementAux[1] 
+            if (isInsideTransition){
+                idTransition = transition.id
+            }
+            else if (isInsideNameElement) {
+                nameTransition = transition.name
+            }
+        }
+        
+        for (var arc of arrayArcs) {
+            nIntermediatePoints = arc.intermediatePoints.length
+            for (var i = 0; i < nIntermediatePoints; i++) {
+                isInsidePointArc = insideArc(mouseX, mouseY, arc.intermediatePoints[i][0], arc.intermediatePoints[i][1])
+                if (isInsidePointArc){
+                    idArc = arc.id
+                    pointArc = i
+                } 
+            }
+        }
 
     }
 
@@ -105,7 +130,7 @@ canvas.addEventListener('mousemove', (event) => {
                 place.posY = mouseY;
             }
 
-            else if (isPress && nameElement == place.name) {
+            else if (isPress && namePlace == place.name) {
                     place.namePositionX = mouseX - sizeFontWidth/2
                     place.namePositionY = mouseY + sizeFontName/2
             }
@@ -115,15 +140,15 @@ canvas.addEventListener('mousemove', (event) => {
         }
 
         for (var transition of arrayTransitions) {
-            isInsideTransition = insideTransition(mouseX, mouseY, transition.posX, transition.posY)    
-            insideNameElementAux = insideNameElement(transition.name,transition.namePositionX,transition.namePositionY, mouseX, mouseY)   
-            isInsideNameElement = insideNameElementAux[0]
-            sizeFontWidth = insideNameElementAux[1]   
-            if (isInsideTransition && isPress) {
+            // isInsideTransition = insideTransition(mouseX, mouseY, transition.posX, transition.posY)    
+            // insideNameElementAux = insideNameElement(transition.name,transition.namePositionX,transition.namePositionY, mouseX, mouseY)   
+            // isInsideNameElement = insideNameElementAux[0]
+            // sizeFontWidth = insideNameElementAux[1]   
+            if (isPress && idTransition == transition.id) {
                 transition.posX = mouseX - transitionWidth / 2;
                 transition.posY = mouseY - transitionHeigth / 2;
             }
-            else if (isInsideNameElement && isPress) {
+            else if (isPress && nameTransition == transition.name) {
                 transition.namePositionX = mouseX - sizeFontWidth/2
                 transition.namePositionY = mouseY + sizeFontName/2
             }
@@ -135,8 +160,8 @@ canvas.addEventListener('mousemove', (event) => {
         for (var arc of arrayArcs) {
             nIntermediatePoints = arc.intermediatePoints.length
             for (var i = 0; i < nIntermediatePoints; i++) {
-                isInsidePointArc = insideArc(mouseX, mouseY, arc.intermediatePoints[i][0], arc.intermediatePoints[i][1])
-                if (isInsidePointArc && isPress) {
+                //isInsidePointArc = insideArc(mouseX, mouseY, arc.intermediatePoints[i][0], arc.intermediatePoints[i][1])
+                if (isPress && idArc == arc.id && pointArc == i) {
                     arc.intermediatePoints[i][0] = mouseX
                     arc.intermediatePoints[i][1] = mouseY      
                 }
@@ -155,7 +180,11 @@ canvas.addEventListener('mouseup', (event) => {
     if (event.button == 0) {
         isPress = false
         idPlace = null
-        nameElement = null
+        namePlace = null
+        idTransition = null
+        nameTransition = null
+        idArc = null
+        pointArc = null
     }
 })
 

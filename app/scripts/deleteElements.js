@@ -136,3 +136,25 @@ document.getElementById('buttonDeleteNet').addEventListener('click', function() 
         buttonPress = 0;      
     }
 });
+
+
+function cleanVariables () { 
+
+    // startingPositionArc = []
+    // endPositionArc = []
+    // intermediatePoints = []
+    // start = null
+    // end = null 
+    // drawArc = false
+    // selectFirtsPoint = false
+    // isInsidePlace = false
+    // isInsideTransition = false
+    // insideNameElementAux = false
+    // isInsidePointArc = false
+    // isInsideTriangleArc = false
+    // typeElement = null
+    // endPositionArcAux = null
+    
+    // inside = false
+    
+}

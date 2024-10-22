@@ -1,4 +1,5 @@
 function buttonAddPlace() {
+    cleanVariables()
     if (buttonPress != 1) {
         buttonPress = 1   
     }
@@ -8,6 +9,7 @@ function buttonAddPlace() {
 }
 
 function buttonAddTransition() {
+    cleanVariables()
     if (buttonPress != 2) {
         buttonPress = 2   
     }
@@ -17,6 +19,7 @@ function buttonAddTransition() {
 }
 
 function buttonAddArc() {
+    cleanVariables()
     if (buttonPress != 3) {
         buttonPress = 3
         drawArc = true
@@ -25,6 +28,7 @@ function buttonAddArc() {
 }
 
 function buttonAddInhArc() {
+    cleanVariables()
     if (buttonPress != 4) {
         buttonPress = 4
         drawArc = true
@@ -33,7 +37,9 @@ function buttonAddInhArc() {
 }
 
 function buttonDeleteElement() {
+    cleanVariables()
     if (buttonPress != 5) {
+        //cleanVariables()
         buttonPress = 5      
     }
     else {
@@ -42,6 +48,7 @@ function buttonDeleteElement() {
 }
 
 function buttonNetSimulation() {
+    cleanVariables()
     if (!simulation) {
         buttonPress = 6
         simulation = true
