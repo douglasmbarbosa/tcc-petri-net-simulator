@@ -163,5 +163,7 @@ function cleanVariables () {
     intermediatePoints = [];
     start = null;
     end = null;
+    drawArc = false;
+    typeElement = null;
     
 }
