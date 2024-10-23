@@ -19,8 +19,6 @@ canvas.addEventListener('mousedown', (event) => {
         isPress = true
     }
     
-    console.log(arrayArcs)
-    
     if (!simulation) {
 
         if (buttonPress == 1) {
@@ -91,9 +89,7 @@ canvas.addEventListener('mousedown', (event) => {
     else if (simulation) {
         netSimulationMove(mouseX, mouseY)
     }
-
-    //console.log(arrayArcs)
-    
+  
 })
 
 canvas.addEventListener('mousemove', (event) => {

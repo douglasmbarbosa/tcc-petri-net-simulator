@@ -139,22 +139,29 @@ document.getElementById('buttonDeleteNet').addEventListener('click', function() 
 
 
 function cleanVariables () { 
-
-    // startingPositionArc = []
-    // endPositionArc = []
-    // intermediatePoints = []
-    // start = null
-    // end = null 
-    // drawArc = false
-    // selectFirtsPoint = false
-    // isInsidePlace = false
-    // isInsideTransition = false
-    // insideNameElementAux = false
-    // isInsidePointArc = false
-    // isInsideTriangleArc = false
-    // typeElement = null
-    // endPositionArcAux = null
+   
+    if (start != null && end == null) {
+          
+        if (typeElement == 'place') {
+            for (place of arrayPlaces) {
+                if (place.id == start) {
+                    place.connections.pop()
+                }
+            }      
+        }
+        else if (typeElement == 'transition') {
+            for (transition of arrayTransitions) {
+                if (transition.id == start) {
+                    transition.connections.pop()
+                }
+            }
+        }
+    }
     
-    // inside = false
+    startingPositionArc = [];
+    endPositionArc = [];
+    intermediatePoints = [];
+    start = null;
+    end = null;
     
 }

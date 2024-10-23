@@ -143,7 +143,6 @@ function render(){
                 circleXY = centerCircle(intermediatePoints[nPointsIntermediate - 1 ][0], intermediatePoints[nPointsIntermediate - 1 ][1], finalX, finalY)
             }
             ctx.beginPath();
-            console.log(circleXY)
             ctx.arc(circleXY[0],circleXY[1],radiusPointInhArc,0,2*Math.PI)
         }
         ctx.closePath();
