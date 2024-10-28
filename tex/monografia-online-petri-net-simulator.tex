@@ -1,5 +1,5 @@
 % Magic comments - Informa ao compilador algumas regras de execução, como tipo de compilação ou codificação do texto
-% !TeX root = monografia-aplicacao-redes-de-petri.tex
+% !TeX root = monografia-online-petri-net-simulator.tex
 % !TeX encoding = UTF-8
 % !BIB TS-program = XeLaTex
 % !backend = biber
@@ -32,7 +32,7 @@
 %% FIM DAS CUSTOMIZAÇÕES PARA A UNIVERSIDADE FEDERAL DE OURO PRETO
 
 %% This work consists of the files
-% template-abnt-ufop-escola-de-minas.tex
+% monografia-online-petri-net-simulator.tex
 % referencias.bib
 %%
 % --------------------------------------------
@@ -74,6 +74,29 @@
 \usepackage{booktabs}
 \usepackage{microtype} 	% justificação
 \usepackage{verbatim}
+
+\usepackage{listings} % pacote para inserção de código
+
+\lstdefinelanguage{JavaScript}{
+    keywords={break, case, catch, continue, debugger, default, delete, do, else, finally, for, function, if, in, instanceof, new, return, switch, this, throw, try, typeof, var, void, while, with, let, const},
+    sensitive=true,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]"
+}
+
+\lstset{
+    language=JavaScript,          % Define a linguagem como JavaScript
+    basicstyle=\ttfamily,         % Fonte básica do código
+    keywordstyle=\color{blue},    % Cor das palavras-chave
+    commentstyle=\color{gray},    % Cor dos comentários
+    stringstyle=\color{red},      % Cor das strings
+    breaklines=true,              % Quebra linhas longas automaticamente
+    frame=single,                 % Coloca o código em uma caixa
+    numbers=left,                 % Adiciona números de linha à esquerda
+    numberstyle=\tiny\color{gray} % Estilo dos números de linha
+}
 
 % Pacotes de escrita matemática
 \usepackage{amsmath,amssymb,unicode-math}
@@ -716,6 +739,29 @@ Conforme o exemplo \ref{exemplo_estocastica} é possível analisar o funcionamen
 % ---
 \chapter{Desenvolvimento} \label{cap:desenvolvimento}
 
+Escrever aqui de forma introdutória o que foi feito e criado no arquivo index.html 
+
+\section{Criação dos elementos}
+
+\lstinputlisting{scripts/addPlace.js}
+
+
+\subsection*{Criação dos lugares}
+
+\subsection*{Criação das transições}
+
+\subsection*{Criação dos arcos}
+
+\section{Exclusão}
+
+\subsection*{Deletando elementos}
+
+\subsection*{Deletando a rede por completo}
+
+\section{Salvando e carregando a rede} 
+
+\section{Simulação da rede}
+
 % Caso seja um trabalho oriundo da Escola de Minas ou do ICEB, é conveniente apresentar uma fórmula:
 % \begin{equation}
 % f(x) = \int \limits_{0}^{+ \infty} \tanh \left[\ln (j \omega)^2 \right] dx \,. \label{eq:01}
@@ -758,6 +804,10 @@ Conforme o exemplo \ref{exemplo_estocastica} é possível analisar o funcionamen
 
 % % primeiro capitulo de Resultados
 \chapter{Considerações Finais} \label{cap:resultados}
+
+Escrever aqui sobre as expectativas futuras. Pode-se colocar aquilo que ainda pode ser desenvolvido na aplicação, como: redes coloridas, estocásticas, desenvolvimento de uma interface mais agradável, dentre outras melhorias
+
+
 % % ---
 
 % Neste capítulo é apresentada uma análise dos resultados obtidos.

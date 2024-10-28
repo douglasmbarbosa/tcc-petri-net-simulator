@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>monografia-aplicacao-redes-de-petri.bcf</file>
+      <file>monografia-online-petri-net-simulator.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>monografia-aplicacao-redes-de-petri.bbl</file>
+      <file>monografia-online-petri-net-simulator.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -72,19 +72,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>monografia-aplicacao-redes-de-petri</infile>
+      <infile>monografia-online-petri-net-simulator</infile>
     </cmdline>
     <input>
-      <file>monografia-aplicacao-redes-de-petri.bcf</file>
+      <file>monografia-online-petri-net-simulator.bcf</file>
     </input>
     <output>
-      <file>monografia-aplicacao-redes-de-petri.bbl</file>
+      <file>monografia-online-petri-net-simulator.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>monografia-aplicacao-redes-de-petri.bbl</file>
+      <file>monografia-online-petri-net-simulator.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>monografia-aplicacao-redes-de-petri.bcf</file>
+      <file>monografia-online-petri-net-simulator.bcf</file>
     </requires>
     <requires type="editable">
       <file>referencias.bib</file>
