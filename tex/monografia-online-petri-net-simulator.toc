@@ -4,22 +4,23 @@
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {Introdução}}{9}{chapter.1}%
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{9}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Justificativas e Relevância}{9}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Objetivo Geral}{10}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Objetivos Específicos}{10}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Metodologia}{10}{section.1.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Fundamentação teórica}}{13}{chapter.2}%
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Fundamentação teórica}}{13}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Redes de Petri}{13}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Tecnologias para o desenvolvimento web}{19}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Simuladores Conhecidos}{19}{section.2.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Desenvolvimento}}{20}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Criação dos elementos}{20}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Exclusão}{20}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Salvando e carregando a rede}{20}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Simulação da rede}{20}{section.3.4}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Desenvolvimento}}{20}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Criação dos elementos}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Exclusão}{22}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Salvando e carregando a rede}{22}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Simulação da rede}{22}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Publicação do projeto online}{22}{section.3.5}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Considerações Finais}}{21}{chapter.4}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Considerações Finais}}{23}{chapter.4}%
 \vspace {\cftbeforechapterskip }

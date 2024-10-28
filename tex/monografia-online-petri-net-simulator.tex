@@ -739,12 +739,35 @@ Conforme o exemplo \ref{exemplo_estocastica} é possível analisar o funcionamen
 % ---
 \chapter{Desenvolvimento} \label{cap:desenvolvimento}
 
-Escrever aqui de forma introdutória o que foi feito e criado no arquivo index.html 
+O desenvolvimento deste projeto iniciou-se com uma análise geral das funcionalidades centrais que a aplicação web deveria atender para alcançar seus objetivos. Desde o princípio, buscou-se criar uma ferramenta funcional e intuitiva que permitisse aos usuários construir, visualizar e simular redes de Petri. Essas funcionalidades formam a espinha dorsal da aplicação, garantindo não apenas o cumprimento do objetivo principal, mas também estabelecendo uma base sólida para futuras expansões e melhorias. Dessa forma, o sistema foi pensado para ser escalável, possibilitando a adição de novas funcionalidades e o aprimoramento contínuo da interface e da experiência do usuário. Essas funciolidades buscam cumprir os seguintes requisitos: 
+
+\begin{enumerate}
+	\item Definição de um espaço na tela para a criação de uma rede Petri;
+	\item Capacidade de adição dos elementos que compõem uma rede de Petri;
+	\item Capacidade de movimentação dos elementos adicionados a área destinada ao desenvolvimento da rede de Petri;
+	\item Uma vez criado um elemento, ser possível modificar suas propriedades;
+	\item Possibilidade de exclusão dos elementos, tanto de forma individidual, quanto de modo geral;
+	\item Possibilidade de salvar e carregar as redes de Petri criadas;
+	\item Possibilidade de simular a rede de Petri desenvolvida;
+	\item Forma de hospedar a aplicação de modo online para acesso via navegador de internet.
+\end{enumerate}
+
+Com os requisitos em mente, criou-se a base de arquivos que seriam utilizados para o desenvolvimento da aplicação web, sendo eles: 
+
+\begin{enumerate}
+	\item index.hmtl;
+	\item style.css;
+	\item script.js.
+\end{enumerate}
+
+Através do arquivo \textbf{index.html} estruturou-se toda a interface da aplicação. É nele em que se define todos os elementos que vão fazer parte da interface apresentada ao usuário final. O arquivo \textbf{sytle.css} define as principais propriedades visuais que foram estabelicidas anteriormente no arquivo \textbf{index.html}. Por fim, no arquivo \textbf{script.js} se define toda a lógica da aplicação. Através da liguagem de programação JavaScript se desenvolveu todas as funcionalidades que foram estabelicidas anteriormente. 
+
+Ao longo do desenvolvimento, verificou-se que seria mais fácil o desacoplamento das funcionalidades em scripts separados. Desse modo, diferentes arquivos .js foram criados, para que cada funcionalidade fosse desenvolvida separadamente. Sendo assim, no arquivo \textbf{index.html} esses arquivos foram declarados, tornando possível a junção de todas as funcionalidades que compõem a aplicação. 
+ 
 
 \section{Criação dos elementos}
 
 \lstinputlisting{scripts/addPlace.js}
-
 
 \subsection*{Criação dos lugares}
 
@@ -758,9 +781,11 @@ Escrever aqui de forma introdutória o que foi feito e criado no arquivo index.h
 
 \subsection*{Deletando a rede por completo}
 
-\section{Salvando e carregando a rede} 
+\section{Salvando e carregando a rede}
 
 \section{Simulação da rede}
+
+\section{Publicação do projeto online}
 
 % Caso seja um trabalho oriundo da Escola de Minas ou do ICEB, é conveniente apresentar uma fórmula:
 % \begin{equation}
