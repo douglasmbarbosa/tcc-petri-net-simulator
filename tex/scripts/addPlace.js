@@ -11,5 +11,4 @@ function addPlace(mouseX, mouseY) {
     }
     arrayPlaces.push(objPlace);
     nPlaces += 1;
-    // teste
 }

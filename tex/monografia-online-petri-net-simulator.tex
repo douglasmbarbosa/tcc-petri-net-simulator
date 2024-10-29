@@ -98,6 +98,8 @@
     numberstyle=\tiny\color{gray} % Estilo dos números de linha
 }
 
+\renewcommand{\lstlistingname}{Código} % Altera "Listing" para "Código"
+
 % Pacotes de escrita matemática
 \usepackage{amsmath,amssymb,unicode-math}
 
@@ -744,6 +746,7 @@ O desenvolvimento deste projeto iniciou-se com uma análise geral das funcionali
 \begin{enumerate}
 	\item Definição de um espaço na tela para a criação de uma rede Petri;
 	\item Capacidade de adição dos elementos que compõem uma rede de Petri;
+	\item Capacidade de renderização dos elementos na tela;
 	\item Capacidade de movimentação dos elementos adicionados a área destinada ao desenvolvimento da rede de Petri;
 	\item Uma vez criado um elemento, ser possível modificar suas propriedades;
 	\item Possibilidade de exclusão dos elementos, tanto de forma individidual, quanto de modo geral;
@@ -762,14 +765,55 @@ Com os requisitos em mente, criou-se a base de arquivos que seriam utilizados pa
 
 Através do arquivo \textbf{index.html} estruturou-se toda a interface da aplicação. É nele em que se define todos os elementos que vão fazer parte da interface apresentada ao usuário final. O arquivo \textbf{sytle.css} define as principais propriedades visuais que foram estabelicidas anteriormente no arquivo \textbf{index.html}. Por fim, no arquivo \textbf{script.js} se define toda a lógica da aplicação. Através da liguagem de programação JavaScript se desenvolveu todas as funcionalidades que foram estabelicidas anteriormente. 
 
-Ao longo do desenvolvimento, verificou-se que seria mais fácil o desacoplamento das funcionalidades em scripts separados. Desse modo, diferentes arquivos .js foram criados, para que cada funcionalidade fosse desenvolvida separadamente. Sendo assim, no arquivo \textbf{index.html} esses arquivos foram declarados, tornando possível a junção de todas as funcionalidades que compõem a aplicação. 
- 
+No arquivo \textbf{index.hmtl} inicialmente foi criado o título da página denominado \textbf{Online Petri Net Simulator} e seu posicionamento foi definido no topo e ao centro da tela, conforme imagem abaixo:
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.3]{figuras/tela_inicial_titulo_topo_centro.png}
+	\caption[Título no topo e ao centro]{Rede de Petri Temporizada - Estágio 3. Fonte: Pipe.}
+	\label{fig:titulo_topo_centro}
+\end{figure}
+
+Para a aplicação das funcionalidades foram definidos no arquivo  \textbf{index.hmtl} botões que ao serem apertados executariam uma determinada ação. 
+
+Ao longo do desenvolvimento, verificou-se que seria mais simples fazer o desacoplamento das funcionalidades em scripts separados. Desse modo, diferentes arquivos .js foram criados, para que cada funcionalidade fosse desenvolvida separadamente. Sendo assim, no arquivo \textbf{index.html} esses arquivos foram declarados, tornando possível a junção de todas as funcionalidades que compõem a aplicação. 
+
+\section{Eventos do JavaScript}
+
+Explicar aqui os eventos \textbf{\textit{mousedown}}, \textbf{\textit{mousemove}} e \textbf{\textit{mouseup}}
 
 \section{Criação dos elementos}
 
-\lstinputlisting{scripts/addPlace.js}
 
 \subsection*{Criação dos lugares}
+
+Para a criação dos lugares foi criado um primeiro botão através do arquivo \textit{\textbf{index.html}}. No momento em que se pressiona o botão \textit{\textbf{AddPlace}} a função \textit{\textbf{buttonAddPlace}} é chamada e seu script é executado. Nessa função, a variável global \textit{\textbf{buttonPress}} sofre a alteração de seu valor, caso seu valor seja diferente de \textit{\textbf{1}}, o valor \textit{\textbf{1}} é atribuído, do contrário seu valor retorna para zero.
+
+\lstinputlisting[caption={Função buttonAddPlace}, captionpos=b, label={lst:buttonAddPlace}]{scripts/buttonAddPlace.js}
+
+Quando \textit{\textbf{buttonPress = 1}} espera-se que o usuário clique na área demarcada para a construção de sua rede de Petri. No momento do clique, o evento \textit{\textbf{mousedown}} é detectado e seu script é executado. No script do evento \textit{\textbf{mousedown}} se faz uma verificação do valor da variável \textit{\textbf{buttonPress}}. Como o valor atribuído é \textit{\textbf{1}} se faz uma chamada da função \textit{\textbf{addPlace}} passando-se os valores \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}. 
+
+\lstinputlisting[caption={Chamada da função addPlace}, captionpos=b, label={lst:chamadaAddPlace}]{scripts/chamadaAddPlace.js}
+
+Na função \textbf{\textit{addPlace}} se constroi um objeto \textbf{\textit{(objPlace)}}) com as seguintes propriedades: 
+
+\begin{enumerate}
+	\item \textbf{id:} representa a identidade única que irá identificar esse objeto ao longo de todo o código;
+	\item \textbf{name:} semelhante ao id, mas editável pelo usuário. Esse é o valor mostrado na tela quando se cria o objeto lugar;
+	\item \textbf{namePositionX:} indica o valor do eixo X em que o \textbf{\textit{name}} do objeto se encontra na tela;
+	\item \textbf{namePositionY:} indica o valor do eixo Y em que o \textbf{\textit{name}} do objeto se encontra na tela;
+	\item \textbf{posX:} indica o valor do eixo X em que o objeto se encontra na tela;
+	\item \textbf{posY:} indica o valor do eixo X em que o objeto se encontra na tela;
+	\item \textbf{connections:} array que identifica quais outros objetos estão ligados a ele;
+	\item \textbf{nTokens:} identifica quantos \textbf{\textit{tokens}} o objeto lugar possuí.
+\end{enumerate}
+
+Após a definição desses valores no \textbf{\textit{objPlace}} se faz a inserção do mesmo no \textbf{\textit{arrayPlaces}}, em que se encontra todos os outros objetos de mesmas propriedades. Também se faz o acréscimo de \textbf{\textit{1}} na contagem de quantos lugares existem até o momento.
+
+\lstinputlisting[caption={Função addPlace}, captionpos=b, label={lst:functionAddPlace}]{scripts/addPlace.js}
+
+Posteriormente a execução da função \textbf{\textit{addPlace}}, o valor da variável \textbf{\textit{buttonPress}} é atribuído como \textbf{\textit{0.}} 
+
 
 \subsection*{Criação das transições}
 
