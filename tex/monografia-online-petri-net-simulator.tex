@@ -100,6 +100,17 @@
 
 \renewcommand{\lstlistingname}{Código} % Altera "Listing" para "Código"
 
+
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\tikzset{
+	startstop/.style={rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=red!30},
+	process/.style={rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30},
+	arrow/.style={thick,->,>=stealth}
+}
+
 % Pacotes de escrita matemática
 \usepackage{amsmath,amssymb,unicode-math}
 
@@ -778,6 +789,8 @@ Para a aplicação das funcionalidades foram definidos no arquivo  \textbf{index
 
 Ao longo do desenvolvimento, verificou-se que seria mais simples fazer o desacoplamento das funcionalidades em scripts separados. Desse modo, diferentes arquivos .js foram criados, para que cada funcionalidade fosse desenvolvida separadamente. Sendo assim, no arquivo \textbf{index.html} esses arquivos foram declarados, tornando possível a junção de todas as funcionalidades que compõem a aplicação. 
 
+\section{Renderizando elementos na tela}
+
 \section{Eventos do JavaScript}
 
 Explicar aqui os eventos \textbf{\textit{mousedown}}, \textbf{\textit{mousemove}} e \textbf{\textit{mouseup}}
@@ -795,7 +808,7 @@ Quando \textit{\textbf{buttonPress = 1}} espera-se que o usuário clique na áre
 
 \lstinputlisting[caption={Chamada da função addPlace}, captionpos=b, label={lst:chamadaAddPlace}]{scripts/chamadaAddPlace.js}
 
-Na função \textbf{\textit{addPlace}} se constroi um objeto \textbf{\textit{(objPlace)}}) com as seguintes propriedades: 
+Na função \textbf{\textit{addPlace}} se constroi um objeto \textbf{\textit{(objPlace)}} com as seguintes propriedades: 
 
 \begin{enumerate}
 	\item \textbf{id:} representa a identidade única que irá identificar esse objeto ao longo de todo o código;
@@ -812,10 +825,118 @@ Após a definição desses valores no \textbf{\textit{objPlace}} se faz a inser�
 
 \lstinputlisting[caption={Função addPlace}, captionpos=b, label={lst:functionAddPlace}]{scripts/addPlace.js}
 
-Posteriormente a execução da função \textbf{\textit{addPlace}}, o valor da variável \textbf{\textit{buttonPress}} é atribuído como \textbf{\textit{0.}} 
+Posteriormente a execução da função \textbf{\textit{addPlace}}, o valor da variável \textbf{\textit{buttonPress}} é atribuído como \textbf{\textit{0.}}
 
+\newpage
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[node distance=2cm]
+		
+		% Nodes
+		\node (start) [startstop] {Clique no botão \textbf{\textit{addPlace}}};
+		\node (step) [process, below of=start] {\textbf{\textit{buttonPress = 1}}};
+		\node (step1) [process, below of=step] {Clique na área destinada a construção da rede de Petri};
+		\node (step2) [process, below of=step1] {Chamada da função \textbf{\textit{addPlace}}};
+		\node (step3) [process, below of=step2] {Criação do \textbf{\textit{objPlace}}};
+		\node (end) [startstop, below of=step3] {Adiciona \textbf{\textit{objPlace} ao \textbf{\textit{arrayPlaces}}}};
+		\node (step4) [process, below of=end] {\textbf{\textit{buttonPress = 0}}};
+		
+		% Arrows
+		\draw [arrow] (start) -- (step);
+		\draw [arrow] (step) -- (step1);
+		\draw [arrow] (step1) -- (step2);
+		\draw [arrow] (step2) -- (step3);
+		\draw [arrow] (step3) -- (end);
+		\draw [arrow] (end) -- (step4);
+		
+	\end{tikzpicture}
+	\caption{Diagrama de fluxo para adicionar um lugar}
+	\label{fig:fluxo4etapas}
+\end{figure}
+
+\newpage
+
+Para facilitar a visualização no momento da adição do lugar, um efeito sombreado, representando o lugar, é mostrado enquanto se movimenta o mouse, antes do clique na tela, na área destinada a construção da rede de Petri, conforme a imagem abaixo:
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.55]{figuras/exemplo_clique_addPlace.png}
+	\caption[Clicando bo botao addPlace]{Clique no botão addPlace}
+	\label{fig:clique_add_place}
+\end{figure}
 
 \subsection*{Criação das transições}
+
+De modo semelhante a criação de lugares, temos um segundo botão, criado através do arquivo \textbf{\textit{index.html}}, denominada \textbf{\textit{Add Transition}}. Seu modo de funcionamento é análogo ao botão \textbf{\textit{Add Place}}. No momento de seu clique, a função \textbf{\textit{buttonAddTransition()}} é chamada. Suas orientãções também alterarm o valor da variável global \textbf{\textit{buttonPress}}. Quando seu valor é diferente de \textbf{\textit{2}}, o valor \textbf{\textit{2}} é atribuído, caso contrário o valor retorna para zero. 
+
+\lstinputlisting[caption={Função buttonAddTransition}, captionpos=b, label={lst:buttonAddTransition}]{scripts/buttonAddTransition.js}
+
+No momento do clique do botão \textbf{\textit{Add Transition}} espera-se que o usuário faça um clique na área destinada a construção da rede de Petri. Dessa forma, fazendo o clique, uma transição é adicionada na mesma posição em que ocorreu o clique. Nesse momento, o evento \textbf{\textit{mousedown}} é chamado e se faz uma verifição do valor da variável \textbf{\textit{buttonPress}}. Como o valor é igual a \textbf{\textit{2}}, a função \textbf{addTransition()} é chamada, passando-se os valores \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}.
+
+\lstinputlisting[caption={Chamada da função addTransition()}, captionpos=b, label={lst:chamadaAddTransition}]{scripts/chamadaAddTransition.js}
+
+Na função \textbf{addTransition()} se constrói um objeto \textbf{\textit{objTransition}} com as seguintes propriedades:
+
+\begin{enumerate}
+	\item \textbf{id:} representa a identidade única da transição que irá identificar esse objeto ao longo de todo o código;
+	\item \textbf{name:} semelhante ao id, mas editável pelo usuário. Esse é o valor mostrado na tela quando se cria o objeto trasição;
+	\item \textbf{namePositionX:} indica o valor do eixo X em que o \textbf{\textit{name}} da transição se encontra na tela;
+	\item \textbf{namePositionY:} indica o valor do eixo Y em que o \textbf{\textit{name}} da transição se encontra na tela;
+	\item \textbf{posX:} indica o valor do eixo X em que a transição se encontra na tela;
+	\item \textbf{posY:} indica o valor do eixo Y em que a transição se encontra na tela;
+	\item \textbf{connections:} array que identifica quais outros objetos estão ligados a essa transição;
+	\item \textbf{isEnable:} valor booleano que indica se as exigências para ativação da transição foram cumpridas.
+\end{enumerate}
+
+Após as definições desses valores no \textbf{\textit{objTransition}} se faz a inserção do mesmo no \textbf{\textit{arrayTransitions}}, em que se encontra todas as outras transições de mesmas propriedades. Também se faz o acréscimo de \textbf{\textit{1}} na contagem de quantas transições existem até o momento.
+
+\lstinputlisting[caption={Função addTransition()}, captionpos=b, label={lst:addTransition}]{scripts/addTransition.js}
+
+Posteriormente a execução da função \textbf{\textit{addTransition()}}, o valor da variável \textbf{\textit{buttonPress}} é atribuído como \textbf{\textit{0}}
+
+Para facilitar a visualização no momento de adição da transição, o botão pressionado permanece na cor amarela enquanto o clique na tela não ocorre para adição da transição. Além disso, um efeito sombreado, em forma de uma transição acompanha o cursor do mouse enquanto não há o clique, conforme imagem abaixo: 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.55]{figuras/exemplo_clique_addTransition.png}
+	\caption[Clicando bo botao addTransition]{Clique no botão Add Transition}
+	\label{fig:clique_add_transition}
+\end{figure}
+
+
+\newpage
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[node distance=2cm]
+		
+		% Nodes
+		\node (start) [startstop] {Clique no botão \textbf{\textit{Add Transition}}};
+		\node (step1) [process, below of=start] {\textbf{\textit{buttonPress = 2}}};
+		\node (step2) [process, below of=step1] {Clique na área destinada a construção da rede de Petri};
+		\node (step3) [process, below of=step2] {Chamada da função \textbf{\textit{addTransition}}};
+		\node (step4) [process, below of=step3] {Criação do \textbf{\textit{objTransition}}};
+		\node (step5) [process, below of=step4] {Adiciona \textbf{\textit{objTransition} ao \textbf{\textit{arrayTransitions}}}};
+		\node (step6) [process, below of=step5] {A transição é renderizada na tela na posição \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}};
+		\node (end) [startstop, below of=step6] {\textbf{\textit{buttonPress = 0}}};
+		
+		% Arrows
+		\draw [arrow] (start) -- (step);
+		\draw [arrow] (step1) -- (step2);
+		\draw [arrow] (step2) -- (step3);
+		\draw [arrow] (step3) -- (step4);
+		\draw [arrow] (step4) -- (step5);
+		\draw [arrow] (step5) -- (step6);
+		\draw [arrow] (step6) -- (end);
+		
+	\end{tikzpicture}
+	\caption{Diagrama de fluxo para adicionar uma transição}
+	\label{fig:fluxo_add_transition}
+\end{figure}
+
+\newpage
+
 
 \subsection*{Criação dos arcos}
 
@@ -875,6 +996,9 @@ Posteriormente a execução da função \textbf{\textit{addPlace}}, o valor da v
 \chapter{Considerações Finais} \label{cap:resultados}
 
 Escrever aqui sobre as expectativas futuras. Pode-se colocar aquilo que ainda pode ser desenvolvido na aplicação, como: redes coloridas, estocásticas, desenvolvimento de uma interface mais agradável, dentre outras melhorias
+
+
+Falar aqui sobre criação de uma tela de login, e banco de dados para armazenamento das redes de petri criadas. Melhorias de interface como adicionar um texto explicando o que o usuário deve fazer quando executa uma ação.
 
 
 % % ---
