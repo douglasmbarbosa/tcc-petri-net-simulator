@@ -940,6 +940,35 @@ Para facilitar a visualização no momento de adição da transição, o botão 
 
 \subsection*{Criação dos arcos}
 
+Para a criação dos arcos foi desenvolvido dois novos botões, denominados \textbf{\textit{Add Arc}}, para a criação de arcos normais, e \textbf{\textit{Add Inh Arc}}, para a criação de arcos inibidores. No momento do clique, eles desempenham funções semelhantes, diferenciando-se apenas pela valor da variável \textit{\textbf{buttonPress}} e \textbf{\textit{arcType}}. O papel dessas variáveis é indicar o botão que foi pressionado e o tipo de arco selecionado. Além disso, a variável booleana  \textbf{\textit{drawArc}} recebe o valor \textbf{\textit{true}} indicando que um arco será desenhado na tela.
+
+\lstinputlisting[caption={Botão Add Arc}, captionpos=b, label={lst:buttonAddArc}]{scripts/buttonAddArc.js}
+
+\lstinputlisting[caption={Botão Add Inh Arc}, captionpos=b, label={lst:buttonAddInhArc}]{scripts/buttonAddInhArc.js}
+
+No momento de acionamento de algum desses dois botões espera-se que o usuário inicie o desenho de um arco. Para isso, inicialmente ele deve selecionar o ponto inicial do desenho desse arco. Para arcos normais, o ponto inicial pode ser tanto um lugar, quanto por uma transição. Para os arcos inibidores, o ponto inicial deve ser obrigatoriamente um lugar, não é possível iniciar o desenho de um arco inibidor a partir de uma transição. Quando o usuário faz o primeiro clique, posterior ao clique do botão, o evento \textbf{\textit{mousedown}} é ativado e a verificação da variável \textbf{\textit{buttonPress}} é verificado. Caso \textbf{\textit{buttonPress}} seja igual a \textbf{\textit{3}} ou \textbf{\textit{4}} a função \textbf{\textit{addArc}} é chamada. Como o valor da variável \textbf{\textit{buttonPress}} não se altera ao longo do desenho do arco, sempre que há um clique na tela, há a chamada da função \textbf{\textit{addArc}}.
+
+A cada chamada da função \textbf{\textit{addArc}} se faz uma verificação de algumas variáveis temporárias que auxiliam a construção dos arcos, são elas: 
+
+\begin{enumerate}
+	\item \textbf{\textit{startingPositionArc:}} array que indica o ponto inicial, nos eixos X e Y da tela, do arco;
+	\item \textbf{\textit{intermediatePoints:}} array que indica todos os pontos, nos eixos X e Y da tela, depois do ponto inicial e antes do ponto final;
+	\item \textbf{\textit{endPositionArc:}} array que indica a ponto final, nos eixos X e Y da tela, do arco.
+\end{enumerate}
+
+A primeira verificação que se faz na função \textbf{\textit{addArc}} é a existência de pontos intermediários. Para essa vericação analisamos o tamanho do array \textbf{\textit{startingPositionArc}} e \textbf{\textit{endPositionArc}}. Se o primeiro for maior que \textbf{\textit{0}}, e o último igual a \textit{\textbf{0}}, significa que o clique foi feito para a construção de um ponto intermediário  arco. Dessa forma, se faz uma inserção no array \textbf{\textit{intermediatePoints}} da posição dos eixos X e Y, passando-se os valores das variáveis \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}.
+
+\lstinputlisting[caption={Verificação de pontos intermediários}, captionpos=b, label={lst:intermediatePoints}]{scripts/intermediatePoints.js}
+
+
+
+
+
+
+
+
+\section{Movimentando elementos na tela}
+
 \section{Exclusão}
 
 \subsection*{Deletando elementos}

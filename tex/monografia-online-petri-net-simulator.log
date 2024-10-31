@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.10.28)  30 OCT 2024 07:28
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.10.28)  31 OCT 2024 07:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2001,11 +2001,12 @@ File: figuras/exemplo_clique_addPlace.png Graphic file (type bmp)
 (scripts/addTransition.js [26])
 File: figuras/exemplo_clique_addTransition.png Graphic file (type bmp)
 <figuras/exemplo_clique_addTransition.png>
- [27] [28] [29]
+ [27] [28] (scripts/buttonAddArc.js)
+(scripts/buttonAddInhArc.js) [29] (scripts/intermediatePoints.js) [30]
 
-LaTeX Warning: Empty bibliography on input line 1030.
+LaTeX Warning: Empty bibliography on input line 1059.
 
-[30
+[31
 
 ]
 \tf@lof=\write7
@@ -2034,12 +2035,12 @@ Package logreq Info: Writing requests to 'monografia-online-petri-net-simulator
 
  ) 
 Here is how much of TeX's memory you used:
- 45344 strings out of 409617
- 867173 string characters out of 5778275
- 2092662 words of memory out of 5000000
- 66806 multiletter control sequences out of 15000+600000
+ 45375 strings out of 409617
+ 867899 string characters out of 5778275
+ 2092821 words of memory out of 5000000
+ 66828 multiletter control sequences out of 15000+600000
  563580 words of font info for 88 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,17n,114p,1206b,5475s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on monografia-online-petri-net-simulator.pdf (31 pages).
+Output written on monografia-online-petri-net-simulator.pdf (32 pages).

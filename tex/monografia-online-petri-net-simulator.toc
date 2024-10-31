@@ -19,10 +19,11 @@
 \contentsline {section}{\numberline {3.1}Renderizando elementos na tela}{21}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Eventos do JavaScript}{21}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Criação dos elementos}{22}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Exclusão}{29}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Salvando e carregando a rede}{29}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Simulação da rede}{29}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Publicação do projeto online}{29}{section.3.7}%
+\contentsline {section}{\numberline {3.4}Movimentando elementos na tela}{30}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Exclusão}{30}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Salvando e carregando a rede}{30}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Simulação da rede}{30}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Publicação do projeto online}{30}{section.3.8}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Considerações Finais}}{30}{chapter.4}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Considerações Finais}}{31}{chapter.4}%
 \vspace {\cftbeforechapterskip }
