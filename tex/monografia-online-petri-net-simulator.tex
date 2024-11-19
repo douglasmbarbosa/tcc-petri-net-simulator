@@ -940,7 +940,7 @@ Para facilitar a visualização no momento de adição da transição, o botão 
 
 \subsection*{Criação dos arcos}
 
-Para a criação dos arcos foi desenvolvido dois novos botões, denominados \textbf{\textit{Add Arc}}, para a criação de arcos normais, e \textbf{\textit{Add Inh Arc}}, para a criação de arcos inibidores. No momento do clique, eles desempenham funções semelhantes, diferenciando-se apenas pela valor da variável \textit{\textbf{buttonPress}} e \textbf{\textit{arcType}}. O papel dessas variáveis é indicar o botão que foi pressionado e o tipo de arco selecionado. Além disso, a variável booleana  \textbf{\textit{drawArc}} recebe o valor \textbf{\textit{true}} indicando que um arco será desenhado na tela.
+Para a criação dos arcos foram desenvolvido dois novos botões, denominados \textbf{\textit{Add Arc}}, para a criação de arcos normais, e \textbf{\textit{Add Inh Arc}}, para a criação de arcos inibidores. No momento do clique, eles desempenham funções semelhantes, diferenciando-se apenas pela valor da variável \textit{\textbf{buttonPress}} e \textbf{\textit{arcType}}. O papel dessas variáveis é indicar o botão que foi pressionado e o tipo de arco selecionado. Além disso, a variável booleana  \textbf{\textit{drawArc}} recebe o valor \textbf{\textit{true}} indicando que um arco será desenhado na tela.
 
 \lstinputlisting[caption={Botão Add Arc}, captionpos=b, label={lst:buttonAddArc}]{scripts/buttonAddArc.js}
 
@@ -948,24 +948,48 @@ Para a criação dos arcos foi desenvolvido dois novos botões, denominados \tex
 
 No momento de acionamento de algum desses dois botões espera-se que o usuário inicie o desenho de um arco. Para isso, inicialmente ele deve selecionar o ponto inicial do desenho desse arco. Para arcos normais, o ponto inicial pode ser tanto um lugar, quanto por uma transição. Para os arcos inibidores, o ponto inicial deve ser obrigatoriamente um lugar, não é possível iniciar o desenho de um arco inibidor a partir de uma transição. Quando o usuário faz o primeiro clique, posterior ao clique do botão, o evento \textbf{\textit{mousedown}} é ativado e a verificação da variável \textbf{\textit{buttonPress}} é verificado. Caso \textbf{\textit{buttonPress}} seja igual a \textbf{\textit{3}} ou \textbf{\textit{4}} a função \textbf{\textit{addArc}} é chamada. Como o valor da variável \textbf{\textit{buttonPress}} não se altera ao longo do desenho do arco, sempre que há um clique na tela, há a chamada da função \textbf{\textit{addArc}}.
 
+
+\textcolor{red}{Inserir as propriedades do arco aqui}
+
 A cada chamada da função \textbf{\textit{addArc}} se faz uma verificação de algumas variáveis temporárias que auxiliam a construção dos arcos, são elas: 
 
 \begin{enumerate}
-	\item \textbf{\textit{startingPositionArc:}} array que indica o ponto inicial, nos eixos X e Y da tela, do arco;
+	\item \textbf{\textit{startingPositionArc:}} array que indica o ponto inicial, nos eixos X e Y da tela, do arco, além de contter o id do item em que o arco se inicia;
 	\item \textbf{\textit{intermediatePoints:}} array que indica todos os pontos, nos eixos X e Y da tela, depois do ponto inicial e antes do ponto final;
-	\item \textbf{\textit{endPositionArc:}} array que indica a ponto final, nos eixos X e Y da tela, do arco.
+	\item \textbf{\textit{endPositionArc:}} array que indica a ponto final, nos eixos X e Y da tela, do arco, além de contter o id do item em que o arco termina.
 \end{enumerate}
 
 A primeira verificação que se faz na função \textbf{\textit{addArc}} é a existência de pontos intermediários. Para essa vericação analisamos o tamanho do array \textbf{\textit{startingPositionArc}} e \textbf{\textit{endPositionArc}}. Se o primeiro for maior que \textbf{\textit{0}}, e o último igual a \textit{\textbf{0}}, significa que o clique foi feito para a construção de um ponto intermediário  arco. Dessa forma, se faz uma inserção no array \textbf{\textit{intermediatePoints}} da posição dos eixos X e Y, passando-se os valores das variáveis \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}.
 
 \lstinputlisting[caption={Verificação de pontos intermediários}, captionpos=b, label={lst:intermediatePoints}]{scripts/intermediatePoints.js}
 
+Caso a condição anterior não seja atendida, se entende que o ponto \textbf{\textit{X}} e \textbf{\textit{Y}} não representa um ponto intermediário do arco. Posteriormente, se percorre os arrays \textbf{\textit{arrayPlaces}} e \textbf{\textit{arrayTransition}}. Para cada uma das posições de ambos os arrays se faz a verificação, através das funções \textbf{\textit{isInsidePlace}} e \textbf{\textit{isInsideTransition}}, se o clique do mouse ocorreu dentro de algum dos lugares ou transições que estão dispostas na tela. Caso o clique ocorra dentro de algum desses dois elementos, o ponto \textbf{\textit{X}} e \textbf{\textit{Y}} será gravado na variável \textbf{\textit{startingPositionArc}}, juntamente com o \textbf{\textit{id}} do elemento em que o arco se iniciou. 
+
+\subsection*{Para lugares}
+
+Caso a chamada da função \textbf{\textit{isInsidePlace}} retorne \textbf{\textit{true}} e a variável \textbf{\textit{startingPositionArc}} não contenha nenhum valor, o ponto inicial, com os eixos \textbf{\textit{X}} e \textbf{\textit{Y}} e o id do lugar, são gravados nas propriedades do arco. Além disso, no lugar em quem o arco se iniciou, insere-se a informação de que aquele arco se iniciou ali. A variável auxiliar \textbf{\textit{typeElement}} também recebe o valor \textbf{\textit{"place"}}, para indicar que aquele arco se iniciou num lugar. 
+
+Caso a verificação anterior não seja atendida, se faz uma nova verificação. Se a chamada da função \textbf{\textit{isInsidePlace}} retornar \textbf{\textit{true}} e a variável \textbf{\textit{typeElement}} contiver o valor \textbf{\textit{"transition"}}, quer dizer que o arco se iniciou em uma transição, e agora está finalizando em um lugar. Com isso, se adiciona o valor \textbf{\textit{X} e \textbf{\textit{Y}}} do clique e o \textbf{\textit{id}} do lugar em que o arco está finalizando na variável \textbf{\textit{endPositionArc}} que, posteriormente, será adicionado nas propriedades do arco. O lugar recebe a informação de que esse arco finalizou nele.
+
+Com a finalização do arco, a variável \textbf{\textit{drawArc}} recebe o valor \textbf{\textit{false}} e a \textbf{\textit{typeElement}} recebe \textbf{\textit{null}}
+
+\lstinputlisting[caption={Construção de arco verificando os lugares}, captionpos=b, label={lst:arcPlace}]{scripts/arcPlace.js}
+
+\subsection*{Para transições}
+
+Caso a chamada da função \textbf{\textit{isInsideTransition}} retorne \textbf{\textit{true}} e a variável \textbf{\textit{startingPositionArc}} não contenha nenhum valor, o ponto inicial, com os eixos \textbf{\textit{X}} e \textbf{\textit{Y}} e o id da transição, são gravados nas propriedades do arco. Além disso, na transição em quem o arco se iniciou, insere-se a informação de que aquele arco se iniciou ali. A variável auxiliar \textbf{\textit{typeElement}} também recebe o valor \textbf{\textit{"transition"}}, para indicar que aquele arco se iniciou numa transição. 
+
+Caso a verificação anterior não seja atendida, se faz uma nova verificação. Se a chamada da função \textbf{\textit{isInsideTransition}} retornar \textbf{\textit{true}} e a variável \textbf{\textit{typeElement}} contiver o valor \textbf{\textit{"place"}}, quer dizer que o arco se iniciou em um lugar, e agora está finalizando em uma transição. Com isso, se adiciona o valor \textbf{\textit{X} e \textbf{\textit{Y}}} do clique e o \textbf{\textit{id}} da transição em que o arco está finalizando na variável \textbf{\textit{endPositionArc}} que, posteriormente, será adicionado nas propriedades do arco. A transição recebe a informação de que esse arco finalizou nele.
+
+Com a finalização do arco, a variável \textbf{\textit{drawArc}} recebe o valor \textbf{\textit{false}} e a \textbf{\textit{typeElement}} recebe \textbf{\textit{null}}
+
+\lstinputlisting[caption={Construção de arco verificando as transições}, captionpos=b, label={lst:arcTransition}]{scripts/arcTransition.js}
+
+\subsection*{Criando o arco com as propriedades}
 
 
 
-
-
-
+\lstinputlisting[caption={Criando o arco com as propriedades}, captionpos=b, label={lst:addArc}]{scripts/addArc.js}
 
 \section{Movimentando elementos na tela}
 
