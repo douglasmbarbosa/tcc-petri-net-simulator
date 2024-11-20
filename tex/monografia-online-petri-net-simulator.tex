@@ -987,7 +987,23 @@ Com a finalização do arco, a variável \textbf{\textit{drawArc}} recebe o valo
 
 \subsection*{Criando o arco com as propriedades}
 
+Quando as variáveis temporárias \textbf{\textit{startingPositionArc}} e \textbf{\textit{endPositionArc}} apresentam valores atribuídos significa que todas as propriedades para se construir um arco estão satisfeitas, são elas:
 
+\begin{enumerate}
+	\item \textbf{id:} representa a identidade única do arco que irá identificar esse objeto ao longo de todo o código;
+	\item \textbf{name:} identificador visual e textual do arco na tela;
+	\item \textbf{type:} indica o tipo do arco, se ele é do tipo normal ou inibidor;
+	\item \textbf{startingPositionArc:} indica o valor dos eixos X e Y em que o arco se inicia;
+	\item \textbf{endPositionArc:} indica o valor dos eixos X e Y em que o arco finaliza;
+	\item \textbf{start:} indica o id do elemento em que o arco se inicia;
+	\item \textbf{end:} indica o id do elemento em que o arco finaliza;
+	\item \textbf{intermediatePoints:} cada posição representa o valor dos eixos X e Y de um ponto intermediário do arco;
+	\item \textbf{isEnable:} valor booleano que indica se as exigências para ativação daquele arco estão satisfeitas.
+	\item \textbf{weight:} indica o peso do arco.
+	\item \textbf{weightPos:} indica o valor dos eixos X e Y em que o peso do arco será mostrado na tela.
+\end{enumerate}
+
+Tendo essas propriedades definidas se faz a adição do arco no \textbf{\textit{arrayArcs}}. Por fim, as variáveis temporárias são atribuídas com valores nulos para que o próximo arco possa ser construído.
 
 \lstinputlisting[caption={Criando o arco com as propriedades}, captionpos=b, label={lst:addArc}]{scripts/addArc.js}
 
