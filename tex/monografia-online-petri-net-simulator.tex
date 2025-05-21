@@ -802,9 +802,11 @@ Para o desenvolvimento da aplicação web, capaz de construir e simular redes de
 
 referência: \url{https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event}
 
-O evento \textbf{\textit{mousemove}} é disparado sempre que ocorre o movimento do ponteiro do mouse sobre um determinado elemento. No caso da aplicação web desenvolvida, é acionado sempre que ocorre o movimento do ponteiro do mouse sobre a área delimitada para o desenvolvimento da rede de Petri. 
+O evento \textbf{\textit{mousemove}} é disparado sempre que ocorre o movimento do ponteiro do mouse sobre um determinado elemento. No caso da aplicação web desenvolvida, é acionado sempre que ocorre o movimento do ponteiro do mouse dentro da área delimitada para o desenvolvimento das redes de Petri. 
 
-As propriedades \textbf{\textbf{clientX}} e \textbf{\textit{clientY}} permitem definir a posição do ponteiro do mouse sempre que ele está se movendo. A última posição detectada pelo evento é a do cursor. Utiliza-se desse evento, principalmente, para determinar se o cursor está sobre um dos elementos clicáveis na tela. Caso sim, ele altera o design do ponteiro, conforme imagem. 
+As propriedades \textbf{\textbf{clientX}} e \textbf{\textit{clientY}} permitem definir a posição do ponteiro do mouse sempre que ele está se movendo. Utiliza-se desse evento, principalmente, para determinar se o cursor está sobre alguns dos elementos clicáveis na tela. Caso sim, ele altera o design do ponteiro. Quando está fora de algum elemento clicável, o ponteiro do mouse utiliza o estilo \textbf{\textit{default}}, e quando está sobre a área de algum elemento clicável, o estilo é \textbf{\textit{pointer}}.
+
+
 
 \color{adiconar imagem e código do evento simplificado}
 \subsection*{mousedown}
