@@ -1,7 +1,7 @@
 % Magic comments - Informa ao compilador algumas regras de execução, como tipo de compilação ou codificação do texto
 % !TeX root = monografia-online-petri-net-simulator.tex
 % !TeX encoding = UTF-8
-% !BIB TS-program = XeLaTex
+% !BIB TS-program = LuaLaTex
 % !backend = biber
 
 %% abtex2-modelo-trabalho-academico.tex, v-1.9.2 laurocesar
@@ -164,12 +164,12 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{DESENVOLVIMENTO DE UMA APLICAÇÃO WEB COM O OBJETIVO DE CONSTRUIR E SIMULAR REDES DE PETRI}
+\titulo{DESENVOLVIMENTO DE UM SIMULADOR DE REDES DE PETRI INDEPENDENTE DE PLATAFORMA}
 \autor{Douglas Meneses Barbosa}
 \local{Ouro Preto}
 \data{\the\year} % imprime o ano corrente no campo data
 \orientador{Prof. Dr. Danny Augusto Vieira Tonidandel}
-\coorientador{\color{red}Não definido}
+%\coorientador{\color{red}Não definido}
 \instituicao{Universidade Federal de Ouro Preto}
 \tipotrabalho{Monografia de Graduação}
 \preambulo{Trabalho apresentado ao Colegiado do Curso de Engenharia de Controle e Automação da Universidade Federal de Ouro Preto como parte dos requisitos para a obtenção do Grau de Engenheiro de Controle e Automação.}
@@ -806,7 +806,8 @@ O evento \textbf{\textit{mousemove}} é disparado sempre que ocorre o movimento 
 
 As propriedades \textbf{\textbf{clientX}} e \textbf{\textit{clientY}} permitem definir a posição do ponteiro do mouse sempre que ele está se movendo. A última posição detectada pelo evento é a do cursor. Utiliza-se desse evento, principalmente, para determinar se o cursor está sobre um dos elementos clicáveis na tela. Caso sim, ele altera o design do ponteiro, conforme imagem. 
 
-\color{adiconar imagem e código do evento simplificado}
+\fbox{adicionar imagem e código do evento simplificado}
+
 \subsection*{mousedown}
 
 referencia: \url{https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event}
