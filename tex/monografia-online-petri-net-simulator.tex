@@ -800,13 +800,34 @@ Para o desenvolvimento da aplicação web, capaz de construir e simular redes de
 
 \subsection*{mousemove}
 
-referência: \url{https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event}
+O evento \textbf{\textit{mousemove}} é disparado sempre que ocorre o movimento do ponteiro do mouse sobre um determinado elemento \cite{mdn_mousedown_event}. No caso da aplicação web desenvolvida, é acionado sempre que ocorre o movimento do ponteiro do mouse dentro da área delimitada para o desenvolvimento das redes de Petri. 
 
-O evento \textbf{\textit{mousemove}} é disparado sempre que ocorre o movimento do ponteiro do mouse sobre um determinado elemento. No caso da aplicação web desenvolvida, é acionado sempre que ocorre o movimento do ponteiro do mouse sobre a área delimitada para o desenvolvimento da rede de Petri. 
+\lstinputlisting[caption={Exemplo da chamada do evento \textbf{\textit{mousemove}}}, captionpos=b, label={lst:functionAddPlace}]{scripts/mousemove.js}
 
-As propriedades \textbf{\textbf{clientX}} e \textbf{\textit{clientY}} permitem definir a posição do ponteiro do mouse sempre que ele está se movendo. A última posição detectada pelo evento é a do cursor. Utiliza-se desse evento, principalmente, para determinar se o cursor está sobre um dos elementos clicáveis na tela. Caso sim, ele altera o design do ponteiro, conforme imagem. 
+As propriedades \textbf{\textbf{clientX}} e \textbf{\textit{clientY}} permitem definir a posição do ponteiro do mouse sempre que ele está se movendo. Utiliza-se desse evento, principalmente, para determinar se o cursor está sobre alguns dos elementos clicáveis na tela. Caso sim, ele altera o design do ponteiro. Quando está fora de algum elemento clicável, o ponteiro do mouse utiliza o estilo \textbf{\textit{default}}, e quando está sobre a área de algum elemento clicável, o estilo é \textbf{\textit{pointer}}.
 
-\fbox{adicionar imagem e código do evento simplificado}
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.4]{figuras/mouse_estilo_default.png}
+	\caption[Mouse estilo default]{Ponteiro do mouse com estilo \textbf{\textit{default}}}
+	\label{fig:mouse_estilo_default}
+\end{figure}
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.4]{figuras/mouse_estilo_pointer.png}
+	\caption[Mouse estilo default]{Ponteiro do mouse com estilo \textbf{\textit{pointer}}}
+	\label{fig:mouse_estilo_pointer}
+\end{figure}
+
+O evento \textbf{\textit{mousemove}} também é utilizado no momento de criação dos arcos, para renderizar o arco enquanto ele ainda está sendo desenhado. Por exemplo, ao clicar no primeiro elemento, lugar ou transição, onde o arco iniciará, uma posição inicial é detectada. Após, espera-se que o usuário clique, ou num ponto intermediário do arco, ou no ponto final do arco. Enquanto o ponto final, no segundo elemento, não é detectado, utiliza-se da posição do ponteiro do mouse nos eixos \textbf{x} e \textbf{y} do evento \textbf{\textit{mousemove}} para renderizar uma linha entre a última posição fixa detectada e a posição do ponteiro do mouse.
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.4]{figuras/mousemove_desenhando_arco.png}
+	\caption[Mousemove desenhando arco]{Arco sendo renderizado antes de ser concluído com \textbf{\textit{mousemove}}}
+	\label{fig:mousemove_desenhando_arco}
+\end{figure}
 
 \subsection*{mousedown}
 
@@ -817,9 +838,6 @@ referencia: \url{https://developer.mozilla.org/en-US/docs/Web/API/Element/moused
 referencia: \url{https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event}
 
 Explicar aqui os eventos \textbf{\textit{mousedown}}, \textbf{\textit{mousemove}} e \textbf{\textit{mouseup}}
-
-
-
 
 \section{Criação dos elementos}
 
