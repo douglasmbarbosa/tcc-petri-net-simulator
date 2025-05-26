@@ -30,12 +30,10 @@ function render(){
         else {
             ctx.fillStyle = 'black'   
         }
-
         ctx.fill();
         ctx.closePath();
         ctx.fillStyle = 'black' 
-        ctx.fillText(transition.name, transition.namePositionX, transition.namePositionY);
-        
+        ctx.fillText(transition.name, transition.namePositionX, transition.namePositionY); 
     }  
 
     //desenhando o arco
