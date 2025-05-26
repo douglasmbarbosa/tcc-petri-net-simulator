@@ -74,7 +74,7 @@
 \usepackage{booktabs}
 \usepackage{microtype} 	% justificação
 \usepackage{verbatim}
-
+\usepackage{placeins}
 \usepackage{listings} % pacote para inserção de código
 
 \lstdefinelanguage{JavaScript}{
@@ -795,12 +795,11 @@ A renderização de elementos visuais na interface é uma das funcionalidades es
 
 De modo simples, os elementos de uma rede de Petri são representados de forma gráfica por meio de figuras geométricas já conhecidas pela maioria das pessoas, tornando mais simples a analogia dos elementos das redes de Petri, com figuras geométricas já conhecidas. Os lugares são representados por círculos, as transições por retângulos, e os arcos que ligam esses elementos são ilustrados como setas direcionais. Elementos adicionais, como marcações, pesos e títulos, são exibidas como textos e números renderizados diretamente na tela, complementando a representação visual e fornecendo os dados necessários para a interpretação correta da rede.
 
-O HTML5 fornece o elemento \textbf{<canvas>}, que permite o desenvolvimento de figuras geométricas, gráficos e textos. No contexto desse projeto, o elemento \textbf{<canvas>} foi essencial. Primeiramente, fornecendo uma área na tela para o desenvolvimento e manipulação das redes de Petri. Posteriormente, fornecendo uma API que pode ser manipulada, através do JavaScript, para a criação de elementos gráficos. 
+O HTML5 fornece o elemento \textbf{<canvas>}, que permite o desenvolvimento de figuras geométricas, gráficos e textos. No contexto desse projeto, o \textbf{canvas} é essencial. Primeiramente, fornecendo uma área na tela para o desenvolvimento e manipulação das redes de Petri. Posteriormente, fornecendo uma API que pode ser manipulada, através do JavaScript, para a criação dos elementos gráficos. 
 
 \lstinputlisting[caption={Chamada do elemento \textbf{<canvas>} no HTML5}, captionpos=b, label={lst:areacanvas}]{scripts/areaCanvas.html}
 
 Após a chamada do elemento \textbf{<canvas>} no arquivo \textbf{\textit{index.html}} uma área retangular com altura e largura definidas nos métodos \textbf{\textit{width}} e \textbf{\textit{heigth}} é definida na tela. Com essa definição feita, é possível a manipulação do que será renderizado na tela, dentro dessa área \textbf{canvas} criada. 
-
 
 \begin{figure}[ht] 
 	\centering
@@ -808,14 +807,19 @@ Após a chamada do elemento \textbf{<canvas>} no arquivo \textbf{\textit{index.h
 	\caption[Área canvas]{Retângulo da área \textbf{<canvas>} logo abaixo dos botões da aplicação web}
 	\label{fig:area_canvas}
 \end{figure}
+\FloatBarrier
+
+Tendo a área \textbf{canvas} definida, inicia-se a manipulação dos elementos gráficos que iram representar as redes de Petri. Para tornar possível a interatividade de diferentes elementos criou-se uma função de loop. Essa função tem como principal objetivo apagar e renderizar os elementos representados na área canvas de forma continua. Esse processo de apagar os elementos e renderizar novamente, várias vezes por segundo, permite criar animações, tornando possível a movimentação dos elementos e a edição das informações na tela. 
+
+\lstinputlisting[caption={Função loop}, captionpos=b, label={lst:functionloop}]{scripts/functionLoop.js}
+
+O método JavaScript \textbf{\textit{window.requestAnimationFrame(loop, canvas)}} informa ao navegador que se deseja executar animações. Além disso, ele sincroniza a taxa de atualização, em \textbf{Hz}, das animações, com a taxa de atualização do monitor do usuário. Posteriormente, faz-se a chamada da função \textbf{\textit{render()}}, que irá renderizar os elementos na área \textbf{canvas}. Também, a função \textbf{\textit{buttonColors()}} é acionada. Ela verifica qual botão foi pressionado e, com base nas informações, altera a cor do botão que indica a ação a ser executada. 
+
+Além, faz-se a verificação da variável \textbf{\textit{simulation}}, que indica ao código se está ocorrendo a ação de simulação da rede de Petri. Caso sim, a função \textbf{\textit{netSimulationEnables()}}, responsável pela simulação da rede de Petri \ref{cap:simulation}, é acionada.
+
+\subsection*{Função de renderização}
 
 
-Explicar o canvas
-Falar da funcao loop ()
-Falar da funçào render ()
-
-
-\newpage
 
 \section{Eventos do JavaScript}
 
@@ -882,6 +886,10 @@ Quando ocorre o evento \textbf{\textit{mousedown}}, a variável \textbf{\textit{
 	\caption[Mouse estilo grabbing]{Ponteiro do mouse com estilo \textbf{\textit{grabbing}}}
 	\label{fig:mouse_estilo_grabbing}
 \end{figure}
+
+falar da função loop () 
+
+falar da função render (), explicando como desenhar circulos, textos dentre outros
 
 \section{Criação dos elementos}
 
@@ -1101,7 +1109,7 @@ Tendo essas propriedades definidas se faz a adição do arco no \textbf{\textit{
 
 \section{Salvando e carregando a rede}
 
-\section{Simulação da rede}
+\section{Simulação da rede} \label{cap:simulation}
 
 \section{Publicação do projeto online}
 
