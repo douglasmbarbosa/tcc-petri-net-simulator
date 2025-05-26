@@ -793,18 +793,17 @@ Ao longo do desenvolvimento, verificou-se que seria mais simples fazer o desacop
 
 \section{Eventos do JavaScript}
 
-No desenvolvimento de aplicações web, é essencial que as páginas sejam responsivas e interativas. A linguagem JavaScript nos fornece uma série de funcionalidades que permitem o desenvolvimento de eventos para a interatividade do usuário com as página que ele acessa. Os eventos representam ações e recorrências que ocorrem dentro do navegador do usuário, como cliques e movimentação do mouse, teclas pressionadas no teclado, dentre outras ações que um usuário, normalmente, pode executar dentro de uma página na web. 
+No desenvolvimento de aplicações web, é essencial que as páginas sejam responsivas e interativas. A linguagem JavaScript nos fornece uma série de funcionalidades que permitem o desenvolvimento de eventos para a interatividade do usuário com as páginas que ele acessa. Os eventos representam ações e recorrências que ocorrem dentro do navegador do usuário, como cliques, movimentação do mouse, pressionamento de teclas no teclado, dentre outras ações que um usuário, normalmente, pode executar dentro de uma página na web. 
 
 Para o desenvolvimento da aplicação web, capaz de construir e simular redes de Petri, é fundamental 3 principais eventos, sendo eles o \textbf{\textit{mousemove}}, \textbf{\textit{mousedown}} e \textbf{\textit{mouseup}}. Esses eventos permitem que o usuário consiga interagir com a área da página dedicada ao desenvolvimento das redes de Petri. 
-
 
 \subsection*{mousemove}
 
 O evento \textbf{\textit{mousemove}} é disparado sempre que ocorre o movimento do ponteiro do mouse sobre um determinado elemento \cite{mdn_mousemove_event}. No caso da aplicação web desenvolvida, é acionado sempre que ocorre o movimento do ponteiro do mouse dentro da área delimitada para o desenvolvimento das redes de Petri. 
 
-\lstinputlisting[caption={Exemplo da chamada do evento \textbf{\textit{mousemove}}}, captionpos=b, label={lst:functionAddPlace}]{scripts/mousemove.js}
+\lstinputlisting[caption={Exemplo da chamada do evento \textbf{\textit{mousemove}}}, captionpos=b, label={lst:eventmousemove}]{scripts/mousemove.js}
 
-As propriedades \textbf{\textbf{clientX}} e \textbf{\textit{clientY}} permitem definir a posição do ponteiro do mouse sempre que ele está se movendo. Utiliza-se desse evento, principalmente, para determinar se o cursor está sobre alguns dos elementos clicáveis na tela. Caso sim, ele altera o design do ponteiro. Quando está fora de algum elemento clicável, o ponteiro do mouse utiliza o estilo \textbf{\textit{default}}, e quando está sobre a área de algum elemento clicável, o estilo é \textbf{\textit{pointer}}.
+As propriedades \textbf{\textit{clientX}} e \textbf{\textit{clientY}} permitem definir a posição do ponteiro do mouse sempre que ele está se movendo. Utiliza-se desse evento, principalmente, para determinar se o cursor está sobre alguns dos elementos clicáveis na tela. Caso sim, ele altera o estilo do ponteiro. Quando está fora de algum elemento clicável, o ponteiro do mouse utiliza o estilo \textbf{\textit{default}}, e quando está sobre a área de algum elemento clicável, o estilo é alterado para \textbf{\textit{pointer}}.
 
 \begin{figure}[ht] 
 	\centering
@@ -820,7 +819,7 @@ As propriedades \textbf{\textbf{clientX}} e \textbf{\textit{clientY}} permitem d
 	\label{fig:mouse_estilo_pointer}
 \end{figure}
 
-O evento \textbf{\textit{mousemove}} também é utilizado no momento de criação dos arcos, para renderizar o arco enquanto ele ainda está sendo desenhado. Por exemplo, ao clicar no primeiro elemento, lugar ou transição, onde o arco iniciará, uma posição inicial é detectada. Após, espera-se que o usuário clique, ou num ponto intermediário do arco, ou no ponto final do arco. Enquanto o ponto final, no segundo elemento, não é detectado, utiliza-se da posição do ponteiro do mouse nos eixos \textbf{x} e \textbf{y} do evento \textbf{\textit{mousemove}} para renderizar uma linha entre a última posição fixa detectada e a posição do ponteiro do mouse.
+O evento \textbf{\textit{mousemove}} também é utilizado no momento de criação dos arcos, para renderizar o arco enquanto ele ainda está sendo desenhado. Por exemplo, ao clicar no primeiro elemento, lugar ou transição, onde o arco iniciará, uma posição inicial é detectada. Após, espera-se que o usuário clique, ou num ponto intermediário do arco, ou no ponto final do arco. Enquanto o ponto final, no segundo elemento, não é detectado, utiliza-se da posição do ponteiro do mouse, nos eixos \textbf{x} e \textbf{y}, do evento \textbf{\textit{mousemove}} para renderizar uma linha entre a última posição fixa detectada e a posição do ponteiro do mouse.
 
 \begin{figure}[ht] 
 	\centering
@@ -829,17 +828,34 @@ O evento \textbf{\textit{mousemove}} também é utilizado no momento de criaçã
 	\label{fig:mousemove_desenhando_arco}
 \end{figure}
 
-\subsection*{mousedown}
+\subsection*{mousedown}\label{cap:mousedown}
 
 O evento \textbf{\textit{mousedown}} é disparado sempre que ocorre o pressionamento de um botão do mouse sobre um determinado elemento \cite{mdn_mousedown_event}. No caso da aplicação web desenvolvida, é acionado sempre que ocorre o clique do mouse dentro da área delimitada para o desenvolvimento das redes de Petri. 
 
-referencia: \url{https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event}
+\lstinputlisting[caption={Exemplo da chamada do evento \textbf{\textit{mousedown}}}, captionpos=b, label={lst:eventmousedown}]{scripts/mousedown.js}
 
-\subsection*{mouseup}
+Através do evento \textbf{\textit{mousedown}} é possível determinar a posição \textbf{x} e \textbf{y} em que ocorreu um clique. Com isso, verifica-se qual dos botões de ação está pressionado. Por exemplo, caso o botão \textbf{Add Place} esteja ativado, um lugar, na posição \textbf{x} e \textbf{y}, onde ocorreu o clique, será adicionado. O mesmo vale para transições e arcos. Além disso, é possível determinar se o clique ocorreu dentro de algum elemento. Isso é essencial para determinar o elemento inicial e final de um arco. 
 
-referencia: \url{https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event}
+Em combinação com o evento \textbf{\textit{mouseup}} \ref{cap:mouseup} define-se, também, se algum botão do mouse está sendo pressionado continuamente, ou seja, se o usuário clicou e segurou o botão pressionado. 
 
-Explicar aqui os eventos \textbf{\textit{mousedown}}, \textbf{\textit{mousemove}} e \textbf{\textit{mouseup}}
+\subsection*{mouseup}\label{cap:mouseup}
+
+O evento \textbf{\textit{mouseup}} é disparado sempre que ocorre a soltura de um botão do mouse após ele ter sido pressionado \cite{mdn_mouseup_event}. No caso da aplicação web desenvolvida, é acionado sempre que ocorre a soltura do botão após ele ter sido pressionado dentro da área delimitada para o desenvolvimento das redes de Petri.
+
+\lstinputlisting[caption={Exemplo da chamada do evento \textbf{\textit{mouseup}}}, captionpos=b, label={lst:eventmouseup}]{scripts/mouseup.js}
+
+O evento \textbf{\textit{mouseup}} é utilizado, principalmente, em conjunto com o evento \textbf{\textit{mousedown}} \ref{cap:mousedown}. Essa junção permite saber quando um botão do mouse está sendo continuamente pressionado. Com essa funcionalidade, podemos executar ações de movimentação dos nossos elementos \ref{cap:move_elements}, como lugares, transições, nome de elementos, dentre outros. 
+
+\lstinputlisting[caption={Lógica para botão continuamente pressionado \textbf{\textit{isPress}}}, captionpos=b, label={lst:ispress}]{scripts/isPress.js}
+
+Quando ocorre o evento \textbf{\textit{mousedown}}, a variável \textbf{\textit{isPress}} recebe o valor verdadeiro. Enquanto o evento \textbf{\textit{mouseup}} não ocorre, a variável permanece como verdadeiro, indicando para o código que o botão está sendo pressionado. Além disso, quando \textbf{\textit{isPress}} é verdadeiro, e ele está sobre algum dos elementos, o estilo do cursor muda para \textbf{\textit{grabbing}}, um estilo que mostra para o usuário que aquele elemento pode ser movimentado. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.4]{figuras/mouse_estilo_grabbing.png}
+	\caption[Mouse estilo grabbing]{Ponteiro do mouse com estilo \textbf{\textit{grabbing}}}
+	\label{fig:mouse_estilo_grabbing}
+\end{figure}
 
 \section{Criação dos elementos}
 
@@ -1049,7 +1065,7 @@ Tendo essas propriedades definidas se faz a adição do arco no \textbf{\textit{
 
 \lstinputlisting[caption={Criando o arco com as propriedades}, captionpos=b, label={lst:addArc}]{scripts/addArc.js}
 
-\section{Movimentando elementos na tela}
+\section{Movimentando elementos na tela}\label{cap:move_elements}
 
 \section{Exclusão}
 
