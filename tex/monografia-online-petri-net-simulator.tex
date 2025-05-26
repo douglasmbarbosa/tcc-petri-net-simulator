@@ -74,7 +74,7 @@
 \usepackage{booktabs}
 \usepackage{microtype} 	% justificação
 \usepackage{verbatim}
-
+\usepackage{placeins}
 \usepackage{listings} % pacote para inserção de código
 
 \lstdefinelanguage{JavaScript}{
@@ -791,20 +791,106 @@ Ao longo do desenvolvimento, verificou-se que seria mais simples fazer o desacop
 
 \section{Renderizando elementos na tela}
 
+A renderização de elementos visuais na interface é uma das funcionalidades essenciais de uma aplicação web moderna, especialmente quando se trata da representação gráfica de estruturas conceituais. Neste projeto, cujo objetivo principal é possibilitar a criação e manipulação de redes de Petri, torna-se indispensável a visualização clara e interativa dos componentes que constituem esse tipo de rede.
+
+De modo simples, os elementos de uma rede de Petri são representados de forma gráfica por meio de figuras geométricas já conhecidas pela maioria das pessoas, tornando mais simples a analogia dos elementos das redes de Petri, com figuras geométricas já conhecidas. Os lugares são representados por círculos, as transições por retângulos, e os arcos que ligam esses elementos são ilustrados como setas direcionais. Elementos adicionais, como marcações, pesos e títulos, são exibidas como textos e números renderizados diretamente na tela, complementando a representação visual e fornecendo os dados necessários para a interpretação correta da rede.
+
+O HTML5 fornece o elemento \textbf{<canvas>}, que permite o desenvolvimento de figuras geométricas, gráficos e textos. No contexto desse projeto, o \textbf{canvas} é essencial. Primeiramente, fornecendo uma área na tela para o desenvolvimento e manipulação das redes de Petri. Posteriormente, fornecendo uma API que pode ser manipulada, através do JavaScript, para a criação dos elementos gráficos. 
+
+\lstinputlisting[caption={Chamada do elemento \textbf{<canvas>} no HTML5}, captionpos=b, label={lst:areacanvas}]{scripts/areaCanvas.html}
+
+Após a chamada do elemento \textbf{<canvas>} no arquivo \textbf{\textit{index.html}} uma área retangular com altura e largura definidas nos métodos \textbf{\textit{width}} e \textbf{\textit{heigth}} é definida na tela. Com essa definição feita, é possível a manipulação do que será renderizado na tela, dentro dessa área \textbf{canvas} criada. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.3]{figuras/area_canvas.png}
+	\caption[Área canvas]{Retângulo da área \textbf{<canvas>} logo abaixo dos botões da aplicação web}
+	\label{fig:area_canvas}
+\end{figure}
+\FloatBarrier
+
+Tendo a área \textbf{canvas} definida, inicia-se a manipulação dos elementos gráficos que iram representar as redes de Petri. Para tornar possível a interatividade de diferentes elementos criou-se uma função de loop. Essa função tem como principal objetivo apagar e renderizar os elementos representados na área canvas de forma continua. Esse processo de apagar os elementos e renderizar novamente, várias vezes por segundo, permite criar animações, tornando possível a movimentação dos elementos e a edição das informações na tela. 
+
+\lstinputlisting[caption={Função loop}, captionpos=b, label={lst:functionloop}]{scripts/functionLoop.js}
+
+O método JavaScript \textbf{\textit{window.requestAnimationFrame(loop, canvas)}} informa ao navegador que se deseja executar animações. Além disso, ele sincroniza a taxa de atualização, em \textbf{Hz}, das animações, com a taxa de atualização do monitor do usuário. Posteriormente, faz-se a chamada da função \textbf{\textit{render()}}, que irá renderizar os elementos na área \textbf{canvas}. Também, a função \textbf{\textit{buttonColors()}} é acionada. Ela verifica qual botão foi pressionado e, com base nas informações, altera a cor do botão que indica a ação a ser executada. 
+
+Além, faz-se a verificação da variável \textbf{\textit{simulation}}, que indica ao código se está ocorrendo a ação de simulação da rede de Petri. Caso sim, a função \textbf{\textit{netSimulationEnables()}}, responsável pela simulação da rede de Petri \ref{cap:simulation}, é acionada.
+
+\subsection*{Função de renderização}
+
+A função \textbf{\textit{render()}} é responsável pela renderização de todos os elementos dentro da área \textbf{canvas} destinada a construção e simulação das redes de Petri. Ela utiliza a API do JavaScript para a manipulação do \textbf{canvas}. Para cada tipo de elemento inicia-se o desenho com \textbf{\textit{beginPatch()}} e se finaliza com \textbf{\textit{beginPatch()}}
+
+\begin{enumerate}
+	\item renderização dos lugares;
+	\item renderização das transições;
+	\item renderização dos arcos;
+	\item renderização dos pontos intermediário dos arcos;
+	\item renderização do triângulo ou circulo na ponta do arco, a depender do tipo de arco;
+	\item renderização do arco, enquanto ele é criado \ref{fig:mousemove_desenhando_arco};
+	\item renderização do lugar após o botão \textbf{Add Place} ser pressionado, e antes de ser adicionado com \textbf{\textit{mousedown}};
+	\item renderização da transição após o botão \textbf{Add Transition} ser pressionado, e antes de ser adicionado com \textbf{\textit{mousedown}}.
+\end{enumerate}
+
+\subsubsection*{Renderização dos lugares}
+
+Um lugar é, graficamente, um circulo. Ao manipular o \textbf{canvas} é possível construir um circulo passando os seguintes parâmetros: as posições \textbf{x} e \textbf{y} do centro do circulo e o seu raio. 
+
+\lstinputlisting[caption={Renderizando lugar}, captionpos=b, label={lst:renderPlace}]{scripts/renderPlace.js}
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=1]{figuras/renderPlace.png}
+	\caption[renderPlace]{Lugar P1 renderizado na tela}
+	\label{fig:renderPlace}
+\end{figure}
+\FloatBarrier
+
+Além disso, um lugar possui algumas outras características, como o número de \textbf{\textit{tokens}} e o seu nome. Dessa forma, um número, representando a quantidade de \textbf{\textit{tokens}} é renderizado no centro do circulo. Um outro texto, representando o nome é renderizado um pouco acima do circulo, conforme \ref{lst:renderPlace}. A renderização ocorre de forma recursiva em cada um dos lugares que estão informados em \textbf{\textit{arrayPlaces}}.
+
+\subsubsection*{Renderização das transições}
+
+Uma transição é, graficamente, um retângulo. É possível construir um retângulo passando os seguintes parâmetros: posição \textbf{x} e \textbf{y} da ponta inferior esquerda do retângulo, largura e altura, em pixels. Além disso, a transição possui a cor preta quando a propriedade \textbf{\textit{isEnable}} é falsa. Quando \textbf{\textit{isEnable}} é verdadeiro, e a simulação está ativada, a cor da transição é vermelha. 
+
+\lstinputlisting[caption={Renderizando transição}, captionpos=b, label={lst:renderTransition}]{scripts/renderTransition.js}
+
+\begin{figure}[ht]
+	\centering
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\includegraphics[scale=1]{figuras/renderTransitionEnableFalse.png}
+		%\caption[renderTransitionEnableFalse]{Transição renderizada não ativada}
+		\label{fig:renderTransitionEnableFalse}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\includegraphics[scale=1]{figuras/renderTransitionEnableTrue.png}
+		%\caption[renderTransitionEnableTrue]{Transição renderizada ativada}
+		\label{fig:renderTransitionEnableTrue}
+	\end{minipage}
+	\caption{Comparação de renderização entre transição não ativada e ativada}
+\end{figure}
+
+Como o parâmetro a ser passado para a API do JavaScript para a construção de um retângulo em uma área \textbf{canvas} exige as coordenadas \textbf{x} e \textbf{y} do canto inferior esquerdo do retângulo, fez-se uma compensação, utilizando os valores de altura e largura, para se obter a posição do centro do retângulo. Dessa forma, ao posicionar e movimentar uma transição, se faz pela posição do centro.
+
+\subsubsection*{Renderização dos arcos}
+
+Um arco, graficamente, é uma linha. No caso específico das redes de Petri, temos 2 principais tipos de arcos, normal e inibidor. O arco normal é representado como uma seta, o arco inibidor é semelhante, mas possui um circulo na ponta, ao invés de um triângulo. 
+
 \section{Eventos do JavaScript}
 
-No desenvolvimento de aplicações web, é essencial que as páginas sejam responsivas e interativas. A linguagem JavaScript nos fornece uma série de funcionalidades que permitem o desenvolvimento de eventos para a interatividade do usuário com as página que ele acessa. Os eventos representam ações e recorrências que ocorrem dentro do navegador do usuário, como cliques e movimentação do mouse, teclas pressionadas no teclado, dentre outras ações que um usuário, normalmente, pode executar dentro de uma página na web. 
+No desenvolvimento de aplicações web, é essencial que as páginas sejam responsivas e interativas. A linguagem JavaScript nos fornece uma série de funcionalidades que permitem o desenvolvimento de eventos para a interatividade do usuário com as páginas que ele acessa. Os eventos representam ações e recorrências que ocorrem dentro do navegador do usuário, como cliques, movimentação do mouse, pressionamento de teclas no teclado, dentre outras ações que um usuário, normalmente, pode executar dentro de uma página na web. 
 
 Para o desenvolvimento da aplicação web, capaz de construir e simular redes de Petri, é fundamental 3 principais eventos, sendo eles o \textbf{\textit{mousemove}}, \textbf{\textit{mousedown}} e \textbf{\textit{mouseup}}. Esses eventos permitem que o usuário consiga interagir com a área da página dedicada ao desenvolvimento das redes de Petri. 
 
-
 \subsection*{mousemove}
 
-O evento \textbf{\textit{mousemove}} é disparado sempre que ocorre o movimento do ponteiro do mouse sobre um determinado elemento \cite{mdn_mousedown_event}. No caso da aplicação web desenvolvida, é acionado sempre que ocorre o movimento do ponteiro do mouse dentro da área delimitada para o desenvolvimento das redes de Petri. 
+O evento \textbf{\textit{mousemove}} é disparado sempre que ocorre o movimento do ponteiro do mouse sobre um determinado elemento \cite{mdn_mousemove_event}. No caso da aplicação web desenvolvida, é acionado sempre que ocorre o movimento do ponteiro do mouse dentro da área delimitada para o desenvolvimento das redes de Petri. 
 
-\lstinputlisting[caption={Exemplo da chamada do evento \textbf{\textit{mousemove}}}, captionpos=b, label={lst:functionAddPlace}]{scripts/mousemove.js}
+\lstinputlisting[caption={Exemplo da chamada do evento \textbf{\textit{mousemove}}}, captionpos=b, label={lst:eventmousemove}]{scripts/mousemove.js}
 
-As propriedades \textbf{\textbf{clientX}} e \textbf{\textit{clientY}} permitem definir a posição do ponteiro do mouse sempre que ele está se movendo. Utiliza-se desse evento, principalmente, para determinar se o cursor está sobre alguns dos elementos clicáveis na tela. Caso sim, ele altera o design do ponteiro. Quando está fora de algum elemento clicável, o ponteiro do mouse utiliza o estilo \textbf{\textit{default}}, e quando está sobre a área de algum elemento clicável, o estilo é \textbf{\textit{pointer}}.
+As propriedades \textbf{\textit{clientX}} e \textbf{\textit{clientY}} permitem definir a posição do ponteiro do mouse sempre que ele está se movendo. Utiliza-se desse evento, principalmente, para determinar se o cursor está sobre alguns dos elementos clicáveis na tela. Caso sim, ele altera o estilo do ponteiro. Quando está fora de algum elemento clicável, o ponteiro do mouse utiliza o estilo \textbf{\textit{default}}, e quando está sobre a área de algum elemento clicável, o estilo é alterado para \textbf{\textit{pointer}}.
 
 \begin{figure}[ht] 
 	\centering
@@ -820,7 +906,7 @@ As propriedades \textbf{\textbf{clientX}} e \textbf{\textit{clientY}} permitem d
 	\label{fig:mouse_estilo_pointer}
 \end{figure}
 
-O evento \textbf{\textit{mousemove}} também é utilizado no momento de criação dos arcos, para renderizar o arco enquanto ele ainda está sendo desenhado. Por exemplo, ao clicar no primeiro elemento, lugar ou transição, onde o arco iniciará, uma posição inicial é detectada. Após, espera-se que o usuário clique, ou num ponto intermediário do arco, ou no ponto final do arco. Enquanto o ponto final, no segundo elemento, não é detectado, utiliza-se da posição do ponteiro do mouse nos eixos \textbf{x} e \textbf{y} do evento \textbf{\textit{mousemove}} para renderizar uma linha entre a última posição fixa detectada e a posição do ponteiro do mouse.
+O evento \textbf{\textit{mousemove}} também é utilizado no momento de criação dos arcos, para renderizar o arco enquanto ele ainda está sendo desenhado. Por exemplo, ao clicar no primeiro elemento, lugar ou transição, onde o arco iniciará, uma posição inicial é detectada. Após, espera-se que o usuário clique, ou num ponto intermediário do arco, ou no ponto final do arco. Enquanto o ponto final, no segundo elemento, não é detectado, utiliza-se da posição do ponteiro do mouse, nos eixos \textbf{x} e \textbf{y}, do evento \textbf{\textit{mousemove}} para renderizar uma linha entre a última posição fixa detectada e a posição do ponteiro do mouse.
 
 \begin{figure}[ht] 
 	\centering
@@ -829,15 +915,38 @@ O evento \textbf{\textit{mousemove}} também é utilizado no momento de criaçã
 	\label{fig:mousemove_desenhando_arco}
 \end{figure}
 
-\subsection*{mousedown}
+\subsection*{mousedown}\label{cap:mousedown}
 
-referencia: \url{https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event}
+O evento \textbf{\textit{mousedown}} é disparado sempre que ocorre o pressionamento de um botão do mouse sobre um determinado elemento \cite{mdn_mousedown_event}. No caso da aplicação web desenvolvida, é acionado sempre que ocorre o clique do mouse dentro da área delimitada para o desenvolvimento das redes de Petri. 
 
-\subsection*{mouseup}
+\lstinputlisting[caption={Exemplo da chamada do evento \textbf{\textit{mousedown}}}, captionpos=b, label={lst:eventmousedown}]{scripts/mousedown.js}
 
-referencia: \url{https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event}
+Através do evento \textbf{\textit{mousedown}} é possível determinar a posição \textbf{x} e \textbf{y} em que ocorreu um clique. Com isso, verifica-se qual dos botões de ação está pressionado. Por exemplo, caso o botão \textbf{Add Place} esteja ativado, um lugar, na posição \textbf{x} e \textbf{y}, onde ocorreu o clique, será adicionado. O mesmo vale para transições e arcos. Além disso, é possível determinar se o clique ocorreu dentro de algum elemento. Isso é essencial para determinar o elemento inicial e final de um arco. 
 
-Explicar aqui os eventos \textbf{\textit{mousedown}}, \textbf{\textit{mousemove}} e \textbf{\textit{mouseup}}
+Em combinação com o evento \textbf{\textit{mouseup}} \ref{cap:mouseup} define-se, também, se algum botão do mouse está sendo pressionado continuamente, ou seja, se o usuário clicou e segurou o botão pressionado. 
+
+\subsection*{mouseup}\label{cap:mouseup}
+
+O evento \textbf{\textit{mouseup}} é disparado sempre que ocorre a soltura de um botão do mouse após ele ter sido pressionado \cite{mdn_mouseup_event}. No caso da aplicação web desenvolvida, é acionado sempre que ocorre a soltura do botão após ele ter sido pressionado dentro da área delimitada para o desenvolvimento das redes de Petri.
+
+\lstinputlisting[caption={Exemplo da chamada do evento \textbf{\textit{mouseup}}}, captionpos=b, label={lst:eventmouseup}]{scripts/mouseup.js}
+
+O evento \textbf{\textit{mouseup}} é utilizado, principalmente, em conjunto com o evento \textbf{\textit{mousedown}} \ref{cap:mousedown}. Essa junção permite saber quando um botão do mouse está sendo continuamente pressionado. Com essa funcionalidade, podemos executar ações de movimentação dos nossos elementos \ref{cap:move_elements}, como lugares, transições, nome de elementos, dentre outros. 
+
+\lstinputlisting[caption={Lógica para botão continuamente pressionado \textbf{\textit{isPress}}}, captionpos=b, label={lst:ispress}]{scripts/isPress.js}
+
+Quando ocorre o evento \textbf{\textit{mousedown}}, a variável \textbf{\textit{isPress}} recebe o valor verdadeiro. Enquanto o evento \textbf{\textit{mouseup}} não ocorre, a variável permanece como verdadeiro, indicando para o código que o botão está sendo pressionado. Além disso, quando \textbf{\textit{isPress}} é verdadeiro, e ele está sobre algum dos elementos, o estilo do cursor muda para \textbf{\textit{grabbing}}, um estilo que mostra para o usuário que aquele elemento pode ser movimentado. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.4]{figuras/mouse_estilo_grabbing.png}
+	\caption[Mouse estilo grabbing]{Ponteiro do mouse com estilo \textbf{\textit{grabbing}}}
+	\label{fig:mouse_estilo_grabbing}
+\end{figure}
+
+falar da função loop () 
+
+falar da função render (), explicando como desenhar circulos, textos dentre outros
 
 \section{Criação dos elementos}
 
@@ -1047,7 +1156,7 @@ Tendo essas propriedades definidas se faz a adição do arco no \textbf{\textit{
 
 \lstinputlisting[caption={Criando o arco com as propriedades}, captionpos=b, label={lst:addArc}]{scripts/addArc.js}
 
-\section{Movimentando elementos na tela}
+\section{Movimentando elementos na tela}\label{cap:move_elements}
 
 \section{Exclusão}
 
@@ -1057,7 +1166,7 @@ Tendo essas propriedades definidas se faz a adição do arco no \textbf{\textit{
 
 \section{Salvando e carregando a rede}
 
-\section{Simulação da rede}
+\section{Simulação da rede} \label{cap:simulation}
 
 \section{Publicação do projeto online}
 
