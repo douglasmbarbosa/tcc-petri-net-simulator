@@ -819,6 +819,34 @@ Além, faz-se a verificação da variável \textbf{\textit{simulation}}, que ind
 
 \subsection*{Função de renderização}
 
+A função \textbf{\textit{render()}} é responsável pela renderização de todos os elementos dentro da área \textbf{canvas} destinada a construção e simulação das redes de Petri. Ela utiliza a API do JavaScript para a manipulação do \textbf{canvas}. Para cada tipo de elemento inicia-se o desenho com \textbf{\textit{beginPatch()}} e se finaliza com \textbf{\textit{beginPatch()}}
+
+\begin{enumerate}
+	\item renderização dos lugares;
+	\item renderização das transições;
+	\item renderização dos arcos;
+	\item renderização dos pontos intermediário dos arcos;
+	\item renderização do triângulo ou circulo na ponta do arco, a depender do tipo de arco;
+	\item renderização do arco, enquanto ele é criado \ref{fig:mousemove_desenhando_arco};
+	\item renderização do lugar após o botão \textbf{Add Place} ser pressionado, e antes de ser adicionado com \textbf{\textit{mousedown}};
+	\item renderização da transição após o botão \textbf{Add Transition} ser pressionado, e antes de ser adicionado com \textbf{\textit{mousedown}}.
+\end{enumerate}
+
+\subsubsection*{Renderização dos lugares}
+
+Para renderizar um lugar é importante entender que ele, nada mais é, que um circulo. Ao manipular o \textbf{canvas} é possível construir um circulo passando as posições \textbf{x} e \textbf{y} e o seu raio. 
+
+\lstinputlisting[caption={Renderizando lugar}, captionpos=b, label={lst:renderPlace}]{scripts/renderPlace.js}
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=1]{figuras/renderPlace.png}
+	\caption[renderPlace]{Lugar P1 renderizado na tela}
+	\label{fig:renderPlace}
+\end{figure}
+\FloatBarrier
+
+Além disso, um lugar possui algumas outras características, como o número de \textbf{\textit{tokens}} e o seu nome. Dessa forma, um número, representando a quantidade de \textbf{\textit{tokens}} é renderizado no centro do circulo. Um outro texto, representando o nome é renderizado um pouco acima do circulo, conforme \ref{lst:renderPlace}. A renderização ocorre de forma recursiva em cada um dos lugares que estão informados em \textbf{\textit{arrayPlaces}}.
 
 
 \section{Eventos do JavaScript}
