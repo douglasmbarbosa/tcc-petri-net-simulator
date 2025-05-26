@@ -791,6 +791,32 @@ Ao longo do desenvolvimento, verificou-se que seria mais simples fazer o desacop
 
 \section{Renderizando elementos na tela}
 
+A renderização de elementos visuais na interface é uma das funcionalidades essenciais de uma aplicação web moderna, especialmente quando se trata da representação gráfica de estruturas conceituais. Neste projeto, cujo objetivo principal é possibilitar a criação e manipulação de redes de Petri, torna-se indispensável a visualização clara e interativa dos componentes que constituem esse tipo de rede.
+
+De modo simples, os elementos de uma rede de Petri são representados de forma gráfica por meio de figuras geométricas já conhecidas pela maioria das pessoas, tornando mais simples a analogia dos elementos das redes de Petri, com figuras geométricas já conhecidas. Os lugares são representados por círculos, as transições por retângulos, e os arcos que ligam esses elementos são ilustrados como setas direcionais. Elementos adicionais, como marcações, pesos e títulos, são exibidas como textos e números renderizados diretamente na tela, complementando a representação visual e fornecendo os dados necessários para a interpretação correta da rede.
+
+O HTML5 fornece o elemento \textbf{<canvas>}, que permite o desenvolvimento de figuras geométricas, gráficos e textos. No contexto desse projeto, o elemento \textbf{<canvas>} foi essencial. Primeiramente, fornecendo uma área na tela para o desenvolvimento e manipulação das redes de Petri. Posteriormente, fornecendo uma API que pode ser manipulada, através do JavaScript, para a criação de elementos gráficos. 
+
+\lstinputlisting[caption={Chamada do elemento \textbf{<canvas>} no HTML5}, captionpos=b, label={lst:areacanvas}]{scripts/areaCanvas.html}
+
+Após a chamada do elemento \textbf{<canvas>} no arquivo \textbf{\textit{index.html}} uma área retangular com altura e largura definidas nos métodos \textbf{\textit{width}} e \textbf{\textit{heigth}} é definida na tela. Com essa definição feita, é possível a manipulação do que será renderizado na tela, dentro dessa área \textbf{canvas} criada. 
+
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.3]{figuras/area_canvas.png}
+	\caption[Área canvas]{Retângulo da área \textbf{<canvas>} logo abaixo dos botões da aplicação web}
+	\label{fig:area_canvas}
+\end{figure}
+
+
+Explicar o canvas
+Falar da funcao loop ()
+Falar da funçào render ()
+
+
+\newpage
+
 \section{Eventos do JavaScript}
 
 No desenvolvimento de aplicações web, é essencial que as páginas sejam responsivas e interativas. A linguagem JavaScript nos fornece uma série de funcionalidades que permitem o desenvolvimento de eventos para a interatividade do usuário com as páginas que ele acessa. Os eventos representam ações e recorrências que ocorrem dentro do navegador do usuário, como cliques, movimentação do mouse, pressionamento de teclas no teclado, dentre outras ações que um usuário, normalmente, pode executar dentro de uma página na web. 
