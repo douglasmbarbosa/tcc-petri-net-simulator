@@ -1186,6 +1186,38 @@ Tendo essas propriedades definidas se faz a adição do arco no \textbf{\textit{
 
 \section{Movimentando elementos na tela}\label{cap:move_elements}
 
+A movimentação de elementos é essencial para a construção de uma rede de Petri. A partir do momento em que os elementos são dispostos na tela, eles necessitam ser movimentados para uma melhor visualização e compreensão da rede. Os elementos, por vezes, podem ficar sobrepostos e mal distribuídos no momento de sua criação, gerando desconforto visual. Os elementos que podem ser movidos são: 
+
+\begin{enumerate}
+	\item lugares;
+	\item transições;
+	\item nome dos elementos;
+	\item pontos intermediários dos arcos.
+\end{enumerate}
+
+Outros elementos, como número de \textbf{\textit{tokens}}, peso dos arcos, além dos pontos \textbf{x} e \textbf{y}, iniciais e finais dos arcos, acompanham a movimentação dos elementos principais, que podem ser movidos. Ou seja, não é possível movê-los diretamente.
+
+\begin{figure}[ht]
+	\centering
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\includegraphics[scale=0.5]{figuras/move_mal_distribuido.png}
+		%\caption[move_mal_distribuido]{move_mal_distribuido}
+		\label{fig:move_mal_distribuido}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\includegraphics[scale=0.5]{figuras/move_bem_distribuido.png}
+		%\caption[move_bem_distribuido]{\textbf{move_bem_distribuido}}
+		\label{fig:move_mal_distribuido}
+	\end{minipage}
+	\caption{Elementos mal distribuídos e movimentados para uma melhor visualização.}
+\end{figure}
+\FloatBarrier
+
+Além disso, alguns critérios precisam ser atendidos para que o movimento do elemento ocorra. É necessário que o cursor do mouse seja pressionado e segurado dentro da área do elemento a ser movimentado. 
+
 \section{Exclusão}
 
 \subsection*{Deletando elementos}
