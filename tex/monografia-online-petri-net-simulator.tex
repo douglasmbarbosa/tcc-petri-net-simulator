@@ -878,11 +878,33 @@ Uma transição é, graficamente, um retângulo. É possível construir um retâ
 	\caption{Comparação de renderização entre transição não ativada e ativada}
 \end{figure}
 
-Como o parâmetro a ser passado para a API do JavaScript para a construção de um retângulo em uma área \textbf{canvas} exige as coordenadas \textbf{x} e \textbf{y} do canto inferior esquerdo do retângulo, fez-se uma compensação, utilizando os valores de altura e largura, para se obter a posição do centro do retângulo. Dessa forma, ao posicionar e movimentar uma transição, se faz pela posição do centro.
+Como o parâmetro a ser passado para a API do JavaScript para a construção de um retângulo em uma área \textbf{canvas} exige as coordenadas \textbf{x} e \textbf{y} do canto inferior esquerdo do retângulo, fez-se uma compensação, utilizando os valores de altura e largura, para se obter a posição do centro do retângulo. Dessa forma, ao posicionar e movimentar uma transição, se faz pela posição do centro.  A renderização ocorre de forma recursiva em cada uma das transições que estão informados em \textbf{\textit{arrayTransitions}}.
 
 \subsubsection*{Renderização dos arcos}
 
-Um arco, graficamente, é uma linha. No caso específico das redes de Petri, temos 2 principais tipos de arcos, normal e inibidor. O arco normal é representado como uma seta, o arco inibidor é semelhante, mas possui um circulo na ponta, ao invés de um triângulo. 
+Um arco, graficamente, é uma linha. No caso específico das redes de Petri, temos 2 principais tipos de arcos, normal e inibidor. O arco normal é representado como uma seta, o arco inibidor é semelhante, mas possui um circulo na ponta, ao invés de um triângulo. O processo é feito recursivamente em cada um dos arcos contidos em \textbf{\textit{arrayArcs}}.
+
+\lstinputlisting[caption={Renderizando arco}, captionpos=b, label={lst:renderArc}]{scripts/renderArc.js}
+
+Inicialmente, para a renderização do arco, há uma detecção da posição \textbf{x} e \textbf{y}. Esse primeiro ponto precisar ser, necessariamente dentro de algum elemento, lugar ou transição para arcos normais, e, apenas lugar, para arcos inibidores. Tendo a primeira posição \textbf{x} e \textbf{y} definida, há duas opções: ou o usuário seleciona o elemento final do arco, ou ele seleciona um ponto intermediário. No primeiro caso, uma linha entre o ponto inicial e final é renderizada. Caso seja um arco normal, um triângulo na ponto é renderizado que, junto com a linha, dá a ilusão de ser uma seta direcional. No caso do arco inibidor, um circulo é renderizado na ponta final da linha. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.7]{figuras/arcNormalInibidor.png}
+	\caption[Arco normal e inibidor]{Arco normal e inibidor chegando transição T1}
+	\label{fig:arcNormalInibidor}
+\end{figure}
+
+Há também o segundo caso, em que o usuário cria um ponto intermediário. Nesse caso, uma linha entre o ponto inicial e o ponto intermediário é criada. Na posição \textbf{x} e y\textbf{y} desse ponto intermediário é criado um circulo, para indicar que ali tem um arco intermediário, e que pode ser movimentado posteriormente. Podem existir infinitos pontos intermediários, até que o usuário clique no elemento final, quando o desenho do arco finaliza. Na ponta final, há o triângulo ou circulo, a depender do tipo de arco. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.8]{figuras/arcPontoIntermediario.png}
+	\caption[Arco com pontos intermediários]{Arcos com pontos intermediários}
+	\label{fig:arcPontoIntermediario}
+\end{figure}
+
+Além disso, o arco é mostrado, em tempo real, enquanto é desenhado. Faz-se isso utilizando o ponto inicial, juntamente com os pontos intermediário, caso existam, e a posição final é a do ponteiro do mouse, obtida com \textbf{\textit{mousemove}} \ref{cap:mousemove}. O processo é o mesmo que o anterior, diferenciado-se pelo fato do ponto final ser o obtido pelas propriedades \textbf{\textit{clientX}} e \textbf{\textit{clientY}} do evento \textbf{\textit{mousemove}} \ref{fig:mousemove_desenhando_arco}. 
 
 \section{Eventos do JavaScript}
 
@@ -890,7 +912,7 @@ No desenvolvimento de aplicações web, é essencial que as páginas sejam respo
 
 Para o desenvolvimento da aplicação web, capaz de construir e simular redes de Petri, é fundamental 3 principais eventos, sendo eles o \textbf{\textit{mousemove}}, \textbf{\textit{mousedown}} e \textbf{\textit{mouseup}}. Esses eventos permitem que o usuário consiga interagir com a área da página dedicada ao desenvolvimento das redes de Petri. 
 
-\subsection*{mousemove}
+\subsection*{mousemove}\label{cap:mousemove}
 
 O evento \textbf{\textit{mousemove}} é disparado sempre que ocorre o movimento do ponteiro do mouse sobre um determinado elemento \cite{mdn_mousemove_event}. No caso da aplicação web desenvolvida, é acionado sempre que ocorre o movimento do ponteiro do mouse dentro da área delimitada para o desenvolvimento das redes de Petri. 
 
