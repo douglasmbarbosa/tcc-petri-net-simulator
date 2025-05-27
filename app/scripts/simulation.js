@@ -50,7 +50,7 @@ function netSimulationEnables() {
                                     }
                                 }
                                 else if (arc.type == "inhibitor") {
-                                    if (place.nTokens <= arc.weight) {
+                                    if (place.nTokens < arc.weight) {
                                         arc.isEnable = true        
                                     }
                                     else {
