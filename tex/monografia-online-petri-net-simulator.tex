@@ -972,10 +972,6 @@ Quando ocorre o evento \textbf{\textit{mousedown}}, a variável \textbf{\textit{
 	\label{fig:mouse_estilo_grabbing}
 \end{figure}
 
-falar da função loop () 
-
-falar da função render (), explicando como desenhar circulos, textos dentre outros
-
 \section{Criação dos elementos}
 
 
@@ -1216,7 +1212,24 @@ Outros elementos, como número de \textbf{\textit{tokens}}, peso dos arcos, alé
 \end{figure}
 \FloatBarrier
 
-Além disso, alguns critérios precisam ser atendidos para que o movimento do elemento ocorra. É necessário que o cursor do mouse seja pressionado e segurado dentro da área do elemento a ser movimentado. 
+
+Além disso, alguns critérios precisam ser atendidos para que o movimento do elemento ocorra. É necessário que o cursor do mouse seja pressionado e segurado dentro da área do elemento a ser movimentado. Para isso, se torna fundamental descobrir se um clique ocorreu dentro da área dos elementos que podem se movimentar. No caso dos lugares e pontos intermediários, se calcula se o clique ocorreu dentro da área do circulo que os formam. No caso das transições e nome dos elementos, se calcula com base no retângulo que os formam. 
+
+\subsection*{Verificando clique em círculos}
+
+Ao clicarmos na área \textbf{canvas} obtemos o ponto \textbf{x} e \textbf{y} onde ele ocorreu. Assim, temos 2 possibilidades: ocorreu dentro do circulo, no caso, lugar ou ponto intermediário, ou fora. Para determinar se o clique ocorreu dentro de algum dos circulos distribuidos na área \textbf{canvas} calcula-se o comprimento entre o ponto \textbf{x} e \textbf{y} do clique e o ponto \textbf{x} e \textbf{y} central de cada circulo \cite{Macoratti2014}, de forma recursiva. Caso esse comprimento seja inferior ou igual ao raio de algum desses circulos, podemos afirmar que ele ocorreu dentro de algum elemento. Caso contrário, ocorreu fora.
+
+O cálculo é feito utilizando-se da fórmula para distância entre 2 pontos. 
+
+\begin{equation}\label{eq:distancia_entre_pontos}
+	d_{AB}^2 = (x_B - x_A)^2 + (y_B - y_A)^2
+\end{equation}
+
+\lstinputlisting[caption={Verificando clique e atualizando posição do circulo}, captionpos=b, label={lst:insidePlace}]{scripts/insidePlace.js}
+
+Tendo o retorno da função e a variável \textbf{\textit{isPress}} \ref{lst:ispress} como verdadeiro, há a satisfação das condições necessárias para movimentar o elemento. Dessa forma, a nova posição do centro do circulo é a posição do ponteiro do mouse, obtida com \textbf{\textit{mousemove}} \ref{cap:mousemove}. A movimentação ocorrerá até que o botão do mouse deixe de ser pressionado. 
+
+\subsection*{Verificando clique em retângulos}
 
 \section{Exclusão}
 
