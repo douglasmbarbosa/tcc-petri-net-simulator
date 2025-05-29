@@ -1232,18 +1232,14 @@ Tendo o retorno da função e a variável \textbf{\textit{isPress}} \ref{lst:isp
 
 \subsection*{Verificando clique em retângulos}
 
-referência: \url{https://math.stackexchange.com/questions/190111/how-to-check-if-a-point-is-inside-a-rectangle}
-
-As transições e nome de elementos podem ser caracterizados como retângulos dentro da área \textbf{canvas}. Ao clicar na área \textbf{canvas} obtemos as posições \textbf{x} e \textbf{y} do clique. Para determinarmos se o clique ocorreu dentro de algum dos retângulos verifica-se e comparara-se o ponto \textbf{x} e \textbf{y} do clique com o ponto inferior esquerdo do retângulo. Faz-se a verificação da seguinte forma:
+As transições e nome de elementos podem ser caracterizados como retângulos dentro da área \textbf{canvas}. Ao clicar na área \textbf{canvas} obtemos as posições \textbf{x} e \textbf{y} do clique. Para determinarmos se o clique ocorreu dentro de algum dos retângulos verifica-se e comparara-se o ponto \textbf{x} e \textbf{y} do clique com o ponto inferior esquerdo do retângulo \cite{Manzoni2013}. Faz-se a verificação da seguinte forma:
 
 \begin{enumerate}
-	\item $mouseX >= transitionX$;
-	\item $mouseX <= transitionX + transitionWidth$;
-	\item $mouseY >= transitionY$;
-	\item $mouseY <= transitionY + transitionHeigth$.
+	\item $mouseX \geq transitionX$;
+	\item $mouseX \leq transitionX + transitionWidth$;
+	\item $mouseY \geq transitionY$;
+	\item $mouseY \leq transitionY + transitionHeigth$.
 \end{enumerate}
-
-Caso todas essas comparações sejam verdadeiras, pode-se dizer que o clique ocorreu dentro de algum retângulo.
 
 \begin{figure}[h!]
 	\centering
@@ -1269,8 +1265,15 @@ Caso todas essas comparações sejam verdadeiras, pode-se dizer que o clique oco
 		\fill (D) circle (2pt) node[above left] {\scriptsize $transitionY + transitionHeigth$};
 		
 	\end{tikzpicture}
-	\caption{Retângulo no plano XY com os vértices nomeados $A$, $B$, $C$ e $D$.}
+	\caption{Transição representada no plano cartesiano.}
 \end{figure}
+
+
+\lstinputlisting[caption={Verificando clique e atualizando posição do retângulo}, captionpos=b, label={lst:insideTransition}]{scripts/insideTransition.js}
+
+Caso todas essas comparações sejam verdadeiras, pode-se concluir que o clique ocorreu dentro de algum retângulo. Com isso, tendo \textbf{\textit{isPress}} verdadeira, move-se o retângulo. A posição central do retângulo será a mesma do ponteiro do mouse. 
+
+
 
 
 \section{Exclusão}
