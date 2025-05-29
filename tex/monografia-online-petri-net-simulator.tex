@@ -1225,11 +1225,53 @@ O cálculo é feito utilizando-se da fórmula para distância entre 2 pontos.
 	d_{AB}^2 = (x_B - x_A)^2 + (y_B - y_A)^2
 \end{equation}
 
+
 \lstinputlisting[caption={Verificando clique e atualizando posição do circulo}, captionpos=b, label={lst:insidePlace}]{scripts/insidePlace.js}
 
 Tendo o retorno da função e a variável \textbf{\textit{isPress}} \ref{lst:ispress} como verdadeiro, há a satisfação das condições necessárias para movimentar o elemento. Dessa forma, a nova posição do centro do circulo é a posição do ponteiro do mouse, obtida com \textbf{\textit{mousemove}} \ref{cap:mousemove}. A movimentação ocorrerá até que o botão do mouse deixe de ser pressionado. 
 
 \subsection*{Verificando clique em retângulos}
+
+referência: \url{https://math.stackexchange.com/questions/190111/how-to-check-if-a-point-is-inside-a-rectangle}
+
+As transições e nome de elementos podem ser caracterizados como retângulos dentro da área \textbf{canvas}. Ao clicar na área \textbf{canvas} obtemos as posições \textbf{x} e \textbf{y} do clique. Para determinarmos se o clique ocorreu dentro de algum dos retângulos verifica-se e comparara-se o ponto \textbf{x} e \textbf{y} do clique com o ponto inferior esquerdo do retângulo. Faz-se a verificação da seguinte forma:
+
+\begin{enumerate}
+	\item $mouseX >= transitionX$;
+	\item $mouseX <= transitionX + transitionWidth$;
+	\item $mouseY >= transitionY$;
+	\item $mouseY <= transitionY + transitionHeigth$.
+\end{enumerate}
+
+Caso todas essas comparações sejam verdadeiras, pode-se dizer que o clique ocorreu dentro de algum retângulo.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[scale=1]
+		% Eixos
+		\draw[->] (-1,0) -- (6,0) node[right] {$x$};
+		\draw[->] (0,-1) -- (0,5) node[above] {$y$};
+		
+		% Pontos do retângulo
+		\coordinate (A) at (2,1);
+		\coordinate (B) at (4,1);
+		\coordinate (C) at (4,4);
+		\coordinate (D) at (2,4);
+		
+		
+		% Retângulo
+		\draw[thick, black] (A) -- (B) -- (C) -- (D) -- cycle;
+		
+		% Nomeando os pontos
+		\fill (A) circle (2pt) node[below left] {\scriptsize $transitionX, transitionY$};
+		\fill (B) circle (2pt) node[below right] {\scriptsize $transitionX + transitionWidth$};
+		\fill (C) circle (2pt) node[above right] {$$};
+		\fill (D) circle (2pt) node[above left] {\scriptsize $transitionY + transitionHeigth$};
+		
+	\end{tikzpicture}
+	\caption{Retângulo no plano XY com os vértices nomeados $A$, $B$, $C$ e $D$.}
+\end{figure}
+
 
 \section{Exclusão}
 
