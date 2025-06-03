@@ -1273,12 +1273,27 @@ As transições e nome de elementos podem ser caracterizados como retângulos de
 
 Caso todas essas comparações sejam verdadeiras, pode-se concluir que o clique ocorreu dentro de algum retângulo. Com isso, tendo \textbf{\textit{isPress}} verdadeira, move-se o retângulo. A posição central do retângulo será a mesma do ponteiro do mouse. 
 
-
-
-
 \section{Exclusão}
 
+A partir do momento em que elementos são criados, há a necessidade de poder excluí-los, seja para corrigir algum erro, testar novas possibilidades, ou seja para deletar tudo e iniciar de novo. Na aplicação web desenvolvida buscou-se focar na exclusão tanto dos elementos individualmente, no caso, lugares, transições e arcos, quanto também pela exclusão da rede por completo, excluindo tudo de uma única vez.
+
+{\color{red}criar fluxo para explicar o processo}
+
 \subsection*{Deletando elementos}
+
+Para deletar um elemento, de forma individual, é necessário clicar no botão \textbf{\textit{Delete Element}}. A partir dessa ação há 3 possibilidades: 
+
+\begin{enumerate}
+	\item exclusão de um lugar;
+	\item exclusão de uma transição;
+	\item exclusão de um arco.
+\end{enumerate}
+
+Para deletar um lugar, ou transição, o processo é semelhante. Além deletar o elemento em si, há a necessidade de deletar os arcos que chegam e que saem, visto que, os arcos são dependentes desses elementos. Após o clique no botão \textbf{\textit{Delete Element}} há a mudança do valor da variável \textbf{\textit{buttonPress}} para 5, e a chamada da função \textbf{\textit{deleteElements()}}.
+
+
+
+
 
 \subsection*{Deletando a rede por completo}
 
