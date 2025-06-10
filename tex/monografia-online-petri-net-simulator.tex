@@ -1289,11 +1289,15 @@ Para deletar um elemento, de forma individual, é necessário clicar no botão \
 	\item exclusão de um arco.
 \end{enumerate}
 
-Para deletar um lugar, ou transição, o processo é semelhante. Além deletar o elemento em si, há a necessidade de deletar os arcos que chegam e que saem, visto que, os arcos são dependentes desses elementos. Após o clique no botão \textbf{\textit{Delete Element}} há a mudança do valor da variável \textbf{\textit{buttonPress}} para 5, e a chamada da função \textbf{\textit{deleteElements()}}.
+Para deletar um lugar, ou transição, o processo é semelhante. Além de deletar o elemento em si, há a necessidade de deletar os arcos que chegam e que saem, visto que, os arcos são dependentes desses elementos. Após o clique no botão \textbf{\textit{Delete Element}} há a mudança do valor da variável \textbf{\textit{buttonPress}} para \textbf{5} e, em seguida, quando ocorrer o evento \textbf{\textit{mousedown}} \ref{cap:mousedown}, há a chamada da função \textbf{\textit{deleteElements()}}. 
 
+A função percorre os 3 arrays principais de elementos, \textbf{\textit{arrayPlaces}}, \textbf{\textit{arrayTransitions}} e \textbf{\textit{arrayArcs}}. Dessa forma, há a verificação da ocorrência de um clique dentro da área de algum dos elementos que podem ser excluídos: lugar, transição ou arco. No caso dos arcos, verifica-se se o clique ocorreu na área de algum dos pontos intermediários, ou na área da ponta do arco, sendo a área circular ou triangular, a depender do tipo de arco, normal ou inibidor. Caso a condição seja verdadeira, exclui-se o elemento do seu \textbf{\textit{array}} correspondente.
 
+\lstinputlisting[caption={Função \textbf{\textit{deleteElements()}} simplificada para excluir um lugar}, captionpos=b, label={lst:deleteElements}]{scripts/deleteElements.js}
 
+Na exclusão de lugares e transições, verifica-se quais arcos chegam ou saem desses elementos através da propriedade \textbf{\textit{connections}}. Tendo as conexões, faz-se também a exclusão desses arcos. Ao deletar um lugar e os arcos que chegam ou que saem, por exemplo, também exclui-se na transição a menção, na propriedade \textbf{\textit{connections}}, que há uma conexão com o arco excluído. O mesmo vale para quando se exclui uma transição. 
 
+Por fim, quando exclui-se um arco, de forma individual, verifica-se o elemento inicial e final, ou seja, onde o arco inicia e onde o arco finaliza. Tendo esses 2 elementos, faz-se a exclusão da menção de conexão na propriedade \textbf{\textit{connections}} de cada um desses elementos.
 
 \subsection*{Deletando a rede por completo}
 
