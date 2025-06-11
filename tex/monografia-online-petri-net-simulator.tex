@@ -111,6 +111,8 @@
 	arrow/.style={thick,->,>=stealth}
 }
 
+\usetikzlibrary{positioning}
+
 % Pacotes de escrita matemática
 \usepackage{amsmath,amssymb,unicode-math}
 
@@ -994,7 +996,7 @@ Na função \textbf{\textit{addPlace}} se constroi um objeto \textbf{\textit{(ob
 	\item \textbf{namePositionY:} indica o valor do eixo Y em que o \textbf{\textit{name}} do objeto se encontra na tela;
 	\item \textbf{posX:} indica o valor do eixo X em que o objeto se encontra na tela;
 	\item \textbf{posY:} indica o valor do eixo X em que o objeto se encontra na tela;
-	\item \textbf{connections:} array que identifica quais outros objetos estão ligados a ele;
+	\item \textbf{connections:} array que identifica quais outros objetos estão ligados a ele;\label{prop:connections}
 	\item \textbf{nTokens:} identifica quantos \textbf{\textit{tokens}} o objeto lugar possuí.
 \end{enumerate}
 
@@ -1279,6 +1281,15 @@ A partir do momento em que elementos são criados, há a necessidade de poder ex
 
 {\color{red}criar fluxo para explicar o processo}
 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=1]{figuras/deleteDiagram.pdf}
+	\caption[Fluxograma Delete Elements]{Diagrama de fluxo para exclusão}
+	\label{fig:deleteDiagram}
+\end{figure}
+\FloatBarrier
+
 \subsection*{Deletando elementos}
 
 Para deletar um elemento, de forma individual, é necessário clicar no botão \textbf{\textit{Delete Element}}. A partir dessa ação há 3 possibilidades: 
@@ -1295,13 +1306,33 @@ A função percorre os 3 arrays principais de elementos, \textbf{\textit{arrayPl
 
 \lstinputlisting[caption={Função \textbf{\textit{deleteElements()}} simplificada para excluir um lugar}, captionpos=b, label={lst:deleteElements}]{scripts/deleteElements.js}
 
-Na exclusão de lugares e transições, verifica-se quais arcos chegam ou saem desses elementos através da propriedade \textbf{\textit{connections}}. Tendo as conexões, faz-se também a exclusão desses arcos. Ao deletar um lugar e os arcos que chegam ou que saem, por exemplo, também exclui-se na transição a menção, na propriedade \textbf{\textit{connections}}, que há uma conexão com o arco excluído. O mesmo vale para quando se exclui uma transição. 
+Na exclusão de lugares e transições, verifica-se quais arcos chegam ou saem desses elementos através da propriedade \textbf{\textit{connections}} \ref{prop:connections}. Tendo as conexões, faz-se também a exclusão desses arcos. Ao deletar um lugar e os arcos que chegam ou que saem, por exemplo, também exclui-se na transição a menção, na propriedade \textbf{\textit{connections}}, que há uma conexão com o arco excluído. O mesmo vale para quando se exclui uma transição. 
 
 Por fim, quando exclui-se um arco, de forma individual, verifica-se o elemento inicial e final, ou seja, onde o arco inicia e onde o arco finaliza. Tendo esses 2 elementos, faz-se a exclusão da menção de conexão na propriedade \textbf{\textit{connections}} de cada um desses elementos.
 
 \subsection*{Deletando a rede por completo}
 
-\section{Salvando e carregando a rede}
+A exclusão da rede por completo é uma funcionalidade de extrema importância. Uma vez que se deseja iniciar um novo projeto é necessário limpar a área de desenvolvimento das redes de Petri. A forma como a aplicação web funciona leva em consideração os valores das diferentes variáveis. Ou seja, a rede de Petri, nada mais é, que a interpretação das várias variáveis dentro do código. Inicialmente, quando não se tem nenhum elemento da rede de Petri, as variáveis são todas nulas. Conforme os elementos vão sendo criados, as variáveis vão recebendo valores, e esses valores vão sendo interpretados ao longo de todo o código. Com a exclusão da rede como um todo, se deseja voltar ao estado inicial, em que todas as variáveis são nulas. Dessa forma, para excluir a rede por completo, basta limpar as variáveis, atribuindo valores vazios, zeros e nulos. 
+
+\lstinputlisting[caption={Função \textbf{\textit{deleteNet()}}}, captionpos=b, label={lst:deleteNet}]{scripts/deleteNet.js}
+
+A função \textbf{\textit{deleteNet()}} retorna todas as variáveis, que compõem a rede de Petri, para seu valor inicial, zero ou vazio. Além disso, ela limpa o \textbf{\textit{localStorage}} \ref{cap:saveLoadNet}, eliminando os dados salvos na memória do navegador. 
+
+Entretanto, para executar a função \textbf{\textit{deleteNet()}}, é necessário que o usuário confirme tal solicitação, visto que, excluir toda a rede é uma operação extrema, em que se excluirá todos os dados referentes a rede de Petri que está sendo desenvolvida até o momento. Para isso, no momento em que o usuário faz o clique no botão \textbf{Delete Net}, uma caixa de confirmação aparece, pedindo ao usuário para confirmar a ação de exclusão da rede, ou para cancelar a solicitação. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.4]{figuras/confirmDeleteNet.png}
+	\caption[Caixa de confirmação para exclusão da rede por completo]{Caixa de confirmação para exclusão da rede por completo}
+	\label{fig:confirmDeleteNet}
+\end{figure}
+\FloatBarrier
+
+\lstinputlisting[caption={Código para caixa de confirmação de exclusão da rede por completo}, captionpos=b, label={lst:confirmDeleteNet}]{scripts/confirmDeleteNet.js}
+
+Após a confirmação, por parte do usuário, faz-se a exclusão da rede por completo.
+
+\section{Salvando e carregando a rede}\label{cap:saveLoadNet}
 
 \section{Simulação da rede} \label{cap:simulation}
 
