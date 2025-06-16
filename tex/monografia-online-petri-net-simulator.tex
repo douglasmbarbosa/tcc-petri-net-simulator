@@ -1310,13 +1310,13 @@ Na exclusão de lugares e transições, verifica-se quais arcos chegam ou saem d
 
 Por fim, quando exclui-se um arco, de forma individual, verifica-se o elemento inicial e final, ou seja, onde o arco inicia e onde o arco finaliza. Tendo esses 2 elementos, faz-se a exclusão da menção de conexão na propriedade \textbf{\textit{connections}} de cada um desses elementos.
 
-\subsection*{Deletando a rede por completo}
+\subsection*{Deletando a rede por completo} \label{cap:deleteNetFull}
 
 A exclusão da rede por completo é uma funcionalidade de extrema importância. Uma vez que se deseja iniciar um novo projeto é necessário limpar a área de desenvolvimento das redes de Petri. A forma como a aplicação web funciona leva em consideração os valores das diferentes variáveis. Ou seja, a rede de Petri, nada mais é, que a interpretação das várias variáveis dentro do código. Inicialmente, quando não se tem nenhum elemento da rede de Petri, as variáveis são todas nulas. Conforme os elementos vão sendo criados, as variáveis vão recebendo valores, e esses valores vão sendo interpretados ao longo de todo o código. Com a exclusão da rede como um todo, se deseja voltar ao estado inicial, em que todas as variáveis são nulas. Dessa forma, para excluir a rede por completo, basta limpar as variáveis, atribuindo valores vazios, zeros e nulos. 
 
 \lstinputlisting[caption={Função \textbf{\textit{deleteNet()}}}, captionpos=b, label={lst:deleteNet}]{scripts/deleteNet.js}
 
-A função \textbf{\textit{deleteNet()}} retorna todas as variáveis, que compõem a rede de Petri, para seu valor inicial, zero ou vazio. Além disso, ela limpa o \textbf{\textit{localStorage}} \ref{cap:saveLoadNet}, eliminando os dados salvos na memória do navegador. 
+A função \textbf{\textit{deleteNet()}} retorna todas as variáveis, que compõem a rede de Petri, para seu valor inicial, zero ou vazio. Além disso, ela limpa o \textbf{\textit{localStorage}} \ref{cap:localStorage}, eliminando os dados salvos na memória do navegador. 
 
 Entretanto, para executar a função \textbf{\textit{deleteNet()}}, é necessário que o usuário confirme tal solicitação, visto que, excluir toda a rede é uma operação extrema, em que se excluirá todos os dados referentes a rede de Petri que está sendo desenvolvida até o momento. Para isso, no momento em que o usuário faz o clique no botão \textbf{Delete Net}, uma caixa de confirmação aparece, pedindo ao usuário para confirmar a ação de exclusão da rede, ou para cancelar a solicitação. 
 
@@ -1333,6 +1333,50 @@ Entretanto, para executar a função \textbf{\textit{deleteNet()}}, é necessár
 Após a confirmação, por parte do usuário, faz-se a exclusão da rede por completo.
 
 \section{Salvando e carregando a rede}\label{cap:saveLoadNet}
+
+Com a rede de Petri já construída, torna-se essencial disponibilizar mecanismos que permitam seu salvamento e posterior carregamento, garantindo assim a persistência dos dados e a continuidade do trabalho do usuário. Na aplicação web desenvolvida, essas funcionalidades foram implementadas por meio da exportação e importação de arquivos no formato \textbf{JSON}, o que possibilita a portabilidade da rede entre diferentes dispositivos ou sessões. Adicionalmente, a aplicação realiza o salvamento automático no \textbf{\textit{localStorage}} do navegador, permitindo a recuperação da rede de Petri mesmo após o fechamento ou recarregamento da página, evitando perdas acidentais de progresso.
+
+Como citado em capítulos anteriores, a rede de Petri, nada mais é, que a interpretação das várias variáveis ao longo de todo o código \ref{cap:deleteNetFull}. Dessa forma, para que ocorra o salvamento da rede de Petri, é necessário persistir os dados dessas variáveis de maneira simples e portável. Com isso, um arquivo \textbf{\textit{.json}}, contendo todos os dados necessários para a replicação da rede de Petri é exportado sempre que ocorre uma ação de salvamento, através do botão \textbf{\textit{Save Net}} da rede de Petri e, para o carregamento, é feito uma importação, com o botão \textbf{\textit{Load Net}}, desse arquivo \textbf{\textit{.json}}. O formato \textbf{\textit{JSON}} é leve e portável, facilitando o compartilhamento da rede de Petri entre os vários usuários.   
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.3]{figuras/saveNet.png}
+	\caption[Tela para exportação da rede de Petri]{Tela para exportação da rede de Petri}
+	\label{fig:saveNet}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.3]{figuras/loadNet.png}
+	\caption[Tela para importação da rede de Petri]{Tela para importação da rede de Petri}
+	\label{fig:loadNet}
+\end{figure}
+\FloatBarrier
+
+Para a exportação, após o clique do botão \textbf{\textit{Save Net}}, ocorre a chamada da função \textbf{\textit{saveJSON()}}. Ela chama outra função, \textbf{saveVariables()}, que salva as variáveis. Após, ocorre a exportação dos dados no arquivo \textbf{\textit{.json}} 
+
+\lstinputlisting[caption={Código para exportação da rede num arquivo \textbf{\textit{.json}}}, captionpos=b, label={lst:saveNet}]{scripts/saveNet.js}
+
+Para a importação, após o clique do botão \textbf{\textit{Load Net}}, ocorre a chamada da função \textbf{\textit{loadJSON()}}. Ela chama outra função, \textbf{loadVariables()}, que carrega as variáveis. Após, ocorre a importação dos dados do arquivo \textbf{\textit{.json}} 
+
+\lstinputlisting[caption={Código para importação da rede num arquivo \textbf{\textit{.json}}}, captionpos=b, label={lst:saveNet}]{scripts/loadNet.js}
+
+\subsubsection*{localStorage}\label{cap:localStorage} 
+
+Além da exportação e importação de arquivos \textbf{\textit{.json}}, há também o salvamento através do \textbf{\textit{localStorage}}. O \textbf{\textit{localStorage}} é uma funcionalidade nativa dos navegadores modernos que permite o armazenamento de dados localmente no dispositivo do usuário, de forma persistente e sem necessidade de conexão com o servidor \cite{mdn_local_storage}. 
+
+\lstinputlisting[caption={Código para persistência dos dados com \textbf{\textit{localStorage}}}, captionpos=b, label={lst:localStorage}]{scripts/localStorage.js}
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.6]{figuras/localStorage.png}
+	\caption[Dados persistidos no localStorage]{Dados persistidos no \textbf{\textit{localStorage}}}
+	\label{fig:localStorage}
+\end{figure}
+\FloatBarrier
+
+Na aplicação desenvolvida, o \textbf{\textit{localStorage}} é utilizado como mecanismo complementar de persistência de dados. Sempre que a rede de Petri é modificada, o seu estado atual é convertido para uma representação em formato \textbf{\textit{JSON}} e armazenado localmente. Dessa forma, ao retornar à aplicação, o usuário pode retomar seu trabalho a partir do ponto em que parou, sem a necessidade de realizar uma exportação manual. Esta abordagem contribui significativamente para a usabilidade e robustez da ferramenta, proporcionando uma experiência mais fluida e confiável. 
 
 \section{Simulação da rede} \label{cap:simulation}
 
