@@ -88,7 +88,8 @@
 
 \lstset{
     language=JavaScript,          % Define a linguagem como JavaScript
-    basicstyle=\ttfamily,         % Fonte básica do código
+   	backgroundcolor=\color{gray!10},
+    basicstyle=\ttfamily\footnotesize,         % Fonte básica do código
     keywordstyle=\color{blue},    % Cor das palavras-chave
     commentstyle=\color{gray},    % Cor dos comentários
     stringstyle=\color{red},      % Cor das strings
@@ -863,21 +864,22 @@ Uma transição é, graficamente, um retângulo. É possível construir um retâ
 \lstinputlisting[caption={Renderizando transição}, captionpos=b, label={lst:renderTransition}]{scripts/renderTransition.js}
 
 \begin{figure}[ht]
+	\label{fig:renderTransition}
 	\centering
-	\begin{minipage}{0.49\textwidth}
+	\begin{minipage}{0.5\textwidth}
 		\centering
-		\includegraphics[scale=1]{figuras/renderTransitionEnableFalse.png}
+		\includegraphics[scale=1]{figuras/transitionEnableFalse.png}
 		%\caption[renderTransitionEnableFalse]{Transição renderizada não ativada}
 		\label{fig:renderTransitionEnableFalse}
 	\end{minipage}
 	\hfill
-	\begin{minipage}{0.49\textwidth}
+	\begin{minipage}{0.5\textwidth}
 		\centering
-		\includegraphics[scale=1]{figuras/renderTransitionEnableTrue.png}
+		\includegraphics[scale=1]{figuras/transitionEnableTrue.png}
 		%\caption[renderTransitionEnableTrue]{Transição renderizada ativada}
 		\label{fig:renderTransitionEnableTrue}
 	\end{minipage}
-	\caption{Comparação de renderização entre transição não ativada e ativada}
+	\caption{Renderização da transição T1 de forma não ativada e ativada}
 \end{figure}
 
 Como o parâmetro a ser passado para a API do JavaScript para a construção de um retângulo em uma área \textbf{canvas} exige as coordenadas \textbf{x} e \textbf{y} do canto inferior esquerdo do retângulo, fez-se uma compensação, utilizando os valores de altura e largura, para se obter a posição do centro do retângulo. Dessa forma, ao posicionar e movimentar uma transição, se faz pela posição do centro.  A renderização ocorre de forma recursiva em cada uma das transições que estão informados em \textbf{\textit{arrayTransitions}}.
@@ -916,7 +918,7 @@ Para o desenvolvimento da aplicação web, capaz de construir e simular redes de
 
 \subsection*{mousemove}\label{cap:mousemove}
 
-O evento \textbf{\textit{mousemove}} é disparado sempre que ocorre o movimento do ponteiro do mouse sobre um determinado elemento \cite{mdn_mousemove_event}. No caso da aplicação web desenvolvida, é acionado sempre que ocorre o movimento do ponteiro do mouse dentro da área delimitada para o desenvolvimento das redes de Petri. 
+O evento \textbf{\textit{mousemove}} é disparado sempre que ocorre o movimento do ponteiro do mouse sobre um determinado elemento \cite{mdn_mousemove_event}. No caso da aplicação web desenvolvida, é acionado sempre que ocorre o movimento do ponteiro do mouse dentro da área delimitada para o desenvolvimento das redes de 
 
 \lstinputlisting[caption={Exemplo da chamada do evento \textbf{\textit{mousemove}}}, captionpos=b, label={lst:eventmousemove}]{scripts/mousemove.js}
 
@@ -1065,7 +1067,7 @@ Na função \textbf{addTransition()} se constrói um objeto \textbf{\textit{objT
 	\item \textbf{posX:} indica o valor do eixo X em que a transição se encontra na tela;
 	\item \textbf{posY:} indica o valor do eixo Y em que a transição se encontra na tela;
 	\item \textbf{connections:} array que identifica quais outros objetos estão ligados a essa transição;
-	\item \textbf{isEnable:} valor booleano que indica se as exigências para ativação da transição foram cumpridas.
+	\item \textbf{isEnable:} valor booleano que indica se as exigências para ativação da transição foram cumpridas.\label{prop:isEnable}
 \end{enumerate}
 
 Após as definições desses valores no \textbf{\textit{objTransition}} se faz a inserção do mesmo no \textbf{\textit{arrayTransitions}}, em que se encontra todas as outras transições de mesmas propriedades. Também se faz o acréscimo de \textbf{\textit{1}} na contagem de quantas transições existem até o momento.
@@ -1379,6 +1381,23 @@ Além da exportação e importação de arquivos \textbf{\textit{.json}}, há ta
 Na aplicação desenvolvida, o \textbf{\textit{localStorage}} é utilizado como mecanismo complementar de persistência de dados. Sempre que a rede de Petri é modificada, o seu estado atual é convertido para uma representação em formato \textbf{\textit{JSON}} e armazenado localmente. Dessa forma, ao retornar à aplicação, o usuário pode retomar seu trabalho a partir do ponto em que parou, sem a necessidade de realizar uma exportação manual. Esta abordagem contribui significativamente para a usabilidade e robustez da ferramenta, proporcionando uma experiência mais fluida e confiável. 
 
 \section{Simulação da rede} \label{cap:simulation}
+
+A simulação da rede de Petri desenvolvida pelo usuário desempenha um papel fundamental no funcionamento do sistema. Após a criação da rede, torna-se necessário permitir sua manipulação e execução. Como as redes de Petri possuem uma representação matemática bem definida, a simulação pode ser realizada de forma eficiente. Para isso, é necessário comparar, modificar e atualizar as variáveis que compõem a estrutura da rede, como número de marcações dos lugares, peso dos arcos e verificando se uma transição está ativada ou não. 
+
+Para simular a rede de Petri, duas funções principais foram desenvolvidas. A primeira, denominada \textbf{\textit{netSimulationEnables()},} analisa todas as transições, verificando quais delas estão ativadas. Cada transição é analisada individualmente, verificando se as condições para ativação estão sendo cumpridas. Caso sim, a propriedade \textbf{\textit{isEnable}} \ref{prop:isEnable} da transição é definida como \textbf{\textit{true}} e a cor da transição na tela se altera para vermelho \ref{fig:renderTransition}. 
+
+\lstinputlisting[caption={Função \textbf{\textit{netSimulationEnables()}}}, captionpos=b, label={lst:saveNet}]{scripts/transitionEnable.js}
+
+Inicialmente, percorre-se todas as transições analisando quais arcos estão chegando. Essa etapa é feita observando a propriedade \textbf{\textit{connections}} de cada transição. Analisando o peso do arco, em comparação com o número de marcações do lugar em que ele está saindo, determina-se se o arco está ativado ou não.
+
+\begin{description}
+	\item[Arcos normais:] número de marcações $\geq$ peso do arco
+	\item[Arcos inibidores:] número de marcações < peso do arco
+\end{description}
+
+Após cada verificação de arco, o resultado é armazenado no \textbf{\textit{arrayIsEnable}}. Caso todas as verificações sejam verdadeiras, a propriedade \textbf{\textit{isEnable}} da transição é alterada para \textbf{\textit{true}}, caso contrário, como \textbf{\textit{false}}. 
+
+A segunda função, denominada \textbf{\textit{netSimulationMove()}} ...
 
 \section{Publicação do projeto online}
 
