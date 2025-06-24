@@ -1391,13 +1391,52 @@ Para simular a rede de Petri, duas funções principais foram desenvolvidas. A p
 Inicialmente, percorre-se todas as transições analisando quais arcos estão chegando. Essa etapa é feita observando a propriedade \textbf{\textit{connections}} de cada transição. Analisando o peso do arco, em comparação com o número de marcações do lugar em que ele está saindo, determina-se se o arco está ativado ou não.
 
 \begin{description}
-	\item[Arcos normais:] número de marcações $\geq$ peso do arco
-	\item[Arcos inibidores:] número de marcações < peso do arco
+	\item[Arcos normais:] número de marcações $\geq$ peso do arco;
+	\item[Arcos inibidores:] número de marcações < peso do arco.
 \end{description}
 
 Após cada verificação de arco, o resultado é armazenado no \textbf{\textit{arrayIsEnable}}. Caso todas as verificações sejam verdadeiras, a propriedade \textbf{\textit{isEnable}} da transição é alterada para \textbf{\textit{true}}, caso contrário, como \textbf{\textit{false}}. 
 
-A segunda função, denominada \textbf{\textit{netSimulationMove()}} ...
+A segunda função, denominada \textbf{\textit{netSimulationMove()}}, faz a movimentação das marcações, conforme o usuário clica na transição que está ativada. A função é chamada sempre que ocorre o evento \textbf{\textit{mousedown}} e a variável \textbf{\textit{simulation}} é definida como\textbf{\textit{true}}, o que ocorre sempre que o botão \textbf{\textit{Simulation}} é pressionado.  
+
+\lstinputlisting[caption={Código para ativação da simulação}, captionpos=b, label={lst:enableSimulation}]{scripts/enableSimulation.js}
+
+Tendo a simulação ativada, o usuário deve fazer o clique nas transições que deseja, simulando o comportamento da rede e movimentando as marcações do lugar de origem para o lugar de destino. A função \textbf{\textit{netSimulationMove()}} executa duas ações: 
+
+\begin{enumerate}
+	\item subtrair do lugar de origem o número de marcações com base no peso do arco que sai;
+	\item adicionar ao lugar de destino o número de marcações com base no peso do arco que chega.
+\end{enumerate}
+
+\lstinputlisting[caption={Função \textbf{\textit{netSimulationMove()}}}, captionpos=b, label={lst:netSimulationMove}]{scripts/netSimulationMove.js}
+
+O primeiro passo da função verifica se o clique ocorreu dentro de alguma transição e se ela está ativada. Caso sim, as duas ações ocorrem. A primeira subtrai do lugar de origem o valor correspondente ao peso do arco que está saindo. A segunda soma ao lugar de destino o valor correspondente ao peso de arco. Também, é necessário que os arcos para essas ações sejam do tipo normal. O peso dos arcos inibidores não interferem na subtração ao adição de marcações, apenas na ativação dos arcos.
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.8]{figuras/moveTokens1.png}
+	\caption[Movimentando as marcações]{Movimentação das marcações - Parte 1}
+	\label{fig:moveTokens1}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.8]{figuras/moveTokens2.png}
+	\caption[Movimentando as marcações]{Movimentação das marcações - Parte 2}
+	\label{fig:moveTokens2}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.8]{figuras/moveTokens3.png}
+	\caption[Movimentando as marcações]{Movimentação das marcações - Parte 3}
+	\label{fig:moveTokens3}
+\end{figure}
+\FloatBarrier
+
+Através da função \textbf{\textit{netSimulationMove()}} simula-se o comportamento da rede de Petri.
 
 \section{Publicação do projeto online}
 
