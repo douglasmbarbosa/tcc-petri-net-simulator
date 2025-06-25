@@ -736,7 +736,7 @@ Conforme o exemplo \ref{exemplo_estocastica} é possível analisar o funcionamen
 
 %\section{Linguagens de marcação de texto}
 
-\section{Tecnologias para o desenvolvimento web}
+\section{Tecnologias para o desenvolvimento web} \label{cap:tecnologiaweb}
 
 \subsection*{HTML}
 
@@ -1439,6 +1439,58 @@ O primeiro passo da função verifica se o clique ocorreu dentro de alguma trans
 Através da função \textbf{\textit{netSimulationMove()}} simula-se o comportamento da rede de Petri.
 
 \section{Publicação do projeto online}
+
+A publicação do projeto online garante que qualquer usuário com acesso a internet consiga acessar a aplicação web desenvolvida. Com o objetivo de tornar o simulador de redes de Petri acessível, de forma ampla e gratuita, optou-se por realizar sua publicação como uma aplicação web estática, utilizando ferramentas modernas de desenvolvimento e hospedagem. O projeto, desenvolvido integralmente com tecnologias de \textbf{\textit{front-end}}, HTML, CSS e JavaScript \ref{cap:tecnologiaweb}, não requer \textbf{\textit{back-end}} ou banco de dados, tornando-o ideal para ser hospedado em plataformas que oferecem suporte a sites estáticos. 
+
+Para o controle de versão e o gerenciamento do código-fonte, utilizou-se a plataforma Github, amplamente reconhecida na área de desenvolvimento de software por oferecer hospedagem de repositórios baseados no sistema de controle de versões Git. O código-fonte do simulador encontra-se hospedado em um repositório público, o que promove a transparência do desenvolvimento e facilita eventuais colaborações futuras. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.33]{figuras/repoGithub.png}
+	\caption[Repositório Github]{Repositório Github:  \href{https://github.com/douglasmbarbosa/tcc-petri-net-simulator}{github.com/douglasmbarbosa/tcc-petri-net-simulator}}
+	\label{fig:repoGithub}
+\end{figure}
+\FloatBarrier
+
+A publicação online e o processo de entrega contínua foram realizados por meio da ferramenta Netlify, uma plataforma de hospedagem focada em aplicações front-end. O Netlify oferece integração nativa com o GitHub, permitindo que cada modificação realizada na \textbf{\textit{branch}} \textbf{\textit{main}} do repositório dispare automaticamente um novo processo de \textbf{\textit{build}} e \textbf{\textit{deploy}} do projeto. Ou seja, sempre que ocorre uma alteração no repositório, faz-se a subida dessas modificações automaticamente para o usuário final. Essa integração contínua garante que a versão publicada do simulador esteja sempre sincronizada com a última versão do código. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.5]{figuras/netlify1.png}
+	\caption[netlify 1 ]{Projeto criado na plataforma Netlyfy}
+	\label{fig:netlify1}
+\end{figure}
+\FloatBarrier
+
+Para a configuração do projeto na plataforma Netlify, optou-se pela utilização de um domínio personalizado. O domínio \textbf{\textit{\href{https://petrinetsimulator.com}{petrinetsimulator.com}}} foi adquirido na plataforma Hostinger para a publicação do projeto online. Após a compra do domínio, registrou-se o mesmo na Netlify, juntamente com a integração com o Github. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.35]{figuras/hostingerDomain.png}
+	\caption[Hostinger Domain]{Domínio personalizado na plataforma Hostinger}
+	\label{fig:hostinger}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.4]{figuras/netlify2.png}
+	\caption[netlify 2]{Domínio personalizado configurado na plataforma Netlify}
+	\label{fig:netlify2}
+\end{figure}
+\FloatBarrier
+
+Além dessas configurações, a plataforma Netlify fornece o certificado SSL/TLS, garantindo a utilização do protocolo HTTPS, fornecendo um acesso seguro para os usuário da aplicação web. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.5]{figuras/netlify3.png}
+	\caption[netlify 3]{Certificado SSL/TLS configurado na plataforma Netlify}
+	\label{fig:netlify2}
+\end{figure}
+\FloatBarrier
+
+A integração entre as ferramentas adotadas e as práticas empregadas ao longo do desenvolvimento contribuíram para a disponibilização eficiente, segura e acessível, de forma online, ao simulador de redes de Petri. 
 
 % Caso seja um trabalho oriundo da Escola de Minas ou do ICEB, é conveniente apresentar uma fórmula:
 % \begin{equation}
