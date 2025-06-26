@@ -392,7 +392,7 @@ Em 1962, Carl Adam Petri, por meio de sua dissertação, mostrou para o mundo a 
 
 A evolução da industria e da tecnologia também culminou com a popularização da internet \cite{lins2013evoluccao}. O surgimento do World Wide Web, em 1990, por Tim Berners-Lee, permitiu aos primeiros usuários da internet, como conhecemos hoje, a interação com um sistema de hipertexto. Com o passar dos anos, as aplicações web se tornaram cada vez mais comuns e sofisticadas. O que antes começou com páginas estáticas evoluiu para aplicações dinâmicas, interativas e de fácil acesso para a maioria das pessoas. Atualmente, se consegue ter uma experiência muito próxima as funcionalidades de um computador pessoal, com aplicações desktop, apenas manipulando abas em um navegador.
 
-Diante da facilidade de acesso a aplicativos web por meio dos navegadores, como Google Chrome, Firefox, Safari, Edge, entre outros, surge a seguinte ideia: desenvolver uma aplicação web que possibilite aos usuários a criação e simulação do comportamento de redes de Petri, de forma simples e intuitiva. Para tal, torna-se necessário o conhecimento de tecnologias voltadas para o desenvolvimento web, como HTML5, CSS3 e JavaScript.
+Diante da facilidade de acesso a aplicativos web por meio dos navegadores, como Google Chrome, Firefox, Safari, Edge, entre outros, surge a seguinte ideia: desenvolver uma aplicação web que possibilite aos usuários a criação e simulação do comportamento de redes de Petri, de forma simples e intuitiva. Para tal, torna-se necessário o conhecimento de tecnologias voltadas para o desenvolvimento web, como HTML5, CSS3 e Javascript.
 
 Além do conhecimento em desenvolvimento, será necessário  compreender os conceitos e práticas de infraestrutura, viabilizando a disponibilidade e o acesso contínuo à aplicação web. Uma vez desenvolvida, a aplicação pode ser disponibilizada para acesso por qualquer usuário que possua conexão com a internet, facilitando a modelagem de redes de Petri.
 
@@ -438,7 +438,7 @@ Nesse contexto, uma aplicação web, simples e intuitiva, atenderia as necessida
 
 O desenvolvimento de uma aplicação web capaz de criar e simular o comportamento de redes de Petri.
 
-\section{Objetivos Específicos}
+\section{Objetivos Específicos} \label{cap:objEspecifico}
 
 \begin{itemize}
         \item Desenvolvimento de um motor de simulação, capaz de simular o comportamento das redes de Petri criadas, possibilitando a visualização, por parte do usuário, do comportamento em diferentes cenários;
@@ -484,7 +484,7 @@ Paralelamente ao desenvolvimento do diagrama de fluxo, será criado um diagrama 
 
 \newpage
 
-Após a definição do design, com a criação do diagrama de fluxo e do diagrama de classe, inicia-se o processo de programação. A linguagem de programação JavaScript será utilizada, juntamente com HTML e CSS. O desenvolvimento acompanhará o design pré-estabelecido. Com isso, espera-se a criação de um MVP (Minimum Viable Product).
+Após a definição do design, com a criação do diagrama de fluxo e do diagrama de classe, inicia-se o processo de programação. A linguagem de programação Javascript será utilizada, juntamente com HTML e CSS. O desenvolvimento acompanhará o design pré-estabelecido. Com isso, espera-se a criação de um MVP (Minimum Viable Product).
 
 Com a criação do MVP, em um ambiente local, a aplicação será hospedada em um servidor on-premisse da Universidade Federal de Ouro Preto. Após a hospedagem, espera-se que a aplicação esteja disponível para acesso público por meio da internet.
 
@@ -738,17 +738,37 @@ Conforme o exemplo \ref{exemplo_estocastica} é possível analisar o funcionamen
 
 \section{Tecnologias para o desenvolvimento web} \label{cap:tecnologiaweb}
 
+O desenvolvimento de aplicações web interativas e eficientes requer a utilização de um conjunto de tecnologias modernas que, utilizadas juntas, fornecem os recursos necessários para a construção de interfaces gráficas, implementação de lógicas, estilização visual e versionamento de código. Para tais necessidades, tem-se as principais ferramentas utilizadas para tais finalidades, sendo elas o HTML, CSS, Javascript e Git. 
+
 \subsection*{HTML}
 
-referência \url{https://developer.mozilla.org/pt-BR/docs/Web/HTML}
+O \textbf{HTML} (\textit{HyperText Markup Language}) é a linguagem de marcação padrão para a criação e estruturação de conteúdo na internet \cite{mdn_html}. Sua função principal é definir a estrutura semântica de uma página web, organizando elementos como títulos, parágrafos, imagens, links, botões, formulários e vários outros elementos. No desenvolvimento de uma aplicação web para construção e simulação de redes de Petri, o HTML atua como esqueleto da interface, definindo todas as funcionalidades com as quais o usuário teria acesso. 
+  
+Dessa forma, o HTML é composto por uma série de elementos conhecidos como \textit{tags}, os quais são utilizados para estruturar e identificar semanticamente o conteúdo de uma página web. Cada {\textit{tag}} possui uma função específica e pode conter atributos que modificam seu comportamento ou aparência.
+
+A estrutura básica de um documento HTML é hierárquica e inicia com a \textit{tag} \textbf{<!DOCTYPE html>}, seguida pelas \textit{tags} \textbf{<html>}, \textbf{<head>} e \textbf{<body>}, que organizam o conteúdo e os metadados da página. O conteúdo visual e interativo apresentado ao usuário reside, predominantemente, dentro da \textit{tag} \textbf{<body>}, enquanto elementos de configuração, definição de estilos e \textit{scripts} são alocados na \textit{tag} \textbf{<head>}. 
+
+Por fim, através do arquivo HTML faz-se a junção de outras tecnologias, tais como o CSS e o Javascript. 
 
 \subsection*{CSS}
 
-referência \url{https://developer.mozilla.org/pt-BR/docs/Web/CSS}
+O \textbf{CSS} (\textit{Cascading Style Sheets}) é a linguagem responsável pela definição da aparência dos elementos HTML \cite{mdn_css}. Através do CSS, é possível personalizar cores, tamanhos, posicionamentos, margens, fontes e efeitos visuais. A estilização também contribuiu para a experiência do usuário ao proporcionar \textit{feedback} visual em interações, como a mudança de cor de um botão ao clicar e a exibição de mensagens de alerta. 
 
-\subsection*{JavaScript}
+Para a aplicação de construção e simulação de redes de Petri, o CSS é fundamental para estilizar os elementos gráficos, os lugares, transições e arcos, definindo as cores e tamanhos, e organizando o layout da área de desenho e dos painéis de controle, garantindo uma experiência de usuário intuitiva e esteticamente agradável. 
 
-referência \url{https://developer.mozilla.org/pt-BR/docs/Web/JavaScript}
+\subsection*{Javascript}
+
+O \textbf{Javascript} é uma linguagem de programação interpretada, executada no lado do navegador do usuário, e é responsável por implementar comportamentos dinâmicos nas páginas web \cite{mdn_css}. Trata-se de uma linguagem orientada a eventos, que permite responder a interações do usuário, manipular o \textit{DOM} em tempo real, controlar estados da aplicação e realizar operações lógicas e matemáticas.
+
+Enquanto o HTML é responsável pela estrutura da página e o CSS pela sua apresentação visual, o Javascript permite a implementação de comportamentos dinâmicos, como respostas a eventos de usuários, manipulação do conteúdo da página em tempo real, validação de formulários, animações, chamadas assíncronas, entre outros. 
+
+Na aplicação proposta, o Javascript desempenha papel central no funcionamento do simulador. Toda a lógica de construção e simulação da rede de Petri foi implementada em Javascript, permitindo o desenvolvimento de diversas funcionalidades para a aplicação e para o cumprimento dos objetivos específicos do projeto \ref{cap:objEspecifico}. 
+
+\subsection*{Git} \label{cap:git}
+
+O \textbf{Git} é um sistema de controle de versão distribuído amplamente utilizado em projetos de desenvolvimento de software \cite{git_docs}. Seu principal objetivo é registrar e gerenciar o histórico de alterações feitas no código-fonte, permitindo o acompanhamento da evolução do projeto, reversão de modificações e colaboração de forma eficiente.
+
+Para o desenvolvimento do projeto, o controle de versão é essencial. O Git, em conjunto com a plataforma GitHub, permitem não apenas o versionamento contínuo do código-fonte, mas também a criação de ramificações para o desenvolvimento simultâneo de diferentes funcionalidades, sem comprometer a integridade da versão principal do projeto. Além disso, o GitHub viabiliza a disponibilização pública do repositório, favorecendo a transparência, a colaboração e o acesso ao código por terceiros. A utilização de ambas ferramentas garantem a preservação do histórico de alterações, facilitando o rastreamento de modificações, a identificação de regressões e a reversão de mudanças indesejadas, contribuindo significativamente para a organização e segurança do desenvolvimento.
 
 \section{Simuladores Conhecidos}
 
@@ -757,6 +777,37 @@ referência \url{https://developer.mozilla.org/pt-BR/docs/Web/JavaScript}
 \subsection*{Online Petri-net simulator - OPN}
 
 \subsection*{TryRdP}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 % ---
 \chapter{Desenvolvimento} \label{cap:desenvolvimento}
@@ -783,7 +834,7 @@ Com os requisitos em mente, criou-se a base de arquivos que seriam utilizados pa
 	\item script.js.
 \end{enumerate}
 
-Através do arquivo \textbf{index.html} estruturou-se toda a interface da aplicação. É nele em que se define todos os elementos que vão fazer parte da interface apresentada ao usuário final. O arquivo \textbf{sytle.css} define as principais propriedades visuais que foram estabelicidas anteriormente no arquivo \textbf{index.html}. Por fim, no arquivo \textbf{script.js} se define toda a lógica da aplicação. Através da liguagem de programação JavaScript se desenvolveu todas as funcionalidades que foram estabelicidas anteriormente. 
+Através do arquivo \textbf{index.html} estruturou-se toda a interface da aplicação. É nele em que se define todos os elementos que vão fazer parte da interface apresentada ao usuário final. O arquivo \textbf{sytle.css} define as principais propriedades visuais que foram estabelicidas anteriormente no arquivo \textbf{index.html}. Por fim, no arquivo \textbf{script.js} se define toda a lógica da aplicação. Através da liguagem de programação Javascript se desenvolveu todas as funcionalidades que foram estabelicidas anteriormente. 
 
 No arquivo \textbf{index.hmtl} inicialmente foi criado o título da página denominado \textbf{Online Petri Net Simulator} e seu posicionamento foi definido no topo e ao centro da tela, conforme imagem abaixo:
 
@@ -804,7 +855,7 @@ A renderização de elementos visuais na interface é uma das funcionalidades es
 
 De modo simples, os elementos de uma rede de Petri são representados de forma gráfica por meio de figuras geométricas já conhecidas pela maioria das pessoas, tornando mais simples a analogia dos elementos das redes de Petri, com figuras geométricas já conhecidas. Os lugares são representados por círculos, as transições por retângulos, e os arcos que ligam esses elementos são ilustrados como setas direcionais. Elementos adicionais, como marcações, pesos e títulos, são exibidas como textos e números renderizados diretamente na tela, complementando a representação visual e fornecendo os dados necessários para a interpretação correta da rede.
 
-O HTML5 fornece o elemento \textbf{<canvas>}, que permite o desenvolvimento de figuras geométricas, gráficos e textos. No contexto desse projeto, o \textbf{canvas} é essencial. Primeiramente, fornecendo uma área na tela para o desenvolvimento e manipulação das redes de Petri. Posteriormente, fornecendo uma API que pode ser manipulada, através do JavaScript, para a criação dos elementos gráficos. 
+O HTML5 fornece o elemento \textbf{<canvas>}, que permite o desenvolvimento de figuras geométricas, gráficos e textos. No contexto desse projeto, o \textbf{canvas} é essencial. Primeiramente, fornecendo uma área na tela para o desenvolvimento e manipulação das redes de Petri. Posteriormente, fornecendo uma API que pode ser manipulada, através do Javascript, para a criação dos elementos gráficos. 
 
 \lstinputlisting[caption={Chamada do elemento \textbf{<canvas>} no HTML5}, captionpos=b, label={lst:areacanvas}]{scripts/areaCanvas.html}
 
@@ -822,13 +873,13 @@ Tendo a área \textbf{canvas} definida, inicia-se a manipulação dos elementos 
 
 \lstinputlisting[caption={Função loop}, captionpos=b, label={lst:functionloop}]{scripts/functionLoop.js}
 
-O método JavaScript \textbf{\textit{window.requestAnimationFrame(loop, canvas)}} informa ao navegador que se deseja executar animações. Além disso, ele sincroniza a taxa de atualização, em \textbf{Hz}, das animações, com a taxa de atualização do monitor do usuário. Posteriormente, faz-se a chamada da função \textbf{\textit{render()}}, que irá renderizar os elementos na área \textbf{canvas}. Também, a função \textbf{\textit{buttonColors()}} é acionada. Ela verifica qual botão foi pressionado e, com base nas informações, altera a cor do botão que indica a ação a ser executada. 
+O método Javascript \textbf{\textit{window.requestAnimationFrame(loop, canvas)}} informa ao navegador que se deseja executar animações. Além disso, ele sincroniza a taxa de atualização, em \textbf{Hz}, das animações, com a taxa de atualização do monitor do usuário. Posteriormente, faz-se a chamada da função \textbf{\textit{render()}}, que irá renderizar os elementos na área \textbf{canvas}. Também, a função \textbf{\textit{buttonColors()}} é acionada. Ela verifica qual botão foi pressionado e, com base nas informações, altera a cor do botão que indica a ação a ser executada. 
 
 Além, faz-se a verificação da variável \textbf{\textit{simulation}}, que indica ao código se está ocorrendo a ação de simulação da rede de Petri. Caso sim, a função \textbf{\textit{netSimulationEnables()}}, responsável pela simulação da rede de Petri \ref{cap:simulation}, é acionada.
 
 \subsection*{Função de renderização}
 
-A função \textbf{\textit{render()}} é responsável pela renderização de todos os elementos dentro da área \textbf{canvas} destinada a construção e simulação das redes de Petri. Ela utiliza a API do JavaScript para a manipulação do \textbf{canvas}. Para cada tipo de elemento inicia-se o desenho com \textbf{\textit{beginPatch()}} e se finaliza com \textbf{\textit{beginPatch()}}
+A função \textbf{\textit{render()}} é responsável pela renderização de todos os elementos dentro da área \textbf{canvas} destinada a construção e simulação das redes de Petri. Ela utiliza a API do Javascript para a manipulação do \textbf{canvas}. Para cada tipo de elemento inicia-se o desenho com \textbf{\textit{beginPatch()}} e se finaliza com \textbf{\textit{beginPatch()}}
 
 \begin{enumerate}
 	\item renderização dos lugares;
@@ -882,7 +933,7 @@ Uma transição é, graficamente, um retângulo. É possível construir um retâ
 	\caption{Renderização da transição T1 de forma não ativada e ativada}
 \end{figure}
 
-Como o parâmetro a ser passado para a API do JavaScript para a construção de um retângulo em uma área \textbf{canvas} exige as coordenadas \textbf{x} e \textbf{y} do canto inferior esquerdo do retângulo, fez-se uma compensação, utilizando os valores de altura e largura, para se obter a posição do centro do retângulo. Dessa forma, ao posicionar e movimentar uma transição, se faz pela posição do centro.  A renderização ocorre de forma recursiva em cada uma das transições que estão informados em \textbf{\textit{arrayTransitions}}.
+Como o parâmetro a ser passado para a API do Javascript para a construção de um retângulo em uma área \textbf{canvas} exige as coordenadas \textbf{x} e \textbf{y} do canto inferior esquerdo do retângulo, fez-se uma compensação, utilizando os valores de altura e largura, para se obter a posição do centro do retângulo. Dessa forma, ao posicionar e movimentar uma transição, se faz pela posição do centro.  A renderização ocorre de forma recursiva em cada uma das transições que estão informados em \textbf{\textit{arrayTransitions}}.
 
 \subsubsection*{Renderização dos arcos}
 
@@ -910,9 +961,9 @@ Há também o segundo caso, em que o usuário cria um ponto intermediário. Ness
 
 Além disso, o arco é mostrado, em tempo real, enquanto é desenhado. Faz-se isso utilizando o ponto inicial, juntamente com os pontos intermediário, caso existam, e a posição final é a do ponteiro do mouse, obtida com \textbf{\textit{mousemove}} \ref{cap:mousemove}. O processo é o mesmo que o anterior, diferenciado-se pelo fato do ponto final ser o obtido pelas propriedades \textbf{\textit{clientX}} e \textbf{\textit{clientY}} do evento \textbf{\textit{mousemove}} \ref{fig:mousemove_desenhando_arco}. 
 
-\section{Eventos do JavaScript}
+\section{Eventos do Javascript}
 
-No desenvolvimento de aplicações web, é essencial que as páginas sejam responsivas e interativas. A linguagem JavaScript nos fornece uma série de funcionalidades que permitem o desenvolvimento de eventos para a interatividade do usuário com as páginas que ele acessa. Os eventos representam ações e recorrências que ocorrem dentro do navegador do usuário, como cliques, movimentação do mouse, pressionamento de teclas no teclado, dentre outras ações que um usuário, normalmente, pode executar dentro de uma página na web. 
+No desenvolvimento de aplicações web, é essencial que as páginas sejam responsivas e interativas. A linguagem Javascript nos fornece uma série de funcionalidades que permitem o desenvolvimento de eventos para a interatividade do usuário com as páginas que ele acessa. Os eventos representam ações e recorrências que ocorrem dentro do navegador do usuário, como cliques, movimentação do mouse, pressionamento de teclas no teclado, dentre outras ações que um usuário, normalmente, pode executar dentro de uma página na web. 
 
 Para o desenvolvimento da aplicação web, capaz de construir e simular redes de Petri, é fundamental 3 principais eventos, sendo eles o \textbf{\textit{mousemove}}, \textbf{\textit{mousedown}} e \textbf{\textit{mouseup}}. Esses eventos permitem que o usuário consiga interagir com a área da página dedicada ao desenvolvimento das redes de Petri. 
 
@@ -1440,9 +1491,9 @@ Através da função \textbf{\textit{netSimulationMove()}} simula-se o comportam
 
 \section{Publicação do projeto online}
 
-A publicação do projeto online garante que qualquer usuário com acesso a internet consiga acessar a aplicação web desenvolvida. Com o objetivo de tornar o simulador de redes de Petri acessível, de forma ampla e gratuita, optou-se por realizar sua publicação como uma aplicação web estática, utilizando ferramentas modernas de desenvolvimento e hospedagem. O projeto, desenvolvido integralmente com tecnologias de \textbf{\textit{front-end}}, HTML, CSS e JavaScript \ref{cap:tecnologiaweb}, não requer \textbf{\textit{back-end}} ou banco de dados, tornando-o ideal para ser hospedado em plataformas que oferecem suporte a sites estáticos. 
+A publicação do projeto online garante que qualquer usuário com acesso a internet consiga acessar a aplicação web desenvolvida. Com o objetivo de tornar o simulador de redes de Petri acessível, de forma ampla e gratuita, optou-se por realizar sua publicação como uma aplicação web estática, utilizando ferramentas modernas de desenvolvimento e hospedagem. O projeto, desenvolvido integralmente com tecnologias de \textbf{\textit{front-end}}, HTML, CSS e Javascript \ref{cap:tecnologiaweb}, não requer \textbf{\textit{back-end}} ou banco de dados, tornando-o ideal para ser hospedado em plataformas que oferecem suporte a sites estáticos. 
 
-Para o controle de versão e o gerenciamento do código-fonte, utilizou-se a plataforma Github, amplamente reconhecida na área de desenvolvimento de software por oferecer hospedagem de repositórios baseados no sistema de controle de versões Git. O código-fonte do simulador encontra-se hospedado em um repositório público, o que promove a transparência do desenvolvimento e facilita eventuais colaborações futuras. 
+Para o controle de versão e o gerenciamento do código-fonte, utilizou-se a plataforma Github, amplamente reconhecida na área de desenvolvimento de software por oferecer hospedagem de repositórios baseados no sistema de controle de versões Git  \ref{cap:git}. O código-fonte do simulador encontra-se hospedado em um repositório público, o que promove a transparência do desenvolvimento e facilita eventuais colaborações futuras. 
 
 \begin{figure}[ht] 
 	\centering
