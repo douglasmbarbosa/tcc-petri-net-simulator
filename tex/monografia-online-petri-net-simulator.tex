@@ -774,40 +774,63 @@ Para o desenvolvimento do projeto, o controle de versão é essencial. O Git, em
 
 \subsection*{Pipe}
 
-\subsection*{Online Petri-net simulator - OPN}
+O \textbf{PIPE} (Plataform Independent Petri Net Editor) é uma ferramenta de software de código aberto para simulação e análise de redes de Petri \cite{Dingle2009PIPE2}. Desenvolvido em linguagem Java, o PIPE se destaca por ser uma ferramenta multiplataforma, operando  em diversos sistemas operacionais, como Windows, MacOS e Linux, facilitando sua acessibilidade e disseminação na comunidade acadêmica e de pesquisa. Entretanto, o projeto aparenta não estar mais em desenvolvimento, visto que, não há mais contribuições no repositório do projeto no Github \cite{PIPEGitHub}. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.30]{figuras/pipeRepo.png}
+	\caption[Repositório no Github do PIPE]{Repositório no Github do PIPE}
+	\label{fig:pipeRepo}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.30]{figuras/pipe.png}
+	\caption[Interface do simulador PIPE]{Interface do simulador PIPE}
+	\label{fig:interfacePipe}
+\end{figure}
+\FloatBarrier
+
+Apesar do PIPE ser uma excelente ferramenta para modelagem e simulação de redes de Petri, seu projeto aparenta não ter mais atualizações, e sua instalação requer conhecimento técnico em Java, podendo ser impeditivo para alguns usuários. Além disso, sua última versão apresenta \textit{bugs}, dificultando a sua utilização. 
+
+\subsection*{APO}
+
+A ferramenta APO (Accessible Petri Net Operations) consiste em uma interface web desenvolvida para facilitar o uso do APT (Analysis of Petri Nets and Transition Systems), um software robusto voltado à análise e síntese de redes de Petri e Sistemas de Transição \cite{apoGithub}. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.30]{figuras/apoRepo.png}
+	\caption[Repositório no Github do APO]{Repositório no Github do APO}
+	\label{fig:pipeAPO}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.30]{figuras/apoInterface.png}
+	\caption[Interface do simulador APO]{Interface do simulador APO}
+	\label{fig:interfaceAPO}
+\end{figure}
+\FloatBarrier
+
+A construção das redes é feita de maneira interativa, por meio de uma barra de ferramentas intuitiva, que permite a criação de lugares, transições e arcos. Após a modelagem da rede, é possível realizar análises automáticas utilizando os algoritmos integrados ao APT, diretamente acessíveis por meio da barra de menu. 
 
 \subsection*{TryRdP}
 
+O \textbf{TryRdP} é uma ferramenta web gratuita e interativa desenvolvida com o objetivo de apoiar o ensino e a aprendizagem significativa das redes de Petri \cite{educomp}. Diante da dificuldade que muitos estudantes enfrentam com o ensino tradicional, muitas vezes excessivamente teórico e abstrato, o TryRdP surge como uma alternativa mais prática e acessível, oferecendo uma abordagem baseada em exemplos reais de aplicação. 
 
+A ferramenta é organizada em três seções principais: introdução, modelagem básica e modelagem avançada, cada uma com explicações detalhadas dos conceitos e exercícios que aumentam progressivamente em complexidade. Essa estrutura favorece o aprendizado gradual e autônomo, permitindo que os usuários desenvolvam suas habilidades de forma prática e contextualizada. Além disso, a ferramenta TryRdP foi desenvolvida utilizando-se de tecnologias web modernas, como HTML, CSS e JavaScript, além de outros \textit{frameworks} para desenvolvimento web.
 
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.40]{figuras/tryrdpInterface.png}
+	\caption[Interface do simulador TryRdP]{Interface do simulador TryRdP}
+	\label{fig:interfaceTryRdP}
+\end{figure}
+\FloatBarrier
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+O TryRDP configura-se como uma ferramenta bastante eficaz para fins educacionais, especialmente no processo de aprendizagem sobre redes de Petri. Sua proposta se destaca pela disponibilização de exercícios com níveis de dificuldade progressivos, além de fornecer mensagens de \textit{feedback} e correção sempre que o usuário comete erros, o que contribui significativamente para o aprendizado ativo. No entanto, a acessibilidade da ferramenta ainda representa uma limitação, uma vez que a localização do endereço \textit{URL} para acesso externo não é intuitiva nem prontamente disponível, dificultando seu uso por novos usuários.
 
 % ---
 \chapter{Desenvolvimento} \label{cap:desenvolvimento}
