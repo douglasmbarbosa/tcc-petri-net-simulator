@@ -167,7 +167,7 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{DESENVOLVIMENTO DE UMA APLICAÇÃO WEB COM O OBJETIVO DE CONSTRUIR E SIMULAR REDES DE PETRI}
+\titulo{SIMULADOR WEB PARA CONSTRUÇÃO E EXECUÇÃO INTERATIVA DE REDES DE PETRI}
 \autor{Douglas Meneses Barbosa}
 \local{Ouro Preto}
 \data{\the\year} % imprime o ano corrente no campo data
@@ -290,13 +290,28 @@
 
 % Agradecimentos - opcional
 \begin{agradecimentos}
-\noindent Os agradecimentos [são opcionais, e] vem aqui... 
+\noindent A realização deste trabalho não teria sido possível sem o apoio e incentivo de pessoas fundamentais ao longo da minha trajetória acadêmica, profissional e pessoal.
+
+\noindent Agradeço, em primeiro lugar, aos meus pais, João e Conceição, por todo o amor, apoio incondicional e pelos valores que me ensinaram e que me trouxeram até aqui. Sua dedicação e confiança foram essenciais para que eu pudesse trilhar este caminho com perseverança.
+
+\noindent Aos meus amigos que estiveram comigo durante os anos vividos em Ouro Preto, deixo minha profunda gratidão pelos momentos compartilhados, pelas conversas, pelo companheirismo e pelo apoio mútuo nas dificuldades e conquistas. Ter estado ao lado de pessoas tão especiais tornou essa jornada mais leve e significativa. 
+
+\noindent Também, à minha namorada Letícia, agradeço por todo o carinho, paciência e incentivo nos momentos mais desafiadores durante toda a jornada de desenvolvimento desse trabalho. Sua presença, conselhos e incentivos foram essenciais para a conclusão desse trabalho.
+
+\noindent Ao professor Danny, meu orientador, registro meus sinceros agradecimentos pela orientação dedicada, pelas sugestões valiosas e pela confiança no desenvolvimento deste trabalho. 
+
+\noindent Por fim, agradeço à Universidade Federal de Ouro Preto (UFOP), pela formação acadêmica de excelência, pelo ambiente de aprendizado e pelas oportunidades que me foram oferecidas ao longo dos anos. Esta instituição teve papel fundamental na construção do meu percurso como estudante e futuro profissional.
+
+\noindent A todos, meu muito obrigado.
+
+
+
 \end{agradecimentos}
 
 % Epígrafe - Opcional
 \begin{epigrafe}
     \vspace*{\fill}
-\epigraph{\textsl{Júpiter leva 4332 dias para fazer uma revolução.}}{---~Oliver Lodge.}
+\epigraph{\textsl{Tudo parece impossível até que seja feito.}}{---~Nelson Mandela.}
 \end{epigrafe}
 % ---
 
@@ -307,24 +322,27 @@
 % resumo em português
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
- \noindent O resumo deve ressaltar o objetivo, o método, os resultados e as conclusões do documento. A ordem e a extensão
- destes itens dependem do tipo de resumo (informativo ou indicativo) e do tratamento que cada item recebe no documento original. O resumo deve ser precedido da referência do documento, com exceção do resumo inserido no
- próprio documento. (\ldots) As palavras-chave devem figurar logo abaixo do resumo, antecedidas da expressão Palavras-chave:, separadas entre si por
- ponto e finalizadas também por ponto.
+ \noindent
+ 
+ As Redes de Petri são um formalismo matemático utilizado na modelagem de sistemas a eventos discretos. Este trabalho tem como objetivo o desenvolvimento de um simulador web de redes de Petri, com foco em acessibilidade por meio do navegador. A ferramenta desenvolvida foi implementada com tecnologias de \textit{frontend} (HTML, CSS e JavaScript) e permite a criação e simulação das redes diretamente no navegador. Entre as funcionalidades disponíveis estão: criação de lugares, transições e arcos; movimentação livre dos componentes na tela; exclusão dos elementos criados e da rede por completo; manipulação via eventos JavaScript; salvamento e carregamento das redes em arquivos no formato JSON; e simulação das redes de Petri desenvolvidas. O projeto utilizou Git para controle de versão e foi disponibilizado na web por meio da plataforma Netlify. Para versões futuras, estão previstas melhorias na interface, como a inclusão de orientações interativas e melhoria no design dos elementos HTML, além de suporte a redes de Petri temporizadas, coloridas e estocásticas, autenticação de usuários e armazenamento persistente das redes criadas em um banco de dados.
 
- \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+\vspace{\onelineskip}
+
+ \textbf{Palavras-chaves}: Redes de Petri. Desenvolvimento Web. Modelagem de Sistemas. Simulação. HTML. CSS. JavaScript. Git. Netlify.  
 \end{resumo}
 
 % resumo em inglês
 \begin{resumo}[Abstract]
  \begin{otherlanguage*}{english}
 
-\noindent This is the english abstract.
+\noindent 
+
+Petri Nets are a mathematical formalism used for modeling discrete event systems. This work aims to develop a web-based Petri Net simulator focused on accessibility through the browser. The developed tool was implemented using frontend technologies (HTML, CSS, and JavaScript) and allows the creation and simulation of Petri Nets directly in the browser. Available features include the creation of places, transitions, and arcs; free movement of components on the screen; deletion of individual elements or the entire network; manipulation via JavaScript events; saving and loading networks in JSON format; and simulation of the created Petri Nets. The project utilized Git for version control and was deployed on the web via the Netlify platform. Future versions plan to include interface improvements such as interactive guidance and enhanced design of HTML elements, as well as support for timed, colored, and stochastic Petri Nets, user authentication, and persistent storage of created networks in a database.
 
    \vspace{\onelineskip}
 
    \noindent
-   \textbf{Key-words}: latex. abntex. text editoration.
+   \textbf{Key-words}: Petri Nets. Web Development. System Modeling. Simulation. HTML. CSS. JavaScript. Git. Netlify.
  \end{otherlanguage*}
 \end{resumo}
 
@@ -656,7 +674,7 @@ A lógica utilizada nas redes de Petri podem facilmente ser traduzidas para os m
 Além da rede de Petri clássica, com o passar dos anos, e com o avanço da tecnologia, houve a necessidade de se adaptar as redes de Petri para atender cenários mais realistas e completos. A partir dessas variações, três delas se destacam, sendo elas as redes de Petri Temporizadas \ref{exemplo_temporarizada}, Coloridas \ref{exemplo_colorida} e Estocásticas \ref{exemplo_estocastica}. Cada uma delas, permite uma representação mais abrangente dos sistemas do mundo real, pois permitem o desenvolvimento de aspectos como tempo, características distintas e incertezas que compõem os diversos tipos de sistemas.
 
 
-\subsubsection*{Temporizada}
+\subsubsection*{Temporizada} \label{cap:redeTemporizada}
 
 \textcolor{red}{referenciar o artigo dcce.ibilce.unesp.br/~aleardo/cursos/str/cap3.pdf }
 
@@ -706,7 +724,7 @@ No exemplo \ref{exemplo_temporarizada} há uma transição fonte $t_{0}$, que es
 
 \end{exemplo}
 
-\subsubsection*{Colorida}
+\subsubsection*{Colorida} \label{cap:redeColorida}
 
 As redes de Petri Coloridas surgiram com a ideia de diminuir o tamanho das representações \cite{frances2003introduccao}, uma vez que muitas representações contam com ideias semelhantes. Através da individualização das marcações, os processos e recursos de um sistema podem agora representar diferentes ideias em uma mesma rede, ou parte dela. O termo "colorida" surge da ideia de termos marcações, com diferentes cores, representando diferentes recursos. Essa forma de representação tem como principal benefício reduzir o tamanho e, consequentemente, a complexidade da representação em uma rede de Petri. Comparando os exemplos, consegue-se analisar tal propriedade. Ambas as redes representam a mesma ideia, porém na segunda representação temos uma quantidade menor de elementos, o que facilita o entendimento. 
 
@@ -717,7 +735,7 @@ Uma vez que se consegue representar as marcações com diferentes cores, torna-s
 
 \end{exemplo}
 
-\subsubsection*{Estocásticas}
+\subsubsection*{Estocásticas} \label{cap:redeEstocastica}
 
 Uma rede de Petri estocástica é mais uma variação das redes de Petri clássicas. Enquanto as redes de Petri clássicas são frequentemente usadas para representar sistemas discretos e determinísticos, as redes de Petri estocásticas permitem incorporar a aleatoriedade e a incerteza na representação.
 
@@ -1609,10 +1627,15 @@ A integração entre as ferramentas adotadas e as práticas empregadas ao longo 
 % % primeiro capitulo de Resultados
 \chapter{Considerações Finais} \label{cap:resultados}
 
-Escrever aqui sobre as expectativas futuras. Pode-se colocar aquilo que ainda pode ser desenvolvido na aplicação, como: redes coloridas, estocásticas, desenvolvimento de uma interface mais agradável, dentre outras melhorias
+O desenvolvimento de um simulador web para Redes de Petri representa uma importante contribuição no contexto do ensino e da experimentação prática com modelagem de sistemas a eventos discretos. A aplicação apresentada demonstrou-se eficaz na construção e simulação de redes de Petri simples, utilizando-se apenas de tecnologias de \textit{frontend}, viabilizando seu uso diretamente em navegadores, sem a necessidade de instalação de software adicional.
 
+Apesar dos avanços alcançados com o presente trabalho, ainda há diversas possibilidades de aprimoramento e expansão da aplicação. Entre os principais desenvolvimentos futuros, destaca-se a possibilidade de incorporar funcionalidades mais avançadas ao simulador, como o suporte a redes de Petri temporizadas \ref{cap:redeTemporizada}, coloridas \ref{cap:redeColorida} e estocásticas \ref{cap:redeEstocastica}, o que permitiria a modelagem de sistemas mais complexos e com variabilidade probabilística.
 
-Falar aqui sobre criação de uma tela de login, e banco de dados para armazenamento das redes de petri criadas. Melhorias de interface como adicionar um texto explicando o que o usuário deve fazer quando executa uma ação.
+Conjuntamente, melhorias na interface gráfica do usuário são desejáveis, visto que, a aplicação web desenvolvida é muito simples no aspecto visual. Com melhorias na interface, o usuário terá uma experiência mais intuitiva e eficiente. Essa etapa inclui a adição de elementos explicativos, como textos orientativos que auxiliem o usuário a entender quais ações estão disponíveis ou devem ser realizadas em determinados momentos da simulação. Também, tornar os elementos HTML mais sofisticados a nível de \textit{design}, como os botões e a própria área de desenvolvimento das redes de Petri e, dessa forma, trazendo maior beleza para a interface.
+
+Outra perspectiva relevante para a evolução da ferramenta é a implementação de um sistema de autenticação de usuários, por meio da criação de uma tela de \textit{login} integrada a um banco de dados. Tal funcionalidade permitiria o armazenamento personalizado das redes de Petri criadas pelos usuários, viabilizando a continuidade do trabalho em sessões futuras e incentivando o uso da ferramenta em ambientes educacionais colaborativos. Com o banco de dados, o usuário poderá criar uma conta na ferramenta, tornando possível o gerenciamento de seus projetos em qualquer navegador. Tal funcionalidade permite maior mobilidade e segurança para a preservação dos projetos. 
+
+Portanto, embora a versão atual do simulador já apresente uma base sólida para a criação e execução de redes de Petri, sua arquitetura e escopo permanecem abertos à expansão, o que garante um vasto campo para pesquisas e melhorias contínuas. Espera-se que este trabalho possa servir de ponto de partida para futuras iniciativas voltadas ao aprimoramento de ferramentas educacionais baseadas na web, aplicadas à modelagem de sistemas a eventos discretos.
 
 
 % % ---
