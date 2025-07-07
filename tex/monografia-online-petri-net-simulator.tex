@@ -172,7 +172,7 @@
 \local{Ouro Preto}
 \data{\the\year} % imprime o ano corrente no campo data
 \orientador{Prof. Dr. Danny Augusto Vieira Tonidandel}
-\coorientador{\color{red}Não definido}
+%\coorientador{\color{red}Não definido}
 \instituicao{Universidade Federal de Ouro Preto}
 \tipotrabalho{Monografia de Graduação}
 \preambulo{Trabalho apresentado ao Colegiado do Curso de Engenharia de Controle e Automação da Universidade Federal de Ouro Preto como parte dos requisitos para a obtenção do Grau de Engenheiro de Controle e Automação.}
@@ -283,9 +283,9 @@
 
 
 % Folha de aprovação - Obrigatório NBR 14724/2011
-\begin{folhadeaprovacao}
-\includepdf{folha-de-aprovacao.pdf}
-\end{folhadeaprovacao}
+%\begin{folhadeaprovacao}
+%\includepdf{folha-de-aprovacao.pdf}
+%\end{folhadeaprovacao}
 
 
 % Agradecimentos - opcional
@@ -303,8 +303,6 @@
 \noindent Por fim, agradeço à Universidade Federal de Ouro Preto (UFOP), pela formação acadêmica de excelência, pelo ambiente de aprendizado e pelas oportunidades que me foram oferecidas ao longo dos anos. Esta instituição teve papel fundamental na construção do meu percurso como estudante e futuro profissional.
 
 \noindent A todos, meu muito obrigado.
-
-
 
 \end{agradecimentos}
 
@@ -351,6 +349,11 @@ Petri Nets are a mathematical formalism used for modeling discrete event systems
 \pdfbookmark[0]{\listfigurename}{lof}
 \listoffigures*
 \cleardoublepage
+
+
+\renewcommand{\lstlistlistingname}{Lista de Scripts} % Renomeia o título da lista
+\lstlistoflistings % Gera a lista de scripts
+
 % ---
 
 % % inserir lista de tabelas
@@ -404,13 +407,11 @@ Petri Nets are a mathematical formalism used for modeling discrete event systems
 % --
 \chapter[Introdução]{Introdução}
 
-nome da aplicação: Online Petri Net Simulator
-
 Em 1962, Carl Adam Petri, por meio de sua dissertação, mostrou para o mundo a sua criação, as redes de Petri \cite{petri1962kommunikation}. Podemos definir uma rede de Petri como sendo uma ferramenta matemática para modelagem de sistemas concorrentes. Além da modelagem matemática, as redes de Petri podem ser ilustradas graficamente por meio de seus elementos, os lugares, as transições e os arcos. Além disso, com a evolução da industria e da tecnologia, as redes de Petri ganharam ainda mais relevância, uma vez que elas permitem a modelagem de diversos tipos de sistemas, em diferentes áreas. 
 
 A evolução da industria e da tecnologia também culminou com a popularização da internet \cite{lins2013evoluccao}. O surgimento do World Wide Web, em 1990, por Tim Berners-Lee, permitiu aos primeiros usuários da internet, como conhecemos hoje, a interação com um sistema de hipertexto. Com o passar dos anos, as aplicações web se tornaram cada vez mais comuns e sofisticadas. O que antes começou com páginas estáticas evoluiu para aplicações dinâmicas, interativas e de fácil acesso para a maioria das pessoas. Atualmente, se consegue ter uma experiência muito próxima as funcionalidades de um computador pessoal, com aplicações desktop, apenas manipulando abas em um navegador.
 
-Diante da facilidade de acesso a aplicativos web por meio dos navegadores, como Google Chrome, Firefox, Safari, Edge, entre outros, surge a seguinte ideia: desenvolver uma aplicação web que possibilite aos usuários a criação e simulação do comportamento de redes de Petri, de forma simples e intuitiva. Para tal, torna-se necessário o conhecimento de tecnologias voltadas para o desenvolvimento web, como HTML5, CSS3 e Javascript.
+Diante da facilidade de acesso a aplicativos web por meio dos navegadores, como Google Chrome, Firefox, Safari, Edge, entre outros, surge a seguinte ideia: desenvolver uma aplicação web que possibilite aos usuários a criação e simulação do comportamento de redes de Petri, de forma simples e intuitiva. Para tal, torna-se necessário o conhecimento de tecnologias voltadas para o desenvolvimento web, como HTML, CSS e Javascript.
 
 Além do conhecimento em desenvolvimento, será necessário  compreender os conceitos e práticas de infraestrutura, viabilizando a disponibilidade e o acesso contínuo à aplicação web. Uma vez desenvolvida, a aplicação pode ser disponibilizada para acesso por qualquer usuário que possua conexão com a internet, facilitando a modelagem de redes de Petri.
 
@@ -423,11 +424,9 @@ Além do conhecimento em desenvolvimento, será necessário  compreender os conc
 
 As redes de Petri representam uma poderosa ferramenta gráfica e matemática para a modelagem e análise de sistemas concorrentes e distribuídos. No entanto, o seu entendimento pode ser um desafio, especialmente para aqueles sem familiaridade com os conceitos e experiência matemática.
 
-Atualmente, existem algumas ferramentas capazes de construir e simular redes de Petri. Entretanto, muitas delas requerem um conhecimento mínimo de computação, para que possam ser instaladas em sistemas operacionais como Linux, Windows e MacOS. Além disso, algumas delas não são multiplataforma, restringindo o acesso dessas ferramentas pelas pessoas.
+Atualmente, existem algumas ferramentas capazes de construir e simular redes de Petri. Entretanto, muitas delas requerem um conhecimento mínimo de computação, para que assim, possam ser instaladas em sistemas operacionais como Linux, Windows e MacOS. Além disso, algumas delas não são multiplataforma, restringindo o acesso dessas ferramentas.
 
 Nesse contexto, uma aplicação web, simples e intuitiva, atenderia as necessidades, tanto de usuários comuns, como o de estudantes e pesquisadores interessados em entender o funcionamento das redes de Petri. Através de uma aplicação web, o acesso é simplificado e facilitado, pois elimina a necessidade de instalações complicadas e pré-conhecimento técnico avançado.
-
-
 
 % Um exemplo de citação em linha pode ser visto como em \textcite{Einstein1920}.
 
@@ -459,11 +458,11 @@ O desenvolvimento de uma aplicação web capaz de criar e simular o comportament
 \section{Objetivos Específicos} \label{cap:objEspecifico}
 
 \begin{itemize}
-        \item Desenvolvimento de um motor de simulação, capaz de simular o comportamento das redes de Petri criadas, possibilitando a visualização, por parte do usuário, do comportamento em diferentes cenários;
-        \item Desenvolvimento de uma interface simples e intuitiva; 
+        \item Desenvolvimento de um motor de simulação, capaz de simular o comportamento das redes de Petri criadas, possibilitando a visualização e a interação, por parte do usuário;
+        \item Desenvolvimento de uma interface simples e intuitiva para a construção e simulação das redes de Petri;
 	\item Aprendizado de tecnologias voltadas para o desenvolvimento web; 
 	\item Criação de uma alternativa simples e de fácil acesso para o aprendizado de redes de Petri;
-        \item Alocação da aplicação em um servidor, permitindo o acesso público.
+        \item Disponibilização da ferramenta desenvolvida através de qualquer navegador web moderno.
 \end{itemize}
 
 
@@ -475,36 +474,26 @@ Inicialmente, para o desenvolvimento da aplicação web, capaz de construir e si
 
 \begin{itemize}
         \item Área da tela em que a rede de Petri será renderizada;
-        \item Botões para inserção de lugares, arcos, tokens e transições;
+        \item Botões para inserção de lugares, transições e arcos;
         \item Botão de simulação em que, ao ser acionado, irá permitir a análise do comportamento da rede de Petri criada;
-        \item Opção de definir labels para os lugares, arcos e posições;
-        \item Alteração de cor da transição quando houver os requisitos mínimos satisfeitos;
-        \item Opção de importação e exportação de projetos.
+        \item Opção de definir propriedades para os componentes das redes de Petri, lugares, transições e arcos;
+        \item Alteração de cor da transição quando houver os requisitos mínimos satisfeitos para sua ativação;
+        \item Opção de deleção dos elementos criados;
+        \item Opção de importação e exportação dos projetos desenvolvidos.
 \end{itemize}
 
-Com as características básicas da aplicação definidas, será desenvolvido um diagrama de fluxo, ilustrado na figura \ref{fig:diagrama_fluxo}, evidenciando o passo a passo de funcionamento da aplicação. 
+Com as características básicas da aplicação definidas, serão desenvolvidos diferentes diagramas de fluxo, semelhantes ao ilustrado na figura \ref{fig:diagrama_fluxo}, evidenciando o passo a passo de funcionamento das principais funcionalidades da aplicação. 
 
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.4]{exemplo_diagrama_de_fluxo.png}
-	\caption[Exemplo de diagrama de fluxo]{Diagrama de fluxo. Fonte: \textcite{boyle1772}.}
+	\caption[Exemplo de diagrama de fluxo]{Exemplo de Diagrama de fluxo \cite{ebac_diagrama_fluxo}.}
 	\label{fig:diagrama_fluxo}
 \end{figure}
 
-Paralelamente ao desenvolvimento do diagrama de fluxo, será criado um diagrama de classe \ref{fig:diagrama_classe}, definindo as diferentes classes de objetos que serão utilizados.
+Além dos diagramas de fluxo, será desenvolvido um esboço de como deverá ser a interface a qual o usuário verá ao acessar a aplicação web. Após a definição do design, e com a criação dos diagramas de fluxo, inicia-se o processo de programação. A linguagem de programação Javascript será utilizada, juntamente com HTML e CSS. O desenvolvimento acompanhará a base do design e requisitos da aplicação pré-estabelecidos. Com isso, espera-se a criação de um MVP - \textit{Minimum Viable Product}.
 
-\begin{figure}[ht] 
-	\centering
-	\includegraphics[scale=0.6]{exemplo_diagrama_de_classe.png}
-	\caption[Exemplo de diagrama de classe]{Diagrama de classe. Fonte: \textcite{boyle1772}.}
-	\label{fig:diagrama_classe}
-\end{figure}
-
-\newpage
-
-Após a definição do design, com a criação do diagrama de fluxo e do diagrama de classe, inicia-se o processo de programação. A linguagem de programação Javascript será utilizada, juntamente com HTML e CSS. O desenvolvimento acompanhará o design pré-estabelecido. Com isso, espera-se a criação de um MVP (Minimum Viable Product).
-
-Com a criação do MVP, em um ambiente local, a aplicação será hospedada em um servidor on-premisse da Universidade Federal de Ouro Preto. Após a hospedagem, espera-se que a aplicação esteja disponível para acesso público por meio da internet.
+Após a criação do MVP, em um ambiente local, a aplicação será hospedada em algum servidor e, dessa forma, a partir de um endereço web, poderá ser acessada pelos usuários através de um navegador. 
 
 
 %link da imagem diagrama de fluxo: https://cdn-cashy-static-assets.lucidchart.com/marketing/pages/lucidspark/consideration/brainstorm-to-identify-each-part-of-your-workflow@2x@2x.png
@@ -572,15 +561,15 @@ Com a criação do MVP, em um ambiente local, a aplicação será hospedada em u
 
 \section{Redes de Petri}
 
-As redes de Petri surgiram por volta da década de 1960 pela mente de Carl Adam Petri. Em 1962, Petri apresentou sua tese intitulada ``Kommunikation mit Automaten'', em que descreveu pela primeira vez a estrutura e funcionamento das redes de Petri. Esse nova ideia de representar sistemas permitiu a análise de sistemas concorrentes e paralelos.
+As redes de Petri surgiram por volta da década de 1960 pela mente de Carl Adam Petri. Em 1962, Petri apresentou sua tese intitulada ``\textit{Kommunikation mit Automaten}'', em que descreveu pela primeira vez a estrutura e funcionamento das redes de Petri \cite{petri1962kommunikation}. Essa nova ideia de representar sistemas permitiu a análise de sistemas concorrentes e paralelos.
 
-Com o passar dos anos, a evolução tecnológica durante a terceira revolução industrial \cite{coutinho1992terceira} evidenciou os benefícios das redes de Petri, e sua aplicabilidade foi ampliada para além da modelagem de processos industriais, sendo adotada também para descrever processos dentro das áreas de Ciência da Computação e Engenharia de Software. Sendo assim, a partir dos anos de 1980, com o crescimento da automação industrial, as redes de Petri começaram a ser adaptadas para atender as necessidades de diferentes áreas. Com isso, surgiram as redes de Petri coloridas, as redes de Petri temporizadas e as redes de Petri estocásticas, como principais exemplos. 
+Com o passar dos anos, a evolução tecnológica durante a terceira revolução industrial \cite{coutinho1992terceira} evidenciou os benefícios das redes de Petri, e sua aplicabilidade foi ampliada para além da modelagem de processos industriais, sendo adotada também para descrever processos dentro das áreas de Ciência da Computação e Engenharia de Software. Sendo assim, a partir dos anos de 1980, com o crescimento da automação industrial, as redes de Petri começaram a ser adaptadas para atender as necessidades de diferentes áreas. Com isso, surgiram as redes de Petri coloridas, temporizadas e estocásticas, sendo evoluções da rede de Petri clássica descrita por Carl Adam Petri.  
 
 \subsection*{O básico de redes de Petri}
 
-Segundo \cite{CassandrasLafortune08}, uma rede de Petri clássica é representada graficamente por lugares, transições e arcos. Os lugares representam os estados do sistema, as transições indicam os eventos ou ações que podem ocorrer durante o funcionamento do sistema. Os arcos direcionados conectam os lugares as transições e as transições aos lugares. Essa estrutura permite a análise de propriedades importantes dos sistemas, como alcançabilidade, vivacidade, deadlock, reversibilidade, entre outras propriedades fundamentais para analise do comportamento de sistemas complexos. 
+Segundo \cite{CassandrasLafortune08}, uma rede de Petri clássica é representada graficamente por lugares, transições e arcos. Os lugares representam os estados do sistema, as transições indicam os eventos ou ações que podem ocorrer durante o funcionamento do sistema. Os arcos direcionados conectam os lugares as transições e as transições aos lugares. Essa estrutura permite a análise de propriedades importantes dos sistemas, como alcançabilidade, vivacidade, \textit{deadlock}, reversibilidade, entre outras propriedades fundamentais para analise do comportamento de sistemas complexos. 
 
-As redes de Petri seguem uma lógica matemática. Sendo assim, seus elementos são definidos como sendo:
+As redes de Petri seguem uma lógica matemática. Assim sendo, seus elementos são definidos como:
 
 \begin{equation*}
     \centering
@@ -591,19 +580,18 @@ em que
 
 \textbf{$P = \left \{ p_{1},p_{2},...,p_{n} \right \}$} é o conjunto de lugares;
 
-$T = \left \{ t_{1},t_{2},...,t_{n} \right \}$ é o conjunto de transições;
+$T = \left \{ t_{1},t_{2},...,t_{m} \right \}$ é o conjunto de transições;
 
-$A \subseteq \left ( P \times T \right ) \cup \left ( T \times P \right )$ representa os arcos de lugares para transições, e transições para lugares;
+$A \subseteq \left ( P \times T \right ) \cup \left ( T \times P \right )$ representa os arcos de lugares para transições, e arcos de transições para lugares;
 
 $w: A \rightarrow \left \{ 1,2,3,... \right \}$ é a função de peso dos arcos.
 
 % Nas redes de Petri, pode-se ter diferentes formas de se interpretar os significados de seus elementos. Porém, de maneira geral, os lugares $P$ indicam os estados da representação. As transições $T$ indicam os eventos e, consequentemente, a mudança de estado da representação. Os pesos $w$ representam a condição necessária para o disparo de uma transição, ou seja, para a mudança de estado. Para isso, a quantidade mínima de tokens presentes em um lugar $P$ necessita ser igual, ou superior, ao peso do arco. E os tokens, por fim, representam a quantidade de elementos presentes em um lugar $P$.
 
-Com tais elementos torna-se possível a criação e modelagem de redes de Petri para a representação de sistemas concorrentes. Conforme o exemplo \ref{exemplo_rede_petri_simples} é possível evidenciar uma rede de Petri simples, permitindo a compreensão de sua estrutura e funcionamento das redes de Petri em um âmbito geral.
+Com tais elementos, torna-se possível a criação e modelagem de redes de Petri para a representação de sistemas concorrentes. Conforme o exemplo \ref{exemplo_rede_petri_simples} é possível evidenciar uma rede de Petri simples, permitindo a compreensão de sua estrutura e funcionamento das redes de Petri em um âmbito geral.
 
-\begin{exemplo}[Uma rede de Petri simples]
-\label{exemplo_rede_petri_simples}]
-
+\begin{exemplo}[Uma rede de Petri simples] \label{exemplo_rede_petri_simples} 
+\end{exemplo}
 Inicialmente, define-se os conjuntos $P, T, A, w$. 
 \begin{eqnarray*}
 P &=& \left \{ p_{1},p_{2}\right \} \\
@@ -612,8 +600,8 @@ A &=& \left \{ \left (p_{1},t_{1}\right ),\left (t_{1},p_{2}\right ) \right \} \
 w\left ( p_{1},t_{1} \right ) &=& 2 \\
 w\left ( t_{1},p_{2} \right ) &=& 1 \\
 \end{eqnarray*}
-\end{exemplo}
-%
+
+
 Para esse exemplo, tem-se os lugares $p_{1}$ e $p_{2}$. O arco $\left ( p_{1},t_{1} \right )$ conecta o lugar $p_{1}$ a transição $t_{1}$, e seu peso $w\left ( p_{1},t_{1} \right )$ é igual a 2.O arco $\left ( t_{1},p_{2} \right )$ conecta a transição  $t_{1}$ ao lugar $p_{2}$, e seu peso $w\left ( t_{1},p_{2} \right )$ é igual a 1. 
 
 Tendo a lógica matemática definida, pode-se ilustrar graficamente a mesma rede de Petri, conforme a figura \ref{fig:rede_petri_simples_ex_01}.
@@ -621,7 +609,7 @@ Tendo a lógica matemática definida, pode-se ilustrar graficamente a mesma rede
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.3]{exemplo_simples_rede_petri.png}
-	\caption[Rede de Petri Simples]{Rede de Petri Simples. Fonte: \textcite{CassandrasLafortune08}.}
+	\caption[Rede de Petri Simples]{Rede de Petri Simples. \textcite{CassandrasLafortune08}.}
 	\label{fig:rede_petri_simples_ex_01}
 \end{figure} 
 
@@ -632,7 +620,7 @@ Para a mudança de estado dessa representação é necessário, no mínimo, duas
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.3]{exemplo_simples_rede_petri_marcacao_p1.png}
-	\caption[Rede de Petri Simples]{Transição $t_{1}$ habilitada. Fonte: \textcite{CassandrasLafortune08}.}
+	\caption[Rede de Petri Simples]{Transição $t_{1}$ habilitada. \textcite{CassandrasLafortune08}.}
 	\label{fig:rede_petri_simples_ex_02}
 \end{figure}
 
@@ -641,27 +629,25 @@ Após a execução da transição $t_{1}$, as duas marcações em $p_{1}$ somem,
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.3]{exemplo_simples_rede_petri_marcacao_p2.png}
-	\caption[Rede de Petri Simples]{Rede de Petri após a transição $t_{1}$ ter sido executada. Fonte: \textcite{CassandrasLafortune08}.}
+	\caption[Rede de Petri Simples]{Rede de Petri após a transição $t_{1}$ ter sido executada. \textcite{CassandrasLafortune08}.}
 	\label{fig:rede_petri_simples_ex_03}
 \end{figure}
-
-%\end{exemplo}
 
 Com o exemplo \ref{exemplo_rede_petri_simples}, é possível entender o princípio básico de funcionamento das redes de Petri. Dessa forma, tem-se que:
 
  \begin{enumerate}[label=(\alph*)]
-    \item \textbf{habilitação de uma transição:} para a habilitação de uma transição $t_{i}$ é necessário que o número de marcações associados ao lugar $p_{i}$, anterior a transição, seja igual, ou superior, ao peso do arco que conecta o lugar $p_{i}$ a transição $t_{i}$;
-    \item \textbf{peso dos arcos:} ...;
-    \item \textbf{movimentação das marcações:} ....
+    \item \textbf{habilitação de uma transição:} para a habilitação de uma transição $t_{m}$ é necessário que o número de marcações associados ao lugar $p_{n}$, anterior a transição $t_{m}$, seja igual, ou superior, ao peso do arco que conecta o lugar $p_{n}$ a transição $t_{m}$;
+    \item \textbf{peso dos arcos:} o peso do arco indica o número mínimo de marcações necessárias para ativar uma transição, além de servir na movimentação das marcações;
+    \item \textbf{movimentação das marcações:} após uma transição $t_{m}$ ser disparada, o número de marcações do lugar $p_{n}$, anterior a transição $t_{m}$, é subtraído, sendo esse valor, o peso do arco que conecta $p_{n}$ a $t_{m}$. O lugar $p_{n + 1}$, posterior a transição $t_{m}$, recebe adição na quantidade de marcações, sendo esse valor, o peso do arco que conecta $t_{m}$ a $p_{n + 1}$. 
 \end{enumerate}
 
 
-\begin{exemplo} \textbf{Uma rede de Petri mais desenvolvida}
-\label{exemplo_rede_petri_desenvolvidada}
+%\begin{exemplo} \textbf{Uma rede de Petri mais desenvolvida}
+%\label{exemplo_rede_petri_desenvolvidada}
 
-\end{exemplo}
+%\end{exemplo}
 
-A lógica utilizada nas redes de Petri podem facilmente ser traduzidas para os modelos utilizados na lógica de programação Ladder, uma vez que as redes de Petri também se utilizam da álgebra booleana. 
+%A lógica utilizada nas redes de Petri podem facilmente ser traduzidas para os modelos utilizados na lógica de %programação Ladder, uma vez que as redes de Petri também se utilizam da álgebra booleana. 
 
 %\begin{exemplo} \textbf{A mesma representação em rede de Petri e Lader}
     
@@ -669,22 +655,19 @@ A lógica utilizada nas redes de Petri podem facilmente ser traduzidas para os m
 
 % \textcolor{red}{Trocar imagens das redes de Petri por imagens retiradas da minha própria aplicação.}
 
-\subsection*{Variantes das redes de Petri clássica}
+\subsection*{Evoluções das redes de Petri clássicas}
 
-Além da rede de Petri clássica, com o passar dos anos, e com o avanço da tecnologia, houve a necessidade de se adaptar as redes de Petri para atender cenários mais realistas e completos. A partir dessas variações, três delas se destacam, sendo elas as redes de Petri Temporizadas \ref{exemplo_temporarizada}, Coloridas \ref{exemplo_colorida} e Estocásticas \ref{exemplo_estocastica}. Cada uma delas, permite uma representação mais abrangente dos sistemas do mundo real, pois permitem o desenvolvimento de aspectos como tempo, características distintas e incertezas que compõem os diversos tipos de sistemas.
-
+Além da rede de Petri clássica, com o passar dos anos, e com o avanço da tecnologia, houve a necessidade de se adaptar as redes de Petri para atender cenários mais realistas e complexos. A partir dessas variações, três delas se destacam, sendo elas as redes de Petri Temporizadas \ref{exemplo_temporarizada}, Coloridas \ref{exemplo_colorida} e Estocásticas \ref{exemplo_estocastica}. Cada uma delas, permite uma representação mais abrangente dos sistemas do mundo real, pois permitem o desenvolvimento de aspectos como tempo, características distintas e incertezas que compõem os diversos tipos de sistemas. Além disso, todas elas podem ser combinadas para representarem diferentes tipos de sistemas, desde os mais simples aos mais complexos. 
 
 \subsubsection*{Temporizada} \label{cap:redeTemporizada}
 
-\textcolor{red}{referenciar o artigo dcce.ibilce.unesp.br/~aleardo/cursos/str/cap3.pdf }
+As redes de Petri Temporizadas surgiram a partir da necessidade de se atribuir uma propriedade temporal a certos atributos de um sistema \cite{Lima2008}. Ao contrário das redes de Petri clássicas, que consideram as transições como instantâneas, as redes de Petri Temporizadas reconhecem que uma vasta quantidade de sistemas do mundo real estão intrinsecamente ligados a variáveis de tempo. Tal fato é extremamente relevante, já que a maiorias dos eventos nesses sistemas demandam certo período de tempo para sua execução completa.
 
-As redes de Petri Temporizadas surgiram a partir da necessidade de se atribuir uma propriedade temporal a certos atributos de um sistema. Ao contrário das redes de Petri clássicas, que consideram as transições como instantâneas, as redes de Petri Temporizadas reconhecem que uma vasta quantidade de sistemas do mundo real estão intrinsecamente ligados a variáveis de tempo. Tal fato é extremamente relevante, já que a maiorias dos eventos nesses sistemas demanda certo período de tempo para sua execução completa.
-
-Nas redes de Petri Temporizadas, pode-se considerar dois cenários para a associação de variáveis de tempo. No primeiro cenário, se tem a associação de tempo $C_{i}$ a duração de uma certa transição $t_{i}$. Ou seja, o evento representado pela transição terá um intervalo de tempo para ser executado. No segundo cenário, associa-se a variável de tempo $C_{i}$ aos lugares $p_{i}$. Dessa forma, as marcações tornam-se disponíveis apenas após o intervalo de tempo. Define-se assim: 
+Nas redes de Petri Temporizadas, pode-se considerar dois cenários para a associação de variáveis de tempo. No primeiro cenário, se tem a associação de tempo $C_{i}$ a duração de uma certa transição $t_{m}$. Ou seja, o evento representado pela transição terá um intervalo de tempo para ser executado. No segundo cenário, associa-se a variável de tempo $C_{i}$ aos lugares $p_{n}$. Dessa forma, as marcações tornam-se disponíveis apenas após o intervalo de tempo. Define-se assim: 
 
 \begin{itemize}
-        \item Tempo $C_{i}$ associado a transição $t_{i}$;
-        \item Tempo $C_{i}$ associado ao lugar $p_{i}$.
+        \item Tempo $C_{i}$ associado a transição $t_{m}$;
+        \item Tempo $C_{i}$ associado ao lugar $p_{n}$.
 \end{itemize}
 
 As transições temporizadas, nos modelos gráficos, para se diferenciar das transições instantâneas, possuem uma cor associada diferente, e isso pode ser evidenciado na maioria dos softwares já disponíveis. Enquanto as transições instantâneas possuem fundo preto, as transições temporárias possuem fundo branco. Além disso, quando uma transição estiver disponível para o disparo, ela possuirá fundo vermelho, conforme a figura \ref{fig:cores_transição}. 
@@ -692,14 +675,15 @@ As transições temporizadas, nos modelos gráficos, para se diferenciar das tra
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.75]{figuras/exemplo_cores_transicao.png}
-	\caption[Cores dos tipos de transição]{Cores dos tipos de transição. Fonte: Pipe.}
+	\caption[Cores dos tipos de transição]{Cores dos tipos de transição.}
 	\label{fig:cores_transição}
 \end{figure}
+\FloatBarrier
 
-No exemplo \ref{exemplo_temporarizada} há uma transição fonte $t_{0}$, que está sempre habilitada, ligada a posição $p_{0}$. O lugar $p_{0}$ está ligado a uma transição temporizada $t_{1}$, por meio de um arco $w(p_{0},t_{1})$ de peso 2. Além disso, a transição $t_{1}$ possui um tempo $C_{1}$ associado. Ou seja, após o disparo da transição $t_{1}$, haverá um tempo $C_{1}$ de espera, indicando o tempo de execução do evento associado a transição. Após a decorrência desse tempo, duas marcações, associadas ao lugar $p_{0}$, se transformarão em apenas uma marcação no lugar $p_{1}$.  
+No exemplo \ref{exemplo_temporarizada} há uma transição fonte $t_{0}$, que está sempre habilitada, conectada ao lugar $p_{0}$. O lugar $p_{0}$ está ligado a uma transição temporizada $t_{1}$, por meio de um arco $w(p_{0},t_{1})$ de peso 2. Além disso, a transição $t_{1}$ possui um tempo $C_{1}$ associado. Ou seja, após o disparo da transição $t_{1}$, haverá um tempo $C_{1}$ de espera, indicando o tempo de execução do evento associado a transição. Após a decorrência desse tempo, duas marcações, associadas ao lugar $p_{0}$, serão consumidas e o lugar $p_{1}$ receberá uma marcação.  
 
-\begin{exemplo} \textbf{Temporizada}
-\label{exemplo_temporarizada}
+\begin{exemplo} [Rede de Petri Temporizada] \label{exemplo_temporarizada}
+\end{exemplo}
 
 \begin{figure}[ht] 
 	\centering
@@ -707,6 +691,7 @@ No exemplo \ref{exemplo_temporarizada} há uma transição fonte $t_{0}$, que es
 	\caption[Rede de Petri Temporizada - Estágio 1]{Rede de Petri Temporizada - Estágio 1. Fonte: Pipe.}
 	\label{fig:rede_petri_temporizada_ex_01}
 \end{figure}
+\FloatBarrier
 
 \begin{figure}[ht] 
 	\centering
@@ -714,6 +699,7 @@ No exemplo \ref{exemplo_temporarizada} há uma transição fonte $t_{0}$, que es
 	\caption[Rede de Petri Temporizada - Estágio 2]{Rede de Petri Temporizada - Estágio 2. Fonte: Pipe.}
 	\label{fig:rede_petri_temporizada_ex_02}
 \end{figure}
+\FloatBarrier
 
 \begin{figure}[ht] 
 	\centering
@@ -721,8 +707,7 @@ No exemplo \ref{exemplo_temporarizada} há uma transição fonte $t_{0}$, que es
 	\caption[Rede de Petri Temporizada - Estágio 3]{Rede de Petri Temporizada - Estágio 3. Fonte: Pipe.}
 	\label{fig:rede_petri_temporizada_ex_03}
 \end{figure}
-
-\end{exemplo}
+\FloatBarrier
 
 \subsubsection*{Colorida} \label{cap:redeColorida}
 
