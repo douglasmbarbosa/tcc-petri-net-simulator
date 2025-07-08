@@ -711,31 +711,46 @@ No exemplo \ref{exemplo_temporarizada} há uma transição fonte $t_{0}$, que es
 
 \subsubsection*{Colorida} \label{cap:redeColorida}
 
-As redes de Petri Coloridas surgiram com a ideia de diminuir o tamanho das representações \cite{frances2003introduccao}, uma vez que muitas representações contam com ideias semelhantes. Através da individualização das marcações, os processos e recursos de um sistema podem agora representar diferentes ideias em uma mesma rede, ou parte dela. O termo "colorida" surge da ideia de termos marcações, com diferentes cores, representando diferentes recursos. Essa forma de representação tem como principal benefício reduzir o tamanho e, consequentemente, a complexidade da representação em uma rede de Petri. Comparando os exemplos, consegue-se analisar tal propriedade. Ambas as redes representam a mesma ideia, porém na segunda representação temos uma quantidade menor de elementos, o que facilita o entendimento. 
+As redes de Petri Coloridas surgiram com a ideia de diminuir o tamanho das representações \cite{frances2003introduccao}, uma vez que muitas representações contam com ideias semelhantes. Através da individualização das marcações, os processos e recursos de um sistema podem agora representar diferentes ideias em uma mesma rede, ou parte dela. O termo "colorida" surge da ideia de termos marcações, com diferentes cores, representando diferentes recursos. Essa forma de representação tem como principal benefício reduzir o tamanho e, consequentemente, a complexidade da representação em uma rede de Petri.
 
 Uma vez que se consegue representar as marcações com diferentes cores, torna-se mais simples a representação de sistemas complexos, diminuindo a complexidade das análises. Nas redes de Petri tradicionais, cada lugar representa um único estado do sistema representado. As redes de Petri coloridas deixam de forma mais intuitiva e clara a representação de múltiplos estados ou recursos. 
 
 \begin{exemplo} \textbf{Colorida}
 \label{exemplo_colorida}
-
 \end{exemplo}
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.35]{figuras/rede_petri_colorida.png}
+	\caption[Rede de Petri Colorida]{Rede de Petri Colorida. \cite{inbook}}
+	\label{fig:rede_petri_colorida}
+\end{figure}
+\FloatBarrier
+
+No exemplo \ref{exemplo_colorida} diferentes elementos estão representados no mesmo lugar.  O peso dos arcos são referenciados por cores e, dessa forma, a transição só estará habilitada caso o lugar contenha marcações do mesmo tipo que a cor indicada no peso do arco. A transição $t_{0}$ não está habilitada porque não há uma marcação da cor \textit{<a>} no lugar $p_{0}$. A transição $t_{1}$ está habilitada porque há uma marcação da cor \textit{<a>} no lugar $p_{1}$ e marcações das cores \textit{<a>} e \textit{<b>} no lugar $p_{2}$ \cite{inbook}.
 
 \subsubsection*{Estocásticas} \label{cap:redeEstocastica}
 
-Uma rede de Petri estocástica é mais uma variação das redes de Petri clássicas. Enquanto as redes de Petri clássicas são frequentemente usadas para representar sistemas discretos e determinísticos, as redes de Petri estocásticas permitem incorporar a aleatoriedade e a incerteza na representação.
+Uma rede de Petri estocástica é mais uma evolução das redes de Petri clássicas. Enquanto as redes de Petri clássicas são frequentemente usadas para representar sistemas discretos e determinísticos, as redes de Petri estocásticas permitem incorporar a aleatoriedade e a incerteza na representação.
 
-Nas redes de Petri estocásticas, os elementos básicos, como lugares, transições e arcos, são semelhantes aos das redes de Petri convencionais. No entanto, a principal diferença é que as transições não são ativadas de forma determinística, mas sim com base em probabilidades. Isso significa que a ocorrência de uma transição é governada por um processo estocástico, como um processo de Poisson, e a escolha de qual transição ocorre em um determinado momento é determinada por probabilidades.
+Nas redes de Petri estocásticas, os elementos básicos, como lugares, transições e arcos, são semelhantes aos das redes de Petri convencionais. No entanto, a principal diferença é que as transições não são ativadas de forma determinística, mas sim com base em probabilidades. Isso significa que a ocorrência de uma transição é governada por um processo estocástico, como um processo de \textit{Poisson}, e a escolha de qual transição ocorre em um determinado momento é determinada por probabilidades.
 
 Essa abordagem estocástica é especialmente útil para modelar sistemas onde eventos ocorrem de maneira aleatória, como sistemas de comunicação, sistemas biológicos e sistemas de manufatura com variações de tempo e recursos. As redes de Petri estocásticas permitem a análise de propriedades estatísticas do sistema, como a probabilidade de estados específicos serem alcançados ou a distribuição de tempo entre eventos.
 
-Conforme o exemplo \ref{exemplo_estocastica} é possível analisar o funcionamento de uma rede de Petri estocástica.
-
-\textcolor{red}{Criar exemplo de Rede de Petri estocástica}
-
+\newpage
 \begin{exemplo} \textbf{Estocásticas}
 \label{exemplo_estocastica}
-
 \end{exemplo}
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.8]{figuras/rede_petri_estocastica.png}
+	\caption[Rede de Petri Estocástica]{Rede de Petri Estocástica. \cite{inproceedings}}
+	\label{fig:rede_petri_estocastica}
+\end{figure}
+\FloatBarrier
+
+Conforme o exemplo \ref{exemplo_estocastica}, os diferentes estados operacionais das unidades são simbolizados pelas marcações coloridas, permitindo distinguir o estado específico de cada instância \cite{inproceedings}. A estrutura da rede é composta por quatro lugares principais: o lugar $P_{1}$ representa as unidades em operação normal; o lugar $P_{2}$ armazena as unidades que foram afetadas por algum evento, mas que ainda não falharam; o lugar $P_{3}$ representa as unidades mitigadas, ou seja, aquelas que, embora tenham sido impactadas, passaram por uma intervenção bem-sucedida; e o lugar $P_4$ contém as unidades que falharam, representando uma fonte de risco para as demais unidades do sistema. A característica estocástica da rede está presente na modelagem temporal das transições entre os estados, que ocorrem de forma probabilística, geralmente seguindo distribuições exponenciais. Essa abordagem permite incorporar a incerteza inerente aos tempos de falha (\textit{time to failure – ttf}), e de intervenção (\textit{intervention time – $T_{int}$}), tornando a simulação mais realista. Quando o \textit{ttf} é superior ao \textit{$T_{int}$}, a unidade pode ser mitigada a tempo, sendo alocada em $P_{3}$; caso contrário, ocorre a falha, e a unidade transita para o lugar $P_{4}$.
 
 %\section{Linguagens de marcação de texto}
 
