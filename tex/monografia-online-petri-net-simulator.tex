@@ -715,7 +715,7 @@ As redes de Petri Coloridas surgiram com a ideia de diminuir o tamanho das repre
 
 Uma vez que se consegue representar as marcações com diferentes cores, torna-se mais simples a representação de sistemas complexos, diminuindo a complexidade das análises. Nas redes de Petri tradicionais, cada lugar representa um único estado do sistema representado. As redes de Petri coloridas deixam de forma mais intuitiva e clara a representação de múltiplos estados ou recursos. 
 
-\begin{exemplo} \textbf{Colorida}
+\begin{exemplo} [Rede de Petri Colorida]
 \label{exemplo_colorida}
 \end{exemplo}
 
@@ -738,7 +738,7 @@ Nas redes de Petri estocásticas, os elementos básicos, como lugares, transiç�
 Essa abordagem estocástica é especialmente útil para modelar sistemas onde eventos ocorrem de maneira aleatória, como sistemas de comunicação, sistemas biológicos e sistemas de manufatura com variações de tempo e recursos. As redes de Petri estocásticas permitem a análise de propriedades estatísticas do sistema, como a probabilidade de estados específicos serem alcançados ou a distribuição de tempo entre eventos.
 
 \newpage
-\begin{exemplo} \textbf{Estocásticas}
+\begin{exemplo} [Rede de Petri Estocástica]
 \label{exemplo_estocastica}
 \end{exemplo}
 
@@ -760,7 +760,7 @@ O desenvolvimento de aplicações web interativas e eficientes requer a utiliza�
 
 \subsection*{HTML}
 
-O \textbf{HTML} (\textit{HyperText Markup Language}) é a linguagem de marcação padrão para a criação e estruturação de conteúdo na internet \cite{mdn_html}. Sua função principal é definir a estrutura semântica de uma página web, organizando elementos como títulos, parágrafos, imagens, links, botões, formulários e vários outros elementos. No desenvolvimento de uma aplicação web para construção e simulação de redes de Petri, o HTML atua como esqueleto da interface, definindo todas as funcionalidades com as quais o usuário teria acesso. 
+O \textbf{HTML} (\textit{HyperText Markup Language}) é a linguagem de marcação padrão para a criação e estruturação de conteúdo na internet \cite{mdn_html}. Sua função principal é definir a estrutura semântica de uma página web, organizando elementos como títulos, parágrafos, imagens, links, botões, formulários e vários outros elementos. No desenvolvimento de uma aplicação web para construção e simulação de redes de Petri, o HTML atua como esqueleto da interface, definindo todas as funcionalidades com as quais o usuário terá acesso. 
   
 Dessa forma, o HTML é composto por uma série de elementos conhecidos como \textit{tags}, os quais são utilizados para estruturar e identificar semanticamente o conteúdo de uma página web. Cada {\textit{tag}} possui uma função específica e pode conter atributos que modificam seu comportamento ou aparência.
 
@@ -770,9 +770,9 @@ Por fim, através do arquivo HTML faz-se a junção de outras tecnologias, tais 
 
 \subsection*{CSS}
 
-O \textbf{CSS} (\textit{Cascading Style Sheets}) é a linguagem responsável pela definição da aparência dos elementos HTML \cite{mdn_css}. Através do CSS, é possível personalizar cores, tamanhos, posicionamentos, margens, fontes e efeitos visuais. A estilização também contribuiu para a experiência do usuário ao proporcionar \textit{feedback} visual em interações, como a mudança de cor de um botão ao clicar e a exibição de mensagens de alerta. 
+O \textbf{CSS} (\textit{Cascading Style Sheets}) é a linguagem responsável pela definição da aparência dos elementos HTML \cite{mdn_css}. Através do CSS, é possível personalizar cores, tamanhos, posicionamentos, margens, fontes e efeitos visuais. A estilização também contribui para a experiência do usuário ao proporcionar \textit{feedback} visual em interações, como a mudança de cor de um botão ao clicar e a exibição de mensagens de alerta. 
 
-Para a aplicação de construção e simulação de redes de Petri, o CSS é fundamental para estilizar os elementos gráficos, os lugares, transições e arcos, definindo as cores e tamanhos, e organizando o layout da área de desenho e dos painéis de controle, garantindo uma experiência de usuário intuitiva e esteticamente agradável. 
+Para a aplicação de construção e simulação de redes de Petri, o CSS é fundamental para estilizar os elementos gráficos, os lugares, transições e arcos, definindo as cores, tamanhos, e organizando o layout da área de desenho e dos painéis de controle, garantindo uma experiência intuitiva e esteticamente agradável para os usuários da aplicação. 
 
 \subsection*{Javascript}
 
@@ -780,7 +780,7 @@ O \textbf{Javascript} é uma linguagem de programação interpretada, executada 
 
 Enquanto o HTML é responsável pela estrutura da página e o CSS pela sua apresentação visual, o Javascript permite a implementação de comportamentos dinâmicos, como respostas a eventos de usuários, manipulação do conteúdo da página em tempo real, validação de formulários, animações, chamadas assíncronas, entre outros. 
 
-Na aplicação proposta, o Javascript desempenha papel central no funcionamento do simulador. Toda a lógica de construção e simulação da rede de Petri foi implementada em Javascript, permitindo o desenvolvimento de diversas funcionalidades para a aplicação e para o cumprimento dos objetivos específicos do projeto \ref{cap:objEspecifico}. 
+Na aplicação proposta, o Javascript desempenha papel central no funcionamento do simulador. Toda a lógica de construção e simulação da rede de Petri será implementada em Javascript, permitindo o desenvolvimento de diversas funcionalidades para a aplicação e para o cumprimento dos objetivos específicos do projeto \ref{cap:objEspecifico}. 
 
 \subsection*{Git} \label{cap:git}
 
@@ -792,7 +792,7 @@ Para o desenvolvimento do projeto, o controle de versão é essencial. O Git, em
 
 \subsection*{Pipe}
 
-O \textbf{PIPE} (Plataform Independent Petri Net Editor) é uma ferramenta de software de código aberto para simulação e análise de redes de Petri \cite{Dingle2009PIPE2}. Desenvolvido em linguagem Java, o PIPE se destaca por ser uma ferramenta multiplataforma, operando  em diversos sistemas operacionais, como Windows, MacOS e Linux, facilitando sua acessibilidade e disseminação na comunidade acadêmica e de pesquisa. Entretanto, o projeto aparenta não estar mais em desenvolvimento, visto que, não há mais contribuições no repositório do projeto no Github \cite{PIPEGitHub}. 
+O \textbf{PIPE} (\textit{Plataform Independent Petri Net Editor}) é uma ferramenta de software de código aberto para simulação e análise de redes de Petri \cite{Dingle2009PIPE2}. Desenvolvido em linguagem Java, o PIPE se destaca por ser uma ferramenta multiplataforma, operando  em diversos sistemas operacionais, como Windows, MacOS e Linux, facilitando sua acessibilidade e disseminação na comunidade acadêmica e de pesquisa. Entretanto, o projeto aparenta não estar mais em desenvolvimento, visto que, não há mais contribuições no repositório do projeto no Github \cite{PIPEGitHub}. 
 
 \begin{figure}[ht] 
 	\centering
@@ -810,11 +810,11 @@ O \textbf{PIPE} (Plataform Independent Petri Net Editor) é uma ferramenta de so
 \end{figure}
 \FloatBarrier
 
-Apesar do PIPE ser uma excelente ferramenta para modelagem e simulação de redes de Petri, seu projeto aparenta não ter mais atualizações, e sua instalação requer conhecimento técnico em Java, podendo ser impeditivo para alguns usuários. Além disso, sua última versão apresenta \textit{bugs}, dificultando a sua utilização. 
+Apesar do PIPE ser uma excelente ferramenta para modelagem e simulação de redes de Petri, seu projeto aparenta não ter mais atualizações, e sua instalação requer conhecimento técnico em Java, podendo ser impeditivo para alguns usuários. Além disso, sua última versão, a versão 5, apresenta diferentes \textit{bugs}, dificultando a sua utilização. 
 
 \subsection*{APO}
 
-A ferramenta APO (Accessible Petri Net Operations) consiste em uma interface web desenvolvida para facilitar o uso do APT (Analysis of Petri Nets and Transition Systems), um software robusto voltado à análise e síntese de redes de Petri e Sistemas de Transição \cite{apoGithub}. 
+A ferramenta APO (\textit{Accessible Petri Net Operations}) consiste em uma interface web desenvolvida para facilitar o uso do APT (\textit{Analysis of Petri Nets and Transition Systems}), um software robusto voltado à análise e síntese de redes de Petri e Sistemas de Transição \cite{apoGithub}. 
 
 \begin{figure}[ht] 
 	\centering
@@ -875,132 +875,20 @@ Com os requisitos em mente, criou-se a base de arquivos que seriam utilizados pa
 	\item script.js.
 \end{enumerate}
 
-Através do arquivo \textbf{index.html} estruturou-se toda a interface da aplicação. É nele em que se define todos os elementos que vão fazer parte da interface apresentada ao usuário final. O arquivo \textbf{sytle.css} define as principais propriedades visuais que foram estabelicidas anteriormente no arquivo \textbf{index.html}. Por fim, no arquivo \textbf{script.js} se define toda a lógica da aplicação. Através da liguagem de programação Javascript se desenvolveu todas as funcionalidades que foram estabelicidas anteriormente. 
+Através do arquivo \textbf{index.html} estruturou-se toda a interface da aplicação. É nele em que se define todos os elementos que vão fazer parte da interface apresentada ao usuário final. O arquivo \textbf{sytle.css} define as principais propriedades visuais que foram estabelicidas anteriormente no arquivo \textbf{index.html}. Por fim, no arquivo \textbf{script.js} se define toda a lógica da aplicação. Através da liguagem de programação Javascript se desenvolveu todas as funcionalidades que foram estabelecidas anteriormente. 
 
-No arquivo \textbf{index.hmtl} inicialmente foi criado o título da página denominado \textbf{Online Petri Net Simulator} e seu posicionamento foi definido no topo e ao centro da tela, conforme imagem abaixo:
+No arquivo \textbf{index.hmtl}, inicialmente, criou-se o título da página denominado \textbf{\textit{Online Petri Net Simulator}} e seu posicionamento foi definido no topo e ao centro da tela, conforme imagem \ref{fig:titulo_topo_centro}:
 
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.3]{figuras/tela_inicial_titulo_topo_centro.png}
-	\caption[Título no topo e ao centro]{Rede de Petri Temporizada - Estágio 3. Fonte: Pipe.}
+	\caption[Título no topo e ao centro da página]{Título no topo e ao centro da página.}
 	\label{fig:titulo_topo_centro}
 \end{figure}
 
-Para a aplicação das funcionalidades foram definidos no arquivo  \textbf{index.hmtl} botões que ao serem apertados executariam uma determinada ação. 
+Para a execução das funcionalidades definiu-se no arquivo \textbf{index.hmtl} botões que, ao serem pressionados, executam uma determinada ação. 
 
-Ao longo do desenvolvimento, verificou-se que seria mais simples fazer o desacoplamento das funcionalidades em scripts separados. Desse modo, diferentes arquivos .js foram criados, para que cada funcionalidade fosse desenvolvida separadamente. Sendo assim, no arquivo \textbf{index.html} esses arquivos foram declarados, tornando possível a junção de todas as funcionalidades que compõem a aplicação. 
-
-\section{Renderizando elementos na tela}
-
-A renderização de elementos visuais na interface é uma das funcionalidades essenciais de uma aplicação web moderna, especialmente quando se trata da representação gráfica de estruturas conceituais. Neste projeto, cujo objetivo principal é possibilitar a criação e manipulação de redes de Petri, torna-se indispensável a visualização clara e interativa dos componentes que constituem esse tipo de rede.
-
-De modo simples, os elementos de uma rede de Petri são representados de forma gráfica por meio de figuras geométricas já conhecidas pela maioria das pessoas, tornando mais simples a analogia dos elementos das redes de Petri, com figuras geométricas já conhecidas. Os lugares são representados por círculos, as transições por retângulos, e os arcos que ligam esses elementos são ilustrados como setas direcionais. Elementos adicionais, como marcações, pesos e títulos, são exibidas como textos e números renderizados diretamente na tela, complementando a representação visual e fornecendo os dados necessários para a interpretação correta da rede.
-
-O HTML5 fornece o elemento \textbf{<canvas>}, que permite o desenvolvimento de figuras geométricas, gráficos e textos. No contexto desse projeto, o \textbf{canvas} é essencial. Primeiramente, fornecendo uma área na tela para o desenvolvimento e manipulação das redes de Petri. Posteriormente, fornecendo uma API que pode ser manipulada, através do Javascript, para a criação dos elementos gráficos. 
-
-\lstinputlisting[caption={Chamada do elemento \textbf{<canvas>} no HTML5}, captionpos=b, label={lst:areacanvas}]{scripts/areaCanvas.html}
-
-Após a chamada do elemento \textbf{<canvas>} no arquivo \textbf{\textit{index.html}} uma área retangular com altura e largura definidas nos métodos \textbf{\textit{width}} e \textbf{\textit{heigth}} é definida na tela. Com essa definição feita, é possível a manipulação do que será renderizado na tela, dentro dessa área \textbf{canvas} criada. 
-
-\begin{figure}[ht] 
-	\centering
-	\includegraphics[scale=0.3]{figuras/area_canvas.png}
-	\caption[Área canvas]{Retângulo da área \textbf{<canvas>} logo abaixo dos botões da aplicação web}
-	\label{fig:area_canvas}
-\end{figure}
-\FloatBarrier
-
-Tendo a área \textbf{canvas} definida, inicia-se a manipulação dos elementos gráficos que iram representar as redes de Petri. Para tornar possível a interatividade de diferentes elementos criou-se uma função de loop. Essa função tem como principal objetivo apagar e renderizar os elementos representados na área canvas de forma continua. Esse processo de apagar os elementos e renderizar novamente, várias vezes por segundo, permite criar animações, tornando possível a movimentação dos elementos e a edição das informações na tela. 
-
-\lstinputlisting[caption={Função loop}, captionpos=b, label={lst:functionloop}]{scripts/functionLoop.js}
-
-O método Javascript \textbf{\textit{window.requestAnimationFrame(loop, canvas)}} informa ao navegador que se deseja executar animações. Além disso, ele sincroniza a taxa de atualização, em \textbf{Hz}, das animações, com a taxa de atualização do monitor do usuário. Posteriormente, faz-se a chamada da função \textbf{\textit{render()}}, que irá renderizar os elementos na área \textbf{canvas}. Também, a função \textbf{\textit{buttonColors()}} é acionada. Ela verifica qual botão foi pressionado e, com base nas informações, altera a cor do botão que indica a ação a ser executada. 
-
-Além, faz-se a verificação da variável \textbf{\textit{simulation}}, que indica ao código se está ocorrendo a ação de simulação da rede de Petri. Caso sim, a função \textbf{\textit{netSimulationEnables()}}, responsável pela simulação da rede de Petri \ref{cap:simulation}, é acionada.
-
-\subsection*{Função de renderização}
-
-A função \textbf{\textit{render()}} é responsável pela renderização de todos os elementos dentro da área \textbf{canvas} destinada a construção e simulação das redes de Petri. Ela utiliza a API do Javascript para a manipulação do \textbf{canvas}. Para cada tipo de elemento inicia-se o desenho com \textbf{\textit{beginPatch()}} e se finaliza com \textbf{\textit{beginPatch()}}
-
-\begin{enumerate}
-	\item renderização dos lugares;
-	\item renderização das transições;
-	\item renderização dos arcos;
-	\item renderização dos pontos intermediário dos arcos;
-	\item renderização do triângulo ou circulo na ponta do arco, a depender do tipo de arco;
-	\item renderização do arco, enquanto ele é criado \ref{fig:mousemove_desenhando_arco};
-	\item renderização do lugar após o botão \textbf{Add Place} ser pressionado, e antes de ser adicionado com \textbf{\textit{mousedown}};
-	\item renderização da transição após o botão \textbf{Add Transition} ser pressionado, e antes de ser adicionado com \textbf{\textit{mousedown}}.
-\end{enumerate}
-
-\subsubsection*{Renderização dos lugares}
-
-Um lugar é, graficamente, um circulo. Ao manipular o \textbf{canvas} é possível construir um circulo passando os seguintes parâmetros: as posições \textbf{x} e \textbf{y} do centro do circulo e o seu raio. 
-
-\lstinputlisting[caption={Renderizando lugar}, captionpos=b, label={lst:renderPlace}]{scripts/renderPlace.js}
-
-\begin{figure}[ht] 
-	\centering
-	\includegraphics[scale=1]{figuras/renderPlace.png}
-	\caption[renderPlace]{Lugar P1 renderizado na tela}
-	\label{fig:renderPlace}
-\end{figure}
-\FloatBarrier
-
-Além disso, um lugar possui algumas outras características, como o número de \textbf{\textit{tokens}} e o seu nome. Dessa forma, um número, representando a quantidade de \textbf{\textit{tokens}} é renderizado no centro do circulo. Um outro texto, representando o nome é renderizado um pouco acima do circulo, conforme \ref{lst:renderPlace}. A renderização ocorre de forma recursiva em cada um dos lugares que estão informados em \textbf{\textit{arrayPlaces}}.
-
-\subsubsection*{Renderização das transições}
-
-Uma transição é, graficamente, um retângulo. É possível construir um retângulo passando os seguintes parâmetros: posição \textbf{x} e \textbf{y} da ponta inferior esquerda do retângulo, largura e altura, em pixels. Além disso, a transição possui a cor preta quando a propriedade \textbf{\textit{isEnable}} é falsa. Quando \textbf{\textit{isEnable}} é verdadeiro, e a simulação está ativada, a cor da transição é vermelha. 
-
-\lstinputlisting[caption={Renderizando transição}, captionpos=b, label={lst:renderTransition}]{scripts/renderTransition.js}
-
-\begin{figure}[ht]
-	\label{fig:renderTransition}
-	\centering
-	\begin{minipage}{0.5\textwidth}
-		\centering
-		\includegraphics[scale=1]{figuras/transitionEnableFalse.png}
-		%\caption[renderTransitionEnableFalse]{Transição renderizada não ativada}
-		\label{fig:renderTransitionEnableFalse}
-	\end{minipage}
-	\hfill
-	\begin{minipage}{0.5\textwidth}
-		\centering
-		\includegraphics[scale=1]{figuras/transitionEnableTrue.png}
-		%\caption[renderTransitionEnableTrue]{Transição renderizada ativada}
-		\label{fig:renderTransitionEnableTrue}
-	\end{minipage}
-	\caption{Renderização da transição T1 de forma não ativada e ativada}
-\end{figure}
-
-Como o parâmetro a ser passado para a API do Javascript para a construção de um retângulo em uma área \textbf{canvas} exige as coordenadas \textbf{x} e \textbf{y} do canto inferior esquerdo do retângulo, fez-se uma compensação, utilizando os valores de altura e largura, para se obter a posição do centro do retângulo. Dessa forma, ao posicionar e movimentar uma transição, se faz pela posição do centro.  A renderização ocorre de forma recursiva em cada uma das transições que estão informados em \textbf{\textit{arrayTransitions}}.
-
-\subsubsection*{Renderização dos arcos}
-
-Um arco, graficamente, é uma linha. No caso específico das redes de Petri, temos 2 principais tipos de arcos, normal e inibidor. O arco normal é representado como uma seta, o arco inibidor é semelhante, mas possui um circulo na ponta, ao invés de um triângulo. O processo é feito recursivamente em cada um dos arcos contidos em \textbf{\textit{arrayArcs}}.
-
-\lstinputlisting[caption={Renderizando arco}, captionpos=b, label={lst:renderArc}]{scripts/renderArc.js}
-
-Inicialmente, para a renderização do arco, há uma detecção da posição \textbf{x} e \textbf{y}. Esse primeiro ponto precisar ser, necessariamente dentro de algum elemento, lugar ou transição para arcos normais, e, apenas lugar, para arcos inibidores. Tendo a primeira posição \textbf{x} e \textbf{y} definida, há duas opções: ou o usuário seleciona o elemento final do arco, ou ele seleciona um ponto intermediário. No primeiro caso, uma linha entre o ponto inicial e final é renderizada. Caso seja um arco normal, um triângulo na ponto é renderizado que, junto com a linha, dá a ilusão de ser uma seta direcional. No caso do arco inibidor, um circulo é renderizado na ponta final da linha. 
-
-\begin{figure}[ht] 
-	\centering
-	\includegraphics[scale=0.7]{figuras/arcNormalInibidor.png}
-	\caption[Arco normal e inibidor]{Arco normal e inibidor chegando transição T1}
-	\label{fig:arcNormalInibidor}
-\end{figure}
-
-Há também o segundo caso, em que o usuário cria um ponto intermediário. Nesse caso, uma linha entre o ponto inicial e o ponto intermediário é criada. Na posição \textbf{x} e y\textbf{y} desse ponto intermediário é criado um circulo, para indicar que ali tem um arco intermediário, e que pode ser movimentado posteriormente. Podem existir infinitos pontos intermediários, até que o usuário clique no elemento final, quando o desenho do arco finaliza. Na ponta final, há o triângulo ou circulo, a depender do tipo de arco. 
-
-\begin{figure}[ht] 
-	\centering
-	\includegraphics[scale=0.8]{figuras/arcPontoIntermediario.png}
-	\caption[Arco com pontos intermediários]{Arcos com pontos intermediários}
-	\label{fig:arcPontoIntermediario}
-\end{figure}
-
-Além disso, o arco é mostrado, em tempo real, enquanto é desenhado. Faz-se isso utilizando o ponto inicial, juntamente com os pontos intermediário, caso existam, e a posição final é a do ponteiro do mouse, obtida com \textbf{\textit{mousemove}} \ref{cap:mousemove}. O processo é o mesmo que o anterior, diferenciado-se pelo fato do ponto final ser o obtido pelas propriedades \textbf{\textit{clientX}} e \textbf{\textit{clientY}} do evento \textbf{\textit{mousemove}} \ref{fig:mousemove_desenhando_arco}. 
+Ao longo do desenvolvimento, verificou-se que seria mais simples fazer o desacoplamento das funcionalidades em \textit{scripts} separados. Desse modo, diferentes arquivos .js foram criados, para que cada funcionalidade fosse desenvolvida separadamente. Sendo assim, no arquivo \textbf{index.html}, esses arquivos foram declarados, tornando possível a junção de todas as funcionalidades que compõem a aplicação. 
 
 \section{Eventos do Javascript}
 
@@ -1067,21 +955,21 @@ Quando ocorre o evento \textbf{\textit{mousedown}}, a variável \textbf{\textit{
 	\caption[Mouse estilo grabbing]{Ponteiro do mouse com estilo \textbf{\textit{grabbing}}}
 	\label{fig:mouse_estilo_grabbing}
 \end{figure}
+\FloatBarrier
 
 \section{Criação dos elementos}
 
-
 \subsection*{Criação dos lugares}
 
-Para a criação dos lugares foi criado um primeiro botão através do arquivo \textit{\textbf{index.html}}. No momento em que se pressiona o botão \textit{\textbf{AddPlace}} a função \textit{\textbf{buttonAddPlace}} é chamada e seu script é executado. Nessa função, a variável global \textit{\textbf{buttonPress}} sofre a alteração de seu valor, caso seu valor seja diferente de \textit{\textbf{1}}, o valor \textit{\textbf{1}} é atribuído, do contrário seu valor retorna para zero.
+Para a criação dos lugares criou-se um primeiro botão através do arquivo \textit{\textbf{index.html}}. No momento em que se pressiona o botão \textit{\textbf{Add Place}} a função \textit{\textbf{buttonAddPlace()}} é chamada e seu \textit{script} é executado. Nessa função, a variável global \textit{\textbf{buttonPress}} sofre a alteração de seu valor, caso seu valor seja diferente de \textit{\textbf{1}}, o valor \textit{\textbf{1}} é atribuído. Do contrário, seu valor retorna para zero.
 
-\lstinputlisting[caption={Função buttonAddPlace}, captionpos=b, label={lst:buttonAddPlace}]{scripts/buttonAddPlace.js}
+\lstinputlisting[caption={Função \textit{\textbf{buttonAddPlace}}}, captionpos=b, label={lst:buttonAddPlace}]{scripts/buttonAddPlace.js}
 
-Quando \textit{\textbf{buttonPress = 1}} espera-se que o usuário clique na área demarcada para a construção de sua rede de Petri. No momento do clique, o evento \textit{\textbf{mousedown}} é detectado e seu script é executado. No script do evento \textit{\textbf{mousedown}} se faz uma verificação do valor da variável \textit{\textbf{buttonPress}}. Como o valor atribuído é \textit{\textbf{1}} se faz uma chamada da função \textit{\textbf{addPlace}} passando-se os valores \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}. 
+Quando \textit{\textbf{buttonPress = 1}} espera-se que o usuário clique na área demarcada para a construção de sua rede de Petri. No momento do clique, o evento \textit{\textbf{mousedown}} é detectado e seu script é executado. No script do evento \textit{\textbf{mousedown}} se faz uma verificação do valor da variável \textit{\textbf{buttonPress}}. Como o valor atribuído é \textit{\textbf{1}} se faz uma chamada da função \textit{\textbf{addPlace()}}, passando-se os valores \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}, obtidos com \textbf{\textit{mousedown}}. 
 
 \lstinputlisting[caption={Chamada da função addPlace}, captionpos=b, label={lst:chamadaAddPlace}]{scripts/chamadaAddPlace.js}
 
-Na função \textbf{\textit{addPlace}} se constroi um objeto \textbf{\textit{(objPlace)}} com as seguintes propriedades: 
+Na função \textbf{\textit{addPlace}} constrói-se um objeto \textbf{\textit{(objPlace)}} com as seguintes propriedades: 
 
 \begin{enumerate}
 	\item \textbf{id:} representa a identidade única que irá identificar esse objeto ao longo de todo o código;
@@ -1091,14 +979,14 @@ Na função \textbf{\textit{addPlace}} se constroi um objeto \textbf{\textit{(ob
 	\item \textbf{posX:} indica o valor do eixo X em que o objeto se encontra na tela;
 	\item \textbf{posY:} indica o valor do eixo X em que o objeto se encontra na tela;
 	\item \textbf{connections:} array que identifica quais outros objetos estão ligados a ele;\label{prop:connections}
-	\item \textbf{nTokens:} identifica quantos \textbf{\textit{tokens}} o objeto lugar possuí.
+	\item \textbf{nTokens:} identifica quantas marcações o objeto lugar possuí.
 \end{enumerate}
 
-Após a definição desses valores no \textbf{\textit{objPlace}} se faz a inserção do mesmo no \textbf{\textit{arrayPlaces}}, em que se encontra todos os outros objetos de mesmas propriedades. Também se faz o acréscimo de \textbf{\textit{1}} na contagem de quantos lugares existem até o momento.
+Após a definição desses valores, se faz a inserção do \textbf{\textit{objPlace}} em \textbf{\textit{arrayPlaces}}, onde se encontra todos os outros objetos com as mesmas propriedades. Também se faz o acréscimo de \textbf{\textit{1}} na contagem de quantos lugares existem na rede até o momento.
 
 \lstinputlisting[caption={Função addPlace}, captionpos=b, label={lst:functionAddPlace}]{scripts/addPlace.js}
 
-Posteriormente a execução da função \textbf{\textit{addPlace}}, o valor da variável \textbf{\textit{buttonPress}} é atribuído como \textbf{\textit{0.}}
+Posteriormente a execução da função \textbf{\textit{addPlace()}}, o valor da variável \textbf{\textit{buttonPress}} é atribuído como \textbf{\textit{0.}}
 
 \newpage
 
@@ -1124,18 +1012,18 @@ Posteriormente a execução da função \textbf{\textit{addPlace}}, o valor da v
 		\draw [arrow] (end) -- (step4);
 		
 	\end{tikzpicture}
-	\caption{Diagrama de fluxo para adicionar um lugar}
+	\caption{Diagrama de fluxo para criar um lugar}
 	\label{fig:fluxo4etapas}
 \end{figure}
 
 \newpage
 
-Para facilitar a visualização no momento da adição do lugar, um efeito sombreado, representando o lugar, é mostrado enquanto se movimenta o mouse, antes do clique na tela, na área destinada a construção da rede de Petri, conforme a imagem abaixo:
+Para facilitar a visualização no momento da adição do lugar, um efeito sombreado, representando o lugar, é mostrado enquanto se movimenta o mouse, antes do clique na tela, na área destinada a construção da rede de Petri, conforme \ref{fig:clique_add_place}:
 
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.55]{figuras/exemplo_clique_addPlace.png}
-	\caption[Clicando bo botao addPlace]{Clique no botão addPlace}
+	\caption[Clicando bo botao addPlace]{Clique no botão \textit{\textbf{addPlace}}}
 	\label{fig:clique_add_place}
 \end{figure}
 
@@ -1143,13 +1031,13 @@ Para facilitar a visualização no momento da adição do lugar, um efeito sombr
 
 De modo semelhante a criação de lugares, temos um segundo botão, criado através do arquivo \textbf{\textit{index.html}}, denominada \textbf{\textit{Add Transition}}. Seu modo de funcionamento é análogo ao botão \textbf{\textit{Add Place}}. No momento de seu clique, a função \textbf{\textit{buttonAddTransition()}} é chamada. Suas orientãções também alterarm o valor da variável global \textbf{\textit{buttonPress}}. Quando seu valor é diferente de \textbf{\textit{2}}, o valor \textbf{\textit{2}} é atribuído, caso contrário o valor retorna para zero. 
 
-\lstinputlisting[caption={Função buttonAddTransition}, captionpos=b, label={lst:buttonAddTransition}]{scripts/buttonAddTransition.js}
+\lstinputlisting[caption={Função \textit{\textbf{buttonAddTransition()}}}, captionpos=b, label={lst:buttonAddTransition}]{scripts/buttonAddTransition.js}
 
-No momento do clique do botão \textbf{\textit{Add Transition}} espera-se que o usuário faça um clique na área destinada a construção da rede de Petri. Dessa forma, fazendo o clique, uma transição é adicionada na mesma posição em que ocorreu o clique. Nesse momento, o evento \textbf{\textit{mousedown}} é chamado e se faz uma verifição do valor da variável \textbf{\textit{buttonPress}}. Como o valor é igual a \textbf{\textit{2}}, a função \textbf{addTransition()} é chamada, passando-se os valores \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}.
+No momento do clique do botão \textbf{\textit{Add Transition}} espera-se que o usuário faça um clique na área destinada a construção da rede de Petri. Dessa forma, fazendo o clique, uma transição é adicionada na mesma posição em que o clique ocorreu. Nesse momento, o evento \textbf{\textit{mousedown}} é chamado e se faz uma verifição do valor da variável \textbf{\textit{buttonPress}}. Como o valor é igual a \textbf{\textit{2}}, a função \textit{\textbf{addTransition()}} é chamada, passando-se os valores \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}.
 
 \lstinputlisting[caption={Chamada da função addTransition()}, captionpos=b, label={lst:chamadaAddTransition}]{scripts/chamadaAddTransition.js}
 
-Na função \textbf{addTransition()} se constrói um objeto \textbf{\textit{objTransition}} com as seguintes propriedades:
+Na função \textbf{addTransition()} se constrói um objeto \textbf{\textit{(objTransition)}} com as seguintes propriedades:
 
 \begin{enumerate}
 	\item \textbf{id:} representa a identidade única da transição que irá identificar esse objeto ao longo de todo o código;
@@ -1159,21 +1047,21 @@ Na função \textbf{addTransition()} se constrói um objeto \textbf{\textit{objT
 	\item \textbf{posX:} indica o valor do eixo X em que a transição se encontra na tela;
 	\item \textbf{posY:} indica o valor do eixo Y em que a transição se encontra na tela;
 	\item \textbf{connections:} array que identifica quais outros objetos estão ligados a essa transição;
-	\item \textbf{isEnable:} valor booleano que indica se as exigências para ativação da transição foram cumpridas.\label{prop:isEnable}
+	\item \textbf{isEnable:} valor booleano que indica se as exigências para ativação da transição estão sendo cumpridas.\label{prop:isEnable}
 \end{enumerate}
 
-Após as definições desses valores no \textbf{\textit{objTransition}} se faz a inserção do mesmo no \textbf{\textit{arrayTransitions}}, em que se encontra todas as outras transições de mesmas propriedades. Também se faz o acréscimo de \textbf{\textit{1}} na contagem de quantas transições existem até o momento.
+Após as definições desses valores, se faz a inserção do \textbf{\textit{objTransition}} em \textbf{\textit{arrayTransitions}}, onde se encontra todas as outras transições com as mesmas propriedades. Também se faz o acréscimo de \textbf{\textit{1}} na contagem de quantas transições existem até o momento na rede.
 
 \lstinputlisting[caption={Função addTransition()}, captionpos=b, label={lst:addTransition}]{scripts/addTransition.js}
 
 Posteriormente a execução da função \textbf{\textit{addTransition()}}, o valor da variável \textbf{\textit{buttonPress}} é atribuído como \textbf{\textit{0}}
 
-Para facilitar a visualização no momento de adição da transição, o botão pressionado permanece na cor amarela enquanto o clique na tela não ocorre para adição da transição. Além disso, um efeito sombreado, em forma de uma transição acompanha o cursor do mouse enquanto não há o clique, conforme imagem abaixo: 
+Para facilitar a visualização no momento de adição da transição, o botão pressionado permanece na cor amarela enquanto o clique na tela não ocorre para adição da transição. Além disso, um efeito sombreado, em forma de uma transição acompanha o cursor do mouse enquanto não há o clique, conforme \ref{fig:clique_add_transition}: 
 
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.55]{figuras/exemplo_clique_addTransition.png}
-	\caption[Clicando bo botao addTransition]{Clique no botão Add Transition}
+	\caption[Clicando bo botao addTransition]{Clique no botão \textit{\textbf{Add Transition}}}
 	\label{fig:clique_add_transition}
 \end{figure}
 
@@ -1212,33 +1100,33 @@ Para facilitar a visualização no momento de adição da transição, o botão 
 
 \subsection*{Criação dos arcos}
 
-Para a criação dos arcos foram desenvolvido dois novos botões, denominados \textbf{\textit{Add Arc}}, para a criação de arcos normais, e \textbf{\textit{Add Inh Arc}}, para a criação de arcos inibidores. No momento do clique, eles desempenham funções semelhantes, diferenciando-se apenas pela valor da variável \textit{\textbf{buttonPress}} e \textbf{\textit{arcType}}. O papel dessas variáveis é indicar o botão que foi pressionado e o tipo de arco selecionado. Além disso, a variável booleana  \textbf{\textit{drawArc}} recebe o valor \textbf{\textit{true}} indicando que um arco será desenhado na tela.
+Para a criação dos arcos foram desenvolvidos dois novos botões, denominados \textbf{\textit{Add Arc}}, para a criação de arcos normais, e \textbf{\textit{Add Inh Arc}}, para a criação de arcos inibidores. No momento do clique, eles desempenham funções semelhantes, diferenciando-se apenas pela valor da variável \textit{\textbf{buttonPress}} e \textbf{\textit{arcType}}. O papel dessas variáveis é indicar o botão que foi pressionado e o tipo de arco selecionado. Além disso, a variável booleana \textbf{\textit{drawArc}} recebe o valor \textbf{\textit{true}} indicando que um arco será desenhado na tela.
 
-\lstinputlisting[caption={Botão Add Arc}, captionpos=b, label={lst:buttonAddArc}]{scripts/buttonAddArc.js}
+\lstinputlisting[caption={Botão \textit{\textbf{Add Arc}}}, captionpos=b, label={lst:buttonAddArc}]{scripts/buttonAddArc.js}
 
-\lstinputlisting[caption={Botão Add Inh Arc}, captionpos=b, label={lst:buttonAddInhArc}]{scripts/buttonAddInhArc.js}
+\lstinputlisting[caption={Botão \textit{\textbf{Add Inh Arc}}}, captionpos=b, label={lst:buttonAddInhArc}]{scripts/buttonAddInhArc.js}
 
-No momento de acionamento de algum desses dois botões espera-se que o usuário inicie o desenho de um arco. Para isso, inicialmente ele deve selecionar o ponto inicial do desenho desse arco. Para arcos normais, o ponto inicial pode ser tanto um lugar, quanto por uma transição. Para os arcos inibidores, o ponto inicial deve ser obrigatoriamente um lugar, não é possível iniciar o desenho de um arco inibidor a partir de uma transição. Quando o usuário faz o primeiro clique, posterior ao clique do botão, o evento \textbf{\textit{mousedown}} é ativado e a verificação da variável \textbf{\textit{buttonPress}} é verificado. Caso \textbf{\textit{buttonPress}} seja igual a \textbf{\textit{3}} ou \textbf{\textit{4}} a função \textbf{\textit{addArc}} é chamada. Como o valor da variável \textbf{\textit{buttonPress}} não se altera ao longo do desenho do arco, sempre que há um clique na tela, há a chamada da função \textbf{\textit{addArc}}.
+No momento de acionamento de algum desses dois botões espera-se que o usuário inicie o desenho de um arco. Para isso, inicialmente, ele deve selecionar o ponto inicial do desenho desse arco. Para arcos normais, o ponto inicial pode ser tanto um lugar, quanto uma transição. Para os arcos inibidores, o ponto inicial deve ser, obrigatoriamente, um lugar. Não é possível iniciar o desenho de um arco inibidor a partir de uma transição. Quando o usuário faz o primeiro clique, posterior ao clique do botão, o evento \textbf{\textit{mousedown}} é ativado e a verificação da variável \textbf{\textit{buttonPress}} ocorre. Caso \textbf{\textit{buttonPress}} seja igual a \textbf{\textit{3}} ou \textbf{\textit{4}} a função \textbf{\textit{addArc()}} é chamada. Como o valor da variável \textbf{\textit{buttonPress}} não se altera ao longo do desenho do arco, sempre que há um clique na tela, há a chamada da função \textbf{\textit{addArc()}}.
 
-A cada chamada da função \textbf{\textit{addArc}} se faz uma verificação de algumas variáveis temporárias que auxiliam a construção dos arcos, são elas: 
+A cada chamada da função \textbf{\textit{addArc()}} se faz uma verificação de algumas variáveis temporárias que auxiliam a construção dos arcos, são elas: 
 
 \begin{enumerate}
 	\item \textbf{\textit{startingPositionArc:}} array que indica o ponto inicial, nos eixos X e Y da tela, do arco, além de contter o id do item em que o arco se inicia;
-	\item \textbf{\textit{intermediatePoints:}} array que indica todos os pontos, nos eixos X e Y da tela, depois do ponto inicial e antes do ponto final;
-	\item \textbf{\textit{endPositionArc:}} array que indica a ponto final, nos eixos X e Y da tela, do arco, além de contter o id do item em que o arco termina.
+	\item \textbf{\textit{intermediatePoints:}} array que indica todos os pontos intermediários, nos eixos X e Y da tela, depois do ponto inicial e antes do ponto final;
+	\item \textbf{\textit{endPositionArc:}} array que indica a ponto final, nos eixos X e Y da tela, do arco, além de conter o id do item em que o arco termina.
 \end{enumerate}
 
-A primeira verificação que se faz na função \textbf{\textit{addArc}} é a existência de pontos intermediários. Para essa vericação analisamos o tamanho do array \textbf{\textit{startingPositionArc}} e \textbf{\textit{endPositionArc}}. Se o primeiro for maior que \textbf{\textit{0}}, e o último igual a \textit{\textbf{0}}, significa que o clique foi feito para a construção de um ponto intermediário  arco. Dessa forma, se faz uma inserção no array \textbf{\textit{intermediatePoints}} da posição dos eixos X e Y, passando-se os valores das variáveis \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}.
+A primeira verificação que se faz na função \textbf{\textit{addArc()}} é a existência de pontos intermediários. Para essa vericação analisa-se o tamanho do array \textbf{\textit{startingPositionArc}} e \textbf{\textit{endPositionArc}}. Se o primeiro for maior que \textbf{\textit{0}}, e o último igual a \textit{\textbf{0}}, significa que o clique foi feito para a construção de um ponto intermediário do arco. Dessa forma, se faz uma inserção no array \textbf{\textit{intermediatePoints}} da posição dos eixos X e Y, passando-se os valores das variáveis \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}.
 
 \lstinputlisting[caption={Verificação de pontos intermediários}, captionpos=b, label={lst:intermediatePoints}]{scripts/intermediatePoints.js}
 
-Caso a condição anterior não seja atendida, se entende que o ponto \textbf{\textit{X}} e \textbf{\textit{Y}} não representa um ponto intermediário do arco. Posteriormente, se percorre os arrays \textbf{\textit{arrayPlaces}} e \textbf{\textit{arrayTransition}}. Para cada uma das posições de ambos os arrays se faz a verificação, através das funções \textbf{\textit{isInsidePlace}} e \textbf{\textit{isInsideTransition}}, se o clique do mouse ocorreu dentro de algum dos lugares ou transições que estão dispostas na tela. Caso o clique ocorra dentro de algum desses dois elementos, o ponto \textbf{\textit{X}} e \textbf{\textit{Y}} será gravado na variável \textbf{\textit{startingPositionArc}}, juntamente com o \textbf{\textit{id}} do elemento em que o arco se iniciou. 
+Caso a condição anterior não seja atendida, se entende que o ponto \textbf{\textit{X}} e \textbf{\textit{Y}} não representa um ponto intermediário do arco. Posteriormente, se percorre os arrays \textbf{\textit{arrayPlaces}} e \textbf{\textit{arrayTransitions}}. Para cada uma das posições de ambos os arrays se faz a verificação, através das funções \textbf{\textit{insidePlace()}} \ref{lst:insidePlace} e \textbf{\textit{insideTransition()}} \ref{lst:insideTransition}, se o clique do mouse ocorreu dentro de algum dos lugares ou transições que estão dispostas na tela. Caso o clique ocorra dentro de algum desses dois elementos, o ponto \textbf{\textit{X}} e \textbf{\textit{Y}} será gravado na variável \textbf{\textit{startingPositionArc}}, juntamente com o \textbf{\textit{id}} do elemento em que o arco se iniciou. 
 
 \subsection*{Para lugares}
 
-Caso a chamada da função \textbf{\textit{isInsidePlace}} retorne \textbf{\textit{true}} e a variável \textbf{\textit{startingPositionArc}} não contenha nenhum valor, o ponto inicial, com os eixos \textbf{\textit{X}} e \textbf{\textit{Y}} e o id do lugar, são gravados nas propriedades do arco. Além disso, no lugar em quem o arco se iniciou, insere-se a informação de que aquele arco se iniciou ali. A variável auxiliar \textbf{\textit{typeElement}} também recebe o valor \textbf{\textit{"place"}}, para indicar que aquele arco se iniciou num lugar. 
+Caso a chamada da função \textbf{\textit{insidePlace()}} retorne \textbf{\textit{true}} e a variável \textbf{\textit{startingPositionArc}} não contenha nenhum valor, o ponto inicial, com os eixos \textbf{\textit{X}} e \textbf{\textit{Y}} e o \textbf{\textit{id}} do lugar, são gravados nas propriedades do arco. Além disso, no lugar em quem o arco se iniciou, insere-se a informação de que aquele arco se iniciou ali. A variável auxiliar \textbf{\textit{typeElement}} também recebe o valor \textbf{\textit{"place"}}, para indicar que aquele arco se iniciou num lugar. 
 
-Caso a verificação anterior não seja atendida, se faz uma nova verificação. Se a chamada da função \textbf{\textit{isInsidePlace}} retornar \textbf{\textit{true}} e a variável \textbf{\textit{typeElement}} contiver o valor \textbf{\textit{"transition"}}, quer dizer que o arco se iniciou em uma transição, e agora está finalizando em um lugar. Com isso, se adiciona o valor \textbf{\textit{X} e \textbf{\textit{Y}}} do clique e o \textbf{\textit{id}} do lugar em que o arco está finalizando na variável \textbf{\textit{endPositionArc}} que, posteriormente, será adicionado nas propriedades do arco. O lugar recebe a informação de que esse arco finalizou nele.
+Caso a verificação anterior não seja atendida, se faz uma nova verificação. Se a chamada da função \textbf{\textit{insidePlace()}} retornar \textbf{\textit{true}} e a variável \textbf{\textit{typeElement}} contiver o valor \textbf{\textit{"transition"}}, quer dizer que o arco se iniciou em uma transição, e agora está finalizando em um lugar. Com isso, se adiciona o valor \textbf{\textit{X} e \textbf{\textit{Y}}} do clique e o \textbf{\textit{id}} do lugar em que o arco está finalizando na variável \textbf{\textit{endPositionArc}} que, posteriormente, será adicionado nas propriedades do arco. O lugar recebe a informação de que esse arco finalizou nele.
 
 Com a finalização do arco, a variável \textbf{\textit{drawArc}} recebe o valor \textbf{\textit{false}} e a \textbf{\textit{typeElement}} recebe \textbf{\textit{null}}
 
@@ -1246,9 +1134,9 @@ Com a finalização do arco, a variável \textbf{\textit{drawArc}} recebe o valo
 
 \subsection*{Para transições}
 
-Caso a chamada da função \textbf{\textit{isInsideTransition}} retorne \textbf{\textit{true}} e a variável \textbf{\textit{startingPositionArc}} não contenha nenhum valor, o ponto inicial, com os eixos \textbf{\textit{X}} e \textbf{\textit{Y}} e o id da transição, são gravados nas propriedades do arco. Além disso, na transição em quem o arco se iniciou, insere-se a informação de que aquele arco se iniciou ali. A variável auxiliar \textbf{\textit{typeElement}} também recebe o valor \textbf{\textit{"transition"}}, para indicar que aquele arco se iniciou numa transição. 
+Caso a chamada da função \textbf{\textit{insideTransition()}} retorne \textbf{\textit{true}} e a variável \textbf{\textit{startingPositionArc}} não contenha nenhum valor, o ponto inicial, com os eixos \textbf{\textit{X}} e \textbf{\textit{Y}} e o \textbf{\textit{id}} da transição, são gravados nas propriedades do arco. Além disso, na transição em quem o arco se iniciou, insere-se a informação de que aquele arco se iniciou ali. A variável auxiliar \textbf{\textit{typeElement}} também recebe o valor \textbf{\textit{"transition"}}, para indicar que aquele arco se iniciou numa transição. 
 
-Caso a verificação anterior não seja atendida, se faz uma nova verificação. Se a chamada da função \textbf{\textit{isInsideTransition}} retornar \textbf{\textit{true}} e a variável \textbf{\textit{typeElement}} contiver o valor \textbf{\textit{"place"}}, quer dizer que o arco se iniciou em um lugar, e agora está finalizando em uma transição. Com isso, se adiciona o valor \textbf{\textit{X} e \textbf{\textit{Y}}} do clique e o \textbf{\textit{id}} da transição em que o arco está finalizando na variável \textbf{\textit{endPositionArc}} que, posteriormente, será adicionado nas propriedades do arco. A transição recebe a informação de que esse arco finalizou nele.
+Caso a verificação anterior não seja atendida, se faz uma nova verificação. Se a chamada da função \textbf{\textit{insideTransition()}} retornar \textbf{\textit{true}} e a variável \textbf{\textit{typeElement}} contiver o valor \textbf{\textit{"place"}}, quer dizer que o arco se iniciou em um lugar, e agora está finalizando em uma transição. Com isso, se adiciona o valor \textbf{\textit{X} e \textbf{\textit{Y}}} do clique e o \textbf{\textit{id}} da transição em que o arco está finalizando na variável \textbf{\textit{endPositionArc}} que, posteriormente, será adicionado nas propriedades do arco. A transição recebe a informação de que esse arco finalizou nele.
 
 Com a finalização do arco, a variável \textbf{\textit{drawArc}} recebe o valor \textbf{\textit{false}} e a \textbf{\textit{typeElement}} recebe \textbf{\textit{null}}
 
@@ -1272,9 +1160,121 @@ Quando as variáveis temporárias \textbf{\textit{startingPositionArc}} e \textb
 	\item \textbf{weightPos:} indica o valor dos eixos X e Y em que o peso do arco será mostrado na tela.
 \end{enumerate}
 
-Tendo essas propriedades definidas se faz a adição do arco no \textbf{\textit{arrayArcs}}. Por fim, as variáveis temporárias são atribuídas com valores nulos para que o próximo arco possa ser construído.
+Tendo essas propriedades definidas faz-se a adição do arco em \textbf{\textit{arrayArcs}}. Por fim, as variáveis temporárias são atribuídas com valores nulos para que o próximo arco possa ser construído.
 
 \lstinputlisting[caption={Criando o arco com as propriedades}, captionpos=b, label={lst:addArc}]{scripts/addArc.js}
+
+\section{Renderizando elementos na tela}
+
+A renderização de elementos visuais na interface é uma das funcionalidades essenciais de uma aplicação web moderna, especialmente quando se trata da representação gráfica de estruturas conceituais. Neste projeto, cujo objetivo principal é possibilitar a criação e manipulação de redes de Petri, torna-se indispensável a visualização clara e interativa dos componentes que constituem esse tipo de rede.
+
+De modo simples, os elementos de uma rede de Petri são representados de forma gráfica por meio de figuras geométricas já conhecidas pela maioria das pessoas, tornando mais simples a analogia dos elementos das redes de Petri, com figuras geométricas já conhecidas. Os lugares são representados por círculos, as transições por retângulos, e os arcos que ligam esses elementos são ilustrados como setas direcionais. Elementos adicionais, como marcações, pesos e títulos, são exibidas como textos e números renderizados diretamente na tela, complementando a representação visual e fornecendo os dados necessários para a interpretação correta da rede.
+
+O HTML fornece a \textit{tag} \textbf{<canvas>}, que permite o desenvolvimento de figuras geométricas, gráficos e textos. No contexto desse projeto, o \textit{canvas} é essencial. Primeiramente, fornecendo uma área na tela para o desenvolvimento e manipulação das redes de Petri. Posteriormente, fornecendo uma API que pode ser manipulada, através do Javascript, para a criação dos elementos gráficos. 
+
+\lstinputlisting[caption={Definição da \textit{tag} \textbf{<canvas>} no HTML}, captionpos=b, label={lst:areacanvas}]{scripts/areaCanvas.html}
+
+Após a chamada do elemento \textbf{<canvas>} no arquivo \textbf{\textit{index.html}} uma área retangular com altura e largura, definidas nos métodos \textbf{\textit{width}} e \textbf{\textit{heigth}}, é renderizada na tela. Com essa definição feita, é possível a manipulação do que será renderizado na tela, dentro da área \textit{canvas} criada. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.3]{figuras/area_canvas.png}
+	\caption[Área canvas]{Retângulo da área \textit{\textbf{<canvas>}} logo abaixo dos botões da aplicação web.}
+	\label{fig:area_canvas}
+\end{figure}
+\FloatBarrier
+
+Tendo a área \textit{canvas} definida, inicia-se a manipulação dos elementos gráficos que irão representar as redes de Petri. Para tornar possível a interatividade de diferentes elementos criou-se uma função de \textit{loop}. Essa função tem como principal objetivo apagar e renderizar os elementos representados na área \textit{canvas} de forma continua. Esse processo de apagar os elementos e renderizar novamente, várias vezes por segundo, permite criar animações, tornando possível a movimentação dos elementos e a edição das informações na tela. 
+
+\lstinputlisting[caption={Função \textit{loop}}, captionpos=b, label={lst:functionloop}]{scripts/functionLoop.js}
+
+O método Javascript \textbf{\textit{window.requestAnimationFrame(loop, canvas)}} informa ao navegador que se deseja executar animações. Além disso, ele sincroniza a taxa de atualização, em \textbf{Hz}, das animações, com a taxa de atualização do monitor do usuário. Posteriormente, faz-se a chamada da função \textbf{\textit{render()}}, que irá renderizar os elementos na área \textit{canvas}. Também, a função \textbf{\textit{buttonColors()}} é acionada. Ela verifica qual botão está pressionado e, com base nas informações, altera a cor do botão que indica a ação que será executada. 
+
+Além, faz-se a verificação da variável \textbf{\textit{simulation}}, que indica ao código se está ocorrendo a ação de simulação da rede de Petri. Caso sim, a função \textbf{\textit{netSimulationEnables()}} \ref{lst:saveNet}, responsável pela simulação da rede de Petri, é acionada.
+
+\subsection*{Função de renderização}
+
+A função \textbf{\textit{render()}} é responsável pela renderização de todos os elementos dentro da área \textit{canvas} destinada a construção e simulação das redes de Petri. Ela utiliza a \textit{API} do Javascript para a manipulação do \textit{canvas}. Para cada tipo de elemento inicia-se o desenho com \textbf{\textit{beginPatch()}} e se finaliza com \textbf{\textit{closePatch()}}. Suas atribuições incluem:
+
+\begin{enumerate}
+	\item renderização dos lugares;
+	\item renderização das transições;
+	\item renderização dos arcos;
+	\item renderização dos pontos intermediário dos arcos;
+	\item renderização do triângulo ou circulo na ponta do arco, a depender do tipo de arco;
+	\item renderização do arco, enquanto ele é criado \ref{fig:mousemove_desenhando_arco};
+	\item renderização do lugar após o botão \textbf{Add Place} ser pressionado, e antes de ser adicionado com \textbf{\textit{mousedown}};
+	\item renderização da transição após o botão \textbf{Add Transition} ser pressionado, e antes de ser adicionado com \textbf{\textit{mousedown}}.
+\end{enumerate}
+
+\subsubsection*{Renderização dos lugares}
+
+Um lugar é, graficamente, um circulo. Ao manipular o \textit{canvas} é possível construir um circulo passando os seguintes parâmetros: as posições \textbf{x} e \textbf{y} do centro do circulo e o seu raio. 
+
+\lstinputlisting[caption={Renderizando um lugar}, captionpos=b, label={lst:renderPlace}]{scripts/renderPlace.js}
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=1]{figuras/renderPlace.png}
+	\caption[renderPlace]{Lugar P1 renderizado na tela}
+	\label{fig:renderPlace}
+\end{figure}
+\FloatBarrier
+
+Além disso, um lugar possui outras características, como o número de marcações e o seu nome. Dessa forma, um número, representando a quantidade de marcações é renderizado no centro do circulo. Um outro texto, representando o nome, é renderizado um pouco acima do circulo, conforme \ref{lst:renderPlace}. A renderização ocorre de forma recursiva em cada um dos lugares que estão informados em \textbf{\textit{arrayPlaces}}.
+
+\subsubsection*{Renderização das transições}
+
+Uma transição é, graficamente, um retângulo. É possível construir um retângulo passando os seguintes parâmetros: posição \textbf{x} e \textbf{y} da ponta inferior esquerda do retângulo, largura e altura, em \textit{pixels}. Além disso, a transição possui a cor preta quando a propriedade \textbf{\textit{isEnable}} é falsa. Quando \textbf{\textit{isEnable}} é verdadeiro, e a simulação está ativada, a cor da transição é vermelha. 
+
+\lstinputlisting[caption={Renderizando uma transição}, captionpos=b, label={lst:renderTransition}]{scripts/renderTransition.js}
+
+\begin{figure}[ht]
+	\label{fig:renderTransition}
+	\centering
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\includegraphics[scale=1]{figuras/transitionEnableFalse.png}
+		%\caption[renderTransitionEnableFalse]{Transição renderizada não ativada}
+		\label{fig:renderTransitionEnableFalse}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\includegraphics[scale=1]{figuras/transitionEnableTrue.png}
+		%\caption[renderTransitionEnableTrue]{Transição renderizada ativada}
+		\label{fig:renderTransitionEnableTrue}
+	\end{minipage}
+	\caption{Renderização da transição T1 de forma não ativada e ativada}
+\end{figure}
+
+Como o parâmetro a ser passado para a \textit{API} do Javascript para a construção de um retângulo em uma área \textbf{canvas} exige as coordenadas \textbf{x} e \textbf{y} do canto inferior esquerdo do retângulo, fez-se uma compensação, utilizando os valores de altura e largura, para se obter a posição do centro do retângulo. Dessa forma, ao posicionar e movimentar uma transição, se faz pela posição do centro.  A renderização ocorre de forma recursiva em cada uma das transições que estão informados em \textbf{\textit{arrayTransitions}}.
+
+\subsubsection*{Renderização dos arcos}
+
+Um arco, graficamente, é uma linha. No caso específico das redes de Petri, temos 2 principais tipos de arcos, normal e inibidor. O arco normal é representado como uma seta, o arco inibidor é semelhante, mas possui um circulo na ponta, ao invés de um triângulo. O processo é feito recursivamente em cada um dos arcos contidos em \textbf{\textit{arrayArcs}}.
+
+\lstinputlisting[caption={Renderizando um arco}, captionpos=b, label={lst:renderArc}]{scripts/renderArc.js}
+
+Inicialmente, para a renderização do arco, há uma detecção da posição \textbf{x} e \textbf{y}, obtida através do evento \textbf{\textit{mousedown}} cap:mousedown. Esse primeiro ponto precisa ser, necessariamente, dentro de algum elemento, lugar ou transição para arcos normais e, apenas lugar, para arcos inibidores. Tendo a primeira posição \textbf{x} e \textbf{y} definida, há duas opções: ou o usuário seleciona o elemento final do arco, ou ele seleciona um ponto intermediário. No primeiro caso, uma linha entre o ponto inicial e final é renderizada. Caso seja um arco normal, um triângulo na ponto é renderizado que, junto com a linha, dá a ilusão de ser uma seta direcional. No caso do arco inibidor, um circulo é renderizado na ponta final da linha. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.7]{figuras/arcNormalInibidor.png}
+	\caption[Arco normal e inibidor]{Arco normal e inibidor chegando transição T1}
+	\label{fig:arcNormalInibidor}
+\end{figure}
+
+Há também o segundo caso, em que o usuário cria um ponto intermediário. Nesse caso, uma linha entre o ponto inicial e o ponto intermediário é criada. Na posição \textbf{x} e y\textbf{y} desse ponto intermediário é criado um circulo, para indicar que ali há um ponto intermediário, e que pode ser movimentado posteriormente. Podem existir infinitos pontos intermediários, até que o usuário clique no elemento final, quando o desenho do arco finaliza. Na ponta final, há o triângulo ou circulo, a depender do tipo de arco. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.8]{figuras/arcPontoIntermediario.png}
+	\caption[Arco com pontos intermediários]{Arcos com pontos intermediários}
+	\label{fig:arcPontoIntermediario}
+\end{figure}
+
+Além disso, o arco é mostrado, em tempo real, enquanto é desenhado. Faz-se isso utilizando o ponto inicial, juntamente com os pontos intermediários, caso existam, e a posição \textbf{x} e \textbf{y} do ponteiro do mouse, obtida com \textbf{\textit{mousemove}} \ref{cap:mousemove}. O processo é o mesmo que o anterior, diferenciado-se pelo fato do ponto final ser o obtido pelas propriedades \textbf{\textit{clientX}} e \textbf{\textit{clientY}} do evento \textbf{\textit{mousemove}} \ref{fig:mousemove_desenhando_arco}. 
 
 \section{Movimentando elementos na tela}\label{cap:move_elements}
 
