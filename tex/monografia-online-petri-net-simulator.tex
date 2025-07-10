@@ -988,42 +988,20 @@ Após a definição desses valores, se faz a inserção do \textbf{\textit{objPl
 
 Posteriormente a execução da função \textbf{\textit{addPlace()}}, o valor da variável \textbf{\textit{buttonPress}} é atribuído como \textbf{\textit{0.}}
 
-\newpage
-
-\begin{figure}[h!]
+\begin{figure}[ht] 
 	\centering
-	\begin{tikzpicture}[node distance=2cm]
-		
-		% Nodes
-		\node (start) [startstop] {Clique no botão \textbf{\textit{addPlace}}};
-		\node (step) [process, below of=start] {\textbf{\textit{buttonPress = 1}}};
-		\node (step1) [process, below of=step] {Clique na área destinada a construção da rede de Petri};
-		\node (step2) [process, below of=step1] {Chamada da função \textbf{\textit{addPlace}}};
-		\node (step3) [process, below of=step2] {Criação do \textbf{\textit{objPlace}}};
-		\node (end) [startstop, below of=step3] {Adiciona \textbf{\textit{objPlace} ao \textbf{\textit{arrayPlaces}}}};
-		\node (step4) [process, below of=end] {\textbf{\textit{buttonPress = 0}}};
-		
-		% Arrows
-		\draw [arrow] (start) -- (step);
-		\draw [arrow] (step) -- (step1);
-		\draw [arrow] (step1) -- (step2);
-		\draw [arrow] (step2) -- (step3);
-		\draw [arrow] (step3) -- (end);
-		\draw [arrow] (end) -- (step4);
-		
-	\end{tikzpicture}
-	\caption{Diagrama de fluxo para criar um lugar}
-	\label{fig:fluxo4etapas}
+	\includegraphics[scale=0.2]{figuras/diagrama-fluxo-addPlace.png}
+	\caption[Diagrama de fluxo para criação de um lugar]{Diagrama de fluxo para criação de um lugar}
+	\label{fig:addPlaceDiagram}
 \end{figure}
-
-\newpage
+\FloatBarrier
 
 Para facilitar a visualização no momento da adição do lugar, um efeito sombreado, representando o lugar, é mostrado enquanto se movimenta o mouse, antes do clique na tela, na área destinada a construção da rede de Petri, conforme \ref{fig:clique_add_place}:
 
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.55]{figuras/exemplo_clique_addPlace.png}
-	\caption[Clicando bo botao addPlace]{Clique no botão \textit{\textbf{addPlace}}}
+	\caption[Clicando bo botao Add Place]{Clique no botão \textit{\textbf{Add Place}}}
 	\label{fig:clique_add_place}
 \end{figure}
 
@@ -1056,6 +1034,14 @@ Após as definições desses valores, se faz a inserção do \textbf{\textit{obj
 
 Posteriormente a execução da função \textbf{\textit{addTransition()}}, o valor da variável \textbf{\textit{buttonPress}} é atribuído como \textbf{\textit{0}}
 
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.2]{figuras/diagrama-fluxo-addTransition.png}
+	\caption[Diagrama de fluxo para criação de uma transição]{Diagrama de fluxo para criação de uma transição}
+	\label{fig:addTransitionDiagram}
+\end{figure}
+\FloatBarrier
+
 Para facilitar a visualização no momento de adição da transição, o botão pressionado permanece na cor amarela enquanto o clique na tela não ocorre para adição da transição. Além disso, um efeito sombreado, em forma de uma transição acompanha o cursor do mouse enquanto não há o clique, conforme \ref{fig:clique_add_transition}: 
 
 \begin{figure}[ht] 
@@ -1064,39 +1050,6 @@ Para facilitar a visualização no momento de adição da transição, o botão 
 	\caption[Clicando bo botao addTransition]{Clique no botão \textit{\textbf{Add Transition}}}
 	\label{fig:clique_add_transition}
 \end{figure}
-
-
-\newpage
-
-\begin{figure}[h!]
-	\centering
-	\begin{tikzpicture}[node distance=2cm]
-		
-		% Nodes
-		\node (start) [startstop] {Clique no botão \textbf{\textit{Add Transition}}};
-		\node (step1) [process, below of=start] {\textbf{\textit{buttonPress = 2}}};
-		\node (step2) [process, below of=step1] {Clique na área destinada a construção da rede de Petri};
-		\node (step3) [process, below of=step2] {Chamada da função \textbf{\textit{addTransition}}};
-		\node (step4) [process, below of=step3] {Criação do \textbf{\textit{objTransition}}};
-		\node (step5) [process, below of=step4] {Adiciona \textbf{\textit{objTransition} ao \textbf{\textit{arrayTransitions}}}};
-		\node (step6) [process, below of=step5] {A transição é renderizada na tela na posição \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}};
-		\node (end) [startstop, below of=step6] {\textbf{\textit{buttonPress = 0}}};
-		
-		% Arrows
-		\draw [arrow] (start) -- (step);
-		\draw [arrow] (step1) -- (step2);
-		\draw [arrow] (step2) -- (step3);
-		\draw [arrow] (step3) -- (step4);
-		\draw [arrow] (step4) -- (step5);
-		\draw [arrow] (step5) -- (step6);
-		\draw [arrow] (step6) -- (end);
-		
-	\end{tikzpicture}
-	\caption{Diagrama de fluxo para adicionar uma transição}
-	\label{fig:fluxo_add_transition}
-\end{figure}
-
-\newpage
 
 \subsection*{Criação dos arcos}
 
@@ -1163,6 +1116,14 @@ Quando as variáveis temporárias \textbf{\textit{startingPositionArc}} e \textb
 Tendo essas propriedades definidas faz-se a adição do arco em \textbf{\textit{arrayArcs}}. Por fim, as variáveis temporárias são atribuídas com valores nulos para que o próximo arco possa ser construído.
 
 \lstinputlisting[caption={Criando o arco com as propriedades}, captionpos=b, label={lst:addArc}]{scripts/addArc.js}
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.12]{figuras/diagrama-fluxo-addArc.png}
+	\caption[Diagrama de fluxo para criação de um Arco]{Diagrama de fluxo para criação de um arco}
+	\label{fig:addArcDiagram}
+\end{figure}
+\FloatBarrier
 
 \section{Renderizando elementos na tela}
 
@@ -1373,17 +1334,6 @@ Caso todas essas comparações sejam verdadeiras, pode-se concluir que o clique 
 
 A partir do momento em que elementos são criados, há a necessidade de poder excluí-los, seja para corrigir algum erro, testar novas possibilidades, ou seja para deletar tudo e iniciar de novo. Na aplicação web desenvolvida buscou-se focar na exclusão tanto dos elementos individualmente, no caso, lugares, transições e arcos, quanto também pela exclusão da rede por completo, excluindo tudo de uma única vez.
 
-{\color{red}criar fluxo para explicar o processo}
-
-
-\begin{figure}[ht] 
-	\centering
-	\includegraphics[scale=1]{figuras/deleteDiagram.pdf}
-	\caption[Fluxograma Delete Elements]{Diagrama de fluxo para exclusão}
-	\label{fig:deleteDiagram}
-\end{figure}
-\FloatBarrier
-
 \subsection*{Deletando elementos}
 
 Para deletar um elemento, de forma individual, é necessário clicar no botão \textbf{\textit{Delete Element}}. A partir dessa ação há 3 possibilidades: 
@@ -1403,6 +1353,14 @@ A função percorre os 3 arrays principais de elementos, \textbf{\textit{arrayPl
 Na exclusão de lugares e transições, verifica-se quais arcos chegam ou saem desses elementos através da propriedade \textbf{\textit{connections}} \ref{prop:connections}. Tendo as conexões, faz-se também a exclusão desses arcos. Ao deletar um lugar e os arcos que chegam ou que saem, por exemplo, também exclui-se na transição a menção, na propriedade \textbf{\textit{connections}}, que há uma conexão com o arco excluído. O mesmo vale para quando se exclui uma transição. 
 
 Por fim, quando exclui-se um arco, de forma individual, verifica-se o elemento inicial e final, ou seja, onde o arco inicia e onde o arco finaliza. Tendo esses 2 elementos, faz-se a exclusão da menção de conexão na propriedade \textbf{\textit{connections}} de cada um desses elementos.
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.15]{figuras/diagrama-fluxo-deleteElement.png}
+	\caption[Diagrama de fluxo para deletar um elemento]{Diagrama de fluxo para deletar um elemento}
+	\label{fig:deleteElementDiagram}
+\end{figure}
+\FloatBarrier
 
 \subsection*{Deletando a rede por completo} \label{cap:deleteNetFull}
 
@@ -1425,6 +1383,14 @@ Entretanto, para executar a função \textbf{\textit{deleteNet()}}, é necessár
 \lstinputlisting[caption={Código para caixa de confirmação de exclusão da rede por completo}, captionpos=b, label={lst:confirmDeleteNet}]{scripts/confirmDeleteNet.js}
 
 Após a confirmação, por parte do usuário, faz-se a exclusão da rede por completo.
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.2]{figuras/diagrama-fluxo-deleteNet.png}
+	\caption[Diagrama de fluxo para deletar a rede por completo]{Diagrama de fluxo para deletar a rede por completo}
+	\label{fig:deleteNetDiagram}
+\end{figure}
+\FloatBarrier
 
 \section{Salvando e carregando a rede}\label{cap:saveLoadNet}
 
