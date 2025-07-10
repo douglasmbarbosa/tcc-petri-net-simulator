@@ -88,7 +88,8 @@
 
 \lstset{
     language=JavaScript,          % Define a linguagem como JavaScript
-    basicstyle=\ttfamily,         % Fonte básica do código
+   	backgroundcolor=\color{gray!10},
+    basicstyle=\ttfamily\footnotesize,         % Fonte básica do código
     keywordstyle=\color{blue},    % Cor das palavras-chave
     commentstyle=\color{gray},    % Cor dos comentários
     stringstyle=\color{red},      % Cor das strings
@@ -166,7 +167,11 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
+<<<<<<< HEAD
 \titulo{DESENVOLVIMENTO DE UM SIMULADOR DE REDES DE PETRI INDEPENDENTE DE PLATAFORMA}
+=======
+\titulo{SIMULADOR WEB PARA CONSTRUÇÃO E EXECUÇÃO INTERATIVA DE REDES DE PETRI}
+>>>>>>> develop
 \autor{Douglas Meneses Barbosa}
 \local{Ouro Preto}
 \data{\the\year} % imprime o ano corrente no campo data
@@ -282,20 +287,33 @@
 
 
 % Folha de aprovação - Obrigatório NBR 14724/2011
-\begin{folhadeaprovacao}
-\includepdf{folha-de-aprovacao.pdf}
-\end{folhadeaprovacao}
+%\begin{folhadeaprovacao}
+%\includepdf{folha-de-aprovacao.pdf}
+%\end{folhadeaprovacao}
 
 
 % Agradecimentos - opcional
 \begin{agradecimentos}
-\noindent Os agradecimentos [são opcionais, e] vem aqui... 
+\noindent A realização deste trabalho não teria sido possível sem o apoio e incentivo de pessoas fundamentais ao longo da minha trajetória acadêmica, profissional e pessoal.
+
+\noindent Agradeço, em primeiro lugar, aos meus pais, João e Conceição, por todo o amor, apoio incondicional e pelos valores que me ensinaram e que me trouxeram até aqui. Sua dedicação e confiança foram essenciais para que eu pudesse trilhar este caminho com perseverança.
+
+\noindent Aos meus amigos que estiveram comigo durante os anos vividos em Ouro Preto, deixo minha profunda gratidão pelos momentos compartilhados, pelas conversas, pelo companheirismo e pelo apoio mútuo nas dificuldades e conquistas. Ter estado ao lado de pessoas tão especiais tornou essa jornada mais leve e significativa. 
+
+\noindent Também, à minha namorada Letícia, agradeço por todo o carinho, paciência e incentivo nos momentos mais desafiadores durante toda a jornada de desenvolvimento desse trabalho. Sua presença, conselhos e incentivos foram essenciais para a conclusão desse trabalho.
+
+\noindent Ao professor Danny, meu orientador, registro meus sinceros agradecimentos pela orientação dedicada, pelas sugestões valiosas e pela confiança no desenvolvimento deste trabalho. 
+
+\noindent Por fim, agradeço à Universidade Federal de Ouro Preto (UFOP), pela formação acadêmica de excelência, pelo ambiente de aprendizado e pelas oportunidades que me foram oferecidas ao longo dos anos. Esta instituição teve papel fundamental na construção do meu percurso como estudante e futuro profissional.
+
+\noindent A todos, meu muito obrigado.
+
 \end{agradecimentos}
 
 % Epígrafe - Opcional
 \begin{epigrafe}
     \vspace*{\fill}
-\epigraph{\textsl{Júpiter leva 4332 dias para fazer uma revolução.}}{---~Oliver Lodge.}
+\epigraph{\textsl{Tudo parece impossível até que seja feito.}}{---~Nelson Mandela.}
 \end{epigrafe}
 % ---
 
@@ -306,24 +324,27 @@
 % resumo em português
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
- \noindent O resumo deve ressaltar o objetivo, o método, os resultados e as conclusões do documento. A ordem e a extensão
- destes itens dependem do tipo de resumo (informativo ou indicativo) e do tratamento que cada item recebe no documento original. O resumo deve ser precedido da referência do documento, com exceção do resumo inserido no
- próprio documento. (\ldots) As palavras-chave devem figurar logo abaixo do resumo, antecedidas da expressão Palavras-chave:, separadas entre si por
- ponto e finalizadas também por ponto.
+ \noindent
+ 
+ As Redes de Petri são um formalismo matemático utilizado na modelagem de sistemas a eventos discretos. Este trabalho tem como objetivo o desenvolvimento de um simulador web de redes de Petri, com foco em acessibilidade por meio do navegador. A ferramenta desenvolvida foi implementada com tecnologias de \textit{frontend} (HTML, CSS e JavaScript) e permite a criação e simulação das redes diretamente no navegador. Entre as funcionalidades disponíveis estão: criação de lugares, transições e arcos; movimentação livre dos componentes na tela; exclusão dos elementos criados e da rede por completo; manipulação via eventos JavaScript; salvamento e carregamento das redes em arquivos no formato JSON; e simulação das redes de Petri desenvolvidas. O projeto utilizou Git para controle de versão e foi disponibilizado na web por meio da plataforma Netlify. Para versões futuras, estão previstas melhorias na interface, como a inclusão de orientações interativas e melhoria no design dos elementos HTML, além de suporte a redes de Petri temporizadas, coloridas e estocásticas, autenticação de usuários e armazenamento persistente das redes criadas em um banco de dados.
 
- \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+\vspace{\onelineskip}
+
+ \textbf{Palavras-chaves}: Redes de Petri. Desenvolvimento Web. Modelagem de Sistemas. Simulação. HTML. CSS. JavaScript. Git. Netlify.  
 \end{resumo}
 
 % resumo em inglês
 \begin{resumo}[Abstract]
  \begin{otherlanguage*}{english}
 
-\noindent This is the english abstract.
+\noindent 
+
+Petri Nets are a mathematical formalism used for modeling discrete event systems. This work aims to develop a web-based Petri Net simulator focused on accessibility through the browser. The developed tool was implemented using frontend technologies (HTML, CSS, and JavaScript) and allows the creation and simulation of Petri Nets directly in the browser. Available features include the creation of places, transitions, and arcs; free movement of components on the screen; deletion of individual elements or the entire network; manipulation via JavaScript events; saving and loading networks in JSON format; and simulation of the created Petri Nets. The project utilized Git for version control and was deployed on the web via the Netlify platform. Future versions plan to include interface improvements such as interactive guidance and enhanced design of HTML elements, as well as support for timed, colored, and stochastic Petri Nets, user authentication, and persistent storage of created networks in a database.
 
    \vspace{\onelineskip}
 
    \noindent
-   \textbf{Key-words}: latex. abntex. text editoration.
+   \textbf{Key-words}: Petri Nets. Web Development. System Modeling. Simulation. HTML. CSS. JavaScript. Git. Netlify.
  \end{otherlanguage*}
 \end{resumo}
 
@@ -332,6 +353,11 @@
 \pdfbookmark[0]{\listfigurename}{lof}
 \listoffigures*
 \cleardoublepage
+
+
+\renewcommand{\lstlistlistingname}{Lista de Scripts} % Renomeia o título da lista
+\lstlistoflistings % Gera a lista de scripts
+
 % ---
 
 % % inserir lista de tabelas
@@ -385,13 +411,11 @@
 % --
 \chapter[Introdução]{Introdução}
 
-nome da aplicação: Online Petri Net Simulator
-
 Em 1962, Carl Adam Petri, por meio de sua dissertação, mostrou para o mundo a sua criação, as redes de Petri \cite{petri1962kommunikation}. Podemos definir uma rede de Petri como sendo uma ferramenta matemática para modelagem de sistemas concorrentes. Além da modelagem matemática, as redes de Petri podem ser ilustradas graficamente por meio de seus elementos, os lugares, as transições e os arcos. Além disso, com a evolução da industria e da tecnologia, as redes de Petri ganharam ainda mais relevância, uma vez que elas permitem a modelagem de diversos tipos de sistemas, em diferentes áreas. 
 
 A evolução da industria e da tecnologia também culminou com a popularização da internet \cite{lins2013evoluccao}. O surgimento do World Wide Web, em 1990, por Tim Berners-Lee, permitiu aos primeiros usuários da internet, como conhecemos hoje, a interação com um sistema de hipertexto. Com o passar dos anos, as aplicações web se tornaram cada vez mais comuns e sofisticadas. O que antes começou com páginas estáticas evoluiu para aplicações dinâmicas, interativas e de fácil acesso para a maioria das pessoas. Atualmente, se consegue ter uma experiência muito próxima as funcionalidades de um computador pessoal, com aplicações desktop, apenas manipulando abas em um navegador.
 
-Diante da facilidade de acesso a aplicativos web por meio dos navegadores, como Google Chrome, Firefox, Safari, Edge, entre outros, surge a seguinte ideia: desenvolver uma aplicação web que possibilite aos usuários a criação e simulação do comportamento de redes de Petri, de forma simples e intuitiva. Para tal, torna-se necessário o conhecimento de tecnologias voltadas para o desenvolvimento web, como HTML5, CSS3 e JavaScript.
+Diante da facilidade de acesso a aplicativos web por meio dos navegadores, como Google Chrome, Firefox, Safari, Edge, entre outros, surge a seguinte ideia: desenvolver uma aplicação web que possibilite aos usuários a criação e simulação do comportamento de redes de Petri, de forma simples e intuitiva. Para tal, torna-se necessário o conhecimento de tecnologias voltadas para o desenvolvimento web, como HTML, CSS e Javascript.
 
 Além do conhecimento em desenvolvimento, será necessário  compreender os conceitos e práticas de infraestrutura, viabilizando a disponibilidade e o acesso contínuo à aplicação web. Uma vez desenvolvida, a aplicação pode ser disponibilizada para acesso por qualquer usuário que possua conexão com a internet, facilitando a modelagem de redes de Petri.
 
@@ -404,11 +428,9 @@ Além do conhecimento em desenvolvimento, será necessário  compreender os conc
 
 As redes de Petri representam uma poderosa ferramenta gráfica e matemática para a modelagem e análise de sistemas concorrentes e distribuídos. No entanto, o seu entendimento pode ser um desafio, especialmente para aqueles sem familiaridade com os conceitos e experiência matemática.
 
-Atualmente, existem algumas ferramentas capazes de construir e simular redes de Petri. Entretanto, muitas delas requerem um conhecimento mínimo de computação, para que possam ser instaladas em sistemas operacionais como Linux, Windows e MacOS. Além disso, algumas delas não são multiplataforma, restringindo o acesso dessas ferramentas pelas pessoas.
+Atualmente, existem algumas ferramentas capazes de construir e simular redes de Petri. Entretanto, muitas delas requerem um conhecimento mínimo de computação, para que assim, possam ser instaladas em sistemas operacionais como Linux, Windows e MacOS. Além disso, algumas delas não são multiplataforma, restringindo o acesso dessas ferramentas.
 
 Nesse contexto, uma aplicação web, simples e intuitiva, atenderia as necessidades, tanto de usuários comuns, como o de estudantes e pesquisadores interessados em entender o funcionamento das redes de Petri. Através de uma aplicação web, o acesso é simplificado e facilitado, pois elimina a necessidade de instalações complicadas e pré-conhecimento técnico avançado.
-
-
 
 % Um exemplo de citação em linha pode ser visto como em \textcite{Einstein1920}.
 
@@ -437,14 +459,14 @@ Nesse contexto, uma aplicação web, simples e intuitiva, atenderia as necessida
 
 O desenvolvimento de uma aplicação web capaz de criar e simular o comportamento de redes de Petri.
 
-\section{Objetivos Específicos}
+\section{Objetivos Específicos} \label{cap:objEspecifico}
 
 \begin{itemize}
-        \item Desenvolvimento de um motor de simulação, capaz de simular o comportamento das redes de Petri criadas, possibilitando a visualização, por parte do usuário, do comportamento em diferentes cenários;
-        \item Desenvolvimento de uma interface simples e intuitiva; 
+        \item Desenvolvimento de um motor de simulação, capaz de simular o comportamento das redes de Petri criadas, possibilitando a visualização e a interação, por parte do usuário;
+        \item Desenvolvimento de uma interface simples e intuitiva para a construção e simulação das redes de Petri;
 	\item Aprendizado de tecnologias voltadas para o desenvolvimento web; 
 	\item Criação de uma alternativa simples e de fácil acesso para o aprendizado de redes de Petri;
-        \item Alocação da aplicação em um servidor, permitindo o acesso público.
+        \item Disponibilização da ferramenta desenvolvida através de qualquer navegador web moderno.
 \end{itemize}
 
 
@@ -456,36 +478,26 @@ Inicialmente, para o desenvolvimento da aplicação web, capaz de construir e si
 
 \begin{itemize}
         \item Área da tela em que a rede de Petri será renderizada;
-        \item Botões para inserção de lugares, arcos, tokens e transições;
+        \item Botões para inserção de lugares, transições e arcos;
         \item Botão de simulação em que, ao ser acionado, irá permitir a análise do comportamento da rede de Petri criada;
-        \item Opção de definir labels para os lugares, arcos e posições;
-        \item Alteração de cor da transição quando houver os requisitos mínimos satisfeitos;
-        \item Opção de importação e exportação de projetos.
+        \item Opção de definir propriedades para os componentes das redes de Petri, lugares, transições e arcos;
+        \item Alteração de cor da transição quando houver os requisitos mínimos satisfeitos para sua ativação;
+        \item Opção de deleção dos elementos criados;
+        \item Opção de importação e exportação dos projetos desenvolvidos.
 \end{itemize}
 
-Com as características básicas da aplicação definidas, será desenvolvido um diagrama de fluxo, ilustrado na figura \ref{fig:diagrama_fluxo}, evidenciando o passo a passo de funcionamento da aplicação. 
+Com as características básicas da aplicação definidas, serão desenvolvidos diferentes diagramas de fluxo, semelhantes ao ilustrado na figura \ref{fig:diagrama_fluxo}, evidenciando o passo a passo de funcionamento das principais funcionalidades da aplicação. 
 
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.4]{exemplo_diagrama_de_fluxo.png}
-	\caption[Exemplo de diagrama de fluxo]{Diagrama de fluxo. Fonte: \textcite{boyle1772}.}
+	\caption[Exemplo de diagrama de fluxo]{Exemplo de Diagrama de fluxo \cite{ebac_diagrama_fluxo}.}
 	\label{fig:diagrama_fluxo}
 \end{figure}
 
-Paralelamente ao desenvolvimento do diagrama de fluxo, será criado um diagrama de classe \ref{fig:diagrama_classe}, definindo as diferentes classes de objetos que serão utilizados.
+Além dos diagramas de fluxo, será desenvolvido um esboço de como deverá ser a interface a qual o usuário verá ao acessar a aplicação web. Após a definição do design, e com a criação dos diagramas de fluxo, inicia-se o processo de programação. A linguagem de programação Javascript será utilizada, juntamente com HTML e CSS. O desenvolvimento acompanhará a base do design e requisitos da aplicação pré-estabelecidos. Com isso, espera-se a criação de um MVP - \textit{Minimum Viable Product}.
 
-\begin{figure}[ht] 
-	\centering
-	\includegraphics[scale=0.6]{exemplo_diagrama_de_classe.png}
-	\caption[Exemplo de diagrama de classe]{Diagrama de classe. Fonte: \textcite{boyle1772}.}
-	\label{fig:diagrama_classe}
-\end{figure}
-
-\newpage
-
-Após a definição do design, com a criação do diagrama de fluxo e do diagrama de classe, inicia-se o processo de programação. A linguagem de programação JavaScript será utilizada, juntamente com HTML e CSS. O desenvolvimento acompanhará o design pré-estabelecido. Com isso, espera-se a criação de um MVP (Minimum Viable Product).
-
-Com a criação do MVP, em um ambiente local, a aplicação será hospedada em um servidor on-premisse da Universidade Federal de Ouro Preto. Após a hospedagem, espera-se que a aplicação esteja disponível para acesso público por meio da internet.
+Após a criação do MVP, em um ambiente local, a aplicação será hospedada em algum servidor e, dessa forma, a partir de um endereço web, poderá ser acessada pelos usuários através de um navegador. 
 
 
 %link da imagem diagrama de fluxo: https://cdn-cashy-static-assets.lucidchart.com/marketing/pages/lucidspark/consideration/brainstorm-to-identify-each-part-of-your-workflow@2x@2x.png
@@ -553,15 +565,15 @@ Com a criação do MVP, em um ambiente local, a aplicação será hospedada em u
 
 \section{Redes de Petri}
 
-As redes de Petri surgiram por volta da década de 1960 pela mente de Carl Adam Petri. Em 1962, Petri apresentou sua tese intitulada ``Kommunikation mit Automaten'', em que descreveu pela primeira vez a estrutura e funcionamento das redes de Petri. Esse nova ideia de representar sistemas permitiu a análise de sistemas concorrentes e paralelos.
+As redes de Petri surgiram por volta da década de 1960 pela mente de Carl Adam Petri. Em 1962, Petri apresentou sua tese intitulada ``\textit{Kommunikation mit Automaten}'', em que descreveu pela primeira vez a estrutura e funcionamento das redes de Petri \cite{petri1962kommunikation}. Essa nova ideia de representar sistemas permitiu a análise de sistemas concorrentes e paralelos.
 
-Com o passar dos anos, a evolução tecnológica durante a terceira revolução industrial \cite{coutinho1992terceira} evidenciou os benefícios das redes de Petri, e sua aplicabilidade foi ampliada para além da modelagem de processos industriais, sendo adotada também para descrever processos dentro das áreas de Ciência da Computação e Engenharia de Software. Sendo assim, a partir dos anos de 1980, com o crescimento da automação industrial, as redes de Petri começaram a ser adaptadas para atender as necessidades de diferentes áreas. Com isso, surgiram as redes de Petri coloridas, as redes de Petri temporizadas e as redes de Petri estocásticas, como principais exemplos. 
+Com o passar dos anos, a evolução tecnológica durante a terceira revolução industrial \cite{coutinho1992terceira} evidenciou os benefícios das redes de Petri, e sua aplicabilidade foi ampliada para além da modelagem de processos industriais, sendo adotada também para descrever processos dentro das áreas de Ciência da Computação e Engenharia de Software. Sendo assim, a partir dos anos de 1980, com o crescimento da automação industrial, as redes de Petri começaram a ser adaptadas para atender as necessidades de diferentes áreas. Com isso, surgiram as redes de Petri coloridas, temporizadas e estocásticas, sendo evoluções da rede de Petri clássica descrita por Carl Adam Petri.  
 
 \subsection*{O básico de redes de Petri}
 
-Segundo \cite{CassandrasLafortune08}, uma rede de Petri clássica é representada graficamente por lugares, transições e arcos. Os lugares representam os estados do sistema, as transições indicam os eventos ou ações que podem ocorrer durante o funcionamento do sistema. Os arcos direcionados conectam os lugares as transições e as transições aos lugares. Essa estrutura permite a análise de propriedades importantes dos sistemas, como alcançabilidade, vivacidade, deadlock, reversibilidade, entre outras propriedades fundamentais para analise do comportamento de sistemas complexos. 
+Segundo \cite{CassandrasLafortune08}, uma rede de Petri clássica é representada graficamente por lugares, transições e arcos. Os lugares representam os estados do sistema, as transições indicam os eventos ou ações que podem ocorrer durante o funcionamento do sistema. Os arcos direcionados conectam os lugares as transições e as transições aos lugares. Essa estrutura permite a análise de propriedades importantes dos sistemas, como alcançabilidade, vivacidade, \textit{deadlock}, reversibilidade, entre outras propriedades fundamentais para analise do comportamento de sistemas complexos. 
 
-As redes de Petri seguem uma lógica matemática. Sendo assim, seus elementos são definidos como sendo:
+As redes de Petri seguem uma lógica matemática. Assim sendo, seus elementos são definidos como:
 
 \begin{equation*}
     \centering
@@ -572,19 +584,18 @@ em que
 
 \textbf{$P = \left \{ p_{1},p_{2},...,p_{n} \right \}$} é o conjunto de lugares;
 
-$T = \left \{ t_{1},t_{2},...,t_{n} \right \}$ é o conjunto de transições;
+$T = \left \{ t_{1},t_{2},...,t_{m} \right \}$ é o conjunto de transições;
 
-$A \subseteq \left ( P \times T \right ) \cup \left ( T \times P \right )$ representa os arcos de lugares para transições, e transições para lugares;
+$A \subseteq \left ( P \times T \right ) \cup \left ( T \times P \right )$ representa os arcos de lugares para transições, e arcos de transições para lugares;
 
 $w: A \rightarrow \left \{ 1,2,3,... \right \}$ é a função de peso dos arcos.
 
 % Nas redes de Petri, pode-se ter diferentes formas de se interpretar os significados de seus elementos. Porém, de maneira geral, os lugares $P$ indicam os estados da representação. As transições $T$ indicam os eventos e, consequentemente, a mudança de estado da representação. Os pesos $w$ representam a condição necessária para o disparo de uma transição, ou seja, para a mudança de estado. Para isso, a quantidade mínima de tokens presentes em um lugar $P$ necessita ser igual, ou superior, ao peso do arco. E os tokens, por fim, representam a quantidade de elementos presentes em um lugar $P$.
 
-Com tais elementos torna-se possível a criação e modelagem de redes de Petri para a representação de sistemas concorrentes. Conforme o exemplo \ref{exemplo_rede_petri_simples} é possível evidenciar uma rede de Petri simples, permitindo a compreensão de sua estrutura e funcionamento das redes de Petri em um âmbito geral.
+Com tais elementos, torna-se possível a criação e modelagem de redes de Petri para a representação de sistemas concorrentes. Conforme o exemplo \ref{exemplo_rede_petri_simples} é possível evidenciar uma rede de Petri simples, permitindo a compreensão de sua estrutura e funcionamento das redes de Petri em um âmbito geral.
 
-\begin{exemplo}[Uma rede de Petri simples]
-\label{exemplo_rede_petri_simples}]
-
+\begin{exemplo}[Uma rede de Petri simples] \label{exemplo_rede_petri_simples} 
+\end{exemplo}
 Inicialmente, define-se os conjuntos $P, T, A, w$. 
 \begin{eqnarray*}
 P &=& \left \{ p_{1},p_{2}\right \} \\
@@ -593,8 +604,8 @@ A &=& \left \{ \left (p_{1},t_{1}\right ),\left (t_{1},p_{2}\right ) \right \} \
 w\left ( p_{1},t_{1} \right ) &=& 2 \\
 w\left ( t_{1},p_{2} \right ) &=& 1 \\
 \end{eqnarray*}
-\end{exemplo}
-%
+
+
 Para esse exemplo, tem-se os lugares $p_{1}$ e $p_{2}$. O arco $\left ( p_{1},t_{1} \right )$ conecta o lugar $p_{1}$ a transição $t_{1}$, e seu peso $w\left ( p_{1},t_{1} \right )$ é igual a 2.O arco $\left ( t_{1},p_{2} \right )$ conecta a transição  $t_{1}$ ao lugar $p_{2}$, e seu peso $w\left ( t_{1},p_{2} \right )$ é igual a 1. 
 
 Tendo a lógica matemática definida, pode-se ilustrar graficamente a mesma rede de Petri, conforme a figura \ref{fig:rede_petri_simples_ex_01}.
@@ -602,7 +613,7 @@ Tendo a lógica matemática definida, pode-se ilustrar graficamente a mesma rede
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.3]{exemplo_simples_rede_petri.png}
-	\caption[Rede de Petri Simples]{Rede de Petri Simples. Fonte: \textcite{CassandrasLafortune08}.}
+	\caption[Rede de Petri Simples]{Rede de Petri Simples. \textcite{CassandrasLafortune08}.}
 	\label{fig:rede_petri_simples_ex_01}
 \end{figure} 
 
@@ -613,7 +624,7 @@ Para a mudança de estado dessa representação é necessário, no mínimo, duas
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.3]{exemplo_simples_rede_petri_marcacao_p1.png}
-	\caption[Rede de Petri Simples]{Transição $t_{1}$ habilitada. Fonte: \textcite{CassandrasLafortune08}.}
+	\caption[Rede de Petri Simples]{Transição $t_{1}$ habilitada. \textcite{CassandrasLafortune08}.}
 	\label{fig:rede_petri_simples_ex_02}
 \end{figure}
 
@@ -622,27 +633,25 @@ Após a execução da transição $t_{1}$, as duas marcações em $p_{1}$ somem,
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.3]{exemplo_simples_rede_petri_marcacao_p2.png}
-	\caption[Rede de Petri Simples]{Rede de Petri após a transição $t_{1}$ ter sido executada. Fonte: \textcite{CassandrasLafortune08}.}
+	\caption[Rede de Petri Simples]{Rede de Petri após a transição $t_{1}$ ter sido executada. \textcite{CassandrasLafortune08}.}
 	\label{fig:rede_petri_simples_ex_03}
 \end{figure}
-
-%\end{exemplo}
 
 Com o exemplo \ref{exemplo_rede_petri_simples}, é possível entender o princípio básico de funcionamento das redes de Petri. Dessa forma, tem-se que:
 
  \begin{enumerate}[label=(\alph*)]
-    \item \textbf{habilitação de uma transição:} para a habilitação de uma transição $t_{i}$ é necessário que o número de marcações associados ao lugar $p_{i}$, anterior a transição, seja igual, ou superior, ao peso do arco que conecta o lugar $p_{i}$ a transição $t_{i}$;
-    \item \textbf{peso dos arcos:} ...;
-    \item \textbf{movimentação das marcações:} ....
+    \item \textbf{habilitação de uma transição:} para a habilitação de uma transição $t_{m}$ é necessário que o número de marcações associados ao lugar $p_{n}$, anterior a transição $t_{m}$, seja igual, ou superior, ao peso do arco que conecta o lugar $p_{n}$ a transição $t_{m}$;
+    \item \textbf{peso dos arcos:} o peso do arco indica o número mínimo de marcações necessárias para ativar uma transição, além de servir na movimentação das marcações;
+    \item \textbf{movimentação das marcações:} após uma transição $t_{m}$ ser disparada, o número de marcações do lugar $p_{n}$, anterior a transição $t_{m}$, é subtraído, sendo esse valor, o peso do arco que conecta $p_{n}$ a $t_{m}$. O lugar $p_{n + 1}$, posterior a transição $t_{m}$, recebe adição na quantidade de marcações, sendo esse valor, o peso do arco que conecta $t_{m}$ a $p_{n + 1}$. 
 \end{enumerate}
 
 
-\begin{exemplo} \textbf{Uma rede de Petri mais desenvolvida}
-\label{exemplo_rede_petri_desenvolvidada}
+%\begin{exemplo} \textbf{Uma rede de Petri mais desenvolvida}
+%\label{exemplo_rede_petri_desenvolvidada}
 
-\end{exemplo}
+%\end{exemplo}
 
-A lógica utilizada nas redes de Petri podem facilmente ser traduzidas para os modelos utilizados na lógica de programação Ladder, uma vez que as redes de Petri também se utilizam da álgebra booleana. 
+%A lógica utilizada nas redes de Petri podem facilmente ser traduzidas para os modelos utilizados na lógica de %programação Ladder, uma vez que as redes de Petri também se utilizam da álgebra booleana. 
 
 %\begin{exemplo} \textbf{A mesma representação em rede de Petri e Lader}
     
@@ -650,22 +659,19 @@ A lógica utilizada nas redes de Petri podem facilmente ser traduzidas para os m
 
 % \textcolor{red}{Trocar imagens das redes de Petri por imagens retiradas da minha própria aplicação.}
 
-\subsection*{Variantes das redes de Petri clássica}
+\subsection*{Evoluções das redes de Petri clássicas}
 
-Além da rede de Petri clássica, com o passar dos anos, e com o avanço da tecnologia, houve a necessidade de se adaptar as redes de Petri para atender cenários mais realistas e completos. A partir dessas variações, três delas se destacam, sendo elas as redes de Petri Temporizadas \ref{exemplo_temporarizada}, Coloridas \ref{exemplo_colorida} e Estocásticas \ref{exemplo_estocastica}. Cada uma delas, permite uma representação mais abrangente dos sistemas do mundo real, pois permitem o desenvolvimento de aspectos como tempo, características distintas e incertezas que compõem os diversos tipos de sistemas.
+Além da rede de Petri clássica, com o passar dos anos, e com o avanço da tecnologia, houve a necessidade de se adaptar as redes de Petri para atender cenários mais realistas e complexos. A partir dessas variações, três delas se destacam, sendo elas as redes de Petri Temporizadas \ref{exemplo_temporarizada}, Coloridas \ref{exemplo_colorida} e Estocásticas \ref{exemplo_estocastica}. Cada uma delas, permite uma representação mais abrangente dos sistemas do mundo real, pois permitem o desenvolvimento de aspectos como tempo, características distintas e incertezas que compõem os diversos tipos de sistemas. Além disso, todas elas podem ser combinadas para representarem diferentes tipos de sistemas, desde os mais simples aos mais complexos. 
 
+\subsubsection*{Temporizada} \label{cap:redeTemporizada}
 
-\subsubsection*{Temporizada}
+As redes de Petri Temporizadas surgiram a partir da necessidade de se atribuir uma propriedade temporal a certos atributos de um sistema \cite{Lima2008}. Ao contrário das redes de Petri clássicas, que consideram as transições como instantâneas, as redes de Petri Temporizadas reconhecem que uma vasta quantidade de sistemas do mundo real estão intrinsecamente ligados a variáveis de tempo. Tal fato é extremamente relevante, já que a maiorias dos eventos nesses sistemas demandam certo período de tempo para sua execução completa.
 
-\textcolor{red}{referenciar o artigo dcce.ibilce.unesp.br/~aleardo/cursos/str/cap3.pdf }
-
-As redes de Petri Temporizadas surgiram a partir da necessidade de se atribuir uma propriedade temporal a certos atributos de um sistema. Ao contrário das redes de Petri clássicas, que consideram as transições como instantâneas, as redes de Petri Temporizadas reconhecem que uma vasta quantidade de sistemas do mundo real estão intrinsecamente ligados a variáveis de tempo. Tal fato é extremamente relevante, já que a maiorias dos eventos nesses sistemas demanda certo período de tempo para sua execução completa.
-
-Nas redes de Petri Temporizadas, pode-se considerar dois cenários para a associação de variáveis de tempo. No primeiro cenário, se tem a associação de tempo $C_{i}$ a duração de uma certa transição $t_{i}$. Ou seja, o evento representado pela transição terá um intervalo de tempo para ser executado. No segundo cenário, associa-se a variável de tempo $C_{i}$ aos lugares $p_{i}$. Dessa forma, as marcações tornam-se disponíveis apenas após o intervalo de tempo. Define-se assim: 
+Nas redes de Petri Temporizadas, pode-se considerar dois cenários para a associação de variáveis de tempo. No primeiro cenário, se tem a associação de tempo $C_{i}$ a duração de uma certa transição $t_{m}$. Ou seja, o evento representado pela transição terá um intervalo de tempo para ser executado. No segundo cenário, associa-se a variável de tempo $C_{i}$ aos lugares $p_{n}$. Dessa forma, as marcações tornam-se disponíveis apenas após o intervalo de tempo. Define-se assim: 
 
 \begin{itemize}
-        \item Tempo $C_{i}$ associado a transição $t_{i}$;
-        \item Tempo $C_{i}$ associado ao lugar $p_{i}$.
+        \item Tempo $C_{i}$ associado a transição $t_{m}$;
+        \item Tempo $C_{i}$ associado ao lugar $p_{n}$.
 \end{itemize}
 
 As transições temporizadas, nos modelos gráficos, para se diferenciar das transições instantâneas, possuem uma cor associada diferente, e isso pode ser evidenciado na maioria dos softwares já disponíveis. Enquanto as transições instantâneas possuem fundo preto, as transições temporárias possuem fundo branco. Além disso, quando uma transição estiver disponível para o disparo, ela possuirá fundo vermelho, conforme a figura \ref{fig:cores_transição}. 
@@ -673,14 +679,15 @@ As transições temporizadas, nos modelos gráficos, para se diferenciar das tra
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.75]{figuras/exemplo_cores_transicao.png}
-	\caption[Cores dos tipos de transição]{Cores dos tipos de transição. Fonte: Pipe.}
+	\caption[Cores dos tipos de transição]{Cores dos tipos de transição.}
 	\label{fig:cores_transição}
 \end{figure}
+\FloatBarrier
 
-No exemplo \ref{exemplo_temporarizada} há uma transição fonte $t_{0}$, que está sempre habilitada, ligada a posição $p_{0}$. O lugar $p_{0}$ está ligado a uma transição temporizada $t_{1}$, por meio de um arco $w(p_{0},t_{1})$ de peso 2. Além disso, a transição $t_{1}$ possui um tempo $C_{1}$ associado. Ou seja, após o disparo da transição $t_{1}$, haverá um tempo $C_{1}$ de espera, indicando o tempo de execução do evento associado a transição. Após a decorrência desse tempo, duas marcações, associadas ao lugar $p_{0}$, se transformarão em apenas uma marcação no lugar $p_{1}$.  
+No exemplo \ref{exemplo_temporarizada} há uma transição fonte $t_{0}$, que está sempre habilitada, conectada ao lugar $p_{0}$. O lugar $p_{0}$ está ligado a uma transição temporizada $t_{1}$, por meio de um arco $w(p_{0},t_{1})$ de peso 2. Além disso, a transição $t_{1}$ possui um tempo $C_{1}$ associado. Ou seja, após o disparo da transição $t_{1}$, haverá um tempo $C_{1}$ de espera, indicando o tempo de execução do evento associado a transição. Após a decorrência desse tempo, duas marcações, associadas ao lugar $p_{0}$, serão consumidas e o lugar $p_{1}$ receberá uma marcação.  
 
-\begin{exemplo} \textbf{Temporizada}
-\label{exemplo_temporarizada}
+\begin{exemplo} [Rede de Petri Temporizada] \label{exemplo_temporarizada}
+\end{exemplo}
 
 \begin{figure}[ht] 
 	\centering
@@ -688,6 +695,7 @@ No exemplo \ref{exemplo_temporarizada} há uma transição fonte $t_{0}$, que es
 	\caption[Rede de Petri Temporizada - Estágio 1]{Rede de Petri Temporizada - Estágio 1. Fonte: Pipe.}
 	\label{fig:rede_petri_temporizada_ex_01}
 \end{figure}
+\FloatBarrier
 
 \begin{figure}[ht] 
 	\centering
@@ -695,6 +703,7 @@ No exemplo \ref{exemplo_temporarizada} há uma transição fonte $t_{0}$, que es
 	\caption[Rede de Petri Temporizada - Estágio 2]{Rede de Petri Temporizada - Estágio 2. Fonte: Pipe.}
 	\label{fig:rede_petri_temporizada_ex_02}
 \end{figure}
+\FloatBarrier
 
 \begin{figure}[ht] 
 	\centering
@@ -702,60 +711,148 @@ No exemplo \ref{exemplo_temporarizada} há uma transição fonte $t_{0}$, que es
 	\caption[Rede de Petri Temporizada - Estágio 3]{Rede de Petri Temporizada - Estágio 3. Fonte: Pipe.}
 	\label{fig:rede_petri_temporizada_ex_03}
 \end{figure}
+\FloatBarrier
 
-\end{exemplo}
+\subsubsection*{Colorida} \label{cap:redeColorida}
 
-\subsubsection*{Colorida}
-
-As redes de Petri Coloridas surgiram com a ideia de diminuir o tamanho das representações \cite{frances2003introduccao}, uma vez que muitas representações contam com ideias semelhantes. Através da individualização das marcações, os processos e recursos de um sistema podem agora representar diferentes ideias em uma mesma rede, ou parte dela. O termo "colorida" surge da ideia de termos marcações, com diferentes cores, representando diferentes recursos. Essa forma de representação tem como principal benefício reduzir o tamanho e, consequentemente, a complexidade da representação em uma rede de Petri. Comparando os exemplos, consegue-se analisar tal propriedade. Ambas as redes representam a mesma ideia, porém na segunda representação temos uma quantidade menor de elementos, o que facilita o entendimento. 
+As redes de Petri Coloridas surgiram com a ideia de diminuir o tamanho das representações \cite{frances2003introduccao}, uma vez que muitas representações contam com ideias semelhantes. Através da individualização das marcações, os processos e recursos de um sistema podem agora representar diferentes ideias em uma mesma rede, ou parte dela. O termo "colorida" surge da ideia de termos marcações, com diferentes cores, representando diferentes recursos. Essa forma de representação tem como principal benefício reduzir o tamanho e, consequentemente, a complexidade da representação em uma rede de Petri.
 
 Uma vez que se consegue representar as marcações com diferentes cores, torna-se mais simples a representação de sistemas complexos, diminuindo a complexidade das análises. Nas redes de Petri tradicionais, cada lugar representa um único estado do sistema representado. As redes de Petri coloridas deixam de forma mais intuitiva e clara a representação de múltiplos estados ou recursos. 
 
-\begin{exemplo} \textbf{Colorida}
+\begin{exemplo} [Rede de Petri Colorida]
 \label{exemplo_colorida}
-
 \end{exemplo}
 
-\subsubsection*{Estocásticas}
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.35]{figuras/rede_petri_colorida.png}
+	\caption[Rede de Petri Colorida]{Rede de Petri Colorida. \cite{inbook}}
+	\label{fig:rede_petri_colorida}
+\end{figure}
+\FloatBarrier
 
-Uma rede de Petri estocástica é mais uma variação das redes de Petri clássicas. Enquanto as redes de Petri clássicas são frequentemente usadas para representar sistemas discretos e determinísticos, as redes de Petri estocásticas permitem incorporar a aleatoriedade e a incerteza na representação.
+No exemplo \ref{exemplo_colorida} diferentes elementos estão representados no mesmo lugar.  O peso dos arcos são referenciados por cores e, dessa forma, a transição só estará habilitada caso o lugar contenha marcações do mesmo tipo que a cor indicada no peso do arco. A transição $t_{0}$ não está habilitada porque não há uma marcação da cor \textit{<a>} no lugar $p_{0}$. A transição $t_{1}$ está habilitada porque há uma marcação da cor \textit{<a>} no lugar $p_{1}$ e marcações das cores \textit{<a>} e \textit{<b>} no lugar $p_{2}$ \cite{inbook}.
 
-Nas redes de Petri estocásticas, os elementos básicos, como lugares, transições e arcos, são semelhantes aos das redes de Petri convencionais. No entanto, a principal diferença é que as transições não são ativadas de forma determinística, mas sim com base em probabilidades. Isso significa que a ocorrência de uma transição é governada por um processo estocástico, como um processo de Poisson, e a escolha de qual transição ocorre em um determinado momento é determinada por probabilidades.
+\subsubsection*{Estocásticas} \label{cap:redeEstocastica}
+
+Uma rede de Petri estocástica é mais uma evolução das redes de Petri clássicas. Enquanto as redes de Petri clássicas são frequentemente usadas para representar sistemas discretos e determinísticos, as redes de Petri estocásticas permitem incorporar a aleatoriedade e a incerteza na representação.
+
+Nas redes de Petri estocásticas, os elementos básicos, como lugares, transições e arcos, são semelhantes aos das redes de Petri convencionais. No entanto, a principal diferença é que as transições não são ativadas de forma determinística, mas sim com base em probabilidades. Isso significa que a ocorrência de uma transição é governada por um processo estocástico, como um processo de \textit{Poisson}, e a escolha de qual transição ocorre em um determinado momento é determinada por probabilidades.
 
 Essa abordagem estocástica é especialmente útil para modelar sistemas onde eventos ocorrem de maneira aleatória, como sistemas de comunicação, sistemas biológicos e sistemas de manufatura com variações de tempo e recursos. As redes de Petri estocásticas permitem a análise de propriedades estatísticas do sistema, como a probabilidade de estados específicos serem alcançados ou a distribuição de tempo entre eventos.
 
-Conforme o exemplo \ref{exemplo_estocastica} é possível analisar o funcionamento de uma rede de Petri estocástica.
-
-\textcolor{red}{Criar exemplo de Rede de Petri estocástica}
-
-\begin{exemplo} \textbf{Estocásticas}
+\newpage
+\begin{exemplo} [Rede de Petri Estocástica]
 \label{exemplo_estocastica}
-
 \end{exemplo}
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.8]{figuras/rede_petri_estocastica.png}
+	\caption[Rede de Petri Estocástica]{Rede de Petri Estocástica. \cite{inproceedings}}
+	\label{fig:rede_petri_estocastica}
+\end{figure}
+\FloatBarrier
+
+Conforme o exemplo \ref{exemplo_estocastica}, os diferentes estados operacionais das unidades são simbolizados pelas marcações coloridas, permitindo distinguir o estado específico de cada instância \cite{inproceedings}. A estrutura da rede é composta por quatro lugares principais: o lugar $P_{1}$ representa as unidades em operação normal; o lugar $P_{2}$ armazena as unidades que foram afetadas por algum evento, mas que ainda não falharam; o lugar $P_{3}$ representa as unidades mitigadas, ou seja, aquelas que, embora tenham sido impactadas, passaram por uma intervenção bem-sucedida; e o lugar $P_4$ contém as unidades que falharam, representando uma fonte de risco para as demais unidades do sistema. A característica estocástica da rede está presente na modelagem temporal das transições entre os estados, que ocorrem de forma probabilística, geralmente seguindo distribuições exponenciais. Essa abordagem permite incorporar a incerteza inerente aos tempos de falha (\textit{time to failure – ttf}), e de intervenção (\textit{intervention time – $T_{int}$}), tornando a simulação mais realista. Quando o \textit{ttf} é superior ao \textit{$T_{int}$}, a unidade pode ser mitigada a tempo, sendo alocada em $P_{3}$; caso contrário, ocorre a falha, e a unidade transita para o lugar $P_{4}$.
 
 %\section{Linguagens de marcação de texto}
 
-\section{Tecnologias para o desenvolvimento web}
+\section{Tecnologias para o desenvolvimento web} \label{cap:tecnologiaweb}
+
+O desenvolvimento de aplicações web interativas e eficientes requer a utilização de um conjunto de tecnologias modernas que, utilizadas juntas, fornecem os recursos necessários para a construção de interfaces gráficas, implementação de lógicas, estilização visual e versionamento de código. Para tais necessidades, tem-se as principais ferramentas utilizadas para tais finalidades, sendo elas o HTML, CSS, Javascript e Git. 
 
 \subsection*{HTML}
 
-referência \url{https://developer.mozilla.org/pt-BR/docs/Web/HTML}
+O \textbf{HTML} (\textit{HyperText Markup Language}) é a linguagem de marcação padrão para a criação e estruturação de conteúdo na internet \cite{mdn_html}. Sua função principal é definir a estrutura semântica de uma página web, organizando elementos como títulos, parágrafos, imagens, links, botões, formulários e vários outros elementos. No desenvolvimento de uma aplicação web para construção e simulação de redes de Petri, o HTML atua como esqueleto da interface, definindo todas as funcionalidades com as quais o usuário terá acesso. 
+  
+Dessa forma, o HTML é composto por uma série de elementos conhecidos como \textit{tags}, os quais são utilizados para estruturar e identificar semanticamente o conteúdo de uma página web. Cada {\textit{tag}} possui uma função específica e pode conter atributos que modificam seu comportamento ou aparência.
+
+A estrutura básica de um documento HTML é hierárquica e inicia com a \textit{tag} \textbf{<!DOCTYPE html>}, seguida pelas \textit{tags} \textbf{<html>}, \textbf{<head>} e \textbf{<body>}, que organizam o conteúdo e os metadados da página. O conteúdo visual e interativo apresentado ao usuário reside, predominantemente, dentro da \textit{tag} \textbf{<body>}, enquanto elementos de configuração, definição de estilos e \textit{scripts} são alocados na \textit{tag} \textbf{<head>}. 
+
+Por fim, através do arquivo HTML faz-se a junção de outras tecnologias, tais como o CSS e o Javascript. 
 
 \subsection*{CSS}
 
-referência \url{https://developer.mozilla.org/pt-BR/docs/Web/CSS}
+O \textbf{CSS} (\textit{Cascading Style Sheets}) é a linguagem responsável pela definição da aparência dos elementos HTML \cite{mdn_css}. Através do CSS, é possível personalizar cores, tamanhos, posicionamentos, margens, fontes e efeitos visuais. A estilização também contribui para a experiência do usuário ao proporcionar \textit{feedback} visual em interações, como a mudança de cor de um botão ao clicar e a exibição de mensagens de alerta. 
 
-\subsection*{JavaScript}
+Para a aplicação de construção e simulação de redes de Petri, o CSS é fundamental para estilizar os elementos gráficos, os lugares, transições e arcos, definindo as cores, tamanhos, e organizando o layout da área de desenho e dos painéis de controle, garantindo uma experiência intuitiva e esteticamente agradável para os usuários da aplicação. 
 
-referência \url{https://developer.mozilla.org/pt-BR/docs/Web/JavaScript}
+\subsection*{Javascript}
+
+O \textbf{Javascript} é uma linguagem de programação interpretada, executada no lado do navegador do usuário, e é responsável por implementar comportamentos dinâmicos nas páginas web \cite{mdn_css}. Trata-se de uma linguagem orientada a eventos, que permite responder a interações do usuário, manipular o \textit{DOM} em tempo real, controlar estados da aplicação e realizar operações lógicas e matemáticas.
+
+Enquanto o HTML é responsável pela estrutura da página e o CSS pela sua apresentação visual, o Javascript permite a implementação de comportamentos dinâmicos, como respostas a eventos de usuários, manipulação do conteúdo da página em tempo real, validação de formulários, animações, chamadas assíncronas, entre outros. 
+
+Na aplicação proposta, o Javascript desempenha papel central no funcionamento do simulador. Toda a lógica de construção e simulação da rede de Petri será implementada em Javascript, permitindo o desenvolvimento de diversas funcionalidades para a aplicação e para o cumprimento dos objetivos específicos do projeto \ref{cap:objEspecifico}. 
+
+\subsection*{Git} \label{cap:git}
+
+O \textbf{Git} é um sistema de controle de versão distribuído amplamente utilizado em projetos de desenvolvimento de software \cite{git_docs}. Seu principal objetivo é registrar e gerenciar o histórico de alterações feitas no código-fonte, permitindo o acompanhamento da evolução do projeto, reversão de modificações e colaboração de forma eficiente.
+
+Para o desenvolvimento do projeto, o controle de versão é essencial. O Git, em conjunto com a plataforma GitHub, permitem não apenas o versionamento contínuo do código-fonte, mas também a criação de ramificações para o desenvolvimento simultâneo de diferentes funcionalidades, sem comprometer a integridade da versão principal do projeto. Além disso, o GitHub viabiliza a disponibilização pública do repositório, favorecendo a transparência, a colaboração e o acesso ao código por terceiros. A utilização de ambas ferramentas garantem a preservação do histórico de alterações, facilitando o rastreamento de modificações, a identificação de regressões e a reversão de mudanças indesejadas, contribuindo significativamente para a organização e segurança do desenvolvimento.
 
 \section{Simuladores Conhecidos}
 
 \subsection*{Pipe}
 
-\subsection*{Online Petri-net simulator - OPN}
+O \textbf{PIPE} (\textit{Plataform Independent Petri Net Editor}) é uma ferramenta de software de código aberto para simulação e análise de redes de Petri \cite{Dingle2009PIPE2}. Desenvolvido em linguagem Java, o PIPE se destaca por ser uma ferramenta multiplataforma, operando  em diversos sistemas operacionais, como Windows, MacOS e Linux, facilitando sua acessibilidade e disseminação na comunidade acadêmica e de pesquisa. Entretanto, o projeto aparenta não estar mais em desenvolvimento, visto que, não há mais contribuições no repositório do projeto no Github \cite{PIPEGitHub}. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.30]{figuras/pipeRepo.png}
+	\caption[Repositório no Github do PIPE]{Repositório no Github do PIPE}
+	\label{fig:pipeRepo}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.30]{figuras/pipe.png}
+	\caption[Interface do simulador PIPE]{Interface do simulador PIPE}
+	\label{fig:interfacePipe}
+\end{figure}
+\FloatBarrier
+
+Apesar do PIPE ser uma excelente ferramenta para modelagem e simulação de redes de Petri, seu projeto aparenta não ter mais atualizações, e sua instalação requer conhecimento técnico em Java, podendo ser impeditivo para alguns usuários. Além disso, sua última versão, a versão 5, apresenta diferentes \textit{bugs}, dificultando a sua utilização. 
+
+\subsection*{APO}
+
+A ferramenta APO (\textit{Accessible Petri Net Operations}) consiste em uma interface web desenvolvida para facilitar o uso do APT (\textit{Analysis of Petri Nets and Transition Systems}), um software robusto voltado à análise e síntese de redes de Petri e Sistemas de Transição \cite{apoGithub}. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.30]{figuras/apoRepo.png}
+	\caption[Repositório no Github do APO]{Repositório no Github do APO}
+	\label{fig:pipeAPO}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.30]{figuras/apoInterface.png}
+	\caption[Interface do simulador APO]{Interface do simulador APO}
+	\label{fig:interfaceAPO}
+\end{figure}
+\FloatBarrier
+
+A construção das redes é feita de maneira interativa, por meio de uma barra de ferramentas intuitiva, que permite a criação de lugares, transições e arcos. Após a modelagem da rede, é possível realizar análises automáticas utilizando os algoritmos integrados ao APT, diretamente acessíveis por meio da barra de menu. 
 
 \subsection*{TryRdP}
+
+O \textbf{TryRdP} é uma ferramenta web gratuita e interativa desenvolvida com o objetivo de apoiar o ensino e a aprendizagem significativa das redes de Petri \cite{educomp}. Diante da dificuldade que muitos estudantes enfrentam com o ensino tradicional, muitas vezes excessivamente teórico e abstrato, o TryRdP surge como uma alternativa mais prática e acessível, oferecendo uma abordagem baseada em exemplos reais de aplicação. 
+
+A ferramenta é organizada em três seções principais: introdução, modelagem básica e modelagem avançada, cada uma com explicações detalhadas dos conceitos e exercícios que aumentam progressivamente em complexidade. Essa estrutura favorece o aprendizado gradual e autônomo, permitindo que os usuários desenvolvam suas habilidades de forma prática e contextualizada. Além disso, a ferramenta TryRdP foi desenvolvida utilizando-se de tecnologias web modernas, como HTML, CSS e JavaScript, além de outros \textit{frameworks} para desenvolvimento web.
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.40]{figuras/tryrdpInterface.png}
+	\caption[Interface do simulador TryRdP]{Interface do simulador TryRdP}
+	\label{fig:interfaceTryRdP}
+\end{figure}
+\FloatBarrier
+
+O TryRDP configura-se como uma ferramenta bastante eficaz para fins educacionais, especialmente no processo de aprendizagem sobre redes de Petri. Sua proposta se destaca pela disponibilização de exercícios com níveis de dificuldade progressivos, além de fornecer mensagens de \textit{feedback} e correção sempre que o usuário comete erros, o que contribui significativamente para o aprendizado ativo. No entanto, a acessibilidade da ferramenta ainda representa uma limitação, uma vez que a localização do endereço \textit{URL} para acesso externo não é intuitiva nem prontamente disponível, dificultando seu uso por novos usuários.
 
 % ---
 \chapter{Desenvolvimento} \label{cap:desenvolvimento}
@@ -782,141 +879,30 @@ Com os requisitos em mente, criou-se a base de arquivos que seriam utilizados pa
 	\item script.js.
 \end{enumerate}
 
-Através do arquivo \textbf{index.html} estruturou-se toda a interface da aplicação. É nele em que se define todos os elementos que vão fazer parte da interface apresentada ao usuário final. O arquivo \textbf{sytle.css} define as principais propriedades visuais que foram estabelicidas anteriormente no arquivo \textbf{index.html}. Por fim, no arquivo \textbf{script.js} se define toda a lógica da aplicação. Através da liguagem de programação JavaScript se desenvolveu todas as funcionalidades que foram estabelicidas anteriormente. 
+Através do arquivo \textbf{index.html} estruturou-se toda a interface da aplicação. É nele em que se define todos os elementos que vão fazer parte da interface apresentada ao usuário final. O arquivo \textbf{sytle.css} define as principais propriedades visuais que foram estabelicidas anteriormente no arquivo \textbf{index.html}. Por fim, no arquivo \textbf{script.js} se define toda a lógica da aplicação. Através da liguagem de programação Javascript se desenvolveu todas as funcionalidades que foram estabelecidas anteriormente. 
 
-No arquivo \textbf{index.hmtl} inicialmente foi criado o título da página denominado \textbf{Online Petri Net Simulator} e seu posicionamento foi definido no topo e ao centro da tela, conforme imagem abaixo:
+No arquivo \textbf{index.hmtl}, inicialmente, criou-se o título da página denominado \textbf{\textit{Online Petri Net Simulator}} e seu posicionamento foi definido no topo e ao centro da tela, conforme imagem \ref{fig:titulo_topo_centro}:
 
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.3]{figuras/tela_inicial_titulo_topo_centro.png}
-	\caption[Título no topo e ao centro]{Rede de Petri Temporizada - Estágio 3. Fonte: Pipe.}
+	\caption[Título no topo e ao centro da página]{Título no topo e ao centro da página.}
 	\label{fig:titulo_topo_centro}
 \end{figure}
 
-Para a aplicação das funcionalidades foram definidos no arquivo  \textbf{index.hmtl} botões que ao serem apertados executariam uma determinada ação. 
+Para a execução das funcionalidades definiu-se no arquivo \textbf{index.hmtl} botões que, ao serem pressionados, executam uma determinada ação. 
 
-Ao longo do desenvolvimento, verificou-se que seria mais simples fazer o desacoplamento das funcionalidades em scripts separados. Desse modo, diferentes arquivos .js foram criados, para que cada funcionalidade fosse desenvolvida separadamente. Sendo assim, no arquivo \textbf{index.html} esses arquivos foram declarados, tornando possível a junção de todas as funcionalidades que compõem a aplicação. 
+Ao longo do desenvolvimento, verificou-se que seria mais simples fazer o desacoplamento das funcionalidades em \textit{scripts} separados. Desse modo, diferentes arquivos .js foram criados, para que cada funcionalidade fosse desenvolvida separadamente. Sendo assim, no arquivo \textbf{index.html}, esses arquivos foram declarados, tornando possível a junção de todas as funcionalidades que compõem a aplicação. 
 
-\section{Renderizando elementos na tela}
+\section{Eventos do Javascript}
 
-A renderização de elementos visuais na interface é uma das funcionalidades essenciais de uma aplicação web moderna, especialmente quando se trata da representação gráfica de estruturas conceituais. Neste projeto, cujo objetivo principal é possibilitar a criação e manipulação de redes de Petri, torna-se indispensável a visualização clara e interativa dos componentes que constituem esse tipo de rede.
-
-De modo simples, os elementos de uma rede de Petri são representados de forma gráfica por meio de figuras geométricas já conhecidas pela maioria das pessoas, tornando mais simples a analogia dos elementos das redes de Petri, com figuras geométricas já conhecidas. Os lugares são representados por círculos, as transições por retângulos, e os arcos que ligam esses elementos são ilustrados como setas direcionais. Elementos adicionais, como marcações, pesos e títulos, são exibidas como textos e números renderizados diretamente na tela, complementando a representação visual e fornecendo os dados necessários para a interpretação correta da rede.
-
-O HTML5 fornece o elemento \textbf{<canvas>}, que permite o desenvolvimento de figuras geométricas, gráficos e textos. No contexto desse projeto, o \textbf{canvas} é essencial. Primeiramente, fornecendo uma área na tela para o desenvolvimento e manipulação das redes de Petri. Posteriormente, fornecendo uma API que pode ser manipulada, através do JavaScript, para a criação dos elementos gráficos. 
-
-\lstinputlisting[caption={Chamada do elemento \textbf{<canvas>} no HTML5}, captionpos=b, label={lst:areacanvas}]{scripts/areaCanvas.html}
-
-Após a chamada do elemento \textbf{<canvas>} no arquivo \textbf{\textit{index.html}} uma área retangular com altura e largura definidas nos métodos \textbf{\textit{width}} e \textbf{\textit{heigth}} é definida na tela. Com essa definição feita, é possível a manipulação do que será renderizado na tela, dentro dessa área \textbf{canvas} criada. 
-
-\begin{figure}[ht] 
-	\centering
-	\includegraphics[scale=0.3]{figuras/area_canvas.png}
-	\caption[Área canvas]{Retângulo da área \textbf{<canvas>} logo abaixo dos botões da aplicação web}
-	\label{fig:area_canvas}
-\end{figure}
-\FloatBarrier
-
-Tendo a área \textbf{canvas} definida, inicia-se a manipulação dos elementos gráficos que iram representar as redes de Petri. Para tornar possível a interatividade de diferentes elementos criou-se uma função de loop. Essa função tem como principal objetivo apagar e renderizar os elementos representados na área canvas de forma continua. Esse processo de apagar os elementos e renderizar novamente, várias vezes por segundo, permite criar animações, tornando possível a movimentação dos elementos e a edição das informações na tela. 
-
-\lstinputlisting[caption={Função loop}, captionpos=b, label={lst:functionloop}]{scripts/functionLoop.js}
-
-O método JavaScript \textbf{\textit{window.requestAnimationFrame(loop, canvas)}} informa ao navegador que se deseja executar animações. Além disso, ele sincroniza a taxa de atualização, em \textbf{Hz}, das animações, com a taxa de atualização do monitor do usuário. Posteriormente, faz-se a chamada da função \textbf{\textit{render()}}, que irá renderizar os elementos na área \textbf{canvas}. Também, a função \textbf{\textit{buttonColors()}} é acionada. Ela verifica qual botão foi pressionado e, com base nas informações, altera a cor do botão que indica a ação a ser executada. 
-
-Além, faz-se a verificação da variável \textbf{\textit{simulation}}, que indica ao código se está ocorrendo a ação de simulação da rede de Petri. Caso sim, a função \textbf{\textit{netSimulationEnables()}}, responsável pela simulação da rede de Petri \ref{cap:simulation}, é acionada.
-
-\subsection*{Função de renderização}
-
-A função \textbf{\textit{render()}} é responsável pela renderização de todos os elementos dentro da área \textbf{canvas} destinada a construção e simulação das redes de Petri. Ela utiliza a API do JavaScript para a manipulação do \textbf{canvas}. Para cada tipo de elemento inicia-se o desenho com \textbf{\textit{beginPatch()}} e se finaliza com \textbf{\textit{beginPatch()}}
-
-\begin{enumerate}
-	\item renderização dos lugares;
-	\item renderização das transições;
-	\item renderização dos arcos;
-	\item renderização dos pontos intermediário dos arcos;
-	\item renderização do triângulo ou circulo na ponta do arco, a depender do tipo de arco;
-	\item renderização do arco, enquanto ele é criado \ref{fig:mousemove_desenhando_arco};
-	\item renderização do lugar após o botão \textbf{Add Place} ser pressionado, e antes de ser adicionado com \textbf{\textit{mousedown}};
-	\item renderização da transição após o botão \textbf{Add Transition} ser pressionado, e antes de ser adicionado com \textbf{\textit{mousedown}}.
-\end{enumerate}
-
-\subsubsection*{Renderização dos lugares}
-
-Um lugar é, graficamente, um circulo. Ao manipular o \textbf{canvas} é possível construir um circulo passando os seguintes parâmetros: as posições \textbf{x} e \textbf{y} do centro do circulo e o seu raio. 
-
-\lstinputlisting[caption={Renderizando lugar}, captionpos=b, label={lst:renderPlace}]{scripts/renderPlace.js}
-
-\begin{figure}[ht] 
-	\centering
-	\includegraphics[scale=1]{figuras/renderPlace.png}
-	\caption[renderPlace]{Lugar P1 renderizado na tela}
-	\label{fig:renderPlace}
-\end{figure}
-\FloatBarrier
-
-Além disso, um lugar possui algumas outras características, como o número de \textbf{\textit{tokens}} e o seu nome. Dessa forma, um número, representando a quantidade de \textbf{\textit{tokens}} é renderizado no centro do circulo. Um outro texto, representando o nome é renderizado um pouco acima do circulo, conforme \ref{lst:renderPlace}. A renderização ocorre de forma recursiva em cada um dos lugares que estão informados em \textbf{\textit{arrayPlaces}}.
-
-\subsubsection*{Renderização das transições}
-
-Uma transição é, graficamente, um retângulo. É possível construir um retângulo passando os seguintes parâmetros: posição \textbf{x} e \textbf{y} da ponta inferior esquerda do retângulo, largura e altura, em pixels. Além disso, a transição possui a cor preta quando a propriedade \textbf{\textit{isEnable}} é falsa. Quando \textbf{\textit{isEnable}} é verdadeiro, e a simulação está ativada, a cor da transição é vermelha. 
-
-\lstinputlisting[caption={Renderizando transição}, captionpos=b, label={lst:renderTransition}]{scripts/renderTransition.js}
-
-\begin{figure}[ht]
-	\centering
-	\begin{minipage}{0.49\textwidth}
-		\centering
-		\includegraphics[scale=1]{figuras/renderTransitionEnableFalse.png}
-		%\caption[renderTransitionEnableFalse]{Transição renderizada não ativada}
-		\label{fig:renderTransitionEnableFalse}
-	\end{minipage}
-	\hfill
-	\begin{minipage}{0.49\textwidth}
-		\centering
-		\includegraphics[scale=1]{figuras/renderTransitionEnableTrue.png}
-		%\caption[renderTransitionEnableTrue]{Transição renderizada ativada}
-		\label{fig:renderTransitionEnableTrue}
-	\end{minipage}
-	\caption{Comparação de renderização entre transição não ativada e ativada}
-\end{figure}
-
-Como o parâmetro a ser passado para a API do JavaScript para a construção de um retângulo em uma área \textbf{canvas} exige as coordenadas \textbf{x} e \textbf{y} do canto inferior esquerdo do retângulo, fez-se uma compensação, utilizando os valores de altura e largura, para se obter a posição do centro do retângulo. Dessa forma, ao posicionar e movimentar uma transição, se faz pela posição do centro.  A renderização ocorre de forma recursiva em cada uma das transições que estão informados em \textbf{\textit{arrayTransitions}}.
-
-\subsubsection*{Renderização dos arcos}
-
-Um arco, graficamente, é uma linha. No caso específico das redes de Petri, temos 2 principais tipos de arcos, normal e inibidor. O arco normal é representado como uma seta, o arco inibidor é semelhante, mas possui um circulo na ponta, ao invés de um triângulo. O processo é feito recursivamente em cada um dos arcos contidos em \textbf{\textit{arrayArcs}}.
-
-\lstinputlisting[caption={Renderizando arco}, captionpos=b, label={lst:renderArc}]{scripts/renderArc.js}
-
-Inicialmente, para a renderização do arco, há uma detecção da posição \textbf{x} e \textbf{y}. Esse primeiro ponto precisar ser, necessariamente dentro de algum elemento, lugar ou transição para arcos normais, e, apenas lugar, para arcos inibidores. Tendo a primeira posição \textbf{x} e \textbf{y} definida, há duas opções: ou o usuário seleciona o elemento final do arco, ou ele seleciona um ponto intermediário. No primeiro caso, uma linha entre o ponto inicial e final é renderizada. Caso seja um arco normal, um triângulo na ponto é renderizado que, junto com a linha, dá a ilusão de ser uma seta direcional. No caso do arco inibidor, um circulo é renderizado na ponta final da linha. 
-
-\begin{figure}[ht] 
-	\centering
-	\includegraphics[scale=0.7]{figuras/arcNormalInibidor.png}
-	\caption[Arco normal e inibidor]{Arco normal e inibidor chegando transição T1}
-	\label{fig:arcNormalInibidor}
-\end{figure}
-
-Há também o segundo caso, em que o usuário cria um ponto intermediário. Nesse caso, uma linha entre o ponto inicial e o ponto intermediário é criada. Na posição \textbf{x} e y\textbf{y} desse ponto intermediário é criado um circulo, para indicar que ali tem um arco intermediário, e que pode ser movimentado posteriormente. Podem existir infinitos pontos intermediários, até que o usuário clique no elemento final, quando o desenho do arco finaliza. Na ponta final, há o triângulo ou circulo, a depender do tipo de arco. 
-
-\begin{figure}[ht] 
-	\centering
-	\includegraphics[scale=0.8]{figuras/arcPontoIntermediario.png}
-	\caption[Arco com pontos intermediários]{Arcos com pontos intermediários}
-	\label{fig:arcPontoIntermediario}
-\end{figure}
-
-Além disso, o arco é mostrado, em tempo real, enquanto é desenhado. Faz-se isso utilizando o ponto inicial, juntamente com os pontos intermediário, caso existam, e a posição final é a do ponteiro do mouse, obtida com \textbf{\textit{mousemove}} \ref{cap:mousemove}. O processo é o mesmo que o anterior, diferenciado-se pelo fato do ponto final ser o obtido pelas propriedades \textbf{\textit{clientX}} e \textbf{\textit{clientY}} do evento \textbf{\textit{mousemove}} \ref{fig:mousemove_desenhando_arco}. 
-
-\section{Eventos do JavaScript}
-
-No desenvolvimento de aplicações web, é essencial que as páginas sejam responsivas e interativas. A linguagem JavaScript nos fornece uma série de funcionalidades que permitem o desenvolvimento de eventos para a interatividade do usuário com as páginas que ele acessa. Os eventos representam ações e recorrências que ocorrem dentro do navegador do usuário, como cliques, movimentação do mouse, pressionamento de teclas no teclado, dentre outras ações que um usuário, normalmente, pode executar dentro de uma página na web. 
+No desenvolvimento de aplicações web, é essencial que as páginas sejam responsivas e interativas. A linguagem Javascript nos fornece uma série de funcionalidades que permitem o desenvolvimento de eventos para a interatividade do usuário com as páginas que ele acessa. Os eventos representam ações e recorrências que ocorrem dentro do navegador do usuário, como cliques, movimentação do mouse, pressionamento de teclas no teclado, dentre outras ações que um usuário, normalmente, pode executar dentro de uma página na web. 
 
 Para o desenvolvimento da aplicação web, capaz de construir e simular redes de Petri, é fundamental 3 principais eventos, sendo eles o \textbf{\textit{mousemove}}, \textbf{\textit{mousedown}} e \textbf{\textit{mouseup}}. Esses eventos permitem que o usuário consiga interagir com a área da página dedicada ao desenvolvimento das redes de Petri. 
 
 \subsection*{mousemove}\label{cap:mousemove}
 
-O evento \textbf{\textit{mousemove}} é disparado sempre que ocorre o movimento do ponteiro do mouse sobre um determinado elemento \cite{mdn_mousemove_event}. No caso da aplicação web desenvolvida, é acionado sempre que ocorre o movimento do ponteiro do mouse dentro da área delimitada para o desenvolvimento das redes de Petri. 
+O evento \textbf{\textit{mousemove}} é disparado sempre que ocorre o movimento do ponteiro do mouse sobre um determinado elemento \cite{mdn_mousemove_event}. No caso da aplicação web desenvolvida, é acionado sempre que ocorre o movimento do ponteiro do mouse dentro da área delimitada para o desenvolvimento das redes de 
 
 \lstinputlisting[caption={Exemplo da chamada do evento \textbf{\textit{mousemove}}}, captionpos=b, label={lst:eventmousemove}]{scripts/mousemove.js}
 
@@ -973,21 +959,21 @@ Quando ocorre o evento \textbf{\textit{mousedown}}, a variável \textbf{\textit{
 	\caption[Mouse estilo grabbing]{Ponteiro do mouse com estilo \textbf{\textit{grabbing}}}
 	\label{fig:mouse_estilo_grabbing}
 \end{figure}
+\FloatBarrier
 
 \section{Criação dos elementos}
 
-
 \subsection*{Criação dos lugares}
 
-Para a criação dos lugares foi criado um primeiro botão através do arquivo \textit{\textbf{index.html}}. No momento em que se pressiona o botão \textit{\textbf{AddPlace}} a função \textit{\textbf{buttonAddPlace}} é chamada e seu script é executado. Nessa função, a variável global \textit{\textbf{buttonPress}} sofre a alteração de seu valor, caso seu valor seja diferente de \textit{\textbf{1}}, o valor \textit{\textbf{1}} é atribuído, do contrário seu valor retorna para zero.
+Para a criação dos lugares criou-se um primeiro botão através do arquivo \textit{\textbf{index.html}}. No momento em que se pressiona o botão \textit{\textbf{Add Place}} a função \textit{\textbf{buttonAddPlace()}} é chamada e seu \textit{script} é executado. Nessa função, a variável global \textit{\textbf{buttonPress}} sofre a alteração de seu valor, caso seu valor seja diferente de \textit{\textbf{1}}, o valor \textit{\textbf{1}} é atribuído. Do contrário, seu valor retorna para zero.
 
-\lstinputlisting[caption={Função buttonAddPlace}, captionpos=b, label={lst:buttonAddPlace}]{scripts/buttonAddPlace.js}
+\lstinputlisting[caption={Função \textit{\textbf{buttonAddPlace}}}, captionpos=b, label={lst:buttonAddPlace}]{scripts/buttonAddPlace.js}
 
-Quando \textit{\textbf{buttonPress = 1}} espera-se que o usuário clique na área demarcada para a construção de sua rede de Petri. No momento do clique, o evento \textit{\textbf{mousedown}} é detectado e seu script é executado. No script do evento \textit{\textbf{mousedown}} se faz uma verificação do valor da variável \textit{\textbf{buttonPress}}. Como o valor atribuído é \textit{\textbf{1}} se faz uma chamada da função \textit{\textbf{addPlace}} passando-se os valores \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}. 
+Quando \textit{\textbf{buttonPress = 1}} espera-se que o usuário clique na área demarcada para a construção de sua rede de Petri. No momento do clique, o evento \textit{\textbf{mousedown}} é detectado e seu script é executado. No script do evento \textit{\textbf{mousedown}} se faz uma verificação do valor da variável \textit{\textbf{buttonPress}}. Como o valor atribuído é \textit{\textbf{1}} se faz uma chamada da função \textit{\textbf{addPlace()}}, passando-se os valores \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}, obtidos com \textbf{\textit{mousedown}}. 
 
 \lstinputlisting[caption={Chamada da função addPlace}, captionpos=b, label={lst:chamadaAddPlace}]{scripts/chamadaAddPlace.js}
 
-Na função \textbf{\textit{addPlace}} se constroi um objeto \textbf{\textit{(objPlace)}} com as seguintes propriedades: 
+Na função \textbf{\textit{addPlace}} constrói-se um objeto \textbf{\textit{(objPlace)}} com as seguintes propriedades: 
 
 \begin{enumerate}
 	\item \textbf{id:} representa a identidade única que irá identificar esse objeto ao longo de todo o código;
@@ -997,51 +983,29 @@ Na função \textbf{\textit{addPlace}} se constroi um objeto \textbf{\textit{(ob
 	\item \textbf{posX:} indica o valor do eixo X em que o objeto se encontra na tela;
 	\item \textbf{posY:} indica o valor do eixo X em que o objeto se encontra na tela;
 	\item \textbf{connections:} array que identifica quais outros objetos estão ligados a ele;\label{prop:connections}
-	\item \textbf{nTokens:} identifica quantos \textbf{\textit{tokens}} o objeto lugar possuí.
+	\item \textbf{nTokens:} identifica quantas marcações o objeto lugar possuí.
 \end{enumerate}
 
-Após a definição desses valores no \textbf{\textit{objPlace}} se faz a inserção do mesmo no \textbf{\textit{arrayPlaces}}, em que se encontra todos os outros objetos de mesmas propriedades. Também se faz o acréscimo de \textbf{\textit{1}} na contagem de quantos lugares existem até o momento.
+Após a definição desses valores, se faz a inserção do \textbf{\textit{objPlace}} em \textbf{\textit{arrayPlaces}}, onde se encontra todos os outros objetos com as mesmas propriedades. Também se faz o acréscimo de \textbf{\textit{1}} na contagem de quantos lugares existem na rede até o momento.
 
 \lstinputlisting[caption={Função addPlace}, captionpos=b, label={lst:functionAddPlace}]{scripts/addPlace.js}
 
-Posteriormente a execução da função \textbf{\textit{addPlace}}, o valor da variável \textbf{\textit{buttonPress}} é atribuído como \textbf{\textit{0.}}
+Posteriormente a execução da função \textbf{\textit{addPlace()}}, o valor da variável \textbf{\textit{buttonPress}} é atribuído como \textbf{\textit{0.}}
 
-\newpage
-
-\begin{figure}[h!]
+\begin{figure}[ht] 
 	\centering
-	\begin{tikzpicture}[node distance=2cm]
-		
-		% Nodes
-		\node (start) [startstop] {Clique no botão \textbf{\textit{addPlace}}};
-		\node (step) [process, below of=start] {\textbf{\textit{buttonPress = 1}}};
-		\node (step1) [process, below of=step] {Clique na área destinada a construção da rede de Petri};
-		\node (step2) [process, below of=step1] {Chamada da função \textbf{\textit{addPlace}}};
-		\node (step3) [process, below of=step2] {Criação do \textbf{\textit{objPlace}}};
-		\node (end) [startstop, below of=step3] {Adiciona \textbf{\textit{objPlace} ao \textbf{\textit{arrayPlaces}}}};
-		\node (step4) [process, below of=end] {\textbf{\textit{buttonPress = 0}}};
-		
-		% Arrows
-		\draw [arrow] (start) -- (step);
-		\draw [arrow] (step) -- (step1);
-		\draw [arrow] (step1) -- (step2);
-		\draw [arrow] (step2) -- (step3);
-		\draw [arrow] (step3) -- (end);
-		\draw [arrow] (end) -- (step4);
-		
-	\end{tikzpicture}
-	\caption{Diagrama de fluxo para adicionar um lugar}
-	\label{fig:fluxo4etapas}
+	\includegraphics[scale=0.2]{figuras/diagrama-fluxo-addPlace.png}
+	\caption[Diagrama de fluxo para criação de um lugar]{Diagrama de fluxo para criação de um lugar}
+	\label{fig:addPlaceDiagram}
 \end{figure}
+\FloatBarrier
 
-\newpage
-
-Para facilitar a visualização no momento da adição do lugar, um efeito sombreado, representando o lugar, é mostrado enquanto se movimenta o mouse, antes do clique na tela, na área destinada a construção da rede de Petri, conforme a imagem abaixo:
+Para facilitar a visualização no momento da adição do lugar, um efeito sombreado, representando o lugar, é mostrado enquanto se movimenta o mouse, antes do clique na tela, na área destinada a construção da rede de Petri, conforme \ref{fig:clique_add_place}:
 
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.55]{figuras/exemplo_clique_addPlace.png}
-	\caption[Clicando bo botao addPlace]{Clique no botão addPlace}
+	\caption[Clicando bo botao Add Place]{Clique no botão \textit{\textbf{Add Place}}}
 	\label{fig:clique_add_place}
 \end{figure}
 
@@ -1049,13 +1013,13 @@ Para facilitar a visualização no momento da adição do lugar, um efeito sombr
 
 De modo semelhante a criação de lugares, temos um segundo botão, criado através do arquivo \textbf{\textit{index.html}}, denominada \textbf{\textit{Add Transition}}. Seu modo de funcionamento é análogo ao botão \textbf{\textit{Add Place}}. No momento de seu clique, a função \textbf{\textit{buttonAddTransition()}} é chamada. Suas orientãções também alterarm o valor da variável global \textbf{\textit{buttonPress}}. Quando seu valor é diferente de \textbf{\textit{2}}, o valor \textbf{\textit{2}} é atribuído, caso contrário o valor retorna para zero. 
 
-\lstinputlisting[caption={Função buttonAddTransition}, captionpos=b, label={lst:buttonAddTransition}]{scripts/buttonAddTransition.js}
+\lstinputlisting[caption={Função \textit{\textbf{buttonAddTransition()}}}, captionpos=b, label={lst:buttonAddTransition}]{scripts/buttonAddTransition.js}
 
-No momento do clique do botão \textbf{\textit{Add Transition}} espera-se que o usuário faça um clique na área destinada a construção da rede de Petri. Dessa forma, fazendo o clique, uma transição é adicionada na mesma posição em que ocorreu o clique. Nesse momento, o evento \textbf{\textit{mousedown}} é chamado e se faz uma verifição do valor da variável \textbf{\textit{buttonPress}}. Como o valor é igual a \textbf{\textit{2}}, a função \textbf{addTransition()} é chamada, passando-se os valores \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}.
+No momento do clique do botão \textbf{\textit{Add Transition}} espera-se que o usuário faça um clique na área destinada a construção da rede de Petri. Dessa forma, fazendo o clique, uma transição é adicionada na mesma posição em que o clique ocorreu. Nesse momento, o evento \textbf{\textit{mousedown}} é chamado e se faz uma verifição do valor da variável \textbf{\textit{buttonPress}}. Como o valor é igual a \textbf{\textit{2}}, a função \textit{\textbf{addTransition()}} é chamada, passando-se os valores \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}.
 
 \lstinputlisting[caption={Chamada da função addTransition()}, captionpos=b, label={lst:chamadaAddTransition}]{scripts/chamadaAddTransition.js}
 
-Na função \textbf{addTransition()} se constrói um objeto \textbf{\textit{objTransition}} com as seguintes propriedades:
+Na função \textbf{addTransition()} se constrói um objeto \textbf{\textit{(objTransition)}} com as seguintes propriedades:
 
 \begin{enumerate}
 	\item \textbf{id:} representa a identidade única da transição que irá identificar esse objeto ao longo de todo o código;
@@ -1065,86 +1029,61 @@ Na função \textbf{addTransition()} se constrói um objeto \textbf{\textit{objT
 	\item \textbf{posX:} indica o valor do eixo X em que a transição se encontra na tela;
 	\item \textbf{posY:} indica o valor do eixo Y em que a transição se encontra na tela;
 	\item \textbf{connections:} array que identifica quais outros objetos estão ligados a essa transição;
-	\item \textbf{isEnable:} valor booleano que indica se as exigências para ativação da transição foram cumpridas.
+	\item \textbf{isEnable:} valor booleano que indica se as exigências para ativação da transição estão sendo cumpridas.\label{prop:isEnable}
 \end{enumerate}
 
-Após as definições desses valores no \textbf{\textit{objTransition}} se faz a inserção do mesmo no \textbf{\textit{arrayTransitions}}, em que se encontra todas as outras transições de mesmas propriedades. Também se faz o acréscimo de \textbf{\textit{1}} na contagem de quantas transições existem até o momento.
+Após as definições desses valores, se faz a inserção do \textbf{\textit{objTransition}} em \textbf{\textit{arrayTransitions}}, onde se encontra todas as outras transições com as mesmas propriedades. Também se faz o acréscimo de \textbf{\textit{1}} na contagem de quantas transições existem até o momento na rede.
 
 \lstinputlisting[caption={Função addTransition()}, captionpos=b, label={lst:addTransition}]{scripts/addTransition.js}
 
 Posteriormente a execução da função \textbf{\textit{addTransition()}}, o valor da variável \textbf{\textit{buttonPress}} é atribuído como \textbf{\textit{0}}
 
-Para facilitar a visualização no momento de adição da transição, o botão pressionado permanece na cor amarela enquanto o clique na tela não ocorre para adição da transição. Além disso, um efeito sombreado, em forma de uma transição acompanha o cursor do mouse enquanto não há o clique, conforme imagem abaixo: 
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.2]{figuras/diagrama-fluxo-addTransition.png}
+	\caption[Diagrama de fluxo para criação de uma transição]{Diagrama de fluxo para criação de uma transição}
+	\label{fig:addTransitionDiagram}
+\end{figure}
+\FloatBarrier
+
+Para facilitar a visualização no momento de adição da transição, o botão pressionado permanece na cor amarela enquanto o clique na tela não ocorre para adição da transição. Além disso, um efeito sombreado, em forma de uma transição acompanha o cursor do mouse enquanto não há o clique, conforme \ref{fig:clique_add_transition}: 
 
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.55]{figuras/exemplo_clique_addTransition.png}
-	\caption[Clicando bo botao addTransition]{Clique no botão Add Transition}
+	\caption[Clicando bo botao addTransition]{Clique no botão \textit{\textbf{Add Transition}}}
 	\label{fig:clique_add_transition}
 \end{figure}
 
-
-\newpage
-
-\begin{figure}[h!]
-	\centering
-	\begin{tikzpicture}[node distance=2cm]
-		
-		% Nodes
-		\node (start) [startstop] {Clique no botão \textbf{\textit{Add Transition}}};
-		\node (step1) [process, below of=start] {\textbf{\textit{buttonPress = 2}}};
-		\node (step2) [process, below of=step1] {Clique na área destinada a construção da rede de Petri};
-		\node (step3) [process, below of=step2] {Chamada da função \textbf{\textit{addTransition}}};
-		\node (step4) [process, below of=step3] {Criação do \textbf{\textit{objTransition}}};
-		\node (step5) [process, below of=step4] {Adiciona \textbf{\textit{objTransition} ao \textbf{\textit{arrayTransitions}}}};
-		\node (step6) [process, below of=step5] {A transição é renderizada na tela na posição \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}};
-		\node (end) [startstop, below of=step6] {\textbf{\textit{buttonPress = 0}}};
-		
-		% Arrows
-		\draw [arrow] (start) -- (step);
-		\draw [arrow] (step1) -- (step2);
-		\draw [arrow] (step2) -- (step3);
-		\draw [arrow] (step3) -- (step4);
-		\draw [arrow] (step4) -- (step5);
-		\draw [arrow] (step5) -- (step6);
-		\draw [arrow] (step6) -- (end);
-		
-	\end{tikzpicture}
-	\caption{Diagrama de fluxo para adicionar uma transição}
-	\label{fig:fluxo_add_transition}
-\end{figure}
-
-\newpage
-
 \subsection*{Criação dos arcos}
 
-Para a criação dos arcos foram desenvolvido dois novos botões, denominados \textbf{\textit{Add Arc}}, para a criação de arcos normais, e \textbf{\textit{Add Inh Arc}}, para a criação de arcos inibidores. No momento do clique, eles desempenham funções semelhantes, diferenciando-se apenas pela valor da variável \textit{\textbf{buttonPress}} e \textbf{\textit{arcType}}. O papel dessas variáveis é indicar o botão que foi pressionado e o tipo de arco selecionado. Além disso, a variável booleana  \textbf{\textit{drawArc}} recebe o valor \textbf{\textit{true}} indicando que um arco será desenhado na tela.
+Para a criação dos arcos foram desenvolvidos dois novos botões, denominados \textbf{\textit{Add Arc}}, para a criação de arcos normais, e \textbf{\textit{Add Inh Arc}}, para a criação de arcos inibidores. No momento do clique, eles desempenham funções semelhantes, diferenciando-se apenas pela valor da variável \textit{\textbf{buttonPress}} e \textbf{\textit{arcType}}. O papel dessas variáveis é indicar o botão que foi pressionado e o tipo de arco selecionado. Além disso, a variável booleana \textbf{\textit{drawArc}} recebe o valor \textbf{\textit{true}} indicando que um arco será desenhado na tela.
 
-\lstinputlisting[caption={Botão Add Arc}, captionpos=b, label={lst:buttonAddArc}]{scripts/buttonAddArc.js}
+\lstinputlisting[caption={Botão \textit{\textbf{Add Arc}}}, captionpos=b, label={lst:buttonAddArc}]{scripts/buttonAddArc.js}
 
-\lstinputlisting[caption={Botão Add Inh Arc}, captionpos=b, label={lst:buttonAddInhArc}]{scripts/buttonAddInhArc.js}
+\lstinputlisting[caption={Botão \textit{\textbf{Add Inh Arc}}}, captionpos=b, label={lst:buttonAddInhArc}]{scripts/buttonAddInhArc.js}
 
-No momento de acionamento de algum desses dois botões espera-se que o usuário inicie o desenho de um arco. Para isso, inicialmente ele deve selecionar o ponto inicial do desenho desse arco. Para arcos normais, o ponto inicial pode ser tanto um lugar, quanto por uma transição. Para os arcos inibidores, o ponto inicial deve ser obrigatoriamente um lugar, não é possível iniciar o desenho de um arco inibidor a partir de uma transição. Quando o usuário faz o primeiro clique, posterior ao clique do botão, o evento \textbf{\textit{mousedown}} é ativado e a verificação da variável \textbf{\textit{buttonPress}} é verificado. Caso \textbf{\textit{buttonPress}} seja igual a \textbf{\textit{3}} ou \textbf{\textit{4}} a função \textbf{\textit{addArc}} é chamada. Como o valor da variável \textbf{\textit{buttonPress}} não se altera ao longo do desenho do arco, sempre que há um clique na tela, há a chamada da função \textbf{\textit{addArc}}.
+No momento de acionamento de algum desses dois botões espera-se que o usuário inicie o desenho de um arco. Para isso, inicialmente, ele deve selecionar o ponto inicial do desenho desse arco. Para arcos normais, o ponto inicial pode ser tanto um lugar, quanto uma transição. Para os arcos inibidores, o ponto inicial deve ser, obrigatoriamente, um lugar. Não é possível iniciar o desenho de um arco inibidor a partir de uma transição. Quando o usuário faz o primeiro clique, posterior ao clique do botão, o evento \textbf{\textit{mousedown}} é ativado e a verificação da variável \textbf{\textit{buttonPress}} ocorre. Caso \textbf{\textit{buttonPress}} seja igual a \textbf{\textit{3}} ou \textbf{\textit{4}} a função \textbf{\textit{addArc()}} é chamada. Como o valor da variável \textbf{\textit{buttonPress}} não se altera ao longo do desenho do arco, sempre que há um clique na tela, há a chamada da função \textbf{\textit{addArc()}}.
 
-A cada chamada da função \textbf{\textit{addArc}} se faz uma verificação de algumas variáveis temporárias que auxiliam a construção dos arcos, são elas: 
+A cada chamada da função \textbf{\textit{addArc()}} se faz uma verificação de algumas variáveis temporárias que auxiliam a construção dos arcos, são elas: 
 
 \begin{enumerate}
 	\item \textbf{\textit{startingPositionArc:}} array que indica o ponto inicial, nos eixos X e Y da tela, do arco, além de contter o id do item em que o arco se inicia;
-	\item \textbf{\textit{intermediatePoints:}} array que indica todos os pontos, nos eixos X e Y da tela, depois do ponto inicial e antes do ponto final;
-	\item \textbf{\textit{endPositionArc:}} array que indica a ponto final, nos eixos X e Y da tela, do arco, além de contter o id do item em que o arco termina.
+	\item \textbf{\textit{intermediatePoints:}} array que indica todos os pontos intermediários, nos eixos X e Y da tela, depois do ponto inicial e antes do ponto final;
+	\item \textbf{\textit{endPositionArc:}} array que indica a ponto final, nos eixos X e Y da tela, do arco, além de conter o id do item em que o arco termina.
 \end{enumerate}
 
-A primeira verificação que se faz na função \textbf{\textit{addArc}} é a existência de pontos intermediários. Para essa vericação analisamos o tamanho do array \textbf{\textit{startingPositionArc}} e \textbf{\textit{endPositionArc}}. Se o primeiro for maior que \textbf{\textit{0}}, e o último igual a \textit{\textbf{0}}, significa que o clique foi feito para a construção de um ponto intermediário  arco. Dessa forma, se faz uma inserção no array \textbf{\textit{intermediatePoints}} da posição dos eixos X e Y, passando-se os valores das variáveis \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}.
+A primeira verificação que se faz na função \textbf{\textit{addArc()}} é a existência de pontos intermediários. Para essa vericação analisa-se o tamanho do array \textbf{\textit{startingPositionArc}} e \textbf{\textit{endPositionArc}}. Se o primeiro for maior que \textbf{\textit{0}}, e o último igual a \textit{\textbf{0}}, significa que o clique foi feito para a construção de um ponto intermediário do arco. Dessa forma, se faz uma inserção no array \textbf{\textit{intermediatePoints}} da posição dos eixos X e Y, passando-se os valores das variáveis \textbf{\textit{mouseX}} e \textbf{\textit{mouseY}}.
 
 \lstinputlisting[caption={Verificação de pontos intermediários}, captionpos=b, label={lst:intermediatePoints}]{scripts/intermediatePoints.js}
 
-Caso a condição anterior não seja atendida, se entende que o ponto \textbf{\textit{X}} e \textbf{\textit{Y}} não representa um ponto intermediário do arco. Posteriormente, se percorre os arrays \textbf{\textit{arrayPlaces}} e \textbf{\textit{arrayTransition}}. Para cada uma das posições de ambos os arrays se faz a verificação, através das funções \textbf{\textit{isInsidePlace}} e \textbf{\textit{isInsideTransition}}, se o clique do mouse ocorreu dentro de algum dos lugares ou transições que estão dispostas na tela. Caso o clique ocorra dentro de algum desses dois elementos, o ponto \textbf{\textit{X}} e \textbf{\textit{Y}} será gravado na variável \textbf{\textit{startingPositionArc}}, juntamente com o \textbf{\textit{id}} do elemento em que o arco se iniciou. 
+Caso a condição anterior não seja atendida, se entende que o ponto \textbf{\textit{X}} e \textbf{\textit{Y}} não representa um ponto intermediário do arco. Posteriormente, se percorre os arrays \textbf{\textit{arrayPlaces}} e \textbf{\textit{arrayTransitions}}. Para cada uma das posições de ambos os arrays se faz a verificação, através das funções \textbf{\textit{insidePlace()}} \ref{lst:insidePlace} e \textbf{\textit{insideTransition()}} \ref{lst:insideTransition}, se o clique do mouse ocorreu dentro de algum dos lugares ou transições que estão dispostas na tela. Caso o clique ocorra dentro de algum desses dois elementos, o ponto \textbf{\textit{X}} e \textbf{\textit{Y}} será gravado na variável \textbf{\textit{startingPositionArc}}, juntamente com o \textbf{\textit{id}} do elemento em que o arco se iniciou. 
 
 \subsection*{Para lugares}
 
-Caso a chamada da função \textbf{\textit{isInsidePlace}} retorne \textbf{\textit{true}} e a variável \textbf{\textit{startingPositionArc}} não contenha nenhum valor, o ponto inicial, com os eixos \textbf{\textit{X}} e \textbf{\textit{Y}} e o id do lugar, são gravados nas propriedades do arco. Além disso, no lugar em quem o arco se iniciou, insere-se a informação de que aquele arco se iniciou ali. A variável auxiliar \textbf{\textit{typeElement}} também recebe o valor \textbf{\textit{"place"}}, para indicar que aquele arco se iniciou num lugar. 
+Caso a chamada da função \textbf{\textit{insidePlace()}} retorne \textbf{\textit{true}} e a variável \textbf{\textit{startingPositionArc}} não contenha nenhum valor, o ponto inicial, com os eixos \textbf{\textit{X}} e \textbf{\textit{Y}} e o \textbf{\textit{id}} do lugar, são gravados nas propriedades do arco. Além disso, no lugar em quem o arco se iniciou, insere-se a informação de que aquele arco se iniciou ali. A variável auxiliar \textbf{\textit{typeElement}} também recebe o valor \textbf{\textit{"place"}}, para indicar que aquele arco se iniciou num lugar. 
 
-Caso a verificação anterior não seja atendida, se faz uma nova verificação. Se a chamada da função \textbf{\textit{isInsidePlace}} retornar \textbf{\textit{true}} e a variável \textbf{\textit{typeElement}} contiver o valor \textbf{\textit{"transition"}}, quer dizer que o arco se iniciou em uma transição, e agora está finalizando em um lugar. Com isso, se adiciona o valor \textbf{\textit{X} e \textbf{\textit{Y}}} do clique e o \textbf{\textit{id}} do lugar em que o arco está finalizando na variável \textbf{\textit{endPositionArc}} que, posteriormente, será adicionado nas propriedades do arco. O lugar recebe a informação de que esse arco finalizou nele.
+Caso a verificação anterior não seja atendida, se faz uma nova verificação. Se a chamada da função \textbf{\textit{insidePlace()}} retornar \textbf{\textit{true}} e a variável \textbf{\textit{typeElement}} contiver o valor \textbf{\textit{"transition"}}, quer dizer que o arco se iniciou em uma transição, e agora está finalizando em um lugar. Com isso, se adiciona o valor \textbf{\textit{X} e \textbf{\textit{Y}}} do clique e o \textbf{\textit{id}} do lugar em que o arco está finalizando na variável \textbf{\textit{endPositionArc}} que, posteriormente, será adicionado nas propriedades do arco. O lugar recebe a informação de que esse arco finalizou nele.
 
 Com a finalização do arco, a variável \textbf{\textit{drawArc}} recebe o valor \textbf{\textit{false}} e a \textbf{\textit{typeElement}} recebe \textbf{\textit{null}}
 
@@ -1152,9 +1091,9 @@ Com a finalização do arco, a variável \textbf{\textit{drawArc}} recebe o valo
 
 \subsection*{Para transições}
 
-Caso a chamada da função \textbf{\textit{isInsideTransition}} retorne \textbf{\textit{true}} e a variável \textbf{\textit{startingPositionArc}} não contenha nenhum valor, o ponto inicial, com os eixos \textbf{\textit{X}} e \textbf{\textit{Y}} e o id da transição, são gravados nas propriedades do arco. Além disso, na transição em quem o arco se iniciou, insere-se a informação de que aquele arco se iniciou ali. A variável auxiliar \textbf{\textit{typeElement}} também recebe o valor \textbf{\textit{"transition"}}, para indicar que aquele arco se iniciou numa transição. 
+Caso a chamada da função \textbf{\textit{insideTransition()}} retorne \textbf{\textit{true}} e a variável \textbf{\textit{startingPositionArc}} não contenha nenhum valor, o ponto inicial, com os eixos \textbf{\textit{X}} e \textbf{\textit{Y}} e o \textbf{\textit{id}} da transição, são gravados nas propriedades do arco. Além disso, na transição em quem o arco se iniciou, insere-se a informação de que aquele arco se iniciou ali. A variável auxiliar \textbf{\textit{typeElement}} também recebe o valor \textbf{\textit{"transition"}}, para indicar que aquele arco se iniciou numa transição. 
 
-Caso a verificação anterior não seja atendida, se faz uma nova verificação. Se a chamada da função \textbf{\textit{isInsideTransition}} retornar \textbf{\textit{true}} e a variável \textbf{\textit{typeElement}} contiver o valor \textbf{\textit{"place"}}, quer dizer que o arco se iniciou em um lugar, e agora está finalizando em uma transição. Com isso, se adiciona o valor \textbf{\textit{X} e \textbf{\textit{Y}}} do clique e o \textbf{\textit{id}} da transição em que o arco está finalizando na variável \textbf{\textit{endPositionArc}} que, posteriormente, será adicionado nas propriedades do arco. A transição recebe a informação de que esse arco finalizou nele.
+Caso a verificação anterior não seja atendida, se faz uma nova verificação. Se a chamada da função \textbf{\textit{insideTransition()}} retornar \textbf{\textit{true}} e a variável \textbf{\textit{typeElement}} contiver o valor \textbf{\textit{"place"}}, quer dizer que o arco se iniciou em um lugar, e agora está finalizando em uma transição. Com isso, se adiciona o valor \textbf{\textit{X} e \textbf{\textit{Y}}} do clique e o \textbf{\textit{id}} da transição em que o arco está finalizando na variável \textbf{\textit{endPositionArc}} que, posteriormente, será adicionado nas propriedades do arco. A transição recebe a informação de que esse arco finalizou nele.
 
 Com a finalização do arco, a variável \textbf{\textit{drawArc}} recebe o valor \textbf{\textit{false}} e a \textbf{\textit{typeElement}} recebe \textbf{\textit{null}}
 
@@ -1178,9 +1117,129 @@ Quando as variáveis temporárias \textbf{\textit{startingPositionArc}} e \textb
 	\item \textbf{weightPos:} indica o valor dos eixos X e Y em que o peso do arco será mostrado na tela.
 \end{enumerate}
 
-Tendo essas propriedades definidas se faz a adição do arco no \textbf{\textit{arrayArcs}}. Por fim, as variáveis temporárias são atribuídas com valores nulos para que o próximo arco possa ser construído.
+Tendo essas propriedades definidas faz-se a adição do arco em \textbf{\textit{arrayArcs}}. Por fim, as variáveis temporárias são atribuídas com valores nulos para que o próximo arco possa ser construído.
 
 \lstinputlisting[caption={Criando o arco com as propriedades}, captionpos=b, label={lst:addArc}]{scripts/addArc.js}
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.12]{figuras/diagrama-fluxo-addArc.png}
+	\caption[Diagrama de fluxo para criação de um Arco]{Diagrama de fluxo para criação de um arco}
+	\label{fig:addArcDiagram}
+\end{figure}
+\FloatBarrier
+
+\section{Renderizando elementos na tela}
+
+A renderização de elementos visuais na interface é uma das funcionalidades essenciais de uma aplicação web moderna, especialmente quando se trata da representação gráfica de estruturas conceituais. Neste projeto, cujo objetivo principal é possibilitar a criação e manipulação de redes de Petri, torna-se indispensável a visualização clara e interativa dos componentes que constituem esse tipo de rede.
+
+De modo simples, os elementos de uma rede de Petri são representados de forma gráfica por meio de figuras geométricas já conhecidas pela maioria das pessoas, tornando mais simples a analogia dos elementos das redes de Petri, com figuras geométricas já conhecidas. Os lugares são representados por círculos, as transições por retângulos, e os arcos que ligam esses elementos são ilustrados como setas direcionais. Elementos adicionais, como marcações, pesos e títulos, são exibidas como textos e números renderizados diretamente na tela, complementando a representação visual e fornecendo os dados necessários para a interpretação correta da rede.
+
+O HTML fornece a \textit{tag} \textbf{<canvas>}, que permite o desenvolvimento de figuras geométricas, gráficos e textos. No contexto desse projeto, o \textit{canvas} é essencial. Primeiramente, fornecendo uma área na tela para o desenvolvimento e manipulação das redes de Petri. Posteriormente, fornecendo uma API que pode ser manipulada, através do Javascript, para a criação dos elementos gráficos. 
+
+\lstinputlisting[caption={Definição da \textit{tag} \textbf{<canvas>} no HTML}, captionpos=b, label={lst:areacanvas}]{scripts/areaCanvas.html}
+
+Após a chamada do elemento \textbf{<canvas>} no arquivo \textbf{\textit{index.html}} uma área retangular com altura e largura, definidas nos métodos \textbf{\textit{width}} e \textbf{\textit{heigth}}, é renderizada na tela. Com essa definição feita, é possível a manipulação do que será renderizado na tela, dentro da área \textit{canvas} criada. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.3]{figuras/area_canvas.png}
+	\caption[Área canvas]{Retângulo da área \textit{\textbf{<canvas>}} logo abaixo dos botões da aplicação web.}
+	\label{fig:area_canvas}
+\end{figure}
+\FloatBarrier
+
+Tendo a área \textit{canvas} definida, inicia-se a manipulação dos elementos gráficos que irão representar as redes de Petri. Para tornar possível a interatividade de diferentes elementos criou-se uma função de \textit{loop}. Essa função tem como principal objetivo apagar e renderizar os elementos representados na área \textit{canvas} de forma continua. Esse processo de apagar os elementos e renderizar novamente, várias vezes por segundo, permite criar animações, tornando possível a movimentação dos elementos e a edição das informações na tela. 
+
+\lstinputlisting[caption={Função \textit{loop}}, captionpos=b, label={lst:functionloop}]{scripts/functionLoop.js}
+
+O método Javascript \textbf{\textit{window.requestAnimationFrame(loop, canvas)}} informa ao navegador que se deseja executar animações. Além disso, ele sincroniza a taxa de atualização, em \textbf{Hz}, das animações, com a taxa de atualização do monitor do usuário. Posteriormente, faz-se a chamada da função \textbf{\textit{render()}}, que irá renderizar os elementos na área \textit{canvas}. Também, a função \textbf{\textit{buttonColors()}} é acionada. Ela verifica qual botão está pressionado e, com base nas informações, altera a cor do botão que indica a ação que será executada. 
+
+Além, faz-se a verificação da variável \textbf{\textit{simulation}}, que indica ao código se está ocorrendo a ação de simulação da rede de Petri. Caso sim, a função \textbf{\textit{netSimulationEnables()}} \ref{lst:saveNet}, responsável pela simulação da rede de Petri, é acionada.
+
+\subsection*{Função de renderização}
+
+A função \textbf{\textit{render()}} é responsável pela renderização de todos os elementos dentro da área \textit{canvas} destinada a construção e simulação das redes de Petri. Ela utiliza a \textit{API} do Javascript para a manipulação do \textit{canvas}. Para cada tipo de elemento inicia-se o desenho com \textbf{\textit{beginPatch()}} e se finaliza com \textbf{\textit{closePatch()}}. Suas atribuições incluem:
+
+\begin{enumerate}
+	\item renderização dos lugares;
+	\item renderização das transições;
+	\item renderização dos arcos;
+	\item renderização dos pontos intermediário dos arcos;
+	\item renderização do triângulo ou circulo na ponta do arco, a depender do tipo de arco;
+	\item renderização do arco, enquanto ele é criado \ref{fig:mousemove_desenhando_arco};
+	\item renderização do lugar após o botão \textbf{Add Place} ser pressionado, e antes de ser adicionado com \textbf{\textit{mousedown}};
+	\item renderização da transição após o botão \textbf{Add Transition} ser pressionado, e antes de ser adicionado com \textbf{\textit{mousedown}}.
+\end{enumerate}
+
+\subsubsection*{Renderização dos lugares}
+
+Um lugar é, graficamente, um circulo. Ao manipular o \textit{canvas} é possível construir um circulo passando os seguintes parâmetros: as posições \textbf{x} e \textbf{y} do centro do circulo e o seu raio. 
+
+\lstinputlisting[caption={Renderizando um lugar}, captionpos=b, label={lst:renderPlace}]{scripts/renderPlace.js}
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=1]{figuras/renderPlace.png}
+	\caption[renderPlace]{Lugar P1 renderizado na tela}
+	\label{fig:renderPlace}
+\end{figure}
+\FloatBarrier
+
+Além disso, um lugar possui outras características, como o número de marcações e o seu nome. Dessa forma, um número, representando a quantidade de marcações é renderizado no centro do circulo. Um outro texto, representando o nome, é renderizado um pouco acima do circulo, conforme \ref{lst:renderPlace}. A renderização ocorre de forma recursiva em cada um dos lugares que estão informados em \textbf{\textit{arrayPlaces}}.
+
+\subsubsection*{Renderização das transições}
+
+Uma transição é, graficamente, um retângulo. É possível construir um retângulo passando os seguintes parâmetros: posição \textbf{x} e \textbf{y} da ponta inferior esquerda do retângulo, largura e altura, em \textit{pixels}. Além disso, a transição possui a cor preta quando a propriedade \textbf{\textit{isEnable}} é falsa. Quando \textbf{\textit{isEnable}} é verdadeiro, e a simulação está ativada, a cor da transição é vermelha. 
+
+\lstinputlisting[caption={Renderizando uma transição}, captionpos=b, label={lst:renderTransition}]{scripts/renderTransition.js}
+
+\begin{figure}[ht]
+	\label{fig:renderTransition}
+	\centering
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\includegraphics[scale=1]{figuras/transitionEnableFalse.png}
+		%\caption[renderTransitionEnableFalse]{Transição renderizada não ativada}
+		\label{fig:renderTransitionEnableFalse}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\includegraphics[scale=1]{figuras/transitionEnableTrue.png}
+		%\caption[renderTransitionEnableTrue]{Transição renderizada ativada}
+		\label{fig:renderTransitionEnableTrue}
+	\end{minipage}
+	\caption{Renderização da transição T1 de forma não ativada e ativada}
+\end{figure}
+
+Como o parâmetro a ser passado para a \textit{API} do Javascript para a construção de um retângulo em uma área \textbf{canvas} exige as coordenadas \textbf{x} e \textbf{y} do canto inferior esquerdo do retângulo, fez-se uma compensação, utilizando os valores de altura e largura, para se obter a posição do centro do retângulo. Dessa forma, ao posicionar e movimentar uma transição, se faz pela posição do centro.  A renderização ocorre de forma recursiva em cada uma das transições que estão informados em \textbf{\textit{arrayTransitions}}.
+
+\subsubsection*{Renderização dos arcos}
+
+Um arco, graficamente, é uma linha. No caso específico das redes de Petri, temos 2 principais tipos de arcos, normal e inibidor. O arco normal é representado como uma seta, o arco inibidor é semelhante, mas possui um circulo na ponta, ao invés de um triângulo. O processo é feito recursivamente em cada um dos arcos contidos em \textbf{\textit{arrayArcs}}.
+
+\lstinputlisting[caption={Renderizando um arco}, captionpos=b, label={lst:renderArc}]{scripts/renderArc.js}
+
+Inicialmente, para a renderização do arco, há uma detecção da posição \textbf{x} e \textbf{y}, obtida através do evento \textbf{\textit{mousedown}} cap:mousedown. Esse primeiro ponto precisa ser, necessariamente, dentro de algum elemento, lugar ou transição para arcos normais e, apenas lugar, para arcos inibidores. Tendo a primeira posição \textbf{x} e \textbf{y} definida, há duas opções: ou o usuário seleciona o elemento final do arco, ou ele seleciona um ponto intermediário. No primeiro caso, uma linha entre o ponto inicial e final é renderizada. Caso seja um arco normal, um triângulo na ponto é renderizado que, junto com a linha, dá a ilusão de ser uma seta direcional. No caso do arco inibidor, um circulo é renderizado na ponta final da linha. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.7]{figuras/arcNormalInibidor.png}
+	\caption[Arco normal e inibidor]{Arco normal e inibidor chegando transição T1}
+	\label{fig:arcNormalInibidor}
+\end{figure}
+
+Há também o segundo caso, em que o usuário cria um ponto intermediário. Nesse caso, uma linha entre o ponto inicial e o ponto intermediário é criada. Na posição \textbf{x} e y\textbf{y} desse ponto intermediário é criado um circulo, para indicar que ali há um ponto intermediário, e que pode ser movimentado posteriormente. Podem existir infinitos pontos intermediários, até que o usuário clique no elemento final, quando o desenho do arco finaliza. Na ponta final, há o triângulo ou circulo, a depender do tipo de arco. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.8]{figuras/arcPontoIntermediario.png}
+	\caption[Arco com pontos intermediários]{Arcos com pontos intermediários}
+	\label{fig:arcPontoIntermediario}
+\end{figure}
+
+Além disso, o arco é mostrado, em tempo real, enquanto é desenhado. Faz-se isso utilizando o ponto inicial, juntamente com os pontos intermediários, caso existam, e a posição \textbf{x} e \textbf{y} do ponteiro do mouse, obtida com \textbf{\textit{mousemove}} \ref{cap:mousemove}. O processo é o mesmo que o anterior, diferenciado-se pelo fato do ponto final ser o obtido pelas propriedades \textbf{\textit{clientX}} e \textbf{\textit{clientY}} do evento \textbf{\textit{mousemove}} \ref{fig:mousemove_desenhando_arco}. 
 
 \section{Movimentando elementos na tela}\label{cap:move_elements}
 
@@ -1279,17 +1338,6 @@ Caso todas essas comparações sejam verdadeiras, pode-se concluir que o clique 
 
 A partir do momento em que elementos são criados, há a necessidade de poder excluí-los, seja para corrigir algum erro, testar novas possibilidades, ou seja para deletar tudo e iniciar de novo. Na aplicação web desenvolvida buscou-se focar na exclusão tanto dos elementos individualmente, no caso, lugares, transições e arcos, quanto também pela exclusão da rede por completo, excluindo tudo de uma única vez.
 
-{\color{red}criar fluxo para explicar o processo}
-
-
-\begin{figure}[ht] 
-	\centering
-	\includegraphics[scale=1]{figuras/deleteDiagram.pdf}
-	\caption[Fluxograma Delete Elements]{Diagrama de fluxo para exclusão}
-	\label{fig:deleteDiagram}
-\end{figure}
-\FloatBarrier
-
 \subsection*{Deletando elementos}
 
 Para deletar um elemento, de forma individual, é necessário clicar no botão \textbf{\textit{Delete Element}}. A partir dessa ação há 3 possibilidades: 
@@ -1309,6 +1357,14 @@ A função percorre os 3 arrays principais de elementos, \textbf{\textit{arrayPl
 Na exclusão de lugares e transições, verifica-se quais arcos chegam ou saem desses elementos através da propriedade \textbf{\textit{connections}} \ref{prop:connections}. Tendo as conexões, faz-se também a exclusão desses arcos. Ao deletar um lugar e os arcos que chegam ou que saem, por exemplo, também exclui-se na transição a menção, na propriedade \textbf{\textit{connections}}, que há uma conexão com o arco excluído. O mesmo vale para quando se exclui uma transição. 
 
 Por fim, quando exclui-se um arco, de forma individual, verifica-se o elemento inicial e final, ou seja, onde o arco inicia e onde o arco finaliza. Tendo esses 2 elementos, faz-se a exclusão da menção de conexão na propriedade \textbf{\textit{connections}} de cada um desses elementos.
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.15]{figuras/diagrama-fluxo-deleteElement.png}
+	\caption[Diagrama de fluxo para deletar um elemento]{Diagrama de fluxo para deletar um elemento}
+	\label{fig:deleteElementDiagram}
+\end{figure}
+\FloatBarrier
 
 \subsection*{Deletando a rede por completo} \label{cap:deleteNetFull}
 
@@ -1331,6 +1387,14 @@ Entretanto, para executar a função \textbf{\textit{deleteNet()}}, é necessár
 \lstinputlisting[caption={Código para caixa de confirmação de exclusão da rede por completo}, captionpos=b, label={lst:confirmDeleteNet}]{scripts/confirmDeleteNet.js}
 
 Após a confirmação, por parte do usuário, faz-se a exclusão da rede por completo.
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.2]{figuras/diagrama-fluxo-deleteNet.png}
+	\caption[Diagrama de fluxo para deletar a rede por completo]{Diagrama de fluxo para deletar a rede por completo}
+	\label{fig:deleteNetDiagram}
+\end{figure}
+\FloatBarrier
 
 \section{Salvando e carregando a rede}\label{cap:saveLoadNet}
 
@@ -1380,7 +1444,115 @@ Na aplicação desenvolvida, o \textbf{\textit{localStorage}} é utilizado como 
 
 \section{Simulação da rede} \label{cap:simulation}
 
+A simulação da rede de Petri desenvolvida pelo usuário desempenha um papel fundamental no funcionamento do sistema. Após a criação da rede, torna-se necessário permitir sua manipulação e execução. Como as redes de Petri possuem uma representação matemática bem definida, a simulação pode ser realizada de forma eficiente. Para isso, é necessário comparar, modificar e atualizar as variáveis que compõem a estrutura da rede, como número de marcações dos lugares, peso dos arcos e verificando se uma transição está ativada ou não. 
+
+Para simular a rede de Petri, duas funções principais foram desenvolvidas. A primeira, denominada \textbf{\textit{netSimulationEnables()},} analisa todas as transições, verificando quais delas estão ativadas. Cada transição é analisada individualmente, verificando se as condições para ativação estão sendo cumpridas. Caso sim, a propriedade \textbf{\textit{isEnable}} \ref{prop:isEnable} da transição é definida como \textbf{\textit{true}} e a cor da transição na tela se altera para vermelho \ref{fig:renderTransition}. 
+
+\lstinputlisting[caption={Função \textbf{\textit{netSimulationEnables()}}}, captionpos=b, label={lst:saveNet}]{scripts/transitionEnable.js}
+
+Inicialmente, percorre-se todas as transições analisando quais arcos estão chegando. Essa etapa é feita observando a propriedade \textbf{\textit{connections}} de cada transição. Analisando o peso do arco, em comparação com o número de marcações do lugar em que ele está saindo, determina-se se o arco está ativado ou não.
+
+\begin{description}
+	\item[Arcos normais:] número de marcações $\geq$ peso do arco;
+	\item[Arcos inibidores:] número de marcações < peso do arco.
+\end{description}
+
+Após cada verificação de arco, o resultado é armazenado no \textbf{\textit{arrayIsEnable}}. Caso todas as verificações sejam verdadeiras, a propriedade \textbf{\textit{isEnable}} da transição é alterada para \textbf{\textit{true}}, caso contrário, como \textbf{\textit{false}}. 
+
+A segunda função, denominada \textbf{\textit{netSimulationMove()}}, faz a movimentação das marcações, conforme o usuário clica na transição que está ativada. A função é chamada sempre que ocorre o evento \textbf{\textit{mousedown}} e a variável \textbf{\textit{simulation}} é definida como\textbf{\textit{true}}, o que ocorre sempre que o botão \textbf{\textit{Simulation}} é pressionado.  
+
+\lstinputlisting[caption={Código para ativação da simulação}, captionpos=b, label={lst:enableSimulation}]{scripts/enableSimulation.js}
+
+Tendo a simulação ativada, o usuário deve fazer o clique nas transições que deseja, simulando o comportamento da rede e movimentando as marcações do lugar de origem para o lugar de destino. A função \textbf{\textit{netSimulationMove()}} executa duas ações: 
+
+\begin{enumerate}
+	\item subtrair do lugar de origem o número de marcações com base no peso do arco que sai;
+	\item adicionar ao lugar de destino o número de marcações com base no peso do arco que chega.
+\end{enumerate}
+
+\lstinputlisting[caption={Função \textbf{\textit{netSimulationMove()}}}, captionpos=b, label={lst:netSimulationMove}]{scripts/netSimulationMove.js}
+
+O primeiro passo da função verifica se o clique ocorreu dentro de alguma transição e se ela está ativada. Caso sim, as duas ações ocorrem. A primeira subtrai do lugar de origem o valor correspondente ao peso do arco que está saindo. A segunda soma ao lugar de destino o valor correspondente ao peso de arco. Também, é necessário que os arcos para essas ações sejam do tipo normal. O peso dos arcos inibidores não interferem na subtração ao adição de marcações, apenas na ativação dos arcos.
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.8]{figuras/moveTokens1.png}
+	\caption[Movimentando as marcações]{Movimentação das marcações - Parte 1}
+	\label{fig:moveTokens1}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.8]{figuras/moveTokens2.png}
+	\caption[Movimentando as marcações]{Movimentação das marcações - Parte 2}
+	\label{fig:moveTokens2}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.8]{figuras/moveTokens3.png}
+	\caption[Movimentando as marcações]{Movimentação das marcações - Parte 3}
+	\label{fig:moveTokens3}
+\end{figure}
+\FloatBarrier
+
+Através da função \textbf{\textit{netSimulationMove()}} simula-se o comportamento da rede de Petri.
+
 \section{Publicação do projeto online}
+
+A publicação do projeto online garante que qualquer usuário com acesso a internet consiga acessar a aplicação web desenvolvida. Com o objetivo de tornar o simulador de redes de Petri acessível, de forma ampla e gratuita, optou-se por realizar sua publicação como uma aplicação web estática, utilizando ferramentas modernas de desenvolvimento e hospedagem. O projeto, desenvolvido integralmente com tecnologias de \textbf{\textit{front-end}}, HTML, CSS e Javascript \ref{cap:tecnologiaweb}, não requer \textbf{\textit{back-end}} ou banco de dados, tornando-o ideal para ser hospedado em plataformas que oferecem suporte a sites estáticos. 
+
+Para o controle de versão e o gerenciamento do código-fonte, utilizou-se a plataforma Github, amplamente reconhecida na área de desenvolvimento de software por oferecer hospedagem de repositórios baseados no sistema de controle de versões Git  \ref{cap:git}. O código-fonte do simulador encontra-se hospedado em um repositório público, o que promove a transparência do desenvolvimento e facilita eventuais colaborações futuras. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.33]{figuras/repoGithub.png}
+	\caption[Repositório Github]{Repositório Github:  \href{https://github.com/douglasmbarbosa/tcc-petri-net-simulator}{github.com/douglasmbarbosa/tcc-petri-net-simulator}}
+	\label{fig:repoGithub}
+\end{figure}
+\FloatBarrier
+
+A publicação online e o processo de entrega contínua foram realizados por meio da ferramenta Netlify, uma plataforma de hospedagem focada em aplicações front-end. O Netlify oferece integração nativa com o GitHub, permitindo que cada modificação realizada na \textbf{\textit{branch}} \textbf{\textit{main}} do repositório dispare automaticamente um novo processo de \textbf{\textit{build}} e \textbf{\textit{deploy}} do projeto. Ou seja, sempre que ocorre uma alteração no repositório, faz-se a subida dessas modificações automaticamente para o usuário final. Essa integração contínua garante que a versão publicada do simulador esteja sempre sincronizada com a última versão do código. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.5]{figuras/netlify1.png}
+	\caption[netlify 1 ]{Projeto criado na plataforma Netlyfy}
+	\label{fig:netlify1}
+\end{figure}
+\FloatBarrier
+
+Para a configuração do projeto na plataforma Netlify, optou-se pela utilização de um domínio personalizado. O domínio \textbf{\textit{\href{https://petrinetsimulator.com}{petrinetsimulator.com}}} foi adquirido na plataforma Hostinger para a publicação do projeto online. Após a compra do domínio, registrou-se o mesmo na Netlify, juntamente com a integração com o Github. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.35]{figuras/hostingerDomain.png}
+	\caption[Hostinger Domain]{Domínio personalizado na plataforma Hostinger}
+	\label{fig:hostinger}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.4]{figuras/netlify2.png}
+	\caption[netlify 2]{Domínio personalizado configurado na plataforma Netlify}
+	\label{fig:netlify2}
+\end{figure}
+\FloatBarrier
+
+Além dessas configurações, a plataforma Netlify fornece o certificado SSL/TLS, garantindo a utilização do protocolo HTTPS, fornecendo um acesso seguro para os usuário da aplicação web. 
+
+\begin{figure}[ht] 
+	\centering
+	\includegraphics[scale=0.5]{figuras/netlify3.png}
+	\caption[netlify 3]{Certificado SSL/TLS configurado na plataforma Netlify}
+	\label{fig:netlify2}
+\end{figure}
+\FloatBarrier
+
+A integração entre as ferramentas adotadas e as práticas empregadas ao longo do desenvolvimento contribuíram para a disponibilização eficiente, segura e acessível, de forma online, ao simulador de redes de Petri. 
 
 % Caso seja um trabalho oriundo da Escola de Minas ou do ICEB, é conveniente apresentar uma fórmula:
 % \begin{equation}
@@ -1425,10 +1597,15 @@ Na aplicação desenvolvida, o \textbf{\textit{localStorage}} é utilizado como 
 % % primeiro capitulo de Resultados
 \chapter{Considerações Finais} \label{cap:resultados}
 
-Escrever aqui sobre as expectativas futuras. Pode-se colocar aquilo que ainda pode ser desenvolvido na aplicação, como: redes coloridas, estocásticas, desenvolvimento de uma interface mais agradável, dentre outras melhorias
+O desenvolvimento de um simulador web para Redes de Petri representa uma importante contribuição no contexto do ensino e da experimentação prática com modelagem de sistemas a eventos discretos. A aplicação apresentada demonstrou-se eficaz na construção e simulação de redes de Petri simples, utilizando-se apenas de tecnologias de \textit{frontend}, viabilizando seu uso diretamente em navegadores, sem a necessidade de instalação de software adicional.
 
+Apesar dos avanços alcançados com o presente trabalho, ainda há diversas possibilidades de aprimoramento e expansão da aplicação. Entre os principais desenvolvimentos futuros, destaca-se a possibilidade de incorporar funcionalidades mais avançadas ao simulador, como o suporte a redes de Petri temporizadas \ref{cap:redeTemporizada}, coloridas \ref{cap:redeColorida} e estocásticas \ref{cap:redeEstocastica}, o que permitiria a modelagem de sistemas mais complexos e com variabilidade probabilística.
 
-Falar aqui sobre criação de uma tela de login, e banco de dados para armazenamento das redes de petri criadas. Melhorias de interface como adicionar um texto explicando o que o usuário deve fazer quando executa uma ação.
+Conjuntamente, melhorias na interface gráfica do usuário são desejáveis, visto que, a aplicação web desenvolvida é muito simples no aspecto visual. Com melhorias na interface, o usuário terá uma experiência mais intuitiva e eficiente. Essa etapa inclui a adição de elementos explicativos, como textos orientativos que auxiliem o usuário a entender quais ações estão disponíveis ou devem ser realizadas em determinados momentos da simulação. Também, tornar os elementos HTML mais sofisticados a nível de \textit{design}, como os botões e a própria área de desenvolvimento das redes de Petri e, dessa forma, trazendo maior beleza para a interface.
+
+Outra perspectiva relevante para a evolução da ferramenta é a implementação de um sistema de autenticação de usuários, por meio da criação de uma tela de \textit{login} integrada a um banco de dados. Tal funcionalidade permitiria o armazenamento personalizado das redes de Petri criadas pelos usuários, viabilizando a continuidade do trabalho em sessões futuras e incentivando o uso da ferramenta em ambientes educacionais colaborativos. Com o banco de dados, o usuário poderá criar uma conta na ferramenta, tornando possível o gerenciamento de seus projetos em qualquer navegador. Tal funcionalidade permite maior mobilidade e segurança para a preservação dos projetos. 
+
+Portanto, embora a versão atual do simulador já apresente uma base sólida para a criação e execução de redes de Petri, sua arquitetura e escopo permanecem abertos à expansão, o que garante um vasto campo para pesquisas e melhorias contínuas. Espera-se que este trabalho possa servir de ponto de partida para futuras iniciativas voltadas ao aprimoramento de ferramentas educacionais baseadas na web, aplicadas à modelagem de sistemas a eventos discretos.
 
 
 % % ---
