@@ -351,8 +351,16 @@ Petri Nets are a mathematical formalism used for modeling discrete event systems
 \cleardoublepage
 
 
-\renewcommand{\lstlistlistingname}{Lista de Scripts} % Renomeia o título da lista
-\lstlistoflistings % Gera a lista de scripts
+% Lista de Códigos
+\cleardoublepage
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}} % remove entradas temporariamente do sumário
+\renewcommand{\lstlistlistingname}{Lista de Códigos}
+\lstlistoflistings % gera a lista
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % restaura o nível do sumário
+\cleardoublepage
+
+
+
 
 % ---
 
