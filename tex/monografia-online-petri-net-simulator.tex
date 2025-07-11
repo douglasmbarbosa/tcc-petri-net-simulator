@@ -359,9 +359,6 @@ Petri Nets are a mathematical formalism used for modeling discrete event systems
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}} % restaura o nível do sumário
 \cleardoublepage
 
-
-
-
 % ---
 
 % % inserir lista de tabelas
@@ -617,7 +614,7 @@ Tendo a lógica matemática definida, pode-se ilustrar graficamente a mesma rede
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.3]{exemplo_simples_rede_petri.png}
-	\caption[Rede de Petri Simples]{Rede de Petri Simples. \textcite{CassandrasLafortune08}.}
+	\caption[Rede de Petri Simples - Parte 1]{Rede de Petri Simples - Parte 1. \textcite{CassandrasLafortune08}.}
 	\label{fig:rede_petri_simples_ex_01}
 \end{figure} 
 
@@ -628,7 +625,7 @@ Para a mudança de estado dessa representação é necessário, no mínimo, duas
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.3]{exemplo_simples_rede_petri_marcacao_p1.png}
-	\caption[Rede de Petri Simples]{Transição $t_{1}$ habilitada. \textcite{CassandrasLafortune08}.}
+	\caption[Rede de Petri Simples - Parte 2]{Transição $t_{1}$ habilitada. \textcite{CassandrasLafortune08}.}
 	\label{fig:rede_petri_simples_ex_02}
 \end{figure}
 
@@ -637,7 +634,7 @@ Após a execução da transição $t_{1}$, as duas marcações em $p_{1}$ somem,
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.3]{exemplo_simples_rede_petri_marcacao_p2.png}
-	\caption[Rede de Petri Simples]{Rede de Petri após a transição $t_{1}$ ter sido executada. \textcite{CassandrasLafortune08}.}
+	\caption[Rede de Petri Simples - Parte 3]{Rede de Petri após a transição $t_{1}$ ter sido executada. \textcite{CassandrasLafortune08}.}
 	\label{fig:rede_petri_simples_ex_03}
 \end{figure}
 
@@ -918,6 +915,7 @@ As propriedades \textbf{\textit{clientX}} e \textbf{\textit{clientY}} permitem d
 	\caption[Mouse estilo default]{Ponteiro do mouse com estilo \textbf{\textit{default}}}
 	\label{fig:mouse_estilo_default}
 \end{figure}
+\FloatBarrier
 
 \begin{figure}[ht] 
 	\centering
@@ -925,6 +923,7 @@ As propriedades \textbf{\textit{clientX}} e \textbf{\textit{clientY}} permitem d
 	\caption[Mouse estilo default]{Ponteiro do mouse com estilo \textbf{\textit{pointer}}}
 	\label{fig:mouse_estilo_pointer}
 \end{figure}
+\FloatBarrier
 
 O evento \textbf{\textit{mousemove}} também é utilizado no momento de criação dos arcos, para renderizar o arco enquanto ele ainda está sendo desenhado. Por exemplo, ao clicar no primeiro elemento, lugar ou transição, onde o arco iniciará, uma posição inicial é detectada. Após, espera-se que o usuário clique, ou num ponto intermediário do arco, ou no ponto final do arco. Enquanto o ponto final, no segundo elemento, não é detectado, utiliza-se da posição do ponteiro do mouse, nos eixos \textbf{x} e \textbf{y}, do evento \textbf{\textit{mousemove}} para renderizar uma linha entre a última posição fixa detectada e a posição do ponteiro do mouse.
 
@@ -934,6 +933,7 @@ O evento \textbf{\textit{mousemove}} também é utilizado no momento de criaçã
 	\caption[Mousemove desenhando arco]{Arco sendo renderizado antes de ser concluído com \textbf{\textit{mousemove}}}
 	\label{fig:mousemove_desenhando_arco}
 \end{figure}
+\FloatBarrier
 
 \subsection*{mousedown}\label{cap:mousedown}
 
@@ -1081,11 +1081,11 @@ A primeira verificação que se faz na função \textbf{\textit{addArc()}} é a 
 
 \lstinputlisting[caption={Verificação de pontos intermediários}, captionpos=b, label={lst:intermediatePoints}]{scripts/intermediatePoints.js}
 
-Caso a condição anterior não seja atendida, se entende que o ponto \textbf{\textit{X}} e \textbf{\textit{Y}} não representa um ponto intermediário do arco. Posteriormente, se percorre os arrays \textbf{\textit{arrayPlaces}} e \textbf{\textit{arrayTransitions}}. Para cada uma das posições de ambos os arrays se faz a verificação, através das funções \textbf{\textit{insidePlace()}} \ref{lst:insidePlace} e \textbf{\textit{insideTransition()}} \ref{lst:insideTransition}, se o clique do mouse ocorreu dentro de algum dos lugares ou transições que estão dispostas na tela. Caso o clique ocorra dentro de algum desses dois elementos, o ponto \textbf{\textit{X}} e \textbf{\textit{Y}} será gravado na variável \textbf{\textit{startingPositionArc}}, juntamente com o \textbf{\textit{id}} do elemento em que o arco se iniciou. 
+Caso a condição anterior não seja atendida, se entende que o ponto \textbf{\textit{X}} e \textbf{\textit{Y}} não representa um ponto intermediário do arco. Posteriormente, se percorre os arrays \textbf{\textit{arrayPlaces}} e \textbf{\textit{arrayTransitions}}. Para cada uma das posições de ambos os arrays se faz a verificação, através das funções \textbf{\textit{insidePlace()}} \ref{lst:insidePlace} e \textbf{\textit{insideTransition()}} \ref{lst:insideTransition}, se o clique do mouse ocorreu dentro de algum dos lugares ou transições que estão dispostos na tela. Caso o clique ocorra dentro de algum desses dois elementos, o ponto \textbf{\textit{X}} e \textbf{\textit{Y}} será gravado na variável \textbf{\textit{startingPositionArc}}, juntamente com o \textbf{\textit{id}} do elemento em que o arco se iniciou. 
 
 \subsection*{Para lugares}
 
-Caso a chamada da função \textbf{\textit{insidePlace()}} retorne \textbf{\textit{true}} e a variável \textbf{\textit{startingPositionArc}} não contenha nenhum valor, o ponto inicial, com os eixos \textbf{\textit{X}} e \textbf{\textit{Y}} e o \textbf{\textit{id}} do lugar, são gravados nas propriedades do arco. Além disso, no lugar em quem o arco se iniciou, insere-se a informação de que aquele arco se iniciou ali. A variável auxiliar \textbf{\textit{typeElement}} também recebe o valor \textbf{\textit{"place"}}, para indicar que aquele arco se iniciou num lugar. 
+Caso a chamada da função \textbf{\textit{insidePlace()}} retorne \textbf{\textit{true}} e a variável \textbf{\textit{startingPositionArc}} não conter nenhum valor, o ponto inicial, com os eixos \textbf{\textit{X}} e \textbf{\textit{Y}} e o \textbf{\textit{id}} do lugar, são gravados nas propriedades do arco. Além disso, no lugar em quem o arco se iniciou, insere-se a informação de que aquele arco se iniciou ali. A variável auxiliar \textbf{\textit{typeElement}} também recebe o valor \textbf{\textit{"place"}}, para indicar que aquele arco se iniciou num lugar. 
 
 Caso a verificação anterior não seja atendida, se faz uma nova verificação. Se a chamada da função \textbf{\textit{insidePlace()}} retornar \textbf{\textit{true}} e a variável \textbf{\textit{typeElement}} contiver o valor \textbf{\textit{"transition"}}, quer dizer que o arco se iniciou em uma transição, e agora está finalizando em um lugar. Com isso, se adiciona o valor \textbf{\textit{X} e \textbf{\textit{Y}}} do clique e o \textbf{\textit{id}} do lugar em que o arco está finalizando na variável \textbf{\textit{endPositionArc}} que, posteriormente, será adicionado nas propriedades do arco. O lugar recebe a informação de que esse arco finalizou nele.
 
@@ -1095,7 +1095,7 @@ Com a finalização do arco, a variável \textbf{\textit{drawArc}} recebe o valo
 
 \subsection*{Para transições}
 
-Caso a chamada da função \textbf{\textit{insideTransition()}} retorne \textbf{\textit{true}} e a variável \textbf{\textit{startingPositionArc}} não contenha nenhum valor, o ponto inicial, com os eixos \textbf{\textit{X}} e \textbf{\textit{Y}} e o \textbf{\textit{id}} da transição, são gravados nas propriedades do arco. Além disso, na transição em quem o arco se iniciou, insere-se a informação de que aquele arco se iniciou ali. A variável auxiliar \textbf{\textit{typeElement}} também recebe o valor \textbf{\textit{"transition"}}, para indicar que aquele arco se iniciou numa transição. 
+Caso a chamada da função \textbf{\textit{insideTransition()}} retorne \textbf{\textit{true}} e a variável \textbf{\textit{startingPositionArc}} não conter nenhum valor, o ponto inicial, com os eixos \textbf{\textit{X}} e \textbf{\textit{Y}} e o \textbf{\textit{id}} da transição, são gravados nas propriedades do arco. Além disso, na transição em quem o arco se iniciou, insere-se a informação de que aquele arco se iniciou ali. A variável auxiliar \textbf{\textit{typeElement}} também recebe o valor \textbf{\textit{"transition"}}, para indicar que aquele arco se iniciou numa transição. 
 
 Caso a verificação anterior não seja atendida, se faz uma nova verificação. Se a chamada da função \textbf{\textit{insideTransition()}} retornar \textbf{\textit{true}} e a variável \textbf{\textit{typeElement}} contiver o valor \textbf{\textit{"place"}}, quer dizer que o arco se iniciou em um lugar, e agora está finalizando em uma transição. Com isso, se adiciona o valor \textbf{\textit{X} e \textbf{\textit{Y}}} do clique e o \textbf{\textit{id}} da transição em que o arco está finalizando na variável \textbf{\textit{endPositionArc}} que, posteriormente, será adicionado nas propriedades do arco. A transição recebe a informação de que esse arco finalizou nele.
 
@@ -1121,7 +1121,7 @@ Quando as variáveis temporárias \textbf{\textit{startingPositionArc}} e \textb
 	\item \textbf{weightPos:} indica o valor dos eixos X e Y em que o peso do arco será mostrado na tela.
 \end{enumerate}
 
-Tendo essas propriedades definidas faz-se a adição do arco em \textbf{\textit{arrayArcs}}. Por fim, as variáveis temporárias são atribuídas com valores nulos para que o próximo arco possa ser construído.
+Tendo essas propriedades definidas faz-se a adição do \textbf{\textit{objArc}} em \textbf{\textit{arrayArcs}}. Por fim, as variáveis temporárias são atribuídas com valores nulos para que o próximo arco possa ser construído.
 
 \lstinputlisting[caption={Criando o arco com as propriedades}, captionpos=b, label={lst:addArc}]{scripts/addArc.js}
 
@@ -1137,7 +1137,7 @@ Tendo essas propriedades definidas faz-se a adição do arco em \textbf{\textit{
 
 A renderização de elementos visuais na interface é uma das funcionalidades essenciais de uma aplicação web moderna, especialmente quando se trata da representação gráfica de estruturas conceituais. Neste projeto, cujo objetivo principal é possibilitar a criação e manipulação de redes de Petri, torna-se indispensável a visualização clara e interativa dos componentes que constituem esse tipo de rede.
 
-De modo simples, os elementos de uma rede de Petri são representados de forma gráfica por meio de figuras geométricas já conhecidas pela maioria das pessoas, tornando mais simples a analogia dos elementos das redes de Petri, com figuras geométricas já conhecidas. Os lugares são representados por círculos, as transições por retângulos, e os arcos que ligam esses elementos são ilustrados como setas direcionais. Elementos adicionais, como marcações, pesos e títulos, são exibidas como textos e números renderizados diretamente na tela, complementando a representação visual e fornecendo os dados necessários para a interpretação correta da rede.
+De modo simples, os elementos de uma rede de Petri são representados de forma gráfica por meio de figuras geométricas já conhecidas pela maioria das pessoas, tornando mais simples a analogia dos elementos das redes de Petri com figuras geométricas já conhecidas. Os lugares são representados por círculos, as transições por retângulos, e os arcos que ligam esses elementos são ilustrados como setas direcionais. Elementos adicionais, como marcações, pesos e títulos, são exibidas como textos e números renderizados diretamente na tela, complementando a representação visual e fornecendo os dados necessários para a interpretação correta da rede.
 
 O HTML fornece a \textit{tag} \textbf{<canvas>}, que permite o desenvolvimento de figuras geométricas, gráficos e textos. No contexto desse projeto, o \textit{canvas} é essencial. Primeiramente, fornecendo uma área na tela para o desenvolvimento e manipulação das redes de Petri. Posteriormente, fornecendo uma API que pode ser manipulada, através do Javascript, para a criação dos elementos gráficos. 
 
@@ -1148,7 +1148,7 @@ Após a chamada do elemento \textbf{<canvas>} no arquivo \textbf{\textit{index.h
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.3]{figuras/area_canvas.png}
-	\caption[Área canvas]{Retângulo da área \textit{\textbf{<canvas>}} logo abaixo dos botões da aplicação web.}
+	\caption[Área canvas]{Retângulo da área \textit{\textbf{canvas}} logo abaixo dos botões da aplicação web.}
 	\label{fig:area_canvas}
 \end{figure}
 \FloatBarrier
@@ -1185,12 +1185,12 @@ Um lugar é, graficamente, um circulo. Ao manipular o \textit{canvas} é possív
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=1]{figuras/renderPlace.png}
-	\caption[renderPlace]{Lugar P1 renderizado na tela}
+	\caption[Lugar P1 renderizado na tela]{Lugar P1 renderizado na tela}
 	\label{fig:renderPlace}
 \end{figure}
 \FloatBarrier
 
-Além disso, um lugar possui outras características, como o número de marcações e o seu nome. Dessa forma, um número, representando a quantidade de marcações é renderizado no centro do circulo. Um outro texto, representando o nome, é renderizado um pouco acima do circulo, conforme \ref{lst:renderPlace}. A renderização ocorre de forma recursiva em cada um dos lugares que estão informados em \textbf{\textit{arrayPlaces}}.
+Além disso, um lugar possui outras características, como o número de marcações e o seu nome. Dessa forma, um número, representando a quantidade de marcações é renderizado no centro do circulo. Um outro texto, representando o nome, é renderizado um pouco acima do circulo, conforme \ref{fig:renderPlace}. A renderização ocorre de forma recursiva em cada um dos lugares que estão informados em \textbf{\textit{arrayPlaces}}.
 
 \subsubsection*{Renderização das transições}
 
@@ -1217,15 +1217,15 @@ Uma transição é, graficamente, um retângulo. É possível construir um retâ
 	\caption{Renderização da transição T1 de forma não ativada e ativada}
 \end{figure}
 
-Como o parâmetro a ser passado para a \textit{API} do Javascript para a construção de um retângulo em uma área \textbf{canvas} exige as coordenadas \textbf{x} e \textbf{y} do canto inferior esquerdo do retângulo, fez-se uma compensação, utilizando os valores de altura e largura, para se obter a posição do centro do retângulo. Dessa forma, ao posicionar e movimentar uma transição, se faz pela posição do centro.  A renderização ocorre de forma recursiva em cada uma das transições que estão informados em \textbf{\textit{arrayTransitions}}.
+Como o parâmetro a ser passado para a \textit{API} do Javascript para a construção de um retângulo em uma área \textbf{canvas} exige as coordenadas \textbf{x} e \textbf{y} do canto inferior esquerdo do retângulo, faz-se uma compensação, utilizando os valores de altura e largura, para se obter a posição do centro do retângulo. Dessa forma, ao posicionar e movimentar uma transição, se faz pela posição do centro.  A renderização ocorre de forma recursiva em cada uma das transições que estão informados em \textbf{\textit{arrayTransitions}}.
 
 \subsubsection*{Renderização dos arcos}
 
-Um arco, graficamente, é uma linha. No caso específico das redes de Petri, temos 2 principais tipos de arcos, normal e inibidor. O arco normal é representado como uma seta, o arco inibidor é semelhante, mas possui um circulo na ponta, ao invés de um triângulo. O processo é feito recursivamente em cada um dos arcos contidos em \textbf{\textit{arrayArcs}}.
+Um arco é, graficamente, uma linha. No caso específico das redes de Petri, temos 2 principais tipos de arcos, normal e inibidor. O arco normal é representado como uma seta, o arco inibidor é semelhante, mas possui um circulo na ponta, ao invés de um triângulo. O processo é feito recursivamente em cada um dos arcos contidos em \textbf{\textit{arrayArcs}}.
 
 \lstinputlisting[caption={Renderizando um arco}, captionpos=b, label={lst:renderArc}]{scripts/renderArc.js}
 
-Inicialmente, para a renderização do arco, há uma detecção da posição \textbf{x} e \textbf{y}, obtida através do evento \textbf{\textit{mousedown}} cap:mousedown. Esse primeiro ponto precisa ser, necessariamente, dentro de algum elemento, lugar ou transição para arcos normais e, apenas lugar, para arcos inibidores. Tendo a primeira posição \textbf{x} e \textbf{y} definida, há duas opções: ou o usuário seleciona o elemento final do arco, ou ele seleciona um ponto intermediário. No primeiro caso, uma linha entre o ponto inicial e final é renderizada. Caso seja um arco normal, um triângulo na ponto é renderizado que, junto com a linha, dá a ilusão de ser uma seta direcional. No caso do arco inibidor, um circulo é renderizado na ponta final da linha. 
+Inicialmente, para a renderização do arco, há uma detecção da posição \textbf{x} e \textbf{y}, obtida através do evento \textbf{\textit{mousedown}}. Esse primeiro ponto precisa ser, necessariamente, dentro de algum elemento, lugar ou transição para arcos normais e, apenas lugar, para arcos inibidores. Tendo a primeira posição \textbf{x} e \textbf{y} definida, há duas opções: ou o usuário seleciona o elemento final do arco, ou ele seleciona um ponto intermediário. No primeiro caso, uma linha entre o ponto inicial e final é renderizada. Caso seja um arco normal, um triângulo na ponto é renderizado que, junto com a linha, dá a ilusão de ser uma seta direcional. No caso do arco inibidor, um circulo é renderizado na ponta final da linha. 
 
 \begin{figure}[ht] 
 	\centering
@@ -1234,7 +1234,7 @@ Inicialmente, para a renderização do arco, há uma detecção da posição \te
 	\label{fig:arcNormalInibidor}
 \end{figure}
 
-Há também o segundo caso, em que o usuário cria um ponto intermediário. Nesse caso, uma linha entre o ponto inicial e o ponto intermediário é criada. Na posição \textbf{x} e y\textbf{y} desse ponto intermediário é criado um circulo, para indicar que ali há um ponto intermediário, e que pode ser movimentado posteriormente. Podem existir infinitos pontos intermediários, até que o usuário clique no elemento final, quando o desenho do arco finaliza. Na ponta final, há o triângulo ou circulo, a depender do tipo de arco. 
+Há também o segundo caso, em que o usuário cria um ponto intermediário. Nesse caso, uma linha entre o ponto inicial e o ponto intermediário é criada. Na posição \textbf{x} e \textbf{y} desse ponto intermediário é criado um circulo, para indicar que ali há um ponto intermediário, e que pode ser movimentado posteriormente. Podem existir infinitos pontos intermediários, até que o usuário clique no elemento final, quando o desenho do arco finaliza. Na ponta final, há o triângulo ou circulo, a depender do tipo de arco. 
 
 \begin{figure}[ht] 
 	\centering
@@ -1243,7 +1243,7 @@ Há também o segundo caso, em que o usuário cria um ponto intermediário. Ness
 	\label{fig:arcPontoIntermediario}
 \end{figure}
 
-Além disso, o arco é mostrado, em tempo real, enquanto é desenhado. Faz-se isso utilizando o ponto inicial, juntamente com os pontos intermediários, caso existam, e a posição \textbf{x} e \textbf{y} do ponteiro do mouse, obtida com \textbf{\textit{mousemove}} \ref{cap:mousemove}. O processo é o mesmo que o anterior, diferenciado-se pelo fato do ponto final ser o obtido pelas propriedades \textbf{\textit{clientX}} e \textbf{\textit{clientY}} do evento \textbf{\textit{mousemove}} \ref{fig:mousemove_desenhando_arco}. 
+Além disso, o arco é mostrado, em tempo real, enquanto é desenhado. Faz-se isso utilizando o ponto inicial, juntamente com os pontos intermediários, caso existam, e a posição \textbf{x} e \textbf{y} do ponteiro do mouse, obtida com \textbf{\textit{mousemove}}. O processo é o mesmo que o anterior, diferenciado-se pelo fato do ponto final ser o obtido pelas propriedades \textbf{\textit{clientX}} e \textbf{\textit{clientY}} do evento \textbf{\textit{mousemove}} \ref{fig:mousemove_desenhando_arco}. 
 
 \section{Movimentando elementos na tela}\label{cap:move_elements}
 
@@ -1271,7 +1271,7 @@ Outros elementos, como número de \textbf{\textit{tokens}}, peso dos arcos, alé
 		\centering
 		\includegraphics[scale=0.5]{figuras/move_bem_distribuido.png}
 		%\caption[move_bem_distribuido]{\textbf{move_bem_distribuido}}
-		\label{fig:move_mal_distribuido}
+		\label{fig:move_bem_distribuido}
 	\end{minipage}
 	\caption{Elementos mal distribuídos e movimentados para uma melhor visualização.}
 \end{figure}
@@ -1293,11 +1293,11 @@ O cálculo é feito utilizando-se da fórmula para distância entre 2 pontos.
 
 \lstinputlisting[caption={Verificando clique e atualizando posição do circulo}, captionpos=b, label={lst:insidePlace}]{scripts/insidePlace.js}
 
-Tendo o retorno da função e a variável \textbf{\textit{isPress}} \ref{lst:ispress} como verdadeiro, há a satisfação das condições necessárias para movimentar o elemento. Dessa forma, a nova posição do centro do circulo é a posição do ponteiro do mouse, obtida com \textbf{\textit{mousemove}} \ref{cap:mousemove}. A movimentação ocorrerá até que o botão do mouse deixe de ser pressionado. 
+Tendo o retorno da função e a variável \textbf{\textit{isPress}} \ref{lst:ispress} como verdadeiro, há a satisfação das condições necessárias para movimentar o elemento. Dessa forma, a nova posição do centro do circulo é a posição do ponteiro do mouse, obtida com \textbf{\textit{mousemove}}. A movimentação ocorrerá até que o botão do mouse deixe de ser pressionado, acarretando no evento \textbf{\textit{mouseup}}. 
 
 \subsection*{Verificando clique em retângulos}
 
-As transições e nome de elementos podem ser caracterizados como retângulos dentro da área \textbf{canvas}. Ao clicar na área \textbf{canvas} obtemos as posições \textbf{x} e \textbf{y} do clique. Para determinarmos se o clique ocorreu dentro de algum dos retângulos verifica-se e comparara-se o ponto \textbf{x} e \textbf{y} do clique com o ponto inferior esquerdo do retângulo \cite{Manzoni2013}. Faz-se a verificação da seguinte forma:
+As transições e nome de elementos podem ser caracterizados como retângulos dentro da área \textit{canvas}. Ao clicar na área \textit{canvas} obtemos as posições \textbf{x} e \textbf{y} do clique. Para determinarmos se o clique ocorreu dentro de algum dos retângulos verifica-se e comparara-se o ponto \textbf{x} e \textbf{y} do clique do mouse com o ponto inferior esquerdo do retângulo \cite{Manzoni2013}. Faz-se a verificação da seguinte forma:
 
 \begin{enumerate}
 	\item $mouseX \geq transitionX$;
@@ -1336,7 +1336,7 @@ As transições e nome de elementos podem ser caracterizados como retângulos de
 
 \lstinputlisting[caption={Verificando clique e atualizando posição do retângulo}, captionpos=b, label={lst:insideTransition}]{scripts/insideTransition.js}
 
-Caso todas essas comparações sejam verdadeiras, pode-se concluir que o clique ocorreu dentro de algum retângulo. Com isso, tendo \textbf{\textit{isPress}} verdadeira, move-se o retângulo. A posição central do retângulo será a mesma do ponteiro do mouse. 
+Caso todas essas comparações sejam verdadeiras, pode-se concluir que o clique ocorreu dentro de algum retângulo. Com isso, tendo \textbf{\textit{isPress}} verdadeira, move-se o retângulo. A posição central do retângulo será a mesma do ponteiro do mouse, obtida após o evento \textbf{\textit{mouseup}}. 
 
 \section{Exclusão}
 
@@ -1352,13 +1352,13 @@ Para deletar um elemento, de forma individual, é necessário clicar no botão \
 	\item exclusão de um arco.
 \end{enumerate}
 
-Para deletar um lugar, ou transição, o processo é semelhante. Além de deletar o elemento em si, há a necessidade de deletar os arcos que chegam e que saem, visto que, os arcos são dependentes desses elementos. Após o clique no botão \textbf{\textit{Delete Element}} há a mudança do valor da variável \textbf{\textit{buttonPress}} para \textbf{5} e, em seguida, quando ocorrer o evento \textbf{\textit{mousedown}} \ref{cap:mousedown}, há a chamada da função \textbf{\textit{deleteElements()}}. 
+Para deletar um lugar, ou transição, o processo é semelhante. Além de deletar o elemento em si, há a necessidade de deletar os arcos que chegam e que saem, visto que, os arcos são dependentes desses elementos. Após o clique no botão \textbf{\textit{Delete Element}} há a mudança do valor da variável \textbf{\textit{buttonPress}} para \textbf{5} e, em seguida, quando ocorrer o evento \textbf{\textit{mousedown}}, há a chamada da função \textbf{\textit{deleteElements()}}. 
 
 A função percorre os 3 arrays principais de elementos, \textbf{\textit{arrayPlaces}}, \textbf{\textit{arrayTransitions}} e \textbf{\textit{arrayArcs}}. Dessa forma, há a verificação da ocorrência de um clique dentro da área de algum dos elementos que podem ser excluídos: lugar, transição ou arco. No caso dos arcos, verifica-se se o clique ocorreu na área de algum dos pontos intermediários, ou na área da ponta do arco, sendo a área circular ou triangular, a depender do tipo de arco, normal ou inibidor. Caso a condição seja verdadeira, exclui-se o elemento do seu \textbf{\textit{array}} correspondente.
 
 \lstinputlisting[caption={Função \textbf{\textit{deleteElements()}} simplificada para excluir um lugar}, captionpos=b, label={lst:deleteElements}]{scripts/deleteElements.js}
 
-Na exclusão de lugares e transições, verifica-se quais arcos chegam ou saem desses elementos através da propriedade \textbf{\textit{connections}} \ref{prop:connections}. Tendo as conexões, faz-se também a exclusão desses arcos. Ao deletar um lugar e os arcos que chegam ou que saem, por exemplo, também exclui-se na transição a menção, na propriedade \textbf{\textit{connections}}, que há uma conexão com o arco excluído. O mesmo vale para quando se exclui uma transição. 
+Na exclusão de lugares e transições, verifica-se quais arcos chegam ou saem desses elementos através da propriedade \textbf{\textit{connections}} \ref{prop:connections}. Tendo as conexões, faz-se também a exclusão desses arcos. Ao deletar um lugar e os arcos que chegam e saem, por exemplo, também exclui-se na transição a menção, na propriedade \textbf{\textit{connections}}, que há conexão com o arco excluído. O mesmo vale para quando se exclui uma transição. 
 
 Por fim, quando exclui-se um arco, de forma individual, verifica-se o elemento inicial e final, ou seja, onde o arco inicia e onde o arco finaliza. Tendo esses 2 elementos, faz-se a exclusão da menção de conexão na propriedade \textbf{\textit{connections}} de cada um desses elementos.
 
@@ -1404,7 +1404,7 @@ Após a confirmação, por parte do usuário, faz-se a exclusão da rede por com
 
 Com a rede de Petri já construída, torna-se essencial disponibilizar mecanismos que permitam seu salvamento e posterior carregamento, garantindo assim a persistência dos dados e a continuidade do trabalho do usuário. Na aplicação web desenvolvida, essas funcionalidades foram implementadas por meio da exportação e importação de arquivos no formato \textbf{JSON}, o que possibilita a portabilidade da rede entre diferentes dispositivos ou sessões. Adicionalmente, a aplicação realiza o salvamento automático no \textbf{\textit{localStorage}} do navegador, permitindo a recuperação da rede de Petri mesmo após o fechamento ou recarregamento da página, evitando perdas acidentais de progresso.
 
-Como citado em capítulos anteriores, a rede de Petri, nada mais é, que a interpretação das várias variáveis ao longo de todo o código \ref{cap:deleteNetFull}. Dessa forma, para que ocorra o salvamento da rede de Petri, é necessário persistir os dados dessas variáveis de maneira simples e portável. Com isso, um arquivo \textbf{\textit{.json}}, contendo todos os dados necessários para a replicação da rede de Petri é exportado sempre que ocorre uma ação de salvamento, através do botão \textbf{\textit{Save Net}} da rede de Petri e, para o carregamento, é feito uma importação, com o botão \textbf{\textit{Load Net}}, desse arquivo \textbf{\textit{.json}}. O formato \textbf{\textit{JSON}} é leve e portável, facilitando o compartilhamento da rede de Petri entre os vários usuários.   
+Como citado em capítulos anteriores, a rede de Petri, nada mais é, que a interpretação das várias variáveis ao longo de todo o código. Dessa forma, para que ocorra o salvamento da rede de Petri, é necessário persistir os dados dessas variáveis de maneira simples e portável. Com isso, um arquivo \textbf{\textit{.json}}, contendo todos os dados necessários para a replicação da rede de Petri é exportado sempre que ocorre uma ação de salvamento, através do botão \textbf{\textit{Save Net}}. Para o carregamento, é feito uma importação, com o botão \textbf{\textit{Load Net}}, do arquivo \textbf{\textit{.json}}. O formato \textbf{\textit{JSON}} é leve e portável, facilitando o compartilhamento da rede de Petri entre os vários usuários.   
 
 \begin{figure}[ht] 
 	\centering
@@ -1428,11 +1428,11 @@ Para a exportação, após o clique do botão \textbf{\textit{Save Net}}, ocorre
 
 Para a importação, após o clique do botão \textbf{\textit{Load Net}}, ocorre a chamada da função \textbf{\textit{loadJSON()}}. Ela chama outra função, \textbf{loadVariables()}, que carrega as variáveis. Após, ocorre a importação dos dados do arquivo \textbf{\textit{.json}} 
 
-\lstinputlisting[caption={Código para importação da rede num arquivo \textbf{\textit{.json}}}, captionpos=b, label={lst:saveNet}]{scripts/loadNet.js}
+\lstinputlisting[caption={Código para importação da rede num arquivo \textbf{\textit{.json}}}, captionpos=b, label={lst:loadNet}]{scripts/loadNet.js}
 
 \subsubsection*{localStorage}\label{cap:localStorage} 
 
-Além da exportação e importação de arquivos \textbf{\textit{.json}}, há também o salvamento através do \textbf{\textit{localStorage}}. O \textbf{\textit{localStorage}} é uma funcionalidade nativa dos navegadores modernos que permite o armazenamento de dados localmente no dispositivo do usuário, de forma persistente e sem necessidade de conexão com o servidor \cite{mdn_local_storage}. 
+Além da exportação e importação de arquivos \textbf{\textit{.json}}, há também o salvamento através do \textbf{\textit{localStorage}}. O \textit{localStorage} é uma funcionalidade nativa dos navegadores modernos que permite o armazenamento de dados localmente no dispositivo do usuário, de forma persistente e sem necessidade de conexão com o servidor \cite{mdn_local_storage}. 
 
 \lstinputlisting[caption={Código para persistência dos dados com \textbf{\textit{localStorage}}}, captionpos=b, label={lst:localStorage}]{scripts/localStorage.js}
 
@@ -1448,11 +1448,11 @@ Na aplicação desenvolvida, o \textbf{\textit{localStorage}} é utilizado como 
 
 \section{Simulação da rede} \label{cap:simulation}
 
-A simulação da rede de Petri desenvolvida pelo usuário desempenha um papel fundamental no funcionamento do sistema. Após a criação da rede, torna-se necessário permitir sua manipulação e execução. Como as redes de Petri possuem uma representação matemática bem definida, a simulação pode ser realizada de forma eficiente. Para isso, é necessário comparar, modificar e atualizar as variáveis que compõem a estrutura da rede, como número de marcações dos lugares, peso dos arcos e verificando se uma transição está ativada ou não. 
+A simulação da rede de Petri desenvolvida pelo usuário desempenha um papel fundamental no funcionamento da aplicação web. Após a criação da rede, torna-se necessário permitir sua manipulação e execução. Como as redes de Petri possuem uma representação matemática bem definida, a simulação pode ser realizada de forma eficiente. Para isso, é necessário comparar, modificar e atualizar as variáveis que compõem a estrutura da rede, como número de marcações dos lugares, peso dos arcos e verificando se uma transição está ativada ou não. 
 
 Para simular a rede de Petri, duas funções principais foram desenvolvidas. A primeira, denominada \textbf{\textit{netSimulationEnables()},} analisa todas as transições, verificando quais delas estão ativadas. Cada transição é analisada individualmente, verificando se as condições para ativação estão sendo cumpridas. Caso sim, a propriedade \textbf{\textit{isEnable}} \ref{prop:isEnable} da transição é definida como \textbf{\textit{true}} e a cor da transição na tela se altera para vermelho \ref{fig:renderTransition}. 
 
-\lstinputlisting[caption={Função \textbf{\textit{netSimulationEnables()}}}, captionpos=b, label={lst:saveNet}]{scripts/transitionEnable.js}
+\lstinputlisting[caption={Função \textbf{\textit{netSimulationEnables()}}}, captionpos=b, label={lst:netSimulation}]{scripts/transitionEnable.js}
 
 Inicialmente, percorre-se todas as transições analisando quais arcos estão chegando. Essa etapa é feita observando a propriedade \textbf{\textit{connections}} de cada transição. Analisando o peso do arco, em comparação com o número de marcações do lugar em que ele está saindo, determina-se se o arco está ativado ou não.
 
@@ -1461,9 +1461,9 @@ Inicialmente, percorre-se todas as transições analisando quais arcos estão ch
 	\item[Arcos inibidores:] número de marcações < peso do arco.
 \end{description}
 
-Após cada verificação de arco, o resultado é armazenado no \textbf{\textit{arrayIsEnable}}. Caso todas as verificações sejam verdadeiras, a propriedade \textbf{\textit{isEnable}} da transição é alterada para \textbf{\textit{true}}, caso contrário, como \textbf{\textit{false}}. 
+Após cada verificação de arco, o resultado é armazenado em \textbf{\textit{arrayIsEnable}}. Caso todas as verificações sejam verdadeiras, a propriedade \textbf{\textit{isEnable}} da transição é alterada para \textbf{\textit{true}}, caso contrário, como \textbf{\textit{false}}. 
 
-A segunda função, denominada \textbf{\textit{netSimulationMove()}}, faz a movimentação das marcações, conforme o usuário clica na transição que está ativada. A função é chamada sempre que ocorre o evento \textbf{\textit{mousedown}} e a variável \textbf{\textit{simulation}} é definida como\textbf{\textit{true}}, o que ocorre sempre que o botão \textbf{\textit{Simulation}} é pressionado.  
+A segunda função, denominada \textbf{\textit{netSimulationMove()}}, faz a movimentação das marcações, conforme o usuário clica na transição que está ativada. A função é chamada sempre que ocorre o evento \textbf{\textit{mousedown}} e a variável \textbf{\textit{simulation}} é definida como \textbf{\textit{true}}, o que ocorre sempre que o botão \textbf{\textit{Simulation}} é pressionado.  
 
 \lstinputlisting[caption={Código para ativação da simulação}, captionpos=b, label={lst:enableSimulation}]{scripts/enableSimulation.js}
 
@@ -1476,12 +1476,12 @@ Tendo a simulação ativada, o usuário deve fazer o clique nas transições que
 
 \lstinputlisting[caption={Função \textbf{\textit{netSimulationMove()}}}, captionpos=b, label={lst:netSimulationMove}]{scripts/netSimulationMove.js}
 
-O primeiro passo da função verifica se o clique ocorreu dentro de alguma transição e se ela está ativada. Caso sim, as duas ações ocorrem. A primeira subtrai do lugar de origem o valor correspondente ao peso do arco que está saindo. A segunda soma ao lugar de destino o valor correspondente ao peso de arco. Também, é necessário que os arcos para essas ações sejam do tipo normal. O peso dos arcos inibidores não interferem na subtração ao adição de marcações, apenas na ativação dos arcos.
+O primeiro passo da função verifica se o clique ocorreu dentro de alguma transição e se ela está ativada. Caso sim, as duas ações ocorrem. A primeira subtrai do lugar de origem o valor correspondente ao peso do arco que está saindo. A segunda soma ao lugar de destino o valor correspondente ao peso de arco que está chegando. Também, é necessário que os arcos para essas ações sejam do tipo normal. O peso dos arcos inibidores não interfere na subtração ao adição de marcações, apenas na ativação dos arcos.
 
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.8]{figuras/moveTokens1.png}
-	\caption[Movimentando as marcações]{Movimentação das marcações - Parte 1}
+	\caption[Movimentando as marcações - Parte 1]{Movimentação das marcações - Parte 1}
 	\label{fig:moveTokens1}
 \end{figure}
 \FloatBarrier
@@ -1489,7 +1489,7 @@ O primeiro passo da função verifica se o clique ocorreu dentro de alguma trans
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.8]{figuras/moveTokens2.png}
-	\caption[Movimentando as marcações]{Movimentação das marcações - Parte 2}
+	\caption[Movimentando as marcações - Parte 2]{Movimentação das marcações - Parte 2}
 	\label{fig:moveTokens2}
 \end{figure}
 \FloatBarrier
@@ -1497,7 +1497,7 @@ O primeiro passo da função verifica se o clique ocorreu dentro de alguma trans
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.8]{figuras/moveTokens3.png}
-	\caption[Movimentando as marcações]{Movimentação das marcações - Parte 3}
+	\caption[Movimentando as marcações - Parte 3]{Movimentação das marcações - Parte 3}
 	\label{fig:moveTokens3}
 \end{figure}
 \FloatBarrier
@@ -1506,9 +1506,9 @@ Através da função \textbf{\textit{netSimulationMove()}} simula-se o comportam
 
 \section{Publicação do projeto online}
 
-A publicação do projeto online garante que qualquer usuário com acesso a internet consiga acessar a aplicação web desenvolvida. Com o objetivo de tornar o simulador de redes de Petri acessível, de forma ampla e gratuita, optou-se por realizar sua publicação como uma aplicação web estática, utilizando ferramentas modernas de desenvolvimento e hospedagem. O projeto, desenvolvido integralmente com tecnologias de \textbf{\textit{front-end}}, HTML, CSS e Javascript \ref{cap:tecnologiaweb}, não requer \textbf{\textit{back-end}} ou banco de dados, tornando-o ideal para ser hospedado em plataformas que oferecem suporte a sites estáticos. 
+A publicação do projeto online garante que qualquer usuário com acesso a internet consiga acessar a aplicação web desenvolvida através de um navegador. Com o objetivo de tornar o simulador de redes de Petri acessível, de forma ampla e gratuita, optou-se por realizar sua publicação como uma aplicação web estática, utilizando ferramentas modernas de desenvolvimento e hospedagem. O projeto, desenvolvido integralmente com tecnologias de \textbf{\textit{frontend}} \ref{cap:tecnologiaweb}, HTML, CSS e Javascript , não requer \textbf{\textit{back-end}} ou banco de dados, tornando-o ideal para ser hospedado em plataformas que oferecem suporte a sites estáticos. 
 
-Para o controle de versão e o gerenciamento do código-fonte, utilizou-se a plataforma Github, amplamente reconhecida na área de desenvolvimento de software por oferecer hospedagem de repositórios baseados no sistema de controle de versões Git  \ref{cap:git}. O código-fonte do simulador encontra-se hospedado em um repositório público, o que promove a transparência do desenvolvimento e facilita eventuais colaborações futuras. 
+Para o controle de versão e o gerenciamento do código-fonte, utilizou-se a plataforma Github, amplamente reconhecida na área de desenvolvimento de software por oferecer hospedagem de repositórios baseados no sistema de controle de versões Git. O código-fonte do simulador encontra-se hospedado em um repositório público, o que promove a transparência do desenvolvimento e facilita eventuais colaborações futuras. 
 
 \begin{figure}[ht] 
 	\centering
@@ -1518,12 +1518,12 @@ Para o controle de versão e o gerenciamento do código-fonte, utilizou-se a pla
 \end{figure}
 \FloatBarrier
 
-A publicação online e o processo de entrega contínua foram realizados por meio da ferramenta Netlify, uma plataforma de hospedagem focada em aplicações front-end. O Netlify oferece integração nativa com o GitHub, permitindo que cada modificação realizada na \textbf{\textit{branch}} \textbf{\textit{main}} do repositório dispare automaticamente um novo processo de \textbf{\textit{build}} e \textbf{\textit{deploy}} do projeto. Ou seja, sempre que ocorre uma alteração no repositório, faz-se a subida dessas modificações automaticamente para o usuário final. Essa integração contínua garante que a versão publicada do simulador esteja sempre sincronizada com a última versão do código. 
+A publicação online e o processo de entrega contínua foram realizados por meio da ferramenta Netlify, uma plataforma que fornece hospedagem gratuita para aplicações \textit{frontend}. A Netlify oferece integração nativa com o GitHub, permitindo que cada modificação realizada na \textit{branch} \textbf{\textit{main}} do repositório dispare automaticamente um novo processo de \textbf{\textit{build}} e \textbf{\textit{deploy}} do projeto. Ou seja, sempre que ocorre uma alteração no repositório, faz-se a subida dessas modificações automaticamente para o usuário final. Essa integração contínua garante que a versão publicada do simulador esteja sempre sincronizada com a última versão do código. 
 
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.5]{figuras/netlify1.png}
-	\caption[netlify 1 ]{Projeto criado na plataforma Netlyfy}
+	\caption[Projeto criado na plataforma Netlyfy]{Projeto criado na plataforma Netlyfy}
 	\label{fig:netlify1}
 \end{figure}
 \FloatBarrier
@@ -1533,7 +1533,7 @@ Para a configuração do projeto na plataforma Netlify, optou-se pela utilizaç�
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.35]{figuras/hostingerDomain.png}
-	\caption[Hostinger Domain]{Domínio personalizado na plataforma Hostinger}
+	\caption[Domínio personalizado na plataforma Hostinger]{Domínio personalizado na plataforma Hostinger}
 	\label{fig:hostinger}
 \end{figure}
 \FloatBarrier
@@ -1541,18 +1541,18 @@ Para a configuração do projeto na plataforma Netlify, optou-se pela utilizaç�
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.4]{figuras/netlify2.png}
-	\caption[netlify 2]{Domínio personalizado configurado na plataforma Netlify}
+	\caption[Domínio personalizado configurado na plataforma Netlify]{Domínio personalizado configurado na plataforma Netlify}
 	\label{fig:netlify2}
 \end{figure}
 \FloatBarrier
 
-Além dessas configurações, a plataforma Netlify fornece o certificado SSL/TLS, garantindo a utilização do protocolo HTTPS, fornecendo um acesso seguro para os usuário da aplicação web. 
+Além dessas configurações, a plataforma Netlify fornece o certificado SSL/TLS, garantindo a utilização do protocolo HTTPS, fornecendo um acesso seguro para os usuários da aplicação web. 
 
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.5]{figuras/netlify3.png}
-	\caption[netlify 3]{Certificado SSL/TLS configurado na plataforma Netlify}
-	\label{fig:netlify2}
+	\caption[Certificado SSL/TLS configurado na plataforma Netlify]{Certificado SSL/TLS configurado na plataforma Netlify}
+	\label{fig:netlify3}
 \end{figure}
 \FloatBarrier
 
@@ -1601,9 +1601,9 @@ A integração entre as ferramentas adotadas e as práticas empregadas ao longo 
 % % primeiro capitulo de Resultados
 \chapter{Considerações Finais} \label{cap:resultados}
 
-O desenvolvimento de um simulador web para Redes de Petri representa uma importante contribuição no contexto do ensino e da experimentação prática com modelagem de sistemas a eventos discretos. A aplicação apresentada demonstrou-se eficaz na construção e simulação de redes de Petri simples, utilizando-se apenas de tecnologias de \textit{frontend}, viabilizando seu uso diretamente em navegadores, sem a necessidade de instalação de software adicional.
+O desenvolvimento de um simulador web para redes de Petri representa uma importante contribuição no contexto do ensino e da experimentação prática com modelagem de sistemas a eventos discretos. A aplicação apresentada demonstrou-se eficaz na construção e simulação de redes de Petri simples, utilizando-se apenas de tecnologias de \textit{frontend}, viabilizando seu uso diretamente em navegadores, sem a necessidade de instalação de software adicional.
 
-Apesar dos avanços alcançados com o presente trabalho, ainda há diversas possibilidades de aprimoramento e expansão da aplicação. Entre os principais desenvolvimentos futuros, destaca-se a possibilidade de incorporar funcionalidades mais avançadas ao simulador, como o suporte a redes de Petri temporizadas \ref{cap:redeTemporizada}, coloridas \ref{cap:redeColorida} e estocásticas \ref{cap:redeEstocastica}, o que permitiria a modelagem de sistemas mais complexos e com variabilidade probabilística.
+Apesar dos avanços alcançados com o presente trabalho, ainda há diversas possibilidades de aprimoramento e expansão da aplicação. Entre os principais desenvolvimentos futuros, destaca-se a possibilidade de incorporar funcionalidades mais avançadas ao simulador, como o suporte a redes de Petri temporizadas, coloridas e estocásticas, o que permitiria a modelagem de sistemas mais complexos e com variabilidade temporal e probabilística.
 
 Conjuntamente, melhorias na interface gráfica do usuário são desejáveis, visto que, a aplicação web desenvolvida é muito simples no aspecto visual. Com melhorias na interface, o usuário terá uma experiência mais intuitiva e eficiente. Essa etapa inclui a adição de elementos explicativos, como textos orientativos que auxiliem o usuário a entender quais ações estão disponíveis ou devem ser realizadas em determinados momentos da simulação. Também, tornar os elementos HTML mais sofisticados a nível de \textit{design}, como os botões e a própria área de desenvolvimento das redes de Petri e, dessa forma, trazendo maior beleza para a interface.
 
