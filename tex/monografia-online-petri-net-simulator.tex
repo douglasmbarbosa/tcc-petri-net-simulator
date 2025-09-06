@@ -184,11 +184,11 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-<<<<<<< HEAD
+%<<<<<< HEAD
 \titulo{DESENVOLVIMENTO DE UM SIMULADOR DE REDES DE PETRI INDEPENDENTE DE PLATAFORMA}
-=======
+%=======
 \titulo{SIMULADOR WEB PARA CONSTRUÇÃO E EXECUÇÃO INTERATIVA DE REDES DE PETRI}
->>>>>>> develop
+%>>>>>>> develop
 \autor{Douglas Meneses Barbosa}
 \local{Ouro Preto}
 \data{\the\year} % imprime o ano corrente no campo data
@@ -305,7 +305,7 @@
 
 % Folha de aprovação - Obrigatório NBR 14724/2011
 %\begin{folhadeaprovacao}
-%\includepdf{folha-de-aprovacao.pdf}
+\includepdf{SEI_UFOP - 0971972 - Folha de aprovação do TCC.pdf}
 %\end{folhadeaprovacao}
 
 
@@ -513,7 +513,7 @@ Com as características básicas da aplicação definidas, serão desenvolvidos 
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.4]{exemplo_diagrama_de_fluxo.png}
-	\caption[Exemplo de diagrama de fluxo]{Exemplo de Diagrama de fluxo \textcite{ebac_diagrama_fluxo}.}
+	\caption[Exemplo de diagrama de fluxo]{Exemplo de Diagrama de fluxo. Fonte: \textcite{ebac_diagrama_fluxo}.}
 	\label{fig:diagrama_fluxo}
 \end{figure}
 
@@ -765,12 +765,12 @@ Uma vez que se consegue representar as marcações com diferentes cores, torna-s
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.35]{figuras/rede_petri_colorida.png}
-	\caption[Rede de Petri Colorida]{Rede de Petri Colorida. \textcite{inbook}}
+	\caption[Rede de Petri Colorida]{Rede de Petri Colorida. Fonte: \textcite{inbook}}
 	\label{fig:rede_petri_colorida}
 \end{figure}
 \FloatBarrier
 
-No exemplo \ref{exemplo_colorida} diferentes elementos estão representados no mesmo lugar (Figura \ref{fig:rede_petri_colorida}). O peso dos arcos são referenciados por cores e, dessa forma, a transição só estará habilitada caso o lugar contenha marcações do mesmo tipo que a cor indicada no peso do arco. A transição $t_{0}$ não está habilitada porque não há uma marcação da cor \textit{<a>} no lugar $p_{0}$. A transição $t_{1}$ está habilitada porque há uma marcação da cor \textit{<a>} no lugar $p_{1}$ e marcações das cores \textit{<a>} e \textit{<b>} no lugar $p_{2}$ \textcite{inbook}.
+No exemplo \ref{exemplo_colorida} diferentes elementos estão representados no mesmo lugar (Figura \ref{fig:rede_petri_colorida}). O peso dos arcos são referenciados por cores e, dessa forma, a transição só estará habilitada caso o lugar contenha marcações do mesmo tipo que a cor indicada no peso do arco. A transição $t_{0}$ não está habilitada porque não há uma marcação da cor \textit{<a>} no lugar $p_{0}$. A transição $t_{1}$ está habilitada porque há uma marcação da cor \textit{<a>} no lugar $p_{1}$ e marcações das cores \textit{<a>} e \textit{<b>} no lugar $p_{2}$ \cite{inbook}.
 
 \subsubsection{Estocásticas} \label{cap:redeEstocastica}
 
@@ -788,7 +788,7 @@ Essa abordagem estocástica é especialmente útil para modelar sistemas onde ev
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.2]{figuras/rede_petri_estocastica.png}
-	\caption[Rede de Petri Estocástica]{Rede de Petri Estocástica. \textcite{inproceedings}}
+	\caption[Rede de Petri Estocástica]{Rede de Petri Estocástica. Fonte: \textcite{inproceedings}}
 	\label{fig:rede_petri_estocastica}
 \end{figure}
 \FloatBarrier
@@ -879,7 +879,7 @@ A ferramenta APO (\textit{Accessible Petri Net Operations}) consiste em uma inte
 \end{figure}
 \FloatBarrier
 
-A construção das redes é feita de maneira interativa, por meio de uma barra de ferramentas intuitiva, que permite a criação de lugares, transições e arcos. Após a modelagem da rede, é possível realizar análises automáticas utilizando os algoritmos integrados ao APT, diretamente acessíveis por meio da barra de menu \textcite{apoGithub}. 
+A construção das redes é feita de maneira interativa, por meio de uma barra de ferramentas intuitiva, que permite a criação de lugares, transições e arcos. Após a modelagem da rede, é possível realizar análises automáticas utilizando os algoritmos integrados ao APT, diretamente acessíveis por meio da barra de menu \cite{apoGithub}. 
 
 Apesar de ser uma boa alternativa para a construção de redes de Petri, a ferramenta APO não tem mais suporte.  
 
@@ -1558,7 +1558,7 @@ Para o controle de versão e o gerenciamento do código-fonte, utilizou-se a pla
 \begin{figure}[ht] 
 	\centering
 	\includegraphics[scale=0.33]{figuras/repoGithub.png}
-	\caption[Repositório Github]{Repositório Github:  \href{https://github.com/douglasmbarbosa/tcc-petri-net-simulator}{github.com/douglasmbarbosa/tcc-petri-net-simulator}}
+	\caption[Repositório Github]{Repositório Github. Fonte: \href{https://github.com/douglasmbarbosa/tcc-petri-net-simulator}{github.com/douglasmbarbosa/tcc-petri-net-simulator}}
 	\label{fig:repoGithub}
 \end{figure}
 \FloatBarrier
