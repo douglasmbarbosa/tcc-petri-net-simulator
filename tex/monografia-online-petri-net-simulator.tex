@@ -102,7 +102,6 @@
 \renewcommand{\lstlistingname}{Código} % Altera "Listing" para "Código"
 
 
-
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
 
@@ -158,6 +157,8 @@
 \usepackage{lipsum}	% para geração de texto aleatório
 % ---
 
+\usepackage{fancyhdr}
+
 %Criação de Teoremas
 
 % buscar documentação no CTAN
@@ -200,6 +201,7 @@
 % ---
 
 
+
 % ---
 % Aparência do PDF final
 
@@ -238,7 +240,9 @@
 \makeindex % compila o indice
 
 
+
 \begin{document} % Início do documento
+
 
 \frenchspacing % Retira espaço obsoleto
 
@@ -431,6 +435,17 @@ Petri Nets are a mathematical formalism used for modeling discrete event systems
 % Modelo de capitulo com a introducao, objetivos e estrutura do texto
 
 % --
+
+
+\fancypagestyle{plain}{%
+	\fancyhf{} % limpa tudo
+	\fancyhead[R]{\thepage} % número no topo à direita
+	\renewcommand{\headrulewidth}{0pt} % sem linha
+	\renewcommand{\footrulewidth}{0pt} % sem linha
+}
+
+\pagestyle{plain}
+
 \chapter[Introdução]{Introdução}
 
 Em 1962, Carl Adam Petri, por meio de sua dissertação, mostrou para o mundo a sua criação, as redes de Petri \textcite{petri1962kommunikation}. Define-se uma rede de Petri como sendo uma ferramenta matemática para modelagem de sistemas concorrentes, em que as tarefas ocorrem paralelamente, e distribuídos, onde as tarefas acontecem em diferentes locais de forma integrada. Além da modelagem matemática, as redes de Petri podem ser ilustradas graficamente por meio de seus elementos, os lugares, as transições e os arcos. Além disso, com a evolução da indústria e da tecnologia, as redes de Petri ganharam ainda mais relevância, uma vez que elas permitem a modelagem de diversos tipos de sistemas, em diferentes áreas. 
